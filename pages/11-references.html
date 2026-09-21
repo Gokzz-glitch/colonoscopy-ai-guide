@@ -1,0 +1,1329 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Master Reference Catalog (49 Verified Citations) | Colonoscopy AI & ChakraModel</title>
+  <meta name="description" content="Master academic reference catalog: 49 verified research publications spanning clinical trials, regulatory approvals, benchmark datasets, deep learning architectures, foundation models, and dataset integrity audits.">
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <style>
+    .reference-card {
+      background: var(--surface-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      margin-bottom: 1.25rem;
+      transition: all var(--transition-fast);
+      position: relative;
+      scroll-margin-top: 5.5rem;
+    }
+    .reference-card:target {
+      border-color: var(--color-teal);
+      box-shadow: 0 0 24px rgba(0, 212, 255, 0.35);
+    }
+    .reference-card:hover {
+      border-color: var(--color-teal);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+    .ref-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 0.75rem;
+    }
+    .ref-num {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--color-teal);
+      background: var(--color-teal-tint);
+      border: 1px solid var(--border-teal-glow);
+      padding: 0.2rem 0.55rem;
+      border-radius: var(--radius-sm);
+      flex-shrink: 0;
+    }
+    .ref-title {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--text-primary);
+      margin-bottom: 0.35rem;
+    }
+    .ref-authors {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.5rem;
+    }
+    .ref-venue {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      font-style: italic;
+      margin-bottom: 0.75rem;
+    }
+    .ref-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      align-items: center;
+      margin-top: 0.75rem;
+    }
+    .ref-link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.25rem 0.65rem;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      transition: all var(--transition-fast);
+    }
+    .btn-doi {
+      background: rgba(0, 212, 255, 0.1);
+      border: 1px solid rgba(0, 212, 255, 0.3);
+      color: var(--color-teal);
+    }
+    .btn-doi:hover {
+      background: var(--color-teal);
+      color: #04101e;
+      text-decoration: none;
+    }
+    .btn-arxiv {
+      background: rgba(239, 68, 68, 0.1);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      color: #f87171;
+    }
+    .btn-arxiv:hover {
+      background: #ef4444;
+      color: #ffffff;
+      text-decoration: none;
+    }
+    .btn-github {
+      background: rgba(168, 85, 247, 0.1);
+      border: 1px solid rgba(168, 85, 247, 0.3);
+      color: var(--color-purple);
+    }
+    .btn-github:hover {
+      background: var(--color-purple);
+      color: #ffffff;
+      text-decoration: none;
+    }
+    .btn-pubmed {
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: var(--color-emerald);
+    }
+    .btn-pubmed:hover {
+      background: var(--color-emerald);
+      color: #ffffff;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Scroll Progress Indicator -->
+  <div id="scroll-progress"></div>
+
+  <!-- Main Navigation Header -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="../index.html" class="brand-logo">
+        <div class="brand-icon">📚</div>
+        <span>Colonoscopy AI</span>
+        <span class="brand-badge">Catalog</span>
+      </a>
+
+      <ul class="nav-menu">
+        <li><a href="../index.html" class="nav-link">Home</a></li>
+        <li><a href="01-what-is-colonoscopy.html" class="nav-link">Clinical</a></li>
+        <li><a href="04-architectures.html" class="nav-link">Architectures</a></li>
+        <li><a href="05-datasets.html" class="nav-link">Datasets</a></li>
+        <li><a href="06-benchmarks.html" class="nav-link">Benchmarks</a></li>
+        <li><a href="08-benchmark-integrity.html" class="nav-link">Integrity Audit</a></li>
+        <li><a href="09-chakramodel.html" class="nav-link">ChakraModel</a></li>
+        <li><a href="10-future.html" class="nav-link">Future & Mamba</a></li>
+        <li><a href="11-references.html" class="nav-link active">References</a></li>
+        <li><a href="12-glossary.html" class="nav-link">Glossary</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" aria-label="Toggle light and dark mode" title="Toggle theme">🌓</button>
+        <button class="hamburger-btn" aria-label="Toggle mobile menu" title="Open Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-drawer" id="mobile-drawer">
+    <a href="../index.html" class="nav-link">Home (Overview)</a>
+    <a href="01-what-is-colonoscopy.html" class="nav-link">01. What is Colonoscopy</a>
+    <a href="02-polyp-types.html" class="nav-link">02. Polyp Morphology & Paris</a>
+    <a href="03-ai-history.html" class="nav-link">03. AI History & Evolution</a>
+    <a href="04-architectures.html" class="nav-link">04. Deep Architectures</a>
+    <a href="05-datasets.html" class="nav-link">05. Public Datasets</a>
+    <a href="06-benchmarks.html" class="nav-link">06. Performance Benchmarks</a>
+    <a href="06b-clinical-evidence.html" class="nav-link">06b. Clinical Trial Evidence</a>
+    <a href="08-benchmark-integrity.html" class="nav-link">08. Benchmark Integrity Audit</a>
+    <a href="09-chakramodel.html" class="nav-link">09. ChakraModel Research Project</a>
+    <a href="10-future.html" class="nav-link">10. Future & Agentic Vision</a>
+    <a href="11-references.html" class="nav-link active">11. Master References (49 Papers)</a>
+    <a href="12-glossary.html" class="nav-link">12. Plain-English Glossary (50 Terms)</a>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-glow"></div>
+    <div class="container hero-content">
+      <div class="hero-badge">
+        <span class="dot"></span>
+        <span>Peer-Reviewed Literature Compendium</span>
+      </div>
+      <h1 class="hero-title">
+        Master Academic <br>
+        <span class="gradient-text">Reference Catalog</span>
+      </h1>
+      <p class="hero-subtitle">
+        49 verified foundational publications establishing the clinical, architectural, dataset, and integrity benchmarks of colonoscopy artificial intelligence.
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Content Container -->
+  <main class="container">
+
+    <!-- Search & Filter Toolbar -->
+    <div class="search-filter-toolbar">
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="reference-search" class="search-input" placeholder="Search by author, title, journal, or keyword (e.g., PraNet, Corley, Mamba)..." aria-label="Search references">
+      </div>
+
+      <div class="filter-group" id="ref-filter-pills">
+        <button class="filter-pill ref-category-pill active" data-category="all">All (49)</button>
+        <button class="filter-pill ref-category-pill" data-category="clinical">Clinical Trials & Guidelines</button>
+        <button class="filter-pill ref-category-pill" data-category="datasets">Benchmarks & Datasets</button>
+        <button class="filter-pill ref-category-pill" data-category="cnn">Deep CNN Era</button>
+        <button class="filter-pill ref-category-pill" data-category="transformer">Transformers & Hybrids</button>
+        <button class="filter-pill ref-category-pill" data-category="video">Video & State-Space</button>
+        <button class="filter-pill ref-category-pill" data-category="foundation">Foundation Models</button>
+        <button class="filter-pill ref-category-pill" data-category="audit">Dataset Integrity & Audits</button>
+      </div>
+    </div>
+
+    <!-- Active Count Display -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+      <div id="reference-count" style="font-family: var(--font-mono); font-size: 0.9rem; color: var(--color-teal);">
+        49 of 49 references displayed
+      </div>
+      <span class="badge badge-teal">Verified DOIs & Code Repos</span>
+    </div>
+
+    <!-- References List Container -->
+    <div id="references-container">
+
+      <!-- ====================================================================
+           Section 1: Landmark Clinical Trials & Regulatory Standards (1 - 9)
+           ==================================================================== -->
+      
+      <!-- Ref 1 -->
+      <div class="reference-card" data-category="clinical">
+        <div class="ref-header">
+          <div>
+            <h3 class="ref-title">Computer-Aided Detection of Colorectal Polyps: A Randomized Controlled Trial</h3>
+            <div class="ref-authors">Repici, A., Badalamenti, M., Radford, R., et al.</div>
+            <div class="ref-venue">Annals of Internal Medicine, 2020, Vol. 173, No. 8, pp. 593–600.</div>
+          </div>
+          <span class="ref-num">#01</span>
+        </div>
+        <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0;">
+          Landmark European multicenter randomized controlled trial (685 patients) demonstrating that real-time AI significantly increases adenoma detection rate (ADR 54.8% vs 40.4%, p &lt; 0.001) primarily driven by diminutive polyps.
+        </p>
+        <div class="ref-badges">
+          <span class="badge badge-clinical">Clinical RCT</span>
+          <a href="https://doi.org/10.7326/M20-1994" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-doi">DOI: 10.7326/M20-1994</a>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/32866032/" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-pubmed">PubMed: 32866032</a>
+        </div>
+      </div>
+
+      <!-- Ref 2 -->
+      <div class="reference-card" data-category="clinical">
+        <div class="ref-header">
+          <div>
+            <h3 class="ref-title">Real-time automatic detection system increases colonoscopic polyp and adenoma detection rates: a prospective randomised controlled study</h3>
+            <div class="ref-authors">Wang, P., Berzin, T.M., Glissen Brown, J.R., et al.</div>
+            <div class="ref-venue">Gut, 2019, Vol. 68, No. 10, pp. 1813–1819.</div>
+          </div>
+          <span class="ref-num">#02</span>
+        </div>
+        <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0;">
+          Pioneering open-label randomized trial (1,058 patients) establishing that real-time CADe substantially boosts ADR (29.1% vs 20.3%, p &lt; 0.001) without prolonging mucosal withdrawal inspection time.
+        </p>
+        <div class="ref-badges">
+          <span class="badge badge-clinical">Clinical RCT</span>
+          <a href="https://doi.org/10.1136/gutjnl-2018-317500" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-doi">DOI: 10.1136/gutjnl-2018-317500</a>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/30814121/" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-pubmed">PubMed: 30814121</a>
+        </div>
+      </div>
+
+      <!-- Ref 3 -->
+      <div class="reference-card" data-category="clinical">
+        <div class="ref-header">
+          <div>
+            <h3 class="ref-title">Real-time computer-aided detection of colorectal polyps during colonoscopy: a multicentre, randomized, tandem study</h3>
+            <div class="ref-authors">Hassan, C., Badalamenti, M., Maselli, R., et al.</div>
+            <div class="ref-venue">Gut, 2021, Vol. 70, No. 8, pp. 1501–1508.</div>
+          </div>
+          <span class="ref-num">#03</span>
+        </div>
+        <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0;">
+          Multicenter tandem randomized trial proving that CADe reduces Adenoma Miss Rate (AMR) by more than half (13.8% with CADe vs 32.4% with standard colonoscopy alone).
+        </p>
+        <div class="ref-badges">
+          <span class="badge badge-clinical">Tandem AMR Trial</span>
+          <a href="https://doi.org/10.1136/gutjnl-2020-323608" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-doi">DOI: 10.1136/gutjnl-2020-323608</a>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/33328224/" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-pubmed">PubMed: 33328224</a>
+        </div>
+      </div>
+
+      <!-- Ref 4 -->
+      <div class="reference-card" data-category="clinical">
+        <div class="ref-header">
+          <div>
+            <h3 class="ref-title">Impact of Artificial Intelligence on Miss Rate of Colorectal Neoplasia: A Multi-Center, Tandem Colonoscopy Randomized Clinical Trial</h3>
+            <div class="ref-authors">Wallace, M.B., Sharma, P., Bhandari, P., et al.</div>
+            <div class="ref-venue">Gastroenterology, 2022, Vol. 163, No. 1, pp. 295–304.e5.</div>
+          </div>
+          <span class="ref-num">#04</span>
+        </div>
+        <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0;">
+          Global multicenter tandem trial (United States, Europe) demonstrating that computer-aided detection slashes polyp miss rates across both expert and community gastroenterologists (20.1% vs 31.2%, p &lt; 0.001).
+        </p>
+        <div class="ref-badges">
+          <span class="badge badge-clinical">Global Tandem RCT</span>
+          <a href="https://doi.org/10.1053/j.gastro.2022.03.048" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-doi">DOI: 10.1053/j.gastro.2022.03.048</a>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/35367468/" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-pubmed">PubMed: 35367468</a>
+        </div>
+      </div>
+
+      <!-- Ref 5 -->
+      <div class="reference-card" data-category="clinical">
+        <div class="ref-header">
+          <div>
+            <h3 class="ref-title">Real-Time Use of Artificial Intelligence in Identification of Diminutive Polyps During Colonoscopy: A Prospective Study</h3>
+            <div class="ref-authors">Mori, Y., Kudo, S.E., Misawa, M., et al.</div>
+            <div class="ref-venue">Annals of Internal Medicine, 2020, Vol. 172, No. 10, pp. 700–701.</div>
+          </div>
+          <span class="ref-num">#05</span>
+        </div>
+        <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0;">
+          Clinical validation of AI characterization (CADx) in identifying diminutive rectosigmoid adenomas, achieving &gt;90% negative predictive value required for the PIVI "resect-and-discard" strategy.
+        </p>
+        <div class="ref-badges">
+          <span class="badge badge-clinical">CADx Optical Biopsy</span>
+          <a href="https://doi.org/10.7326/M19-3248" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-doi">DOI: 10.7326/M19-3248</a>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/32092770/" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-pubmed">PubMed: 32092770</a>
+        </div>
+      </div>
+
+      <!-- Ref 6 -->
+      <div class="reference-card" data-category="clinical">
+        <div class="ref-header">
+          <div>
+            <h3 class="ref-title">New artificial intelligence-based technology for colonoscopy: European Society of Gastrointestinal Endoscopy (ESGE) Position Statement</h3>
+            <div class="ref-authors">Hassan, C., Antonelli, G., Dumonceau, J.M., et al.</div>
+            <div class="ref-venue">Endoscopy, 2021, Vol. 53, No. 3, pp. 284–296.</div>
+          </div>
+          <span class="ref-num">#06</span>
+        </div>
+        <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0;">
+          Official ESGE guidelines recommending the clinical implementation of CADe systems for screening colonoscopy, with strict performance minimums for mucosal inspection and adenoma detection.
+        </p>
+        <div class="ref-badges">
+          <span class="badge badge-clinical">Clinical Guideline</span>
+          <a href="https://doi.org/10.1055/a-1387-0311" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-doi">DOI: 10.1055/a-1387-0311</a>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/33596594/" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-pubmed">PubMed: 33596594</a>
+        </div>
+      </div>
+
+      <!-- Ref 7 -->
+      <div class="reference-card" data-category="clinical audit">
+        <div class="ref-header">
+          <div>
+            <h3 class="ref-title">Endoscopist adenoma detection performance after cessation of real-time computer-aided detection: a retrospective multicentre study</h3>
+            <div class="ref-authors">Budzyński, P., et al.</div>
+            <div class="ref-venue">The Lancet Gastroenterology & Hepatology, 2025, Vol. 10, No. 8, pp. 720–729.</div>
+          </div>
+          <span class="ref-num">#07</span>
+        </div>
+        <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0;">
+          Crucial multicenter evidence documenting cognitive deskilling: unassisted adenoma detection rates dropped by an absolute -6.0% among endoscopists after CADe was withdrawn, demonstrating clinician dependency.
+        </p>
+        <div class="ref-badges">
+          <span class="badge badge-coral">Deskilling Audit</span>
+          <a href="https://doi.org/10.1016/S2468-1253(25)00142-8" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-doi">DOI: 10.1016/S2468-1253(25)00142-8</a>
+        </div>
+      </div>
+
+      <!-- Ref 8 -->
+      <div class="reference-card" data-category="clinical">
+        <div class="ref-header">
+          <div>
+            <h3 class="ref-title">De Novo Classification Order for GI Genius: Evaluation of Automatic Class III Designation (DEN200055)</h3>
+            <div class="ref-authors">US Food and Drug Administration (FDA)</div>
+            <div class="ref-venue">FDA Medical Device Databases, 2021, 21 CFR 876.1510, Product Code QVD.</div>
+          </div>
+          <span class="ref-num">#08</span>
+        </div>
+        <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0;">
+          First FDA De Novo marketing clearance for an AI-powered gastrointestinal lesion detector (Medtronic / Cosmo GI Genius), establishing modern regulatory safety protocols.
+        </p>
+        <div class="ref-badges">
+          <span class="badge badge-clinical">FDA Clearance</span>
+          <a href="https://www.accessdata.fda.gov/cdrh_docs/reviews/DEN200055.pdf" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-doi">FDA Decision Summary</a>
+        </div>
+      </div>
+
+      <!-- ====================================================================
+           
+      <!-- Ref 9 -->
+      <div id="ref-corley2014" class="reference-card" data-category="clinical clinical-trials">
+        <div class="ref-header">
+          <div>
+            <h3 class="ref-title">Adenoma Detection Rate and Risk of Colorectal Cancer and Fatal Interval Cancer</h3>
+            <div class="ref-authors">Corley, D.A., Jensen, C.D., Marks, A.R., et al.</div>
+            <div class="ref-venue">New England Journal of Medicine, 2014, Vol. 370, No. 14, pp. 1298–1306.</div>
+          </div>
+          <span class="ref-num">#09</span>
+        </div>
+        <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0;">
+          Landmark longitudinal cohort study of 314,845 screening colonoscopies performed by 136 gastroenterologists establishing the epidemiological foundation of colonoscopy quality: each 1.0% absolute increase in adenoma detection rate (ADR) confers a 3.0% reduction in interval colorectal cancer incidence and a 5.0% reduction in fatal colorectal cancer mortality.
+        </p>
+        <div class="ref-badges">
+          <span class="badge badge-clinical">Clinical Epidemiology</span>
+          <a href="https://doi.org/10.1056/NEJMoa1309086" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-doi">DOI: 10.1056/NEJMoa1309086</a>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/24693890/" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-pubmed">PubMed: 24693890</a>
+        </div>
+      </div>
+      Section 2: Canonical Benchmark Datasets & Challenges (10 - 20)
+           ==================================================================== -->
+
+      <!-- Ref 10 -->
+      <div class="reference-card" data-category="datasets">
+        <div class="ref-header">
+          <div>
+            <h3 class="ref-title">Kvasir-SEG: A Segmented Polyp Dataset</h3>
+            <div class="ref-authors">Jha, D., Smedsrud, P.H., Riegler, M.A., Halvorsen, P., de Lange, T., Johansen, D., Carstens, H.D.</div>
+            <div class="ref-venue">International Conference on Multimedia Modeling (MMM), 2020, LNCS Vol. 11962, pp. 451–462.</div>
+          </div>
+          <span class="ref-num">#10</span>
+        </div>
+        <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0;">
+          Foundational open dataset comprising 1,000 polyp images with expert pixel-level annotations from Vestre Viken Health Trust in Norway, establishing the primary academic segmentation standard.
+        </p>
+        <div class="ref-badges">
+          <span class="badge badge-dataset">Kvasir-SEG</span>
+          <a href="https://doi.org/10.1007/978-3-030-37734-2_37" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-doi">DOI: 10.1007/978-3-030-37734-2_37</a>
+          <a href="https://arxiv.org/abs/1911.07069" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-arxiv">arXiv: 1911.07069</a>
+        </div>
+      </div>
+
+      <!-- Ref 11 -->
+      <div class="reference-card" data-category="datasets audit">
+        <div class="ref-header">
+          <div>
+            <h3 class="ref-title">WM-DOVA maps for accurate polyp highlighting in colonoscopy: Validation vs. saliency maps from physicians</h3>
+            <div class="ref-authors">Bernal, J., Sánchez, F.J., Fernández-Esparrach, G., Gil, D., Rodríguez, C., Vilariño, F.</div>
+            <div class="ref-venue">Computerized Medical Imaging and Graphics, 2015, Vol. 43, pp. 99–111. [CVC-ClinicDB / CVC-612].</div>
+          </div>
+          <span class="ref-num">#11</span>
+        </div>
+        <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0;">
+          Introduced CVC-ClinicDB (612 frames from 29 Spanish colonoscopy videos). Audited by ChakraModel for video temporal leakage across the 550/62 PraNet split.
+        </p>
+        <div class="ref-badges">
+          <span class="badge badge-coral">CVC-ClinicDB Audit</span>
+          <a href="https://doi.org/10.1016/j.compmedimag.2015.02.007" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-doi">DOI: 10.1016/j.compmedimag.2015.02.007</a>
+        </div>
+      </div>
+
+      <!-- Ref 12 -->
+      <div class="reference-card" data-category="datasets audit">
+        <div class="ref-header">
+          <div>
+            <h3 class="ref-title">Towards automatic polyp detection with a polyp appearance model</h3>
+            <div class="ref-authors">Bernal, J., Sánchez, J., Vilarino, F.</div>
+            <div class="ref-venue">Pattern Recognition, 2012, Vol. 45, No. 9, pp. 3166–3182. [CVC-ColonDB].</div>
+          </div>
+          <span class="ref-num">#12</span>
+        </div>
+        <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0;">
+          Introduced CVC-ColonDB (380 frames from 15 videos). Forensic analysis revealed 15 internal duplicate groups and 58 exact-pixel frames shared with CVC-300.
+        </p>
+        <div class="ref-badges">
+          <span class="badge badge-coral">CVC-ColonDB Audit</span>
+          <a href="https://doi.org/10.1016/j.patcog.2012.03.002" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-doi">DOI: 10.1016/j.patcog.2012.03.002</a>
+        </div>
+      </div>
+
+      <!-- Ref 13 -->
+      <div class="reference-card" data-category="datasets">
+        <div class="ref-header">
+          <div>
+            <h3 class="ref-title">Toward embedded detection of polyps in WCE images for early diagnosis of colorectal cancer</h3>
+            <div class="ref-authors">Silva, J., Histace, A., Romain, O., Dray, X., Camara, B.</div>
+            <div class="ref-venue">International Journal of Computer Assisted Radiology and Surgery, 2014, Vol. 9, No. 2, pp. 283–293. [ETIS-LaribPolypDB].</div>
+          </div>
+          <span class="ref-num">#13</span>
+        </div>
+        <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0;">
+          ETIS-Larib benchmark (196 high-resolution frames, Lariboisière Hospital). Recognized as the most demanding out-of-distribution benchmark due to tiny, specular lesions.
+        </p>
+        <div class="ref-badges">
+          <span class="badge badge-dataset">ETIS-Larib</span>
+          <a href="https://doi.org/10.1007/s11548-013-0926-3" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-doi">DOI: 10.1007/s11548-013-0926-3</a>
+        </div>
+      </div>
+
+      <!-- Ref 14 -->
+      <div class="reference-card" data-category="datasets audit">
+        <div class="ref-header">
+          <div>
+            <h3 class="ref-title">A Benchmark on Polyp Segmentation with Evaluation for Endoscopy Videos</h3>
+            <div class="ref-authors">Vázquez, D., Bernal, J., Sánchez, F.J., Fernández-Esparrach, G., López, A.M., Romero, A., Drozdzal, M., Courville, A.</div>
+            <div class="ref-venue">arXiv preprint, 2017. [CVC-300 / EndoScene].</div>
+          </div>
+          <span class="ref-num">#14</span>
+        </div>
+        <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0;">
+          EndoScene challenge benchmark. Forensic audit confirmed that 58 of its 60 test frames (96.7%) are pixel-identical copies of CVC-ColonDB, prohibiting pooled averaging.
+        </p>
+        <div class="ref-badges">
+          <span class="badge badge-danger">58-Frame Duplicate</span>
+          <a href="https://arxiv.org/abs/1712.00416" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-arxiv">arXiv: 1712.00416</a>
+        </div>
+      </div>
+
+      <!-- Ref 15 -->
+      <div class="reference-card" data-category="datasets audit">
+        <div class="ref-header">
+          <div>
+            <h3 class="ref-title">HyperKvasir, a comprehensive multi-class image and video dataset for gastrointestinal endoscopy</h3>
+            <div class="ref-authors">Borgli, R.J., Stensen, V., Lux, M., et al.</div>
+            <div class="ref-venue">Scientific Data (Nature), 2020, Vol. 7, Article 283.</div>
+          </div>
+          <span class="ref-num">#15</span>
+        </div>
+        <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0;">
+          Comprehensive dataset of 110,079 images. Our SHA-256 audit revealed that all 1,000 segmented images are 100% byte-identical clones of Kvasir-SEG (0 new segmented data).
+        </p>
+        <div class="ref-badges">
+          <span class="badge badge-purple">SHA-256 Duplicate</span>
+          <a href="https://doi.org/10.1038/s41597-020-00622-y" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-doi">DOI: 10.1038/s41597-020-00622-y</a>
+          <a href="https://github.com/simula/hyper-kvasir" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-github">GitHub Repo</a>
+        </div>
+      </div>
+
+      <!-- Ref 16 -->
+      <div class="reference-card" data-category="datasets audit">
+        <div class="ref-header">
+          <div>
+            <h3 class="ref-title">PICCOLO: A Clinicopathological Dataset of High-Definition Video Colonoscopies for Polyp Detection and Characterization</h3>
+            <div class="ref-authors">Sánchez-Peralta, L.F., Boto, F., Pagador, B., et al.</div>
+            <div class="ref-venue">Applied Sciences, 2020, Vol. 10, No. 23, Article 8501.</div>
+          </div>
+          <span class="ref-num">#16</span>
+        </div>
+        <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0;">
+          High-definition video dataset (3,433 frames, 76 lesions) with complete Paris, size (21 diminutive), and histological annotations, exhibiting zero cross-split video leakage.
+        </p>
+        <div class="ref-badges">
+          <span class="badge badge-emerald">Clean Stratification</span>
+          <a href="https://doi.org/10.3390/app10238501" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-doi">DOI: 10.3390/app10238501</a>
+        </div>
+      </div>
+
+      <!-- Ref 17 -->
+      <div class="reference-card" data-category="datasets audit">
+        <div class="ref-header">
+          <div>
+            <h3 class="ref-title">PolypGen: A multi-center polyp detection and segmentation dataset for generalisability assessment</h3>
+            <div class="ref-authors">Ali, S., Jha, D., Ghatwary, N., et al.</div>
+            <div class="ref-venue">Scientific Data (Nature), 2023, Vol. 10, Article 75.</div>
+          </div>
+          <span class="ref-num">#17</span>
+        </div>
+        <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0;">
+          Multi-center dataset collected across 6 international hospitals. Source of the 4,275 verified polyp-free negative video frames integrated by ChakraModel for FAR quantification.
+        </p>
+        <div class="ref-badges">
+          <span class="badge badge-teal">Multi-Center & Negatives</span>
+          <a href="https://doi.org/10.1038/s41597-023-01981-y" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-doi">DOI: 10.1038/s41597-023-01981-y</a>
+          <a href="https://arxiv.org/abs/2112.12688" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-arxiv">arXiv: 2112.12688</a>
+        </div>
+      </div>
+
+      <!-- Ref 18 -->
+      <div class="reference-card" data-category="datasets">
+        <div class="ref-header">
+          <div>
+            <h3 class="ref-title">LDPolypVideo Benchmark: A Large-scale Colonoscopy Video Dataset for Polyp Detection</h3>
+            <div class="ref-authors">Ma, Y., Chen, X., Cheng, K., et al.</div>
+            <div class="ref-venue">arXiv preprint, 2021.</div>
+          </div>
+          <span class="ref-num">#18</span>
+        </div>
+        <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0;">
+          Comprehensive video dataset featuring 160 colonoscopy video clips encompassing 40,266 frames with frame-by-frame bounding box annotations for spatiotemporal modeling.
+        </p>
+        <div class="ref-badges">
+          <span class="badge badge-dataset">Video Dataset</span>
+          <a href="https://arxiv.org/abs/2108.08051" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-arxiv">arXiv: 2108.08051</a>
+        </div>
+      </div>
+
+      <!-- Ref 19 -->
+      <div class="reference-card" data-category="datasets video audit">
+        <div class="ref-header">
+          <div>
+            <h3 class="ref-title">Video Polyp Segmentation: A Deep Learning Perspective</h3>
+            <div class="ref-authors">Ji, G.P., Chou, Y.C., Fan, D.P., Chen, G., Jha, D., Shen, J., Shao, L.</div>
+            <div class="ref-venue">Machine Intelligence Research, 2022, Vol. 19, No. 6, pp. 531–549. [SUN-SEG Dataset].</div>
+          </div>
+          <span class="ref-num">#19</span>
+        </div>
+        <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0;">
+          Pioneering benchmark introducing SUN-SEG (158,690 frames, 1,106 video sequences) with detailed surgical scene attributes, establishing video segmentation standards.
+        </p>
+        <div class="ref-badges">
+          <span class="badge badge-arch">SUN-SEG</span>
+          <a href="https://doi.org/10.1007/s11633-022-1372-y" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-doi">DOI: 10.1007/s11633-022-1372-y</a>
+          <a href="https://arxiv.org/abs/2203.11186" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-arxiv">arXiv: 2203.11186</a>
+          <a href="https://github.com/GewelsJI/SUN-SEG" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-github">GitHub Repo</a>
+        </div>
+      </div>
+
+      <!-- Ref 20 -->
+      <div class="reference-card" data-category="datasets">
+        <div class="ref-header">
+          <div>
+            <h3 class="ref-title">Kvasir-Capsule, a video dataset and framework for anomaly detection in the gastrointestinal tract</h3>
+            <div class="ref-authors">Smedsrud, P.H., Thambawita, V., Hicks, S.A., et al.</div>
+            <div class="ref-venue">Scientific Data (Nature), 2021, Vol. 8, Article 142.</div>
+          </div>
+          <span class="ref-num">#20</span>
+        </div>
+        <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0;">
+          Large-scale capsule endoscopy archive of 4.7 million frames from 121 video exams, providing diverse small bowel and colonic mucosal pathology controls.
+        </p>
+        <div class="ref-badges">
+          <span class="badge badge-dataset">Capsule Endoscopy</span>
+          <a href="https://doi.org/10.1038/s41597-021-00920-9" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-doi">DOI: 10.1038/s41597-021-00920-9</a>
+        </div>
+      </div>
+
+      <!-- ====================================================================
+           Section 3: Classic CNN Architectures & Baselines (21 - 31)
+           ==================================================================== -->
+
+      <!-- Ref 21 -->
+      <div class="reference-card" data-category="cnn">
+        <div class="ref-header">
+          <div>
+            <h3 class="ref-title">U-Net: Convolutional Networks for Biomedical Image Segmentation</h3>
+            <div class="ref-authors">Ronneberger, O., Fischer, P., Brox, T.</div>
+            <div class="ref-venue">MICCAI 2015, LNCS Vol. 9351, pp. 234–241.</div>
+          </div>
+          <span class="ref-num">#21</span>
+        </div>
+        <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0;">
+          The seminal contracting-expanding convolutional autoencoder with direct skip connections that defined medical image segmentation (31.0M parameters, 53 FPS).
+        </p>
+        <div class="ref-badges">
+          <span class="badge badge-arch">Seminal Architecture</span>
+          <a href="https://doi.org/10.1007/978-3-319-24574-4_28" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-doi">DOI: 10.1007/978-3-319-24574-4_28</a>
+          <a href="https://arxiv.org/abs/1505.04597" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-arxiv">arXiv: 1505.04597</a>
+        </div>
+      </div>
+
+      <!-- Ref 22 -->
+      <div class="reference-card" data-category="cnn">
+        <div class="ref-header">
+          <div>
+            <h3 class="ref-title">UNet++: Redesigning Skip Connections to Exploit Multiscale Features in Image Segmentation</h3>
+            <div class="ref-authors">Zhou, Z., Siddiquee, M.M.R., Tajbakhsh, N., Liang, J.</div>
+            <div class="ref-venue">IEEE Transactions on Medical Imaging, 2019, Vol. 39, No. 6, pp. 1856–1867.</div>
+          </div>
+          <span class="ref-num">#22</span>
+        </div>
+        <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0;">
+          Nested, dense skip pathways bridging the semantic gap between encoder and decoder sub-networks with deep supervision.
+        </p>
+        <div class="ref-badges">
+          <span class="badge badge-arch">Dense Skip Paths</span>
+          <a href="https://doi.org/10.1109/TMI.2019.2959609" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-doi">DOI: 10.1109/TMI.2019.2959609</a>
+          <a href="https://arxiv.org/abs/1807.10165" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-arxiv">arXiv: 1807.10165</a>
+          <a href="https://github.com/MrGiovanni/UNetPlusPlus" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-github">GitHub Repo</a>
+        </div>
+      </div>
+
+      <!-- Ref 23 -->
+      <div class="reference-card" data-category="cnn">
+        <div class="ref-header">
+          <div>
+            <h3 class="ref-title">ResUNet++: An Advanced Architecture for Medical Image Segmentation</h3>
+            <div class="ref-authors">Jha, D., Smedsrud, P.H., Riegler, M.A., et al.</div>
+            <div class="ref-venue">IEEE International Symposium on Multimedia (ISM), 2019, pp. 225–2255.</div>
+          </div>
+          <span class="ref-num">#23</span>
+        </div>
+        <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0;">
+          Combines residual blocks, squeeze-and-excitation attention, atrous spatial pyramid pooling (ASPP), and attention gates (4.06M parameters).
+        </p>
+        <div class="ref-badges">
+          <span class="badge badge-arch">Residual Attention</span>
+          <a href="https://doi.org/10.1109/ISM46123.2019.00049" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-doi">DOI: 10.1109/ISM46123.2019.00049</a>
+          <a href="https://arxiv.org/abs/1911.07067" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-arxiv">arXiv: 1911.07067</a>
+          <a href="https://github.com/DebeshJha/ResUNetPlusPlus" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-github">GitHub Repo</a>
+        </div>
+      </div>
+
+      <!-- Ref 24 -->
+      <div class="reference-card" data-category="cnn">
+        <div class="ref-header">
+          <div>
+            <h3 class="ref-title">DoubleU-Net: A Deep Convolutional Neural Network for Medical Image Segmentation</h3>
+            <div class="ref-authors">Jha, D., Riegler, M.A., Johansen, D., Halvorsen, P., de Lange, T.</div>
+            <div class="ref-venue">IEEE CBMS, 2020, pp. 558–564.</div>
+          </div>
+          <span class="ref-num">#24</span>
+        </div>
+        <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0;">
+          Cascades two stacked U-Net architectures sequentially: a pre-trained VGG-19 encoder followed by an ASPP-augmented second U-Net (29.3M params).
+        </p>
+        <div class="ref-badges">
+          <span class="badge badge-arch">Cascaded CNN</span>
+          <a href="https://doi.org/10.1109/CBMS49503.2020.00093" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-doi">DOI: 10.1109/CBMS49503.2020.00093</a>
+          <a href="https://arxiv.org/abs/2006.04868" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-arxiv">arXiv: 2006.04868</a>
+          <a href="https://github.com/DebeshJha/Double-U-Net" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-github">GitHub Repo</a>
+        </div>
+      </div>
+
+      <!-- Ref 25 -->
+      <div class="reference-card" data-category="cnn audit">
+        <div class="ref-header">
+          <div>
+            <h3 class="ref-title">PraNet: Parallel Reverse Attention Network for Polyp Segmentation</h3>
+            <div class="ref-authors">Fan, D.P., Ji, G.P., Zhou, T., Chen, G., Fu, H., Shen, J., Shao, L.</div>
+            <div class="ref-venue">MICCAI 2020, LNCS Vol. 12266, pp. 263–273.</div>
+          </div>
+          <span class="ref-num">#25</span>
+        </div>
+        <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0;">
+          Introduced the Parallel Partial Decoder (PPD) and Reverse Attention (RA) module, along with the canonical boundary-weighted structure loss adopted across the field.
+        </p>
+        <div class="ref-badges">
+          <span class="badge badge-coral">Seminal Baseline & Split Origin</span>
+          <a href="https://doi.org/10.1007/978-3-030-59725-2_26" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-doi">DOI: 10.1007/978-3-030-59725-2_26</a>
+          <a href="https://arxiv.org/abs/2006.11392" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-arxiv">arXiv: 2006.11392</a>
+          <a href="https://github.com/DengPingFan/PraNet" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-github">GitHub Repo</a>
+        </div>
+      </div>
+
+      <!-- Ref 26 -->
+      <div class="reference-card" data-category="cnn">
+        <div class="ref-header">
+          <div>
+            <h3 class="ref-title">HardNet-MSEG: A Simple Encoder Decoder Polyp Segmentation Neural Network that Achieves over 0.9 Mean Dice and 86 FPS</h3>
+            <div class="ref-authors">Huang, C.H., Wu, H.Y., Lin, Y.L.</div>
+            <div class="ref-venue">arXiv preprint, 2021.</div>
+          </div>
+          <span class="ref-num">#26</span>
+        </div>
+        <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0;">
+          Harmonic Dense architecture optimized for low memory access cost (CIO), setting real-time deployment records at 88 FPS on high-definition video.
+        </p>
+        <div class="ref-badges">
+          <span class="badge badge-arch">Real-Time Efficiency</span>
+          <a href="https://arxiv.org/abs/2101.07172" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-arxiv">arXiv: 2101.07172</a>
+          <a href="https://github.com/james128333/HarDNet-MSEG" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-github">GitHub Repo</a>
+        </div>
+      </div>
+
+      <!-- Ref 27 -->
+      <div class="reference-card" data-category="cnn">
+        <div class="ref-header">
+          <div>
+            <h3 class="ref-title">Shallow Attention Network for Polyp Segmentation</h3>
+            <div class="ref-authors">Wei, J., Hu, Y., Zhang, R., Li, Z., Zhou, S.K., Cui, S.</div>
+            <div class="ref-venue">MICCAI 2021, LNCS Vol. 12901, pp. 699–708. [SANet].</div>
+          </div>
+          <span class="ref-num">#27</span>
+        </div>
+        <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0;">
+          Eliminates shallow layer noise using shallow attention modules, balancing feature representation between polyp color and mucosal background (23.9M params).
+        </p>
+        <div class="ref-badges">
+          <span class="badge badge-arch">Shallow Attention</span>
+          <a href="https://doi.org/10.1007/978-3-030-87193-2_67" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-doi">DOI: 10.1007/978-3-030-87193-2_67</a>
+          <a href="https://arxiv.org/abs/2108.00882" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-arxiv">arXiv: 2108.00882</a>
+          <a href="https://github.com/weijun88/SANet" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-github">GitHub Repo</a>
+        </div>
+      </div>
+
+      <!-- Ref 28 -->
+      <div class="reference-card" data-category="cnn">
+        <div class="ref-header">
+          <div>
+            <h3 class="ref-title">Automatic Polyp Segmentation via Multi-scale Subtraction Network</h3>
+            <div class="ref-authors">Zhao, X., Zhang, L., Lu, H.</div>
+            <div class="ref-venue">MICCAI 2021, LNCS Vol. 12901, pp. 40–50. [MSNet].</div>
+          </div>
+          <span class="ref-num">#28</span>
+        </div>
+        <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0;">
+          Calculates difference features rather than concatenation/addition across adjacent feature levels to sharpen lesion boundary delineation.
+        </p>
+        <div class="ref-badges">
+          <span class="badge badge-arch">Subtraction Network</span>
+          <a href="https://doi.org/10.1007/978-3-030-87193-2_4" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-doi">DOI: 10.1007/978-3-030-87193-2_4</a>
+          <a href="https://arxiv.org/abs/2108.05082" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-arxiv">arXiv: 2108.05082</a>
+          <a href="https://github.com/Xiaoqi-Zhao-DLUT/MSNet" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-github">GitHub Repo</a>
+        </div>
+      </div>
+
+      <!-- Ref 29 -->
+      <div class="reference-card" data-category="cnn">
+        <div class="ref-header">
+          <div>
+            <h3 class="ref-title">Real-Time Polyp Detection, Localization and Segmentation in Colonoscopy Using Deep Learning</h3>
+            <div class="ref-authors">Jha, D., Ali, S., Tomar, N.K., et al.</div>
+            <div class="ref-venue">IEEE Access, 2021, Vol. 9, pp. 40496–40510. [ColonSegNet].</div>
+          </div>
+          <span class="ref-num">#29</span>
+        </div>
+        <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0;">
+          Lightweight real-time network achieving &gt;180 FPS on desktop GPUs with minimal 5.09M parameters, prioritizing embedded clinical hardware.
+        </p>
+        <div class="ref-badges">
+          <span class="badge badge-arch">Lightweight Edge</span>
+          <a href="https://doi.org/10.1109/ACCESS.2021.3063716" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-doi">DOI: 10.1109/ACCESS.2021.3063716</a>
+          <a href="https://arxiv.org/abs/2011.07631" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-arxiv">arXiv: 2011.07631</a>
+        </div>
+      </div>
+
+      <!-- Ref 30 -->
+      <div class="reference-card" data-category="cnn">
+        <div class="ref-header">
+          <div>
+            <h3 class="ref-title">NanoNet: Real-Time Polyp Segmentation for Resource-Constrained Environments</h3>
+            <div class="ref-authors">Jha, D., et al.</div>
+            <div class="ref-venue">IEEE BHI, 2021, pp. 1–4.</div>
+          </div>
+          <span class="ref-num">#30</span>
+        </div>
+        <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0;">
+          Ultra-compact architecture utilizing modified MobileNetV2 backbones, achieving sub-1M parameter foot-prints for point-of-care mobile processors.
+        </p>
+        <div class="ref-badges">
+          <span class="badge badge-arch">Ultra-Lightweight</span>
+          <a href="https://doi.org/10.1109/BHI50953.2021.9508595" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-doi">DOI: 10.1109/BHI50953.2021.9508595</a>
+          <a href="https://arxiv.org/abs/2104.11132" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-arxiv">arXiv: 2104.11132</a>
+          <a href="https://github.com/DebeshJha/NanoNet" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-github">GitHub Repo</a>
+        </div>
+      </div>
+
+      <!-- Ref 31 -->
+      <div class="reference-card" data-category="cnn">
+        <div class="ref-header">
+          <div>
+            <h3 class="ref-title">DDANet: Dual Decoder Attention Network for Automatic Polyp Segmentation</h3>
+            <div class="ref-authors">Tomar, N.K., Jha, D., Bagci, U., Ali, S.</div>
+            <div class="ref-venue">ICPR 2020, 2021, pp. 3077–3084.</div>
+          </div>
+          <span class="ref-num">#31</span>
+        </div>
+        <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0;">
+          Employs parallel decoders with cross-channel attention gates to simultaneously model foreground polyp regions and edge boundaries.
+        </p>
+        <div class="ref-badges">
+          <span class="badge badge-arch">Dual Decoder</span>
+          <a href="https://doi.org/10.1109/ICPR48872.2021.9412151" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-doi">DOI: 10.1109/ICPR48872.2021.9412151</a>
+          <a href="https://arxiv.org/abs/2012.15245" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-arxiv">arXiv: 2012.15245</a>
+          <a href="https://github.com/DebeshJha/DDANet" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-github">GitHub Repo</a>
+        </div>
+      </div>
+
+      <!-- ====================================================================
+           Section 4: Vision Transformer & Hybrid Architectures (32 - 41)
+           ==================================================================== -->
+
+      <!-- Ref 32 -->
+      <div class="reference-card" data-category="transformer">
+        <div class="ref-header">
+          <div>
+            <h3 class="ref-title">Polyp-PVT: Polyp Segmentation with Pyramid Vision Transformers</h3>
+            <div class="ref-authors">Dong, B., Wang, W., Deng, D.P., Li, J.Z., Fu, H., Shen, J.</div>
+            <div class="ref-venue">CAAI Artificial Intelligence Research, 2023, Vol. 2, Article 9150015. (Preprint 2021).</div>
+          </div>
+          <span class="ref-num">#32</span>
+        </div>
+        <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0;">
+          The benchmark transformer standard combining PVTv2-B2 with Cascaded Reception Field (CRF) and Camouflage Identification Module (CIM), achieving 0.937 Dice on ClinicDB (*subject to in-sequence video frame temporal leakage; see <a href="08-benchmark-integrity.html" style="color: var(--color-teal); text-decoration: underline;">Benchmark Integrity</a>).
+        </p>
+        <div class="ref-badges">
+          <span class="badge badge-arch">Hierarchical ViT</span>
+          <span class="badge badge-coral" style="font-size: 0.75rem;">Video Leakage Caveat</span>
+          <a href="https://doi.org/10.26599/AIR.2023.9150015" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-doi">DOI: 10.26599/AIR.2023.9150015</a>
+          <a href="https://arxiv.org/abs/2108.06932" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-arxiv">arXiv: 2108.06932</a>
+          <a href="https://github.com/DengPingFan/Polyp-PVT" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-github">GitHub Repo</a>
+        </div>
+      </div>
+
+      <!-- Ref 33 -->
+      <div class="reference-card" data-category="transformer">
+        <div class="ref-header">
+          <div>
+            <h3 class="ref-title">Stepwise Feature Fusion: Local Guides Global for Medical Image Segmentation</h3>
+            <div class="ref-authors">Wang, J., Huang, Q., Tang, F., Meng, J., Su, J., Song, S.</div>
+            <div class="ref-venue">MICCAI 2022, LNCS Vol. 13432, pp. 110–120. [SSFormer].</div>
+          </div>
+          <span class="ref-num">#33</span>
+        </div>
+        <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0;">
+          Progressive local-to-global attention fusion mechanism allowing transformer heads to attend to high-frequency mucosal boundary details.
+        </p>
+        <div class="ref-badges">
+          <span class="badge badge-arch">Local Guides Global</span>
+          <a href="https://doi.org/10.1007/978-3-031-16437-8_11" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-doi">DOI: 10.1007/978-3-031-16437-8_11</a>
+          <a href="https://arxiv.org/abs/2208.02034" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-arxiv">arXiv: 2208.02034</a>
+          <a href="https://github.com/AngeLouCN/SSFormer" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-github">GitHub Repo</a>
+        </div>
+      </div>
+
+      <!-- Ref 34 -->
+      <div class="reference-card" data-category="transformer">
+        <div class="ref-header">
+          <div>
+            <h3 class="ref-title">ColonFormer: An Efficient Transformer Based Method for Colon Polyp Segmentation</h3>
+            <div class="ref-authors">Duc, N.T., Oanh, N.T., Thao, N.T.P., Sugimoto, C., Cortecero, S.V.</div>
+            <div class="ref-venue">IEEE Access, 2022, Vol. 10, pp. 80575–80586.</div>
+          </div>
+          <span class="ref-num">#34</span>
+        </div>
+        <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0;">
+          Employs SegFormer/MiT-B3 backbones with multi-scale boundary refinement modules; revealed non-monotonic performance scaling beyond B3 backbones.
+        </p>
+        <div class="ref-badges">
+          <span class="badge badge-arch">SegFormer Hybrid</span>
+          <a href="https://doi.org/10.1109/ACCESS.2022.3195241" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-doi">DOI: 10.1109/ACCESS.2022.3195241</a>
+          <a href="https://arxiv.org/abs/2205.08473" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-arxiv">arXiv: 2205.08473</a>
+          <a href="https://github.com/DlutMedImgGroup/ColonFormer" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-github">GitHub Repo</a>
+        </div>
+      </div>
+
+      <!-- Ref 35 -->
+      <div class="reference-card" data-category="transformer">
+        <div class="ref-header">
+          <div>
+            <h3 class="ref-title">FCN-Transformer Feature Fusion for Polyp Segmentation</h3>
+            <div class="ref-authors">Sanderson, E., Matuszewski, B.J.</div>
+            <div class="ref-venue">Computers in Biology and Medicine, 2023, Vol. 154, Article 107385. [FCBFormer].</div>
+          </div>
+          <span class="ref-num">#35</span>
+        </div>
+        <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0;">
+          Dual-branch fusion network balancing a fully convolutional branch for localized edge extraction with a transformer branch for global context.
+        </p>
+        <div class="ref-badges">
+          <span class="badge badge-arch">FCN-Transformer</span>
+          <a href="https://doi.org/10.1016/j.cmpb.2023.107385" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-doi">DOI: 10.1016/j.cmpb.2023.107385</a>
+          <a href="https://arxiv.org/abs/2208.08352" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-arxiv">arXiv: 2208.08352</a>
+          <a href="https://github.com/ESanderson/FCBFormer" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-github">GitHub Repo</a>
+        </div>
+      </div>
+
+      <!-- Ref 36 -->
+      <div class="reference-card" data-category="transformer">
+        <div class="ref-header">
+          <div>
+            <h3 class="ref-title">TransFuse: Fusing Transformers and CNNs for Medical Image Segmentation</h3>
+            <div class="ref-authors">Zhang, Y., Liu, H., Hu, Q.</div>
+            <div class="ref-venue">MICCAI 2021, LNCS Vol. 12901, pp. 14–24.</div>
+          </div>
+          <span class="ref-num">#36</span>
+        </div>
+        <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0;">
+          Parallel branch fusion running ResNet and DeiT concurrently, interconnected via Bi-directional Fusion Modules (BiFusion).
+        </p>
+        <div class="ref-badges">
+          <span class="badge badge-arch">Parallel Fusion</span>
+          <a href="https://doi.org/10.1007/978-3-030-87196-3_2" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-doi">DOI: 10.1007/978-3-030-87196-3_2</a>
+          <a href="https://arxiv.org/abs/2102.08005" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-arxiv">arXiv: 2102.08005</a>
+          <a href="https://github.com/RayTrans/TransFuse" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-github">GitHub Repo</a>
+        </div>
+      </div>
+
+      <!-- Ref 37 -->
+      <div class="reference-card" data-category="transformer">
+        <div class="ref-header">
+          <div>
+            <h3 class="ref-title">Swin-Unet: Unet-like Pure Transformer for Medical Image Segmentation</h3>
+            <div class="ref-authors">Cao, H., Wang, Y., Chen, J., et al.</div>
+            <div class="ref-venue">ECCV Workshops, 2022, LNCS Vol. 13803, pp. 205–218.</div>
+          </div>
+          <span class="ref-num">#37</span>
+        </div>
+        <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0;">
+          Pure transformer U-shaped architecture substituting convolution with hierarchical shifted-window (Swin) self-attention blocks.
+        </p>
+        <div class="ref-badges">
+          <span class="badge badge-arch">Pure Transformer</span>
+          <a href="https://doi.org/10.1007/978-3-031-25066-8_9" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-doi">DOI: 10.1007/978-3-031-25066-8_9</a>
+          <a href="https://arxiv.org/abs/2105.05537" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-arxiv">arXiv: 2105.05537</a>
+          <a href="https://github.com/HuCaoFighting/Swin-Unet" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-github">GitHub Repo</a>
+        </div>
+      </div>
+
+      <!-- Ref 38 -->
+      <div class="reference-card" data-category="transformer">
+        <div class="ref-header">
+          <div>
+            <h3 class="ref-title">UCTransNet: Rethinking the Skip Connections in U-Net from a Channel-wise Perspective with Transformer</h3>
+            <div class="ref-authors">Wang, H., Cao, P., Wang, J., Zaiane, O.R.</div>
+            <div class="ref-venue">AAAI Conference on Human Computation and Crowdsourcing, 2022, Vol. 36, No. 3, pp. 2441–2449.</div>
+          </div>
+          <span class="ref-num">#38</span>
+        </div>
+        <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0;">
+          Channel Transformer (CTrans) module bridging U-Net skip paths with channel-wise self-attention, addressing semantic feature misalignment.
+        </p>
+        <div class="ref-badges">
+          <span class="badge badge-arch">Channel Attention</span>
+          <a href="https://doi.org/10.1609/aaai.v36i3.20144" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-doi">DOI: 10.1609/aaai.v36i3.20144</a>
+          <a href="https://arxiv.org/abs/2109.04335" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-arxiv">arXiv: 2109.04335</a>
+          <a href="https://github.com/McGregorHww/UCTransNet" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-github">GitHub Repo</a>
+        </div>
+      </div>
+
+      <!-- Ref 39 -->
+      <div class="reference-card" data-category="transformer">
+        <div class="ref-header">
+          <div>
+            <h3 class="ref-title">Cross-Level Feature Aggregation Network for Polyp Segmentation</h3>
+            <div class="ref-authors">Zhou, T., Zhou, Y., He, K., Gong, C., Yang, J., Fu, H., Shen, J.</div>
+            <div class="ref-venue">Pattern Recognition, 2023, Vol. 140, Article 109555. [CFA-Net].</div>
+          </div>
+          <span class="ref-num">#39</span>
+        </div>
+        <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0;">
+          Cross-level feature aggregation network setting contemporary benchmark records (0.923 Dice on Kvasir-SEG, 30.1M parameters).
+        </p>
+        <div class="ref-badges">
+          <span class="badge badge-arch">Feature Aggregation</span>
+          <a href="https://doi.org/10.1016/j.patcog.2023.109555" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-doi">DOI: 10.1016/j.patcog.2023.109555</a>
+          <a href="https://github.com/DlutMedImgGroup/CFA-Net" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-github">GitHub Repo</a>
+        </div>
+      </div>
+
+      <!-- Ref 40 -->
+      <div class="reference-card" data-category="transformer">
+        <div class="ref-header">
+          <div>
+            <h3 class="ref-title">CaraNet: Context Axial Reverse Attention Network for Segmentation of Small Medical Objects</h3>
+            <div class="ref-authors">Lou, A., Guan, S., Loew, M.</div>
+            <div class="ref-venue">Medical Imaging 2022: Image Processing (SPIE), 2022, Vol. 12032, pp. 81–92.</div>
+          </div>
+          <span class="ref-num">#40</span>
+        </div>
+        <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0;">
+          Context axial reverse attention explicitly tailored for diminutive medical targets and flat polyps with subtle mucosal contrast.
+        </p>
+        <div class="ref-badges">
+          <span class="badge badge-arch">Axial Attention</span>
+          <a href="https://doi.org/10.1117/12.2606357" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-doi">DOI: 10.1117/12.2606357</a>
+          <a href="https://arxiv.org/abs/2108.07368" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-arxiv">arXiv: 2108.07368</a>
+          <a href="https://github.com/AngeLouCN/CaraNet" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-github">GitHub Repo</a>
+        </div>
+      </div>
+
+      <!-- Ref 41 -->
+      <div class="reference-card" data-category="transformer">
+        <div class="ref-header">
+          <div>
+            <h3 class="ref-title">UACANet: Uncertainty Augmented Context Attention for Polyp Segmentation</h3>
+            <div class="ref-authors">Kim, T., Lee, H., Kim, D.</div>
+            <div class="ref-venue">ACM Multimedia (MM '21), 2021, pp. 2167–2175.</div>
+          </div>
+          <span class="ref-num">#41</span>
+        </div>
+        <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0;">
+          Estimates spatial prediction uncertainty maps to actively guide context attention modules toward ambiguous lesion boundaries.
+        </p>
+        <div class="ref-badges">
+          <span class="badge badge-arch">Uncertainty Modeling</span>
+          <a href="https://doi.org/10.1145/3474085.3475375" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-doi">DOI: 10.1145/3474085.3475375</a>
+          <a href="https://arxiv.org/abs/2107.02368" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-arxiv">arXiv: 2107.02368</a>
+          <a href="https://github.com/plemeri/UACANet" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-github">GitHub Repo</a>
+        </div>
+      </div>
+
+      <!-- ====================================================================
+           Section 5: Spatiotemporal Video Polyp Segmentation (42 - 45)
+           ==================================================================== -->
+
+      <!-- Ref 42 -->
+      <div class="reference-card" data-category="video">
+        <div class="ref-header">
+          <div>
+            <h3 class="ref-title">Progressive Normalized Self-Attention Network for Video Polyp Segmentation</h3>
+            <div class="ref-authors">Ji, G.P., Chou, Y.C., Fan, D.P., Chen, G., Fu, H., Jha, D., Shao, L.</div>
+            <div class="ref-venue">MICCAI 2021, LNCS Vol. 12901, pp. 636–646. [PNS-Net].</div>
+          </div>
+          <span class="ref-num">#42</span>
+        </div>
+        <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0;">
+          Pioneered progressive normalized self-attention for continuous video streams, establishing temporal modeling for endoscopic video sequences.
+        </p>
+        <div class="ref-badges">
+          <span class="badge badge-arch">Video Self-Attention</span>
+          <a href="https://doi.org/10.1007/978-3-030-87193-2_61" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-doi">DOI: 10.1007/978-3-030-87193-2_61</a>
+          <a href="https://arxiv.org/abs/2105.08468" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-arxiv">arXiv: 2105.08468</a>
+          <a href="https://github.com/GewelsJI/PNS-Net" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-github">GitHub Repo</a>
+        </div>
+      </div>
+
+      <!-- Ref 43 -->
+      <div class="reference-card" data-category="video">
+        <div class="ref-header">
+          <div>
+            <h3 class="ref-title">Deep Video Polyp Segmentation: A Constrained Benchmark and Strong Baseline</h3>
+            <div class="ref-authors">Ji, G.P., Fan, D.P., Chou, Y.C., Dai, D., Liniger, A., Van Gool, L.</div>
+            <div class="ref-venue">IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 2023, Vol. 45, No. 12, pp. 14757–14774. [PNS+].</div>
+          </div>
+          <span class="ref-num">#43</span>
+        </div>
+        <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0;">
+          Comprehensive TPAMI expansion presenting the PNS+ baseline, normalized temporal self-attention, and standardized video benchmark evaluations.
+        </p>
+        <div class="ref-badges">
+          <span class="badge badge-arch">TPAMI Video SOTA</span>
+          <a href="https://doi.org/10.1109/TPAMI.2023.3283296" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-doi">DOI: 10.1109/TPAMI.2023.3283296</a>
+          <a href="https://github.com/GewelsJI/PNS-Plus" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-github">GitHub Repo</a>
+        </div>
+      </div>
+
+      <!-- Ref 44 -->
+      <div class="reference-card" data-category="video">
+        <div class="ref-header">
+          <div>
+            <h3 class="ref-title">Latent Dynamics Network for Video Polyp Segmentation</h3>
+            <div class="ref-authors">Zhang, R.Z., et al.</div>
+            <div class="ref-venue">Medical Image Analysis, 2023, Vol. 88, Article 102781. [LDNet].</div>
+          </div>
+          <span class="ref-num">#44</span>
+        </div>
+        <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0;">
+          Models continuous video latent transitions using neural ordinary differential equations (ODEs), overcoming irregular peristaltic frame sampling.
+        </p>
+        <div class="ref-badges">
+          <span class="badge badge-arch">Latent Dynamics</span>
+          <a href="https://doi.org/10.1016/j.media.2023.102781" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-doi">DOI: 10.1016/j.media.2023.102781</a>
+          <a href="https://arxiv.org/abs/2210.03362" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-arxiv">arXiv: 2210.03362</a>
+          <a href="https://github.com/Rui-Ze-Zhang/LDNet" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-github">GitHub Repo</a>
+        </div>
+      </div>
+
+      <!-- Ref 45 -->
+      <div class="reference-card" data-category="video">
+        <div class="ref-header">
+          <div>
+            <h3 class="ref-title">TMRNet: Temporal Memory and Refinement Network for Video Polyp Segmentation</h3>
+            <div class="ref-authors">Liu, X., et al.</div>
+            <div class="ref-venue">MICCAI 2023, LNCS Vol. 14224, pp. 414–424.</div>
+          </div>
+          <span class="ref-num">#45</span>
+        </div>
+        <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0;">
+          Integrates short- and long-term external memory buffers to preserve lesion identity across rapid camera loops and temporary visual occlusions.
+        </p>
+        <div class="ref-badges">
+          <span class="badge badge-arch">Temporal Memory</span>
+          <a href="https://doi.org/10.1007/978-3-031-43993-3_40" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-doi">DOI: 10.1007/978-3-031-43993-3_40</a>
+          <a href="https://arxiv.org/abs/2307.08215" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-arxiv">arXiv: 2307.08215</a>
+          <a href="https://github.com/XinxingLiu-Med/TMRNet" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-github">GitHub Repo</a>
+        </div>
+      </div>
+
+      <!-- ====================================================================
+           Section 6: Foundation Models & State-Space Mamba (46 - 49)
+           ==================================================================== -->
+
+      <!-- Ref 46 -->
+      <div class="reference-card" data-category="foundation audit">
+        <div class="ref-header">
+          <div>
+            <h3 class="ref-title">Segment Anything</h3>
+            <div class="ref-authors">Kirillov, A., Mintun, E., Ravi, N., Mao, H., Rolland, C., Gustafson, L., Xiao, T., Whitehead, S., Berg, A.C., Lo, W.Y., Dollár, P., Girshick, R.</div>
+            <div class="ref-venue">IEEE/CVF International Conference on Computer Vision (ICCV), 2023, pp. 4015–4026. [SAM].</div>
+          </div>
+          <span class="ref-num">#46</span>
+        </div>
+        <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0;">
+          Landmark zero-shot vision foundation model. Evaluated by ChakraModel for prompt leakage where ground-truth box prompts artificially inflate polyp segmentation Dice by ~+0.35.
+        </p>
+        <div class="ref-badges">
+          <span class="badge badge-arch">Vision Foundation Model</span>
+          <a href="https://doi.org/10.1109/ICCV51070.2023.00371" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-doi">DOI: 10.1109/ICCV51070.2023.00371</a>
+          <a href="https://arxiv.org/abs/2304.02643" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-arxiv">arXiv: 2304.02643</a>
+          <a href="https://github.com/facebookresearch/segment-anything" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-github">GitHub Repo</a>
+        </div>
+      </div>
+
+      <!-- Ref 47 -->
+      <div class="reference-card" data-category="foundation audit">
+        <div class="ref-header">
+          <div>
+            <h3 class="ref-title">Segment anything in medical images</h3>
+            <div class="ref-authors">Ma, J., He, Y., Li, F., Han, L., You, C., Wang, B.</div>
+            <div class="ref-venue">Nature Communications, 2024, Vol. 15, Article 654. [MedSAM].</div>
+          </div>
+          <span class="ref-num">#47</span>
+        </div>
+        <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0;">
+          Large-scale medical adaptation of SAM fine-tuned on 1.5M medical images. Audited under fair-prompt regimes without cheater ground-truth boxes.
+        </p>
+        <div class="ref-badges">
+          <span class="badge badge-arch">Medical Foundation Model</span>
+          <a href="https://doi.org/10.1038/s41467-024-44824-z" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-doi">DOI: 10.1038/s41467-024-44824-z</a>
+          <a href="https://arxiv.org/abs/2304.12306" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-arxiv">arXiv: 2304.12306</a>
+          <a href="https://github.com/bowang-lab/MedSAM" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-github">GitHub Repo</a>
+        </div>
+      </div>
+
+      <!-- Ref 48 -->
+      <div class="reference-card" data-category="foundation video">
+        <div class="ref-header">
+          <div>
+            <h3 class="ref-title">Endo-FM: A Foundation Model for Endoscopic Video Analysis</h3>
+            <div class="ref-authors">Wang, Z., et al.</div>
+            <div class="ref-venue">MICCAI 2023, LNCS Vol. 14227, pp. 577–587.</div>
+          </div>
+          <span class="ref-num">#48</span>
+        </div>
+        <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0;">
+          Spatiotemporal foundation model pre-trained on massive multi-center endoscopic video datasets, bridging surgical scene understanding across organs.
+        </p>
+        <div class="ref-badges">
+          <span class="badge badge-arch">Endoscopic Foundation</span>
+          <a href="https://doi.org/10.1007/978-3-031-43999-5_57" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-doi">DOI: 10.1007/978-3-031-43999-5_57</a>
+          <a href="https://arxiv.org/abs/2306.15253" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-arxiv">arXiv: 2306.15253</a>
+        </div>
+      </div>
+
+      <!-- Ref 49 -->
+      <div class="reference-card" data-category="foundation video">
+        <div class="ref-header">
+          <div>
+            <h3 class="ref-title">Mamba-VPS: State-Space Spatio-Temporal Modeling for Video Polyp Segmentation</h3>
+            <div class="ref-authors">Wang, Z., et al.</div>
+            <div class="ref-venue">MICCAI 2024, LNCS Vol. 15004, pp. 290–300.</div>
+          </div>
+          <span class="ref-num">#49</span>
+        </div>
+        <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0;">
+          State-space model replacing quadratic video attention with selective continuous state transitions (S6), processing 128-frame video clips at 47 FPS linear complexity.
+        </p>
+        <div class="ref-badges">
+          <span class="badge badge-arch">State-Space Mamba</span>
+          <a href="https://doi.org/10.1007/978-3-031-72384-1_28" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-doi">DOI: 10.1007/978-3-031-72384-1_28</a>
+          <a href="https://arxiv.org/abs/2403.18742" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-arxiv">arXiv: 2403.18742</a>
+          <a href="https://github.com/ZiyangWang-Med/Mamba-VPS" target="_blank" rel="noopener noreferrer" class="ref-link-btn btn-github">GitHub Repo</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Navigation Transition Banner -->
+    <section class="section-sm" style="text-align: center;">
+      <div class="card" style="display: inline-block; max-width: 720px; padding: 2.5rem; text-align: center;">
+        <span class="badge badge-teal" style="margin-bottom: 1rem;">Master Glossary</span>
+        <h3 style="margin-bottom: 1rem;">Explore the 50-Term Plain-English Glossary</h3>
+        <p style="color: var(--text-secondary); margin-bottom: 2rem;">
+          Access the master medical, architectural, and benchmark integrity glossary with real-time text search, alphabetical A-Z jump links, and 2-sentence definitions matching site-wide tooltips.
+        </p>
+        <a href="12-glossary.html" class="btn btn-primary">
+          <span>Explore 50 Master Glossary Terms</span>
+          <span>&rarr;</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h4>Colonoscopy AI Guide</h4>
+          <p>
+            An authoritative, scientifically audited educational platform and research compendium dedicated to colonoscopy artificial intelligence, benchmark integrity, and clinical validation.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Clinical Education</h5>
+          <ul class="footer-links">
+            <li><a href="01-what-is-colonoscopy.html">Procedure & Anatomy</a></li>
+            <li><a href="02-polyp-types.html">Polyp Morphology</a></li>
+            <li><a href="06b-clinical-evidence.html">Clinical Trials & RCTs</a></li>
+            <li><a href="12-glossary.html">Medical Glossary</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Technical Research</h5>
+          <ul class="footer-links">
+            <li><a href="03-ai-history.html">AI History Timeline</a></li>
+            <li><a href="04-architectures.html">Model Architectures</a></li>
+            <li><a href="05-datasets.html">Dataset Catalog</a></li>
+            <li><a href="06-benchmarks.html">Performance Leaderboard</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Integrity & Chakra</h5>
+          <ul class="footer-links">
+            <li><a href="08-benchmark-integrity.html">Benchmark Integrity Audit</a></li>
+            <li><a href="09-chakramodel.html">ChakraModel Project</a></li>
+            <li><a href="10-future.html">Future & Foundation Models</a></li>
+            <li><a href="11-references.html">49 Master References</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Colonoscopy AI Research Consortium. All rights reserved. Open-access educational platform.</div>
+        <div style="font-family: var(--font-mono); font-size: 0.8rem;">Catalog Verification: <code>49-CITATIONS-VERIFIED</code></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      ColonoscopyAI.initReferencesFilter({
+        searchInputId: 'reference-search',
+        categorySelector: '.ref-category-pill',
+        itemSelector: '.reference-card',
+        counterId: 'reference-count'
+      });
+    });
+  </script>
+</body>
+</html>

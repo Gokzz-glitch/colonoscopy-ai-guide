@@ -1,0 +1,885 @@
+=== PAGE 1 ===
+ChakraModel: Research Status & Roadmap
+2026-09-21 · ​@Someone
+1. Executive summary
+The data-readiness phase is done, and the first GPU training batch (12 runs) is running on
+Kaggle as of 21 Sep 2026. On the way we changed the paper's claim. We are no longer
+proposing "a new lightweight Transformer U-Net". The claim is now: standard polyp-
+segmentation benchmarks overstate progress, and we measure by how much.
+Three facts found in our own data drove the change:
+Video leakage. The CVC-ClinicDB test frames (62) come from the same colonoscopy
+videos as the 550 training frames. Our earlier train/val split also put adjacent video
+frames on both sides.
+Dataset overlap. PolypDB contains Kvasir-SEG images, including Kvasir test images.
+ColonDB and CVC-300 share 58 identical images.
+No false-alarm measurement. The five standard test sets contain only polyp frames.
+No one reports how often a model "sees" a polyp in healthy colon.
+The paper will measure these effects with controlled experiments: 4 models, 3 seeds, a
+video-grouped split, 4,275 polyp-free frames and a 5-fold ClinicDB leakage study. Our own
+model (ChakraXAttnUNet) stays in the comparison, but it is not the headline contribution.
+Section 3 explains why.
+2. Failure analysis: what we tried before, and why it did not work
+Every earlier model either underperformed a 2020–2021 published baseline or was
+measured on a split we can no longer trust. The numbers below come from our own
+evaluation reports.
+Attempt
+Setup
+Result (Dice)
+Published
+reference
+ChakraTransformer
+ViT-L/16 at 384 px,
+309.2M params, small
+conv decoder
+Kvasir 0.838 (0.847
+with TTA), ClinicDB
+0.771
+Polyp-PVT 0.917 /
+0.937 at 25.1M
+params
+ChakraModel: Research Status & Roadmap
+Page 1 of 17
+
+
+=== PAGE 2 ===
+2.1 ChakraTransformer (the main failure)
+Wrong architecture for dense prediction. A plain ViT with 16-pixel patches sees a 384
+px image as one 24×24 grid. A small polyp covers 1–2 tokens, and there are no multi-
+scale features. Every strong polyp model (PraNet, Polyp-PVT, SSFormer, CFA-Net) uses
+a hierarchical encoder plus a dedicated decoder.
+Far too many parameters for the data. 309M parameters were trained on about 1,000
+images. The literature review we compiled (ColonFormer's MiT-B1 to B5 scaling)
+reports accuracy falling beyond mid-sized encoders on four of five test sets.
+The decoder was an afterthought. About 2M parameters of Conv+Deconv produced
+the whole mask.
+The evaluation protocol was not comparable to published work. Kvasir was scored
+on "the last 10%", and ClinicDB on "all 495" frames. ClinicDB has 612 frames and the
+standard test set is 62. The training split is unknown, so overlap with the test frames
+cannot be excluded. Even U-Net (2015) beat it on ClinicDB.
+Speed was also a problem. 7.8 FPS at FP32 on one T4, about 27 FPS at FP16.
+Attempt
+Setup
+Result (Dice)
+Published
+reference
+UNet++ (ResNet18,
+ImageNet)
+128 px, Kvasir-SEG
+only, 70/15/15 random
+split
+0.830 ± 0.214
+U-Net 0.818 on
+Kvasir at 352 px
+Attention U-Net, from
+scratch
+128 px
+0.768
+—
+Double U-Net, from
+scratch
+128 px
+0.614
+—
+Vanilla U-Net, from
+scratch
+128 px
+0.276
+—
+Ensemble / heavy
+augmentation
+128 px
+0.754 / 0.650
+—
+ChakraModel: Research Status & Roadmap
+Page 2 of 17
+
+
+=== PAGE 3 ===
+2.2 The 128 px experiments
+Resolution. 128 px is about 7.6× fewer pixels than the 352 px standard, which erases
+small polyps. The ± 0.21 standard deviation says a sizeable share of images failed
+almost completely.
+From-scratch training does not work at this data size. Every model without
+ImageNet pre-training collapsed (0.28–0.77). Architecture changes without pre-
+training are not a lever here.
+Kvasir-SEG only, random 70/15/15 split. Nothing was checked for duplicates, and
+nothing was tested on unseen hospitals.
+2.3 Can ChakraTransformer be revived? No.
+Every fix in our own report (a hierarchical encoder, a reverse-attention decoder, the
+standard 1,450-image training set) turns it into Polyp-PVT. The best case is matching a
+2021 model with 10× the parameters. That is weeks of GPU time for no new claim. What we
+keep from it: the evaluation harness, FP16/TTA inference code, the FPS benchmarking, and
+this negative result as a short discussion paragraph.
+2.4 The ChakraXAttnUNet design (a second agent's proposal)
+It uses a Swin-Tiny encoder with cross-attention skip fusion, and is 28.2M parameters, so
+not lightweight. v1 had a real design flaw: each skip feature was average-pooled to 16×16
+before attention, and the full-resolution skip was never passed on. That throws away the
+fine detail that edges and small polyps need. We fixed it in v2 by adding a direct full-
+resolution skip path (28.6M params). Its novelty is still thin: close to Swin-Unet,
+UCTransNet and TransFuse. Our literature review found that such modules add about
+0.005–0.015 Dice in published ablations, which is below seed-to-seed noise.
+3. Why we chose this direction
+We chose the direction where our evidence is strongest and hardest to dismiss. A new
+attention block competes with 30+ published variants whose gains are often below
+measurement noise. A measured flaw in the benchmark everyone uses applies to all of
+them.
+ChakraModel: Research Status & Roadmap
+Page 3 of 17
+
+
+=== PAGE 4 ===
+The choice also follows from the literature review we compiled (Opus volumes I–VII, Sep
+2026). Its closing theses were: measured progress is dominated by backbone pre-training,
+data interventions and temporal information, not by attention modules; benchmarks leak
+at video level; benchmarks contain almost no small or flat polyps; and no one measures
+false alarms. Our audit independently confirmed the leakage and overlap points in our
+own copies of the data.
+Option
+What it would claim
+Why accepted / rejected
+Revive ChakraTransformer
+Big ViT beats SOTA
+Rejected. The fixes
+converge on Polyp-PVT
+(Section 2.3).
+New architecture
+(ChakraXAttnUNet) as the
+headline
+A new CNN–Transformer
+hybrid
+Rejected as headline, kept
+as an entry. Known building
+blocks; typical module
+gains of about 0.01 Dice are
+below seed noise.
+Foundation models (SAM,
+MedSAM)
+Prompted segmentation
+wins
+Deferred. Published SAM
+wins mostly use boxes cut
+from the answer masks
+(about +0.35 Dice from the
+prompt alone, per our
+review). Only a fair-prompt
+re-evaluation is publishable.
+Leakage-aware benchmark
+Benchmarks overstate
+progress, measured
+Chosen. Built on facts we
+already verified in our data.
+Cheap: about 20 T4-hours.
+Every future polyp paper
+would have to engage with
+it.
+Video / temporal model
+Temporal consistency
+Stage 3. Needs SUN-SEG
+(access requested) or
+PolypGen sequences.
+Strongest published effect
+size, but it needs clean
+video data first.
+ChakraModel: Research Status & Roadmap
+Page 4 of 17
+
+
+=== PAGE 5 ===
+Stated contribution (draft): (1) a video-grouped, overlap-audited re-split and a
+quantified inflation estimate for ClinicDB; (2) documented cross-dataset duplication
+(PolypDB/Kvasir, ColonDB/CVC-300); (3) a false-alarm benchmark on 4,275 polyp-free
+frames; (4) a controlled 4-model comparison with seeds, small-polyp strata, speed and
+efficiency, run under one protocol.
+4. Dataset inventory and how each one is used
+Stage 1 (now) trains only on the standard 1,450-image PraNet training set (Kvasir-SEG 900
++ CVC-ClinicDB 550). It tests on the five standard test sets plus 4,275 polyp-free frames.
+Everything else is Stage 2 or 3, and it enters only after the same audit. All counts below
+were measured on our copies.
+Dataset
+What we hold
+Labels
+Role
+Stage
+Kvasir-SEG (via
+PraNet split)
+900 train + 100
+test, Norway
+Pixel masks
+Train / seen-domain
+test
+1
+CVC-ClinicDB (via
+PraNet split)
+550 train + 62 test
+frames from about
+29–31 videos,
+Spain
+Pixel masks
+Train / seen-domain
+test (in-sequence
+caveat)
+1
+CVC-ColonDB
+380 frames
+Pixel masks
+Unseen-domain
+test
+1
+ETIS-LaribPolypDB
+196 frames,
+1225×966
+Pixel masks
+Unseen-domain
+test (smallest
+polyps)
+1
+CVC-300
+(EndoScene test)
+60 frames; 58
+identical to
+ColonDB frames
+Pixel masks
+Unseen-domain
+test, reported
+separately
+1
+PolypGen 2021,
+polyp-free
+sequences
+4,275 frames from
+23 videos,
+1920×1080 and
+720×576
+None (no
+polyp)
+False-alarm test
+only
+1
+ChakraModel: Research Status & Roadmap
+Page 5 of 17
+
+
+=== PAGE 6 ===
+Dataset
+What we hold
+Labels
+Role
+Stage
+PICCOLO release
+0.1
+3,433 frames from
+76 lesions / 40
+videos, Spain;
+clinical metadata
+Pixel masks +
+size (mm), Paris
+class, NICE,
+histology
+Unseen-domain
+test with small and
+flat polyp strata
+2
+PolypGen 2021,
+positive sequences
++ 6-centre single
+frames
+2,409 masked
+sequence frames
++ about 3,762
+single frames from
+6 centres
+Pixel masks,
+boxes
+Multi-centre
+generalisation test
+2
+PolypDB
+3,934
+deduplicated
+pairs, 5 modalities
+(WLI, NBI, BLI, LCI,
+FICE), 3 centres
+Pixel masks
+Stage 2 only after
+removing its Kvasir
+copies
+2
+LDPolypVideo
+160 polyp videos,
+about 42k frames
+(Train/Valid 26,969;
+Test 15,397) + 61
+polyp-free videos
+Bounding
+boxes only
+Weak supervision;
+false alarms on
+video
+3
+HyperKvasir
+8,225 labeled
+images, 1,000
+segmented
+images, labeled
+videos
+Class labels;
+the 1,000 masks
+Segmented
+images are byte-
+identical to Kvasir-
+SEG (1,000/1,000),
+so they are never
+used as extra data
+—
+Kvasir-Capsule
+videos
+46 unlabelled .mp4
+(archive
+misnamed cvc-
+sample-video.zip)
+None
+Not used (capsule
+endoscopy,
+different modality)
+—
+SUN-SEG
+Not held; access
+requested,
+awaiting reply
+Pixel masks on
+video, scribbles
+Stage 3: video
+benchmark and
+small-object strata
+3
+ChakraModel: Research Status & Roadmap
+Page 6 of 17
+
+
+=== PAGE 7 ===
+Bookkeeping findings: final-om-evlautation-upload.zip and finalmuruga-harae.zip
+are byte-identical (same SHA-256). Both are code and weights from the old
+ChakraTransformer evaluation, not data. chakramodel-evaluation-datasets.zip is the
+small Kaggle evaluation copy used in the failed evaluation (3,000 files).
+5. Data audit and cleaning: what we did and what we found
+The files themselves were clean. The splits were not. We fixed the splits without deleting
+or overwriting any source file, and every check can be re-run from
+M:\chakramodelpro\reports\dataset_audit_2026-09-21 .
+5.1 Integrity checks (all 6,182 pairs: 2,248 benchmark + 3,934 PolypDB)
+Reviewed and kept: 21 masks with foreground above 60% (large Kvasir polyps, visually
+valid); 7 masks below 0.2% (tiny ETIS polyps, valid).
+5.2 Duplicate and leakage detection: method
+Naive tools failed, so we changed method and documented why:
+1. Exact hashes (file bytes and decoded pixels) catch only identical copies.
+Check
+Result
+Files that fail to decode or are truncated
+0
+Image without mask, or mask without image
+0
+Image and mask of different sizes
+0
+Mask values
+All exactly {0, 255}; 0 empty masks
+Images that look like masks (a misplaced
+file)
+0
+Snapshot SHA-256 equals the curation
+record
+2,248 / 2,248
+Snapshot image equals the raw PraNet
+source file
+2,248 / 2,248
+"Cleaned" mask vs raw PraNet mask (IoU at
+threshold 127)
+1.000 for every file; the earlier cleaning step
+changed nothing
+ChakraModel: Research Status & Roadmap
+Page 7 of 17
+
+
+=== PAGE 8 ===
+2. pHash/dHash were rejected. Every endoscopy frame shares the black octagonal
+border and text overlays, so unrelated images matched.
+3. Final method: a colour descriptor of the image centre (border and overlays excluded)
+shortlists the 8 nearest neighbours per image. Each pair is then verified geometrically
+with ORB keypoints and RANSAC (≥ 20 inliers). Borderline pairs were checked visually
+on contact sheets.
+4. ClinicDB video structure: frame indices 1–612 are consecutive video frames. We
+grouped them into contiguous blocks, cutting only at strong scene changes (a
+conservative 13 groups), then merged any blocks joined by a verified near-duplicate.
+5.3 Findings
+5.4 The fix: splits_v2
+Group-aware re-split of the same 1,450 training images: groups never cross train/val.
+Finding
+Evidence
+Impact
+Train/val leakage in
+our v1 split
+Adjacent ClinicDB frames on
+both sides (e.g. frames 368 and
+369); 27 video/duplicate groups
+spanned train and val
+Validation Dice inflated; model
+selection untrustworthy
+ClinicDB-62 test is in-
+sequence
+All 62 test frames sit inside
+video blocks that also supply
+training frames; 30 verified
+near-duplicate links
+Standard protocol; keep it for
+comparability but label it seen-
+domain
+PolypDB contains
+Kvasir-SEG
+25 verified copies (a lower
+bound), including Kvasir test
+images, sometimes with
+different masks
+Never train on PolypDB while
+testing on Kvasir
+ColonDB ↔ CVC-300
+58 identical images, 59 identical
+masks
+Report each separately; never
+pool
+Duplicates inside test
+sets
+15 groups in ColonDB, 3 in ETIS
+Minor weighting bias; report it
+ColonDB, ETIS, CVC-
+300 vs training
+No verified duplicates
+These are our only truly unseen
+tests
+ChakraModel: Research Status & Roadmap
+Page 8 of 17
+
+
+=== PAGE 9 ===
+Result: train 1,228 (469 ClinicDB + 759 Kvasir), val 222 (81 + 141). Groups spanning both
+sides: 0 (v1 had 27). Seed 42.
+Stored as a manifest ( splits_v2/trainval_groupsplit_v2.csv ). No image was
+moved or deleted; v1 stays for the E2 comparison.
+5.5 The polyp-free (negative) set
+4,275 polyp-free frames from 23 PolypGen sequences. All decode, with no exact
+duplicates. They are used only for testing: a model's false-alarm rate is the share of frames
+where it predicts any polyp region (at 0%, 0.1% and 1% of frame area).
+6. Stage 2 datasets: verification status (21 Sep 2026)
+PICCOLO is the strongest Stage 2 addition, because it lets us test small and flat polyps on
+a patient-disjoint split. The repaired archives open and pass sampled checks. None of
+these datasets enters the benchmark until it passes the Section 5 audit against all current
+test sets.
+6.1 PICCOLO release 0.1 ( M:\chakramodelpro\piccolo dataset.zip , 3.3 GB)
+Property
+Measured
+Frames with masks
+3,433: train 2,203 / validation 897 / test 333
+Lesions / videos
+76 lesions from 40 videos (train 47, val 17, test 12
+lesions)
+Split leakage
+0 lesions and 0 videos shared between any two
+splits
+Resolution
+1920×1080 and 854×480
+Masks
+All binary {0, 255}; 43 empty (train 19, val 24):
+frames where the polyp is out of view
+Polyp size (68 lesions with a size)
+21 are 5 mm or smaller (diminutive), 16 are 6–9 mm,
+31 are 10 mm or larger
+Paris class
+33 flat-elevated (0-IIa), 2 flat, 33 protruded, 8 not
+given
+Histology
+50 adenoma, 17 hyperplastic, 9 adenocarcinoma
+ChakraModel: Research Status & Roadmap
+Page 9 of 17
+
+
+=== PAGE 10 ===
+Why it matters: the five standard sets have almost no diminutive or flat polyps, and these
+are the lesions missed in practice. PICCOLO gives per-lesion size and Paris class, so we
+can report Dice for polyps of 5 mm or less and for flat polyps on a lesion-disjoint test.
+Plan: in Stage 2, test on the official test split of 333 frames (optionally also validation).
+Treat the 43 empty-mask frames as negatives. First run the duplicate audit against all our
+sets. Licence: PICCOLO is normally released under a signed research-use agreement;
+confirm we hold it before publication.
+6.2 The "repaired" archives: the second agent's claim checked
+Verdict: the zip indexes really are restored. "100% byte-perfect" is not proven: we CRC-
+checked about 30 members per archive, not all 65 GB. A full check can run in the
+background if required.
+6.3 Other Stage 2 / 3 sources
+PolypGen 2021: 2,409 masked frames in the positive sequences, plus single frames
+from 6 centres. One centre is Oslo, where Kvasir comes from, so an overlap check
+against Kvasir is mandatory before use.
+Property
+Measured
+Download gaps
+299 validation void masks (black-border region)
+missing from the Drive export; polyp masks are
+complete
+Archive
+Entries
+Our check
+hyperkvasir-dataset-first-half-and-and-
+ld-dataset.zip
+41,082
+Opens; sampled CRC pass incl. last
+members
+hyperkvasir-labeled-videos-part2-
+001.zip
+189
+Opens; 660 MB CRC-verified incl. tail
+hperkvasir-labeled-videos-part2-
+002.zip
+188
+Opens; 529 MB CRC-verified incl. tail
+polypdb-polyp-raw.zip
+15,736
+Opens; sampled CRC pass
+cvc-sample-video.zip
+46
+Opens; tail CRC pass; contains Kvasir-
+Capsule videos, not CVC
+ChakraModel: Research Status & Roadmap
+Page 10 of 17
+
+
+=== PAGE 11 ===
+LDPolypVideo: boxes only (26,969 train/valid + 15,397 test frames); 61 polyp-free
+videos. Useful for weak supervision and video false alarms in Stage 3.
+HyperKvasir: its 1,000 segmented images are byte-identical to Kvasir-SEG (1,000/1,000
+SHA-256 matches), so they are excluded. The 8,225 labelled images carry class labels,
+not masks.
+SUN-SEG: access requested, awaiting reply. It is the standard video polyp
+segmentation benchmark and has size attributes, so it will be the core of Stage 3.
+7. Experimental protocol (Stage 1)
+Every model is trained and tested under one fixed protocol, so that differences come
+from the model or the split and not from the training recipe. Code:
+M:\chakramodelpro\leakbench (Kaggle dataset gokulrocky/chakra-leakbench-v1 ,
+private).
+7.1 Fixed training recipe
+352×352 input; AdamW (lr 1e-4, weight decay 1e-4); cosine schedule; 50 epochs; batch
+size 16; mixed precision. Loss: the PraNet structure loss (boundary-weighted BCE +
+weighted IoU). Augmentation: flips, 90° rotations, mild brightness and contrast jitter.
+Checkpoint = best mean validation Dice. Tests run once, on that frozen checkpoint.
+7.2 Models
+Official PraNet and Polyp-PVT code will be added through wrappers in Stage 2, so the
+published methods themselves are also represented.
+Model
+Family
+Encoder pre-
+training
+Params
+U-Net + ResNet-34
+CNN baseline
+ImageNet
+24.4M
+SegFormer + MiT-B2
+Hierarchical transformer
+ImageNet
+about
+25M
+FPN + PVTv2-B2
+The encoder Polyp-PVT uses
+ImageNet
+about
+25M
+ChakraXAttnUNet
+v2
+Swin-T + cross-attention skips
+(ours)
+ImageNet
+28.6M
+ChakraModel: Research Status & Roadmap
+Page 11 of 17
+
+
+=== PAGE 12 ===
+7.3 Metrics
+Accuracy: mean Dice and mean IoU per image, with the prediction resized to the
+original ground-truth resolution (standard PraNet evaluation). MAE is also recorded.
+Small polyps: mDice on images whose polyp covers less than 5% of the frame.
+False alarms: the share of the 4,275 polyp-free frames with any predicted polyp area
+(thresholds 0%, 0.1%, 1%).
+Efficiency: parameters, FPS and latency at batch size 1 in FP16, and peak VRAM, all on
+the same Kaggle T4.
+Reporting: each test set separately, labelled seen or unseen domain; mean ± SD over 3
+seeds.
+7.4 Experiments (38 runs, about 20 T4-hours)
+E3 design detail: both fold sets partition the same 612 frames with identical fold sizes
+(216/96/103/102/95). Pooled Dice is therefore over the same frames, and the gap isolates
+leakage. Model selection uses Kvasir-only validation, so ClinicDB never influences
+checkpoint choice.
+7.5 Verification done so far
+The full pipeline ran on CPU for all 4 models (5 images per split).
+A Kaggle GPU smoke test passed: U-Net-R34 and XAttnUNet, 1 epoch on 32 images; all
+evaluation splits ran and exit codes were 0.
+E1 (jobs 0–11) was committed on 21 Sep 2026 and is running on GPU T4×2, one job
+queue per GPU.
+ID
+Design
+Runs
+Question it answers
+E1
+4 models × 3 seeds on splits_v2
+12
+Clean comparison across seen and
+unseen tests, small polyps, false
+alarms, speed
+E2
+U-Net-R34 and SegFormer × 3 seeds
+on the leaky v1 split
+6
+How far does validation Dice drift
+from unseen-test Dice when val
+shares frames with train?
+E3
+ClinicDB 5-fold CV: video-grouped
+folds vs random folds over the same
+612 frames, 2 models
+20
+How much does frame-level splitting
+inflate ClinicDB Dice?
+ChakraModel: Research Status & Roadmap
+Page 12 of 17
+
+
+=== PAGE 13 ===
+8. Roadmap and ETA
+The Stage 1 results should be complete by about 24 Sep, and a first full paper draft by
+about 26 Oct, assuming teammates start their Kaggle slices within a day. Stage 3 depends
+on the SUN-SEG reply.
+flowchart LR
+  A[Stage 0 done<br/>audit + splits_v2] --> B[Stage 1 E1<br/>running]
+  A --> C[Stage 1 E2+E3<br/>teammates]
+  B --> D[Results table<br/>+ statistics]
+  C --> D
+  A --> E[Stage 2 audit<br/>PICCOLO, PolypGen]
+  E --> F[Stage 2 runs<br/>PICCOLO tests,<br/>PraNet, Polyp-PVT, SAM]
+  D --> G[Paper draft]
+  F --> G
+  H[SUN-SEG access] --> I[Stage 3<br/>video, small objects]
+  I --> J[Journal version]
+  G --> J
+Read left to right: arrows are dependencies; boxes in the same column run in parallel.
+Stage
+Work
+Runs in
+parallel with
+Start
+ETA
+0
+Data audit, splits_v2,
+negatives, pipeline, Kaggle
+dataset
+—
+21 Sep
+Done
+1a
+E1: 4 models × 3 seeds
+(Gokul's account)
+1b, 2a
+21 Sep
+about 22 Sep (3–5
+GPU-h on T4×2)
+1b
+E2 + E3: 26 runs over 3
+teammate accounts
+1a, 2a
+22 Sep
+about 23–24 Sep
+1c
+Aggregate results, seed
+statistics, paired tests, figures
+2b
+24 Sep
+about 27 Sep
+2a
+Audit PICCOLO and PolypGen
+against all sets; build their
+manifests
+1a, 1b
+22 Sep
+about 25 Sep
+ChakraModel: Research Status & Roadmap
+Page 13 of 17
+
+
+=== PAGE 14 ===
+Compute budget: Stage 1 needs about 20 T4-hours. The team has 4 accounts × 30 h/week
+= 120 h/week, so compute is not the bottleneck. People-time for analysis and writing is.
+Venue: decide with the mentor. The Stage 1+2 paper fits a workshop or conference short
+paper; Stage 3 would make a journal version (e.g. Medical Image Analysis). Check each
+venue's current deadline before committing.
+9. Team assignments: what happens next
+Each teammate runs one Kaggle slice on their own account, then takes one analysis or
+writing track. Kaggle allows one account per person: do not create extra accounts,
+because a ban can delete the notebooks and datasets on that account.
+9.1 Kaggle runs (all in parallel, starting 22 Sep)
+Stage
+Work
+Runs in
+parallel with
+Start
+ETA
+2b
+Stage 2 runs: PICCOLO
+small/flat strata, official
+PraNet and Polyp-PVT, fair-
+prompt SAM
+1c
+26 Sep
+about 5 Oct
+W
+Paper writing: methods and
+audit sections can start now;
+results after 1c
+1–2
+25 Sep
+first draft about
+26 Oct
+3
+Video stage on SUN-SEG (+
+PolypGen sequences,
+LDPolypVideo): temporal false
+alarms, small objects
+W
+when
+access
+arrives
+about 4–6 weeks
+after access
+Person
+Kaggle slice
+Experiment
+Setting to change
+Gokul
+jobs 0–11
+E1 main comparison
+Already running
+Jayasri
+jobs 12–17
+E2 leaky v1 split
+JOBS = ['12-14', '15-17']
+Varsha
+jobs 18–27
+E3 folds 0–2
+JOBS = ['18-22', '23-27']
+Girupa
+jobs 28–37
+E3 folds 3–4
+JOBS = ['28-32', '33-37']
+ChakraModel: Research Status & Roadmap
+Page 14 of 17
+
+
+=== PAGE 15 ===
+Steps for each teammate:
+1. Gokul adds them as a collaborator on the dataset chakra-leakbench-v1 (dataset
+page → Settings → Sharing), and on the notebook.
+2. Open the notebook, then File → Copy & Edit. Set Accelerator to GPU T4×2 and turn
+Internet on.
+3. Check that the input chakra-leakbench-v1 is attached. Set SMOKE = False and the
+JOBS line from the table.
+4. Save Version → Save & Run All (Commit). It keeps running after the browser closes (up
+to 12 h).
+5. When it finishes, download the Output ( runs/ folder, log_gpu0.txt , log_gpu1.txt )
+into M:\chakramodelpro\leakbench\runs\ .
+6. If a run stops early, commit again with the same JOBS : finished jobs are skipped
+automatically.
+9.2 Analysis and writing tracks (after the runs, in parallel)
+9.3 What Claude does next
+Gokul: own the results table, seed statistics and figures (Stage 1c); final decisions;
+mentor contact.
+Jayasri: related-work section (leakage, dataset shift and benchmark papers in medical
+imaging), with every citation checked against the PDF.
+Varsha: methods and data sections, from Sections 4–7 of this doc (audit procedure,
+splits_v2, protocol).
+Girupa: Stage 2a with Claude: PICCOLO and PolypGen overlap audit, and the PICCOLO
+lesion metadata table (size, Paris class).
+All: read the E3 result once it is in. It decides how strong the headline claim can be
+(Section 10).
+Monitor E1 and pull results.json when it finishes.
+Build the PICCOLO and PolypGen test manifests after the audit.
+Write wrappers for the official PraNet and Polyp-PVT code, and a fair-prompt SAM
+evaluation (no prompt / detector box).
+Draft the paper skeleton and figure scripts from the aggregated results.
+ChakraModel: Research Status & Roadmap
+Page 15 of 17
+
+
+=== PAGE 16 ===
+10. Risks, limitations and questions for the mentor
+The main scientific risk is that E3 shows only a small inflation gap. The plan already covers
+that outcome: a small, well-measured gap is still a reportable result, and the overlap and
+false-alarm findings stand regardless.
+10.1 Risks
+10.2 Limitations to state in the paper
+Only the standard public benchmarks and PICCOLO; no private clinical data.
+The false-alarm set comes from a single dataset (PolypGen), and its frames are
+downscaled for inference.
+Single-frame models only in Stages 1–2. Temporal behaviour waits for Stage 3.
+Risk
+Likelihood
+Mitigation
+E3 gap within seed noise
+Medium
+Report the confidence interval
+honestly; lead with overlap + false
+alarms + PICCOLO small/flat strata
+instead
+ClinicDB video grouping is
+approximate (inferred from frame
+similarity, not official sequence
+labels)
+Medium
+Groups were cut conservatively (13
+groups, under-segmented); state it as
+a limitation; cross-check against
+published sequence counts (29–31
+clips)
+50-epoch recipe underfits some
+models vs published numbers
+Medium
+Same recipe for all models is the
+point; add official PraNet / Polyp-PVT
+results from their own code in Stage 2
+PolypDB/Kvasir overlap count is a
+lower bound
+High
+Say "at least 25"; optional exhaustive
+check before submission
+Dataset licences (PICCOLO
+agreement, SUN-SEG terms, PolypDB
+provenance)
+Medium
+Confirm each licence before its data
+appears in the paper
+Kaggle session limits (12 h per run, 30
+h per week per account)
+Low
+Job queue resumes and skips
+finished runs; 120 h/week available vs
+20 h needed
+ChakraModel: Research Status & Roadmap
+Page 16 of 17
+
+
+=== PAGE 17 ===
+10.3 Questions for the mentor
+1. Is a benchmark and measurement paper (rather than a new architecture) the right first
+publication for the team?
+2. Which venue and deadline should we target for Stage 1+2?
+3. Should ChakraXAttnUNet stay as a comparison entry, or be dropped to keep the story
+focused?
+4. Is a video grouping inferred from frame similarity acceptable, or should we seek the
+official ClinicDB sequence labels?
+5. Stage 3 without SUN-SEG: are PolypGen sequences plus LDPolypVideo boxes enough?
+ChakraModel: Research Status & Roadmap
+Page 17 of 17
+
+

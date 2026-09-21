@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Chronological history and architectural evolution of artificial intelligence in colonoscopy: from 1990s handcrafted wavelets to deep CNNs, Vision Transformers, and modern Selective State Space foundation models.">
+  <meta name="keywords" content="Colonoscopy AI History, Polyp Detection Evolution, U-Net, PraNet, HarDNet-MSEG, Polyp-PVT, ColonFormer, EndoMamba, Medical Vision Timeline">
+  <title>AI Evolution Timeline: Handcrafted Features to Foundation Models | ColonoscopyAI Guide</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+  <!-- Top Horizontal Scroll Progress Indicator -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- Sticky Navigation Header -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="../index.html" class="brand-logo">
+        <div class="brand-icon">C</div>
+        <span>Colonoscopy<span style="color: var(--color-teal);">AI</span></span>
+        <span class="brand-badge">RESEARCH</span>
+      </a>
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="../index.html" class="nav-link">Home</a></li>
+          <li><a href="01-what-is-colonoscopy.html" class="nav-link">Clinical</a></li>
+          <li><a href="06b-clinical-evidence.html" class="nav-link">Trials</a></li>
+          <li><a href="03-ai-history.html" class="nav-link active">AI History</a></li>
+          <li><a href="04-architectures.html" class="nav-link">Architectures</a></li>
+          <li><a href="05-datasets.html" class="nav-link">Datasets</a></li>
+          <li><a href="06-benchmarks.html" class="nav-link">Benchmarks</a></li>
+          <li><a href="08-benchmark-integrity.html" class="nav-link">Integrity</a></li>
+          <li><a href="11-references.html" class="nav-link">References</a></li>
+          <li><a href="12-glossary.html" class="nav-link">Glossary</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" aria-label="Toggle dark/light theme" type="button"></button>
+        <button class="hamburger-btn" aria-label="Open mobile navigation menu" aria-expanded="false" type="button">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav-drawer" aria-label="Mobile Navigation Drawer">
+    <a href="../index.html" class="nav-link">Home</a>
+    <a href="01-what-is-colonoscopy.html" class="nav-link">01 Clinical Foundations</a>
+    <a href="06b-clinical-evidence.html" class="nav-link">06b Clinical Trials &amp; Evidence</a>
+    <a href="03-ai-history.html" class="nav-link active">03 AI History &amp; Evolution</a>
+    <a href="04-architectures.html" class="nav-link">04 Model Architectures</a>
+    <a href="05-datasets.html" class="nav-link">05 Benchmark Datasets</a>
+    <a href="06-benchmarks.html" class="nav-link">06 SOTA Benchmarks</a>
+    <a href="08-benchmark-integrity.html" class="nav-link">08 Forensic Integrity Audit</a>
+    <a href="07-clinical-systems.html" class="nav-link">07 Commercial CADe/CADx</a>
+    <a href="09-chakramodel.html" class="nav-link">09 ChakraModel Research</a>
+    <a href="10-future.html" class="nav-link">10 Future Frontiers</a>
+    <a href="11-references.html" class="nav-link">11 Master References</a>
+    <a href="12-glossary.html" class="nav-link">12 Medical-AI Glossary</a>
+  </div>
+
+  <main class="container section">
+    <!-- Breadcrumb Navigation -->
+    <nav aria-label="Breadcrumb" style="margin-bottom: 2rem;">
+      <ol style="display: flex; gap: 0.5rem; list-style: none; font-size: 0.85rem; color: var(--text-muted); padding: 0;">
+        <li><a href="../index.html" style="color: var(--text-secondary); text-decoration: none;">Home</a></li>
+        <li>/</li>
+        <li><a href="03-ai-history.html" style="color: var(--color-teal); text-decoration: none;">AI Technical</a></li>
+        <li>/</li>
+        <li style="color: var(--text-primary); font-weight: 500;">Evolution Timeline</li>
+      </ol>
+    </nav>
+
+    <!-- Hero Header -->
+    <header class="hero" style="padding-top: 1rem; padding-bottom: 3rem;">
+      <div class="hero-glow"></div>
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="dot"></span>
+          <span>CHRONOLOGICAL MILESTONES (1990s &ndash; 2026)</span>
+        </div>
+        <h1 class="hero-title">
+          From <span class="gradient-text">Handcrafted Wavelets</span> to <span class="gradient-text">Selective State Space Models</span>
+        </h1>
+        <p class="hero-subtitle">
+          Trace the 30-year scientific progression of computer vision in gastroenterology: from geometric valley accumulation and classical ML to convolutional boundary mining, vision transformers, and sub-quadratic medical foundation models.
+        </p>
+      </div>
+    </header>
+
+    <!-- High-Level Metric Cards -->
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="stat-value">4</div>
+        <div class="stat-label">Architectural Eras</div>
+        <div class="stat-delta">1990s &ndash; 2026+</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">31.0M &rarr; 25.4M</div>
+        <div class="stat-label">Param Efficiency</div>
+        <div class="stat-delta">U-Net &rarr; EndoMamba</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">53 &rarr; 88 &rarr; 47</div>
+        <div class="stat-label">Live Throughput (FPS)</div>
+        <div class="stat-delta">&gt;25 FPS Clinical Budget</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">0.398 &rarr; 0.808</div>
+        <div class="stat-label">ETIS mDice Jump</div>
+        <div class="stat-delta">+103% Out-of-Domain Gain</div>
+      </div>
+    </div>
+
+    <!-- Alert Context Box -->
+    <div class="alert alert-technical">
+      <div class="alert-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+      </div>
+      <div class="alert-content">
+        <div class="alert-title">Core Historical Paradigm Shift</div>
+        <p>
+          Colonoscopy computer vision evolved through four distinct architectural transformations. While early methods relied on handcrafted heuristics that failed on flat lesions, modern architectures leverage <span class="glossary-term" data-term="inductive-bias">inductive biases</span>, boundary-weighted loss functions, and long-range spatiotemporal memory to achieve real-time inference without violating the mandatory &le;40&nbsp;ms clinical latency ceiling.
+        </p>
+      </div>
+    </div>
+
+    <!-- Interactive Timeline Slider Section -->
+    <section class="timeline-container" id="timeline-explorer" aria-labelledby="timeline-heading">
+      <div class="flex-between flex-wrap gap-md" style="margin-bottom: 1.5rem;">
+        <div>
+          <h2 id="timeline-heading" style="font-size: 1.75rem; margin-bottom: 0.25rem;">Interactive Era Scrubbing Engine</h2>
+          <p style="color: var(--text-secondary); font-size: 0.95rem;">Drag the slider or click any era pill to isolate milestone models, inspect algorithmic shifts, and review failure modes.</p>
+        </div>
+        <div class="filter-group" id="era-button-group">
+          <button class="filter-pill active" data-era="all" type="button">All 4 Eras</button>
+          <button class="filter-pill" data-era="1" type="button">Era 1: Handcrafted (1990s-2014)</button>
+          <button class="filter-pill" data-era="2" type="button">Era 2: Deep CNNs (2015-2020)</button>
+          <button class="filter-pill" data-era="3" type="button">Era 3: Transformers (2021-2023)</button>
+          <button class="filter-pill" data-era="4" type="button">Era 4: Foundation/SSMs (2023+)</button>
+        </div>
+      </div>
+
+      <div class="timeline-slider-wrapper">
+        <div class="flex-between" style="font-family: var(--font-heading); font-size: 0.85rem; font-weight: 600; color: var(--text-muted);">
+          <span>Era 1: Handcrafted</span>
+          <span>Era 2: CNN Boom</span>
+          <span>Era 3: Vision Transformers</span>
+          <span>Era 4: Foundation Models &amp; SSMs</span>
+        </div>
+        <input type="range" class="timeline-range-input" id="era-slider" min="1" max="4" value="1" step="1" aria-label="Scrub through AI evolution eras">
+        
+        <!-- Dynamic Era Summary Banner -->
+        <div id="era-summary-card" class="timeline-card-view">
+          <div class="flex-between flex-wrap gap-sm" style="margin-bottom: 0.75rem;">
+            <span id="era-badge" class="badge badge-amber">ERA 1 &bull; 1990s &ndash; 2014</span>
+            <span id="era-paradigm" style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--color-amber);">PARADIGM: Handcrafted Morphology &amp; Classical ML</span>
+          </div>
+          <h3 id="era-title" style="font-size: 1.35rem; margin-bottom: 0.5rem; color: var(--text-primary);">The Heuristic Frontier: Texture Wavelets, Energy Valleys &amp; Geometric Voting</h3>
+          <p id="era-desc" style="color: var(--text-secondary); line-height: 1.6; font-size: 0.95rem;">
+            Prior to the deep learning revolution, researchers modeled polyps as protruding, bulbous elliptical structures using color texture wavelets, Window Median Depth of Valleys Accumulation (WM-DOVA), and radial edge voting. These systems required labor-intensive feature engineering, lacked boundary segmentation, and generated prohibitive false-positive rates on normal mucosal folds.
+          </p>
+          <div style="display: flex; gap: 1.5rem; margin-top: 1rem; flex-wrap: wrap; font-size: 0.85rem; border-top: 1px dashed var(--border-subtle); padding-top: 0.75rem;">
+            <div><strong style="color: var(--text-primary);">Key Milestones:</strong> <span id="era-milestones" style="color: var(--text-secondary);">Karkanis (2003), Bernal WM-DOVA (2012/2015), Tajbakhsh Edge-Voting (2015)</span></div>
+            <div><strong style="color: var(--text-primary);">Avg. Throughput:</strong> <span id="era-fps" style="color: var(--text-secondary);">&lt;15 FPS (CPU / early GPU)</span></div>
+            <div><strong style="color: var(--text-primary);">Fatal Limitation:</strong> <span id="era-limitation" style="color: var(--color-coral);">Total failure on flat (Paris IIa/IIb) and sessile serrated lesions</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Milestone Cards Grid Section -->
+    <section style="margin: 3.5rem 0;" aria-label="Detailed Architectural Milestones">
+      <div class="flex-between flex-wrap gap-sm" style="margin-bottom: 2rem;">
+        <h2 style="font-size: 1.85rem; margin: 0;">Verified Architectural Milestones</h2>
+        <span id="cards-counter" style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--color-teal);">Displaying 14 of 14 landmark systems</span>
+      </div>
+
+      <div class="grid grid-2" id="milestone-cards-container">
+
+        <!-- MILESTONE 1: WM-DOVA (2012) -->
+        <article class="card card-glass milestone-card" data-era="1">
+          <div class="card-header">
+            <div>
+              <span class="badge badge-amber" style="margin-bottom: 0.35rem;">1990s &ndash; 2014 &bull; Era 1</span>
+              <h3 class="card-title">WM-DOVA Energy Maps</h3>
+              <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.2rem;">Bernal et al. (2012, IEEE TMI) &bull; Hospital Cl&iacute;nic de Barcelona</div>
+            </div>
+            <span class="badge badge-dataset">Classical CV</span>
+          </div>
+          <div class="card-body">
+            <p style="font-size: 0.925rem; margin-bottom: 1rem;">
+              Introduced Window Median Depth of Valleys Accumulation (<span class="glossary-term" data-term="wm-dova">WM-DOVA</span>), projecting directional intensity valleys to detect the protruding elliptical geometry of polyps against the tubular colon lumen.
+            </p>
+            <div style="background: var(--bg-tertiary); padding: 0.75rem 1rem; border-radius: var(--radius-sm); margin-bottom: 1rem; font-size: 0.85rem;">
+              <div><strong>Primary Breakthrough:</strong> First mathematical model allowing automated localization without prior contrast dyes; directly created the benchmark datasets <span class="glossary-term" data-term="cvc-colondb">CVC-ColonDB</span> and <span class="glossary-term" data-term="cvc-clinicdb">CVC-ClinicDB</span>.</div>
+              <div style="margin-top: 0.4rem;"><strong>Key Limitation:</strong> Incapable of producing pixel segmentation masks; false-positive rate exceeded 20 per procedure on normal colonic haustral folds.</div>
+            </div>
+          </div>
+          <div class="card-footer" style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted);">
+            <span>Params: <code>0 (Handcrafted)</code></span>
+            <span>Speed: <code>~4 FPS (CPU)</code></span>
+            <span>Output: <code>Energy Peak (x, y)</code></span>
+          </div>
+        </article>
+
+        <!-- MILESTONE 2: Edge-Voting (2015) -->
+        <article class="card card-glass milestone-card" data-era="1">
+          <div class="card-header">
+            <div>
+              <span class="badge badge-amber" style="margin-bottom: 0.35rem;">2015 &bull; Era 1 Transition</span>
+              <h3 class="card-title">Geometric Edge-Voting CADe</h3>
+              <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.2rem;">Tajbakhsh, Gurudu, &amp; Liang (2015, IEEE TMI) &bull; Mayo Clinic</div>
+            </div>
+            <span class="badge badge-dataset">Geometric ML</span>
+          </div>
+          <div class="card-body">
+            <p style="font-size: 0.925rem; margin-bottom: 1rem;">
+              Coupled edge classification with global geometric constraints and radial edge-voting, demonstrating that boundary edge geometry vastly outperforms raw color histograms in distinguishing mucosal tissue from vascular patterns.
+            </p>
+            <div style="background: var(--bg-tertiary); padding: 0.75rem 1rem; border-radius: var(--radius-sm); margin-bottom: 1rem; font-size: 0.85rem;">
+              <div><strong>Primary Breakthrough:</strong> Proved that learned edge orientation filters dramatically outperform color-texture descriptors across multi-patient cohorts.</div>
+              <div style="margin-top: 0.4rem;"><strong>Key Limitation:</strong> Severe performance collapse on flat, diminutive (<span class="glossary-term" data-term="diminutive-polyp">&le;5mm</span>) lesions lacking elevated geometric boundaries (<span class="glossary-term" data-term="paris-classification">Paris IIa/IIb</span>).</div>
+            </div>
+          </div>
+          <div class="card-footer" style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted);">
+            <span>Params: <code>N/A (Random Forest/SVM)</code></span>
+            <span>Speed: <code>10 FPS</code></span>
+            <span>Resolution: <code>512 &times; 512</code></span>
+          </div>
+        </article>
+
+        <!-- MILESTONE 3: U-Net (2015) -->
+        <article class="card card-glass milestone-card" data-era="2">
+          <div class="card-header">
+            <div>
+              <span class="badge badge-teal" style="margin-bottom: 0.35rem;">2015 &bull; Era 2</span>
+              <h3 class="card-title">U-Net Biomedical ConvNet</h3>
+              <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.2rem;">Ronneberger et al. (2015, MICCAI) &bull; University of Freiburg</div>
+            </div>
+            <span class="badge badge-arch"><span class="glossary-term" data-term="cnn">Deep CNN</span></span>
+          </div>
+          <div class="card-body">
+            <p style="font-size: 0.925rem; margin-bottom: 1rem;">
+              The foundational medical segmentation architecture. Introduced symmetric contracting (encoder) and expanding (decoder) paths bridged by identity skip connections, enabling precise pixel-level localization with modest training data.
+            </p>
+            <div style="background: var(--bg-tertiary); padding: 0.75rem 1rem; border-radius: var(--radius-sm); margin-bottom: 1rem; font-size: 0.85rem;">
+              <div><strong>Primary Breakthrough:</strong> Complete end-to-end dense pixel segmentation; identity skip connections preserved high-frequency spatial details.</div>
+              <div style="margin-top: 0.4rem;"><strong>Key Limitation:</strong> Massive out-of-distribution collapse: plummets to <strong>0.398 m<span class="glossary-term" data-term="dice">Dice</span> on ETIS-Larib</strong> and 0.512 on ColonDB. Ragged boundaries on low-contrast mucosa.</div>
+            </div>
+          </div>
+          <div class="card-footer" style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted);">
+            <span>Params: <code>31.03M</code></span>
+            <span>Speed: <code>53 FPS (FP32)</code></span>
+            <span>Kvasir Dice: <code>0.818</code></span>
+          </div>
+        </article>
+
+        <!-- MILESTONE 4: SegNet-CADe (2018) -->
+        <article class="card card-glass milestone-card" data-era="2">
+          <div class="card-header">
+            <div>
+              <span class="badge badge-teal" style="margin-bottom: 0.35rem;">2018 &bull; Era 2 Clinical</span>
+              <h3 class="card-title">SegNet Real-Time CADe</h3>
+              <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.2rem;">Wang et al. (2018, Lancet Gastro Hep) &bull; Sichuan University</div>
+            </div>
+            <span class="badge badge-clinical">First Live RCT</span>
+          </div>
+          <div class="card-body">
+            <p style="font-size: 0.925rem; margin-bottom: 1rem;">
+              Trained on 27,113 frames from 1,138 patients, this VGG-16 based SegNet system powered the world's first prospective randomized controlled trial, proving AI directly boosts <span class="glossary-term" data-term="adr">Adenoma Detection Rate (ADR)</span>.
+            </p>
+            <div style="background: var(--bg-tertiary); padding: 0.75rem 1rem; border-radius: var(--radius-sm); margin-bottom: 1rem; font-size: 0.85rem;">
+              <div><strong>Primary Breakthrough:</strong> Verified 94.4% sensitivity and 95.9% specificity at 25 FPS with real-time inline 77&nbsp;ms latency.</div>
+              <div style="margin-top: 0.4rem;"><strong>Key Limitation:</strong> High false-alarm rate (<span class="glossary-term" data-term="far">FAR</span>) on fluid bubbles and mucosal reflections, causing clinical <span class="glossary-term" data-term="alarm-fatigue">alarm fatigue</span>.</div>
+            </div>
+          </div>
+          <div class="card-footer" style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted);">
+            <span>Params: <code>29.4M</code></span>
+            <span>Speed: <code>25 FPS</code></span>
+            <span>Latency: <code>77 ms</code></span>
+          </div>
+        </article>
+
+        <!-- MILESTONE 5: PraNet (2020) -->
+        <article class="card card-glass milestone-card" data-era="2">
+          <div class="card-header">
+            <div>
+              <span class="badge badge-teal" style="margin-bottom: 0.35rem;">2020 &bull; Era 2 Oral</span>
+              <h3 class="card-title">PraNet: Parallel Reverse Attention</h3>
+              <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.2rem;">Fan et al. (2020, MICCAI Oral) &bull; IIAI / Inception Institute</div>
+            </div>
+            <span class="badge badge-arch">Boundary Mining</span>
+          </div>
+          <div class="card-body">
+            <p style="font-size: 0.925rem; margin-bottom: 1rem;">
+              Coupled a Res2Net-50 multi-scale backbone with a <span class="glossary-term" data-term="ppd">Parallel Partial Decoder (PPD)</span> and a top-down <span class="glossary-term" data-term="reverse-attention">Reverse Attention (RA)</span> cascade, establishing the standard modern polyp segmentation architecture.
+            </p>
+            <div style="background: var(--bg-tertiary); padding: 0.75rem 1rem; border-radius: var(--radius-sm); margin-bottom: 1rem; font-size: 0.85rem;">
+              <div><strong>Primary Breakthrough:</strong> Erased the detected polyp interior via inverted attention (<span class="glossary-term" data-term="reverse-attention">1 - &sigma;(P)</span>) to force the network to recursively refine ambiguous boundary transitions.</div>
+              <div style="margin-top: 0.4rem;"><strong>Key Limitation:</strong> Discarded shallow features ($f_1, f_2$) to save compute, causing performance drops on subtle diminutive polyps (&lt;5mm).</div>
+            </div>
+          </div>
+          <div class="card-footer" style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted);">
+            <span>Params: <code>32.55M</code></span>
+            <span>Speed: <code>50 FPS</code></span>
+            <span>ETIS Dice: <code>0.628</code></span>
+          </div>
+        </article>
+
+        <!-- MILESTONE 6: HarDNet-MSEG (2021) -->
+        <article class="card card-glass milestone-card" data-era="2">
+          <div class="card-header">
+            <div>
+              <span class="badge badge-teal" style="margin-bottom: 0.35rem;">2021 &bull; Era 2 Efficiency</span>
+              <h3 class="card-title">HarDNet-MSEG: Low-CIO Real-Time</h3>
+              <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.2rem;">Huang et al. (2021, arXiv:2101.07172) &bull; NTHU Taiwan</div>
+            </div>
+            <span class="badge badge-metric">88 FPS SOTA</span>
+          </div>
+          <div class="card-body">
+            <p style="font-size: 0.925rem; margin-bottom: 1rem;">
+              Optimized for GPU memory access cost (Convolutional Input/Output - CIO) rather than theoretical FLOPs, using harmonic power-of-two dense connections to achieve ultra-fast real-time inference.
+            </p>
+            <div style="background: var(--bg-tertiary); padding: 0.75rem 1rem; border-radius: var(--radius-sm); margin-bottom: 1rem; font-size: 0.85rem;">
+              <div><strong>Primary Breakthrough:</strong> Delivered 88 FPS on standard GeForce RTX 2080 Ti hardware while matching or exceeding PraNet accuracy (0.904 Kvasir mDice).</div>
+              <div style="margin-top: 0.4rem;"><strong>Key Limitation:</strong> Resolution mismatch: trained and tested at $312 \times 312$ (21.4% fewer pixels than $352 \times 352$), partially driving its speed advantage.</div>
+            </div>
+          </div>
+          <div class="card-footer" style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted);">
+            <span>Params: <code>33.34M</code></span>
+            <span>Speed: <code>88 FPS (RTX 2080 Ti)</code></span>
+            <span>GFLOPs: <code>10.4 G</code></span>
+          </div>
+        </article>
+
+        <!-- MILESTONE 7: SANet (2021) -->
+        <article class="card card-glass milestone-card" data-era="2">
+          <div class="card-header">
+            <div>
+              <span class="badge badge-teal" style="margin-bottom: 0.35rem;">2021 &bull; Era 2 MICCAI</span>
+              <h3 class="card-title">SANet: Shallow Attention &amp; Color Exchange</h3>
+              <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.2rem;">Wei et al. (2021, MICCAI) &bull; Institute of Automation, CAS</div>
+            </div>
+            <span class="badge badge-arch">Color Invariance</span>
+          </div>
+          <div class="card-body">
+            <p style="font-size: 0.925rem; margin-bottom: 1rem;">
+              Challenged the convention of discarding low-level features by introducing the Shallow Attention Module (SAM) and CIELAB Color Exchange (CE) data augmentation to bridge multi-center lighting variations.
+            </p>
+            <div style="background: var(--bg-tertiary); padding: 0.75rem 1rem; border-radius: var(--radius-sm); margin-bottom: 1rem; font-size: 0.85rem;">
+              <div><strong>Primary Breakthrough:</strong> Massive jump on unseen ETIS-Larib from 0.628 (PraNet) to <strong>0.750 mDice</strong>, driven by preserving shallow boundary features for diminutive polyps.</div>
+              <div style="margin-top: 0.4rem;"><strong>Key Limitation:</strong> CIELAB color normalization can alter subtle mucosal vascular patterns crucial for neoplastic differentiation (<span class="glossary-term" data-term="nice-classification">NICE criteria</span>).</div>
+            </div>
+          </div>
+          <div class="card-footer" style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted);">
+            <span>Params: <code>32.55M</code></span>
+            <span>Speed: <code>72 FPS</code></span>
+            <span>ETIS Dice: <code>0.750</code></span>
+          </div>
+        </article>
+
+        <!-- MILESTONE 8: Polyp-PVT (2021) -->
+        <article class="card card-glass milestone-card" data-era="3">
+          <div class="card-header">
+            <div>
+              <span class="badge badge-purple" style="margin-bottom: 0.35rem;">2021 &bull; Era 3 Transformer</span>
+              <h3 class="card-title">Polyp-PVT: Pyramid Vision Transformer</h3>
+              <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.2rem;">Dong et al. (2021, arXiv:2108.07368 / CAAI TIT)</div>
+            </div>
+            <span class="badge badge-arch"><span class="glossary-term" data-term="pvt">PVTv2</span> + GCN</span>
+          </div>
+          <div class="card-body">
+            <p style="font-size: 0.925rem; margin-bottom: 1rem;">
+              Pioneered pure Vision Transformer backbones for endoscopy. Combined PVTv2-B2 with a Cascaded Fusion Module (CFM), Camouflaged Identification Module (CIM), and Graph Convolutional Similarity Aggregation.
+            </p>
+            <div style="background: var(--bg-tertiary); padding: 0.75rem 1rem; border-radius: var(--radius-sm); margin-bottom: 1rem; font-size: 0.85rem;">
+              <div><strong>Primary Breakthrough:</strong> First architecture in medical literature to cross the <strong>0.80 mDice threshold on unseen CVC-ColonDB (0.808)</strong>; GCN provided scope rotational invariance.</div>
+              <div style="margin-top: 0.4rem;"><strong>Key Limitation:</strong> Higher parameter footprint (44.6M) and slower inference (30 FPS), operating close to the clinical real-time limit.</div>
+            </div>
+          </div>
+          <div class="card-footer" style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted);">
+            <span>Params: <code>44.60M</code></span>
+            <span>Speed: <code>30 FPS</code></span>
+            <span>ColonDB Dice: <code>0.808</code></span>
+          </div>
+        </article>
+
+        <!-- MILESTONE 9: SSFormer (2022) -->
+        <article class="card card-glass milestone-card" data-era="3">
+          <div class="card-header">
+            <div>
+              <span class="badge badge-purple" style="margin-bottom: 0.35rem;">2022 &bull; Era 3 MICCAI</span>
+              <h3 class="card-title">SSFormer: Local Guides Global</h3>
+              <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.2rem;">Wang et al. (2022, MICCAI) &bull; Shanghai Jiao Tong University</div>
+            </div>
+            <span class="badge badge-arch">Locality Decoder</span>
+          </div>
+          <div class="card-body">
+            <p style="font-size: 0.925rem; margin-bottom: 1rem;">
+              Diagnosed that unconstrained ViT self-attention diffuses probability mass globally. Introduced Local Emphasis (LE) modules in a Progressive Locality Decoder (PLD) to re-concentrate attention onto local lesion borders.
+            </p>
+            <div style="background: var(--bg-tertiary); padding: 0.75rem 1rem; border-radius: var(--radius-sm); margin-bottom: 1rem; font-size: 0.85rem;">
+              <div><strong>Primary Breakthrough:</strong> Re-injected local inductive bias into transformer attention, achieving 0.796 mDice on ETIS-Larib with 33.5M parameters.</div>
+              <div style="margin-top: 0.4rem;"><strong>Key Limitation:</strong> Throughput drops to 28 FPS on Tesla P100 due to multi-scale feature interpolation bottlenecks.</div>
+            </div>
+          </div>
+          <div class="card-footer" style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted);">
+            <span>Params: <code>33.50M</code></span>
+            <span>Speed: <code>28 FPS</code></span>
+            <span>ETIS Dice: <code>0.796</code></span>
+          </div>
+        </article>
+
+        <!-- MILESTONE 10: ColonFormer (2022) -->
+        <article class="card card-glass milestone-card" data-era="3">
+          <div class="card-header">
+            <div>
+              <span class="badge badge-purple" style="margin-bottom: 0.35rem;">2022 &bull; Era 3 IEEE</span>
+              <h3 class="card-title">ColonFormer: Residual Axial Reverse Attention</h3>
+              <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.2rem;">Duc et al. (2022, IEEE Access / JBHI) &bull; HUST / VNU</div>
+            </div>
+            <span class="badge badge-arch">SegFormer MiT-B3</span>
+          </div>
+          <div class="card-body">
+            <p style="font-size: 0.925rem; margin-bottom: 1rem;">
+              Coupled SegFormer's Mix Transformer (MiT-B3) with a UPer Decoder, Cross-level Feature Pyramid (CFP), and Residual Axial Reverse Attention (RA-RA) with an identity bypass escape hatch.
+            </p>
+            <div style="background: var(--bg-tertiary); padding: 0.75rem 1rem; border-radius: var(--radius-sm); margin-bottom: 1rem; font-size: 0.85rem;">
+              <div><strong>Primary Breakthrough:</strong> Pushed unseen ETIS-Larib mDice to <strong>0.801</strong>; discovered the critical <em>Non-Monotonic Backbone Scaling Law</em> in medical vision.</div>
+              <div style="margin-top: 0.4rem;"><strong>Key Limitation:</strong> Heavy backbone scaling (MiT-B4/B5) overfits on medical splits, dropping ETIS Dice by 2.6 percentage points (to 0.775).</div>
+            </div>
+          </div>
+          <div class="card-footer" style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted);">
+            <span>Params: <code>46.64M</code></span>
+            <span>Speed: <code>22 FPS (RTX 2080 Ti)</code></span>
+            <span>ColonDB Dice: <code>0.814</code></span>
+          </div>
+        </article>
+
+        <!-- MILESTONE 11: HSNet (2022) -->
+        <article class="card card-glass milestone-card" data-era="3">
+          <div class="card-header">
+            <div>
+              <span class="badge badge-purple" style="margin-bottom: 0.35rem;">2022 &bull; Era 3 Benchmark Peak</span>
+              <h3 class="card-title">HSNet: Hybrid Semantic Network</h3>
+              <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.2rem;">Fu et al. (2022, Comp Biol Med)</div>
+            </div>
+            <span class="badge badge-metric">0.808 ETIS Peak</span>
+          </div>
+          <div class="card-body">
+            <p style="font-size: 0.925rem; margin-bottom: 1rem;">
+              Combined filtered shallow boundary details with deep semantic representations to bridge the semantic gap, setting the current unprompted benchmark ceiling across standard static datasets.
+            </p>
+            <div style="background: var(--bg-tertiary); padding: 0.75rem 1rem; border-radius: var(--radius-sm); margin-bottom: 1rem; font-size: 0.85rem;">
+              <div><strong>Primary Breakthrough:</strong> Holds the highest published static benchmark scores: <strong>0.926 Kvasir, 0.937 ClinicDB<span style="color: var(--color-coral); font-weight: 700;">*</span>, and 0.808 ETIS-Larib</strong> mDice.</div>
+              <div style="margin-top: 0.35rem; padding: 0.4rem 0.65rem; background: rgba(249, 115, 22, 0.1); border-left: 3px solid var(--color-coral); border-radius: var(--radius-xs); font-size: 0.775rem; color: var(--text-secondary);">
+                <strong style="color: var(--color-coral);">*Integrity Disclaimer:</strong> CVC-ClinicDB scores suffer from in-sequence video frame temporal leakage (+12% to +15% artificial Dice inflation from seen-domain interpolation); see <a href="08-benchmark-integrity.html" style="color: var(--color-teal); text-decoration: underline;">Benchmark Integrity Audit</a>.
+              </div>
+              <div style="margin-top: 0.4rem;"><strong>Key Limitation:</strong> 22 FPS throughput on RTX 3090 fails 60 FPS ultra-HD clinical colonoscope integration requirements.</div>
+            </div>
+          </div>
+          <div class="card-footer" style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted);">
+            <span>Params: <code>46.64M</code></span>
+            <span>Speed: <code>22 FPS</code></span>
+            <span>ETIS Dice: <code>0.808</code></span>
+          </div>
+        </article>
+
+        <!-- MILESTONE 12: Endo-FM (2023) -->
+        <article class="card card-glass milestone-card" data-era="4">
+          <div class="card-header">
+            <div>
+              <span class="badge badge-emerald" style="margin-bottom: 0.35rem;">2023 &bull; Era 4 Foundation</span>
+              <h3 class="card-title">Endo-FM: Video Foundation Model</h3>
+              <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.2rem;">Wang et al. (2023, MICCAI) &bull; CUHK / Shanghai AI Lab</div>
+            </div>
+            <span class="badge badge-arch">Space-Time ViT-B</span>
+          </div>
+          <div class="card-body">
+            <p style="font-size: 0.925rem; margin-bottom: 1rem;">
+              Pioneered large-scale self-supervised pretraining for endoscopic video. Trained a 121.3M parameter ViT-B/16 with divided space-time attention across 5 million frames (33,000 endoscopic clips).
+            </p>
+            <div style="background: var(--bg-tertiary); padding: 0.75rem 1rem; border-radius: var(--radius-sm); margin-bottom: 1rem; font-size: 0.85rem;">
+              <div><strong>Primary Breakthrough:</strong> Massive self-supervised pretraining established foundation model representations tailored to gastrointestinal endoscopy.</div>
+              <div style="margin-top: 0.4rem;"><strong>Key Limitation:</strong> Quadratic attention complexity $\mathcal{O}(P^2 T^2 m)$ caused severe throughput collapse: <strong>drops to 9.2 FPS at T=32 and 2.4 FPS at T=128 frames</strong>.</div>
+            </div>
+          </div>
+          <div class="card-footer" style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted);">
+            <span>Params: <code>121.3M</code></span>
+            <span>Speed: <code>2.4 FPS (T=128)</code></span>
+            <span>Complexity: <code>Quadratic O(P²T²m)</code></span>
+          </div>
+        </article>
+
+        <!-- MILESTONE 13: EndoMamba (2024) -->
+        <article class="card card-glass milestone-card" data-era="4">
+          <div class="card-header">
+            <div>
+              <span class="badge badge-emerald" style="margin-bottom: 0.35rem;">2024/2025 &bull; Era 4 SOTA</span>
+              <h3 class="card-title">EndoMamba: Selective State Space</h3>
+              <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.2rem;">Wang et al. (2024, MICCAI / Springer 2025)</div>
+            </div>
+            <span class="badge badge-arch"><span class="glossary-term" data-term="ssm-mamba">Mamba S6</span></span>
+          </div>
+          <div class="card-body">
+            <p style="font-size: 0.925rem; margin-bottom: 1rem;">
+              Replaced transformer attention with selective state space models (Mamba S6), executing bidirectional visual selective scans with linear complexity $\mathcal{O}(P \cdot T \cdot m)$ for continuous video colonoscopy.
+            </p>
+            <div style="background: var(--bg-tertiary); padding: 0.75rem 1rem; border-radius: var(--radius-sm); margin-bottom: 1rem; font-size: 0.85rem;">
+              <div><strong>Primary Breakthrough:</strong> Solved the video complexity wall: maintains flat <strong>47.1 FPS throughput at T=32 and 46.9 FPS at T=128 frames</strong>; 85.4% Dice on CVC-12k.</div>
+              <div style="margin-top: 0.4rem;"><strong>Key Limitation:</strong> Requires specialized CUDA hardware kernels for hardware-aware associative scan execution.</div>
+            </div>
+          </div>
+          <div class="card-footer" style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted);">
+            <span>Params: <code>25.40M</code></span>
+            <span>Speed: <code>46.9 FPS (T=128)</code></span>
+            <span>Complexity: <code>Linear O(PTm)</code></span>
+          </div>
+        </article>
+
+        <!-- MILESTONE 14: LiteBounD (2026) -->
+        <article class="card card-glass milestone-card" data-era="4">
+          <div class="card-header">
+            <div>
+              <span class="badge badge-emerald" style="margin-bottom: 0.35rem;">2026 &bull; Era 4 Distillation</span>
+              <h3 class="card-title">LiteBounD: Foundation Distillation</h3>
+              <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.2rem;">Recent 2026 Frontier &bull; Boundary Distillation Paradigm</div>
+            </div>
+            <span class="badge badge-metric">Edge Distillation</span>
+          </div>
+          <div class="card-body">
+            <p style="font-size: 0.925rem; margin-bottom: 1rem;">
+              Distills heavy foundation models (SAM, DINOv2, OneFormer) into lightweight student backbones (U-Net, PraNet) by decomposing teacher representations into high/low frequency boundary tokens.
+            </p>
+            <div style="background: var(--bg-tertiary); padding: 0.75rem 1rem; border-radius: var(--radius-sm); margin-bottom: 1rem; font-size: 0.85rem;">
+              <div><strong>Primary Breakthrough:</strong> Elevates standard U-Net from 0.818 to <strong>0.869 mDice on Kvasir-SEG</strong> with only +0.3M added parameters, running at &gt;90 FPS.</div>
+              <div style="margin-top: 0.4rem;"><strong>Key Limitation:</strong> Multi-stage teacher distillation requires expensive multi-teacher offline precomputation before student training.</div>
+            </div>
+          </div>
+          <div class="card-footer" style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted);">
+            <span>Params: <code>17.0M</code></span>
+            <span>Speed: <code>92 FPS</code></span>
+            <span>Kvasir Dice: <code>0.869</code></span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Master Evolution Summary Table -->
+    <section style="margin: 4rem 0;" aria-label="Master Chronological Evolution Table">
+      <h2 style="font-size: 1.75rem; margin-bottom: 1rem;">Master Architectural Lineage Comparison</h2>
+      <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Cross-era comparative matrix synthesizing backbones, parameters, inference throughput, and benchmark leaps.</p>
+      
+      <div class="table-container">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th class="sticky-header">Model</th>
+              <th class="sticky-header">Year</th>
+              <th class="sticky-header">Era</th>
+              <th class="sticky-header">Backbone / Paradigm</th>
+              <th class="sticky-header numeric">Params (M)</th>
+              <th class="sticky-header numeric">FPS (GPU)</th>
+              <th class="sticky-header">Primary Innovation</th>
+              <th class="sticky-header">Key Limitation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>WM-DOVA</strong></td>
+              <td>2012</td>
+              <td><span class="badge badge-amber">Era 1</span></td>
+              <td>Handcrafted Valleys</td>
+              <td class="numeric">0</td>
+              <td class="numeric">4 (CPU)</td>
+              <td>Elliptical valley accumulation</td>
+              <td>No mask output, false alarms on haustral folds</td>
+            </tr>
+            <tr>
+              <td><strong>Edge-Voting</strong></td>
+              <td>2015</td>
+              <td><span class="badge badge-amber">Era 1</span></td>
+              <td>Geometric Constraints</td>
+              <td class="numeric">N/A</td>
+              <td class="numeric">10</td>
+              <td>Edge orientation voting</td>
+              <td>Fails on flat, non-protruding lesions</td>
+            </tr>
+            <tr>
+              <td><strong>U-Net</strong></td>
+              <td>2015</td>
+              <td><span class="badge badge-teal">Era 2</span></td>
+              <td>Plain 4-Stage CNN</td>
+              <td class="numeric">31.03</td>
+              <td class="numeric">53</td>
+              <td>Identity skip connections</td>
+              <td>Severe OOD drop (0.398 ETIS), ragged boundaries</td>
+            </tr>
+            <tr>
+              <td><strong>SegNet-CADe</strong></td>
+              <td>2018</td>
+              <td><span class="badge badge-teal">Era 2</span></td>
+              <td>VGG-16 Semantic</td>
+              <td class="numeric">29.40</td>
+              <td class="numeric">25</td>
+              <td>First prospective live RCT CADe</td>
+              <td>High false-alarm rate on stool/bubbles</td>
+            </tr>
+            <tr>
+              <td><strong>UNet++</strong></td>
+              <td>2018</td>
+              <td><span class="badge badge-teal">Era 2</span></td>
+              <td>Nested CNN Blocks</td>
+              <td class="numeric">36.60</td>
+              <td class="numeric">25</td>
+              <td>Dense nested skip pathways</td>
+              <td>Heavy memory footprint, slow inference</td>
+            </tr>
+            <tr>
+              <td><strong>ResUNet++</strong></td>
+              <td>2019</td>
+              <td><span class="badge badge-teal">Era 2</span></td>
+              <td>ResNet + SE + ASPP</td>
+              <td class="numeric">4.06</td>
+              <td class="numeric">40</td>
+              <td>Squeeze-and-excitation + atrous pooling</td>
+              <td>Modest generalizability on unseen datasets</td>
+            </tr>
+            <tr>
+              <td><strong>PraNet</strong></td>
+              <td>2020</td>
+              <td><span class="badge badge-teal">Era 2</span></td>
+              <td>Res2Net-50</td>
+              <td class="numeric">32.55</td>
+              <td class="numeric">50</td>
+              <td>PPD + Reverse Attention cascade</td>
+              <td>Discards shallow features ($f_1, f_2$)</td>
+            </tr>
+            <tr>
+              <td><strong>HarDNet-MSEG</strong></td>
+              <td>2021</td>
+              <td><span class="badge badge-teal">Era 2</span></td>
+              <td>HarDNet68 (Low CIO)</td>
+              <td class="numeric">33.34</td>
+              <td class="numeric">88</td>
+              <td>DRAM traffic minimization</td>
+              <td>Evaluated at lower 312x312 resolution</td>
+            </tr>
+            <tr>
+              <td><strong>SANet</strong></td>
+              <td>2021</td>
+              <td><span class="badge badge-teal">Era 2</span></td>
+              <td>Res2Net-50 + SAM</td>
+              <td class="numeric">32.55</td>
+              <td class="numeric">72</td>
+              <td>CIELAB Color Exchange + SAM</td>
+              <td>Color swapping alters micro-vessel diagnostic hues</td>
+            </tr>
+            <tr>
+              <td><strong>Polyp-PVT</strong></td>
+              <td>2021</td>
+              <td><span class="badge badge-purple">Era 3</span></td>
+              <td>PVTv2-B2 Transformer</td>
+              <td class="numeric">44.60</td>
+              <td class="numeric">30</td>
+              <td>CIM + Graph-SAM rotational invariance</td>
+              <td>Higher parameter count and computation</td>
+            </tr>
+            <tr>
+              <td><strong>SSFormer</strong></td>
+              <td>2022</td>
+              <td><span class="badge badge-purple">Era 3</span></td>
+              <td>PVTv2-B2 Hybrid</td>
+              <td class="numeric">33.50</td>
+              <td class="numeric">28</td>
+              <td>Progressive Locality Decoder</td>
+              <td>Throughput bounded by multi-scale interpolation</td>
+            </tr>
+            <tr>
+              <td><strong>ColonFormer</strong></td>
+              <td>2022</td>
+              <td><span class="badge badge-purple">Era 3</span></td>
+              <td>SegFormer MiT-B3</td>
+              <td class="numeric">46.64</td>
+              <td class="numeric">22</td>
+              <td>Residual Axial Reverse Attention</td>
+              <td>Degrades beyond MiT-B3 (non-monotonic scaling)</td>
+            </tr>
+            <tr>
+              <td><strong>HSNet</strong></td>
+              <td>2022</td>
+              <td><span class="badge badge-purple">Era 3</span></td>
+              <td>Hybrid ResNet/ViT</td>
+              <td class="numeric">46.64</td>
+              <td class="numeric">22</td>
+              <td>Filtered shallow into deep semantics</td>
+              <td>22 FPS throughput restricts live 60 FPS feeds</td>
+            </tr>
+            <tr>
+              <td><strong>Endo-FM</strong></td>
+              <td>2023</td>
+              <td><span class="badge badge-emerald">Era 4</span></td>
+              <td>ViT-B/16 (Space-Time)</td>
+              <td class="numeric">121.30</td>
+              <td class="numeric">2.4 @ T128</td>
+              <td>Pretrained on 5M video frames</td>
+              <td>Quadratic scaling $\mathcal{O}(P^2 T^2 m)$ limits live video</td>
+            </tr>
+            <tr class="highlight-row">
+              <td><strong>EndoMamba</strong></td>
+              <td>2024</td>
+              <td><span class="badge badge-emerald">Era 4</span></td>
+              <td>VideoMamba S6 (SSM)</td>
+              <td class="numeric">25.40</td>
+              <td class="numeric">46.9 @ T128</td>
+              <td>Linear selective scan $\mathcal{O}(PTm)$</td>
+              <td>Requires specialized CUDA associative scan kernels</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Navigation Next Page Callout -->
+    <div class="card card-glass flex-between flex-wrap gap-md" style="margin: 4rem 0 2rem; padding: 2.25rem;">
+      <div>
+        <span class="badge badge-teal" style="margin-bottom: 0.5rem;">NEXT ARCHITECTURAL STEP</span>
+        <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Deep Dive: Component-by-Component Dissection</h3>
+        <p style="color: var(--text-secondary); max-width: 680px; margin-bottom: 0;">
+          Inspect the mathematical loss formulations, encoder backbones, bottleneck tensor shapes, and reverse attention mechanics powering the 6 most iconic colonoscopy AI models.
+        </p>
+      </div>
+      <a href="04-architectures.html" class="btn btn-primary btn-lg">
+        <span>Explore Architectures</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h4>Colonoscopy<span style="color: var(--color-teal);">AI</span> Guide</h4>
+          <p>Comprehensive educational compendium and forensic research platform covering colorectal polyp detection, segmentation architectures, clinical trials, and benchmark integrity.</p>
+          <p style="margin-top: 1rem; font-size: 0.8rem; color: var(--text-muted);">
+            Based on the 19,236-line technical compendium (Opus 1) and independent dataset forensic audits.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h5>Clinical Domain</h5>
+          <ul class="footer-links">
+            <li><a href="01-what-is-colonoscopy.html">Clinical Foundations</a></li>
+            <li><a href="06b-clinical-evidence.html">Trial Evidence &amp; RCTs</a></li>
+            <li><a href="07-clinical-systems.html">Commercial Systems</a></li>
+            <li><a href="12-glossary.html">Medical Glossary</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>AI &amp; Engineering</h5>
+          <ul class="footer-links">
+            <li><a href="03-ai-history.html">Evolution Timeline</a></li>
+            <li><a href="04-architectures.html">Model Architectures</a></li>
+            <li><a href="05-datasets.html">Dataset Catalog</a></li>
+            <li><a href="06-benchmarks.html">Benchmark Matrices</a></li>
+            <li><a href="09-chakramodel.html">ChakraModel Research</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Integrity &amp; Research</h5>
+          <ul class="footer-links">
+            <li><a href="08-benchmark-integrity.html">Integrity Audit</a></li>
+            <li><a href="10-future.html">Future Frontiers</a></li>
+            <li><a href="11-references.html">Master Bibliography</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 ColonoscopyAI Education &amp; ChakraModel Research. Open medical research platform.</div>
+        <div>Strict Forensic Integrity Standard &bull; Zero Hallucinations</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../assets/js/main.js"></script>
+  <script>
+    // Interactive Timeline Controller for 03-ai-history.html
+    document.addEventListener('DOMContentLoaded', () => {
+      const eraData = {
+        1: {
+          badge: "ERA 1 • 1990s – 2014",
+          badgeClass: "badge-amber",
+          paradigm: "PARADIGM: Handcrafted Morphology & Classical ML",
+          title: "The Heuristic Frontier: Texture Wavelets, Energy Valleys & Geometric Voting",
+          desc: "Prior to the deep learning revolution, researchers modeled polyps as protruding, bulbous elliptical structures using color texture wavelets, Window Median Depth of Valleys Accumulation (WM-DOVA), and radial edge voting. These systems required labor-intensive feature engineering, lacked boundary segmentation, and generated prohibitive false-positive rates on normal mucosal folds.",
+          milestones: "Karkanis (2003), Bernal WM-DOVA (2012/2015), Tajbakhsh Edge-Voting (2015)",
+          fps: "<15 FPS (CPU / early GPU)",
+          limitation: "Total failure on flat (Paris IIa/IIb) and sessile serrated lesions"
+        },
+        2: {
+          badge: "ERA 2 • 2015 – 2020",
+          badgeClass: "badge-teal",
+          paradigm: "PARADIGM: Deep Convolutional Networks & Reverse Attention",
+          title: "The CNN Paradigm: Dense Skip Connections & Boundary Mining",
+          desc: "Triggered by Ronneberger's U-Net, convolutional networks enabled dense pixel-level segmentation. The era culminated in PraNet's Reverse Attention (RA) and HarDNet's memory-traffic (CIO) optimization, achieving real-time 88 FPS throughput. However, standard convolutions suffered from localized receptive field bounds.",
+          milestones: "U-Net (2015), SegNet-CADe (2018), UNet++ (2018), ResUNet++ (2019), PraNet (2020), HarDNet-MSEG (2021), SANet (2021)",
+          fps: "50 – 88 FPS (RTX 2080 Ti)",
+          limitation: "Severe out-of-distribution drop on unseen multicenter datasets (ETIS Dice ~0.40–0.68)"
+        },
+        3: {
+          badge: "ERA 3 • 2021 – 2023",
+          badgeClass: "badge-purple",
+          paradigm: "PARADIGM: Vision Transformers & Hierarchical Attention",
+          title: "The Transformer Era: Global Context & Camouflage Segmentation",
+          desc: "Vision Transformers (PVT, SegFormer MiT) introduced global self-attention across the colon lumen, treating polyps as camouflaged objects against matching mucosa. Cross-level feature pyramids and axial attention pushed unseen ETIS-Larib Dice beyond 0.80 for the first time in medical literature.",
+          milestones: "Polyp-PVT (2021), SSFormer (2022), ColonFormer (2022), HSNet (2022), CFA-Net (2023)",
+          fps: "22 – 30 FPS",
+          limitation: "Non-monotonic scaling: backbones larger than MiT-B3 overfit on small clinical cohorts"
+        },
+        4: {
+          badge: "ERA 4 • 2023 – PRESENT",
+          badgeClass: "badge-emerald",
+          paradigm: "PARADIGM: Video Foundation Models & State Space Models (SSMs)",
+          title: "The Sub-Quadratic Frontier: Continuous Video Memory & Mamba S6",
+          desc: "While standard space-time video transformers collapsed under quadratic complexity O(P²T²m), Selective State Space Models (EndoMamba S6) broke through with linear O(PTm) scan complexity, sustaining flat 47 FPS inference regardless of video context length. Concurrently, boundary distillation bridges heavy foundation teachers into edge students.",
+          milestones: "SAM/MedSAM (2023), Endo-FM (2023), EndoMamba (2024/2025), LiteBounD (2026)",
+          fps: "47 – 92 FPS",
+          limitation: "Requires specialized selective scan CUDA kernels; zero-shot unprompted SAM fails without bounding boxes"
+        }
+      };
+
+      const slider = document.getElementById('era-slider');
+      const eraButtons = document.querySelectorAll('#era-button-group button');
+      const cards = document.querySelectorAll('.milestone-card');
+      const counter = document.getElementById('cards-counter');
+
+      const eraBadge = document.getElementById('era-badge');
+      const eraParadigm = document.getElementById('era-paradigm');
+      const eraTitle = document.getElementById('era-title');
+      const eraDesc = document.getElementById('era-desc');
+      const eraMilestones = document.getElementById('era-milestones');
+      const eraFps = document.getElementById('era-fps');
+      const eraLimitation = document.getElementById('era-limitation');
+
+      function updateEraView(era) {
+        if (era === 'all') {
+          cards.forEach(card => card.style.display = 'flex');
+          counter.textContent = `Displaying ${cards.length} of ${cards.length} landmark systems`;
+          eraBadge.className = 'badge badge-teal';
+          eraBadge.textContent = 'ALL 4 ERAS • 1990s – 2026';
+          eraParadigm.textContent = 'COMPLETE ARCHITECTURAL ARC';
+          eraTitle.textContent = 'Full Thirty-Year Evolution: From Edge Voting to Selective State Space Video';
+          eraDesc.textContent = 'Browse through all 14 milestone systems spanning classical feature engineering, convolutional encoder-decoders, vision transformers, and modern foundation state-space models.';
+          eraMilestones.textContent = '14 landmark peer-reviewed systems';
+          eraFps.textContent = '4 to 88 FPS across hardware eras';
+          eraLimitation.textContent = 'Varies across architectural paradigms (see individual cards below)';
+          return;
+        }
+
+        const eraNum = parseInt(era, 10);
+        const data = eraData[eraNum];
+        if (!data) return;
+
+        eraBadge.className = `badge ${data.badgeClass}`;
+        eraBadge.textContent = data.badge;
+        eraParadigm.textContent = data.paradigm;
+        eraTitle.textContent = data.title;
+        eraDesc.textContent = data.desc;
+        eraMilestones.textContent = data.milestones;
+        eraFps.textContent = data.fps;
+        eraLimitation.textContent = data.limitation;
+
+        let visibleCount = 0;
+        cards.forEach(card => {
+          if (card.getAttribute('data-era') === String(eraNum)) {
+            card.style.display = 'flex';
+            visibleCount++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+        counter.textContent = `Displaying ${visibleCount} of ${cards.length} landmark systems (Era ${eraNum})`;
+      }
+
+      if (slider) {
+        slider.addEventListener('input', (e) => {
+          const val = e.target.value;
+          eraButtons.forEach(btn => {
+            if (btn.getAttribute('data-era') === val) {
+              btn.classList.add('active');
+            } else {
+              btn.classList.remove('active');
+            }
+          });
+          updateEraView(val);
+        });
+      }
+
+      eraButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          eraButtons.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const era = btn.getAttribute('data-era');
+          if (era !== 'all' && slider) {
+            slider.value = era;
+          }
+          updateEraView(era);
+        });
+      });
+    });
+  </script>
+</body>
+</html>

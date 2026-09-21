@@ -1,0 +1,162 @@
+{
+  "timestamp": "2026-09-21T21:41:20.525Z",
+  "verdict": "VICTORY CONFIRMED / CLEAN",
+  "results": {
+    "check1_colondb_cvc300": {
+      "passed": true,
+      "checks": 18,
+      "violations": [],
+      "disclosures": [
+        "index.html: 58-frame duplicate overlap (96.7%) explicitly disclosed",
+        "pages\\05-datasets.html: 58-frame duplicate overlap (96.7%) explicitly disclosed",
+        "pages\\06-benchmarks.html: 58-frame duplicate overlap (96.7%) explicitly disclosed",
+        "pages\\08-benchmark-integrity.html: 58-frame duplicate overlap (96.7%) explicitly disclosed",
+        "pages\\11-references.html: 58-frame duplicate overlap (96.7%) explicitly disclosed",
+        "assets\\js\\charts.js: 58-frame duplicate overlap (96.7%) explicitly disclosed",
+        "README.md: 58-frame duplicate overlap (96.7%) explicitly disclosed"
+      ]
+    },
+    "check2_clinicdb_leakage": {
+      "passed": true,
+      "checks": 14,
+      "violations": [],
+      "pagesWithMetrics": [
+        "index.html",
+        "pages\\03-ai-history.html",
+        "pages\\04-architectures.html",
+        "pages\\05-datasets.html",
+        "pages\\06-benchmarks.html",
+        "pages\\09-chakramodel.html",
+        "pages\\11-references.html"
+      ],
+      "disclosures": [
+        "index.html: ClinicDB metrics disclosed with video leakage disclaimer/badge (badge/alert present: false)",
+        "pages\\03-ai-history.html: ClinicDB metrics disclosed with video leakage disclaimer/badge (badge/alert present: true)",
+        "pages\\04-architectures.html: ClinicDB metrics disclosed with video leakage disclaimer/badge (badge/alert present: true)",
+        "pages\\05-datasets.html: ClinicDB metrics disclosed with video leakage disclaimer/badge (badge/alert present: true)",
+        "pages\\06-benchmarks.html: ClinicDB metrics disclosed with video leakage disclaimer/badge (badge/alert present: true)",
+        "pages\\09-chakramodel.html: ClinicDB metrics disclosed with video leakage disclaimer/badge (badge/alert present: true)",
+        "pages\\11-references.html: ClinicDB metrics disclosed with video leakage disclaimer/badge (badge/alert present: true)"
+      ]
+    },
+    "check3_hyperkvasir_duplicate": {
+      "passed": true,
+      "checks": 18,
+      "violations": [],
+      "disclosures": [
+        "pages\\05-datasets.html: 1,000 SHA-256 byte-identical duplicate disclosure verified",
+        "pages\\08-benchmark-integrity.html: 1,000 SHA-256 byte-identical duplicate disclosure verified",
+        "pages\\11-references.html: 1,000 SHA-256 byte-identical duplicate disclosure verified",
+        "pages\\12-glossary.html: 1,000 SHA-256 byte-identical duplicate disclosure verified",
+        "assets\\js\\main.js: 1,000 SHA-256 byte-identical duplicate disclosure verified"
+      ]
+    },
+    "check4_empirical_invariants": {
+      "passed": true,
+      "checks": 9,
+      "violations": [],
+      "invariantsVerified": [
+        {
+          "id": 1,
+          "name": "Corley et al. NEJM 2014 (1% ADR -> 3% CRC reduction, 5% fatal CRC reduction)",
+          "foundIn": [
+            "index.html",
+            "pages\\01-what-is-colonoscopy.html",
+            "pages\\11-references.html",
+            "README.md"
+          ]
+        },
+        {
+          "id": 2,
+          "name": "41 RCTs / 31,789 patients (55% AMR reduction)",
+          "foundIn": [
+            "index.html",
+            "pages\\06b-clinical-evidence.html",
+            "README.md"
+          ]
+        },
+        {
+          "id": 3,
+          "name": "Budzyń et al. (Lancet Gastro Hep Aug 2025) ACCEPT trial (-6.0% ADR deskilling)",
+          "foundIn": [
+            "pages\\06b-clinical-evidence.html"
+          ]
+        },
+        {
+          "id": 4,
+          "name": "AGA 2025 microsimulation (11 fewer CRCs, 2 fewer CRC deaths, 6-35 extra surveillance colonoscopies, 11% non-neoplastic resection increase)",
+          "foundIn": [
+            "pages\\06b-clinical-evidence.html"
+          ]
+        },
+        {
+          "id": 5,
+          "name": "ChakraTransformer (ViT-L/16 @ 384 px, 309.2M params, Kvasir 0.838, ClinicDB 0.771, 7.76 FPS)",
+          "foundIn": [
+            "pages\\09-chakramodel.html",
+            "README.md"
+          ]
+        },
+        {
+          "id": 6,
+          "name": "ChakraXAttnUNet v2 (28.6M params, dual-path skip routing fixing v1 skip-pooling flaw)",
+          "foundIn": [
+            "pages\\09-chakramodel.html",
+            "README.md"
+          ]
+        },
+        {
+          "id": 7,
+          "name": "splits_v2 (1,228 train / 222 val, 0 leaking video groups)",
+          "foundIn": [
+            "pages\\09-chakramodel.html"
+          ]
+        },
+        {
+          "id": 8,
+          "name": "False alarm set (4,275 frames from 23 PolypGen sequences)",
+          "foundIn": [
+            "pages\\08-benchmark-integrity.html"
+          ]
+        },
+        {
+          "id": 9,
+          "name": "PICCOLO (3,433 frames, 76 lesions, 40 videos: 21 diminutive <=5mm, 16 small 6-9mm, 31 large >=10mm)",
+          "foundIn": [
+            "pages\\05-datasets.html",
+            "pages\\09-chakramodel.html",
+            "pages\\11-references.html"
+          ]
+        }
+      ]
+    },
+    "check5_link_anchor_integrity": {
+      "passed": true,
+      "totalLinks": 723,
+      "externalLinks": 113,
+      "internalLinks": 610,
+      "anchorLinks": 31,
+      "brokenLinks": []
+    },
+    "check6_ocr_provenance": {
+      "passed": true,
+      "checks": 18,
+      "violations": [],
+      "verifiedProvenance": []
+    },
+    "dom_tag_balance": {
+      "passed": true,
+      "pagesChecked": 14,
+      "violations": []
+    },
+    "glossary_integrity": {
+      "passed": true,
+      "termsChecked": 143,
+      "unresolvedTerms": [
+        "pages\\03-ai-history.html: 'wm-dova' (inline text 'WM-DOVA')",
+        "pages\\04-architectures.html: 'gcn' (inline text 'GCN')",
+        "pages\\10-future.html: 'sam' (inline text 'SAM')"
+      ]
+    }
+  }
+}

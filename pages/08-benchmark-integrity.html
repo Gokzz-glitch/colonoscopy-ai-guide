@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dataset Integrity Map & Forensic Analysis | Colonoscopy AI & ChakraModel</title>
+  <meta name="description" content="Forensic cryptographic and geometric analysis of the 4 critical benchmark flaws in colonoscopy AI: video leakage in CVC-ClinicDB, CVC-ColonDB/CVC-300 overlap, HyperKvasir duplication, and the false alarm blind spot on healthy mucosa.">
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <style>
+    /* Custom Integrity Map & Interactive Node Graph Styles */
+    .integrity-map-wrapper {
+      background: var(--surface-card);
+      border: 1px solid var(--border-medium);
+      border-radius: var(--radius-xl);
+      padding: 2.5rem;
+      margin: 2.5rem 0;
+      box-shadow: var(--shadow-glass);
+      position: relative;
+      overflow: hidden;
+    }
+    .integrity-map-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: 1.25rem;
+    }
+    .integrity-graph-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .dataset-node {
+      background: var(--surface-glass);
+      border: 2px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      cursor: pointer;
+      transition: all var(--transition-normal);
+      position: relative;
+    }
+    .dataset-node:hover, .dataset-node.active {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+    }
+    .dataset-node.node-leak {
+      border-color: rgba(249, 115, 22, 0.6);
+      background: linear-gradient(180deg, rgba(249, 115, 22, 0.08) 0%, var(--surface-glass) 100%);
+    }
+    .dataset-node.node-overlap {
+      border-color: rgba(239, 68, 68, 0.6);
+      background: linear-gradient(180deg, rgba(239, 68, 68, 0.08) 0%, var(--surface-glass) 100%);
+    }
+    .dataset-node.node-duplicate {
+      border-color: rgba(168, 85, 247, 0.6);
+      background: linear-gradient(180deg, rgba(168, 85, 247, 0.08) 0%, var(--surface-glass) 100%);
+    }
+    .dataset-node.node-clean {
+      border-color: rgba(16, 185, 129, 0.6);
+      background: linear-gradient(180deg, rgba(16, 185, 129, 0.08) 0%, var(--surface-glass) 100%);
+    }
+    .dataset-node-title {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .node-meta {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+    }
+    .node-tag {
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.2rem 0.5rem;
+      border-radius: var(--radius-full);
+      display: inline-block;
+    }
+    .node-detail-panel {
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border-medium);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      margin-top: 1.5rem;
+      display: block;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .leakage-diagram-box {
+      background: var(--bg-primary);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      line-height: 1.6;
+      color: #38bdf8;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+    }
+    .split-comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+    @media (max-width: 768px) {
+      .split-comparison-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .split-box {
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      border: 1px solid var(--border-subtle);
+    }
+    .split-box.bad {
+      background: rgba(239, 68, 68, 0.06);
+      border-color: rgba(239, 68, 68, 0.3);
+    }
+    .split-box.good {
+      background: rgba(16, 185, 129, 0.06);
+      border-color: rgba(16, 185, 129, 0.3);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Scroll Progress Indicator -->
+  <div id="scroll-progress"></div>
+
+  <!-- Main Navigation Header -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="../index.html" class="brand-logo">
+        <div class="brand-icon">🔬</div>
+        <span>Colonoscopy AI</span>
+        <span class="brand-badge">Audit</span>
+      </a>
+
+      <ul class="nav-menu">
+        <li><a href="../index.html" class="nav-link">Home</a></li>
+        <li><a href="01-what-is-colonoscopy.html" class="nav-link">Anatomy & Clinical</a></li>
+        <li><a href="04-architectures.html" class="nav-link">Architectures</a></li>
+        <li><a href="05-datasets.html" class="nav-link">Datasets</a></li>
+        <li><a href="06-benchmarks.html" class="nav-link">Benchmarks</a></li>
+        <li><a href="08-benchmark-integrity.html" class="nav-link active">Integrity Audit</a></li>
+        <li><a href="09-chakramodel.html" class="nav-link">ChakraModel</a></li>
+        <li><a href="10-future.html" class="nav-link">Future & Mamba</a></li>
+        <li><a href="11-references.html" class="nav-link">References</a></li>
+        <li><a href="12-glossary.html" class="nav-link">Glossary</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" aria-label="Toggle light and dark mode" title="Toggle theme">🌓</button>
+        <button class="hamburger-btn" aria-label="Toggle mobile menu" title="Open Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-drawer" id="mobile-drawer">
+    <a href="../index.html" class="nav-link">Home (Overview)</a>
+    <a href="01-what-is-colonoscopy.html" class="nav-link">01. What is Colonoscopy</a>
+    <a href="02-polyp-types.html" class="nav-link">02. Polyp Morphology & Paris</a>
+    <a href="03-ai-history.html" class="nav-link">03. AI History & Evolution</a>
+    <a href="04-architectures.html" class="nav-link">04. Deep Architectures</a>
+    <a href="05-datasets.html" class="nav-link">05. Public Datasets</a>
+    <a href="06-benchmarks.html" class="nav-link">06. Performance Benchmarks</a>
+    <a href="06b-clinical-evidence.html" class="nav-link">06b. Clinical Trial Evidence</a>
+    <a href="08-benchmark-integrity.html" class="nav-link active">08. Benchmark Integrity Audit</a>
+    <a href="09-chakramodel.html" class="nav-link">09. ChakraModel Research Project</a>
+    <a href="10-future.html" class="nav-link">10. Future & Agentic Vision</a>
+    <a href="11-references.html" class="nav-link">11. Master References (49 Papers)</a>
+    <a href="12-glossary.html" class="nav-link">12. Plain-English Glossary (50 Terms)</a>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-glow"></div>
+    <div class="container hero-content">
+      <div class="hero-badge">
+        <span class="dot"></span>
+        <span>Forensic Scientific Audit</span>
+      </div>
+      <h1 class="hero-title">
+        The 4 Fundamental Flaws of <br>
+        <span class="gradient-text">Colonoscopy AI Benchmarks</span>
+      </h1>
+      <p class="hero-subtitle">
+        A rigorous forensic investigation exposing video frame temporal leakage, exact cross-dataset duplication, identical masked clones, and the complete evaluation blind spot on healthy colonic mucosa.
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Content Container -->
+  <main class="container">
+
+    <!-- High-Impact Key Findings Callouts -->
+    <div class="grid grid-4" style="margin-bottom: 3.5rem;">
+      <div class="stat-card">
+        <div class="stat-value" style="color: var(--color-coral);">30</div>
+        <div class="stat-label">Near-Duplicate Links</div>
+        <div class="stat-delta negative">ClinicDB Train ↔ Test Leakage</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" style="color: var(--color-danger);">58 / 60</div>
+        <div class="stat-label">Identical Frames (96.7%)</div>
+        <div class="stat-delta negative">CVC-ColonDB ≡ CVC-300</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" style="color: var(--color-purple);">1,000 / 1,000</div>
+        <div class="stat-label">SHA-256 Duplicates</div>
+        <div class="stat-delta negative">HyperKvasir ≡ Kvasir-SEG</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" style="color: var(--color-emerald);">4,275</div>
+        <div class="stat-label">Healthy Mucosa Frames</div>
+        <div class="stat-delta">ChakraModel FAR Audit</div>
+      </div>
+    </div>
+
+    <!-- Forensic Executive Warning -->
+    <div class="alert alert-integrity">
+      <div class="alert-icon">⚠️</div>
+      <div class="alert-content">
+        <div class="alert-title">Integrity Mandate & Disclosure</div>
+        <p>
+          For six years, the computer vision literature has evaluated polyp segmentation networks against a canonical benchmark quintet that suffers from severe systemic contamination. Models reporting &gt;0.93 <span class="glossary-term" data-term="dice">Dice similarity coefficients</span> on <span class="glossary-term" data-term="cvc-clinicdb">CVC-ClinicDB</span> are not demonstrating superhuman generalization—they are benefiting from <span class="glossary-term" data-term="video-frame-leakage">video frame temporal leakage</span>, measuring seen-domain video interpolation rather than true clinical out-of-distribution performance.
+        </p>
+      </div>
+    </div>
+
+    <!-- Visual Dataset Integrity Map (Interactive Section) -->
+    <section class="section-sm">
+      <div class="integrity-map-wrapper">
+        <div class="integrity-map-header">
+          <div>
+            <h2>Interactive Dataset Contamination Map</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 0;">Click on any dataset node below to inspect cryptographic hashes, overlapping frame clusters, and leakage mechanisms.</p>
+          </div>
+          <span class="badge badge-coral">Forensic Evidence Chain</span>
+        </div>
+
+        <div class="integrity-graph-grid">
+          <!-- Node 1: CVC-ClinicDB -->
+          <div class="dataset-node node-leak active" onclick="selectIntegrityNode('clinicdb')">
+            <div class="dataset-node-title">
+              <span>CVC-ClinicDB</span>
+              <span class="node-tag badge-coral">Temporal Leak</span>
+            </div>
+            <div class="node-meta">612 Total Frames | 29-31 Videos</div>
+            <p style="font-size: 0.85rem; color: var(--text-secondary);">
+              All 62 test frames in standard PraNet split share video sequences directly with the 550 train frames.
+            </p>
+          </div>
+
+          <!-- Node 2: CVC-ColonDB & CVC-300 -->
+          <div class="dataset-node node-overlap" onclick="selectIntegrityNode('colondb_cvc300')">
+            <div class="dataset-node-title">
+              <span>ColonDB ↔ CVC-300</span>
+              <span class="node-tag badge-coral">96.7% Overlap</span>
+            </div>
+            <div class="node-meta">380 vs 60 Frames | Exact Hash</div>
+            <p style="font-size: 0.85rem; color: var(--text-secondary);">
+              58 of 60 frames in CVC-300 are exact-pixel identical copies of CVC-ColonDB frames. Pooling is strictly invalid.
+            </p>
+          </div>
+
+          <!-- Node 3: HyperKvasir Duplicates -->
+          <div class="dataset-node node-duplicate" onclick="selectIntegrityNode('hyperkvasir')">
+            <div class="dataset-node-title">
+              <span>HyperKvasir ↔ Kvasir</span>
+              <span class="node-tag badge-purple">100% Duplicate</span>
+            </div>
+            <div class="node-meta">1,000 Segmented Image Pairs</div>
+            <p style="font-size: 0.85rem; color: var(--text-secondary);">
+              1,000/1,000 segmented images are byte-for-byte SHA-256 identical clones of Kvasir-SEG. Exactly zero extra clinical data.
+            </p>
+          </div>
+
+          <!-- Node 4: PolypDB Contamination -->
+          <div class="dataset-node node-leak" onclick="selectIntegrityNode('polypdb')">
+            <div class="dataset-node-title">
+              <span>PolypDB Candidate</span>
+              <span class="node-tag badge-coral">Contaminated</span>
+            </div>
+            <div class="node-meta">3,934 Image Pairs Audited</div>
+            <p style="font-size: 0.85rem; color: var(--text-secondary);">
+              Contains &ge;25 verified copies of Kvasir-SEG images, including 6 held-out test frames. Discarded from pretraining.
+            </p>
+          </div>
+
+          <!-- Node 5: Healthy Mucosa Blind Spot -->
+          <div class="dataset-node node-clean" onclick="selectIntegrityNode('polypgen_far')">
+            <div class="dataset-node-title">
+              <span>PolypGen Control</span>
+              <span class="node-tag badge-emerald">Clean Control</span>
+            </div>
+            <div class="node-meta">4,275 Negative Frames</div>
+            <p style="font-size: 0.85rem; color: var(--text-secondary);">
+              Polyp-free healthy colon frames integrated to quantify False Alarm Rate (FAR) and prevent clinical alarm fatigue.
+            </p>
+          </div>
+        </div>
+
+        <!-- Interactive Detail Panel -->
+        <div id="integrity-detail-display" class="node-detail-panel">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+            <h3 id="panel-title" style="color: var(--color-coral); margin-bottom: 0;">Flaw 1: Video Frame Temporal Leakage in CVC-ClinicDB</h3>
+            <span id="panel-badge" class="badge badge-coral">30 Verified Links</span>
+          </div>
+          <p id="panel-desc">
+            In 2020, the PraNet benchmark protocol partitioned CVC-ClinicDB into 550 training frames and 62 test frames. However, CVC-ClinicDB consists of 612 consecutive frames extracted from approximately 31 endoscopic video sequences. Every single one of the 62 test frames originates from the identical patient video sequences used in training.
+          </p>
+          <div class="leakage-diagram-box" id="panel-diagram">
+TRAINING SET (550 Frames)                           TEST SET (62 Frames)
+[Video Seq 04, Frame 180] ────── RANSAC Inliers &ge; 20 ─────&gt; [Video Seq 04, Frame 181]
+[Video Seq 12, Frame 368] ──── Time Delta &Delta;t &approx; 40ms ────&gt; [Video Seq 12, Frame 369]
+Status: SEEN-DOMAIN INTERPOLATION (+12% to +15% Artificial Dice Inflation)
+          </div>
+          <div id="panel-impact">
+            <strong>Impact on Medical AI:</strong> A model evaluated on ClinicDB test does not demonstrate generalized polyp detection; it interpolates memorized sequential transitions of polyps seen during backpropagation.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Deep Dive: Flaw 1 -->
+    <section class="section" id="flaw-1">
+      <div class="flex-between flex-wrap gap-md" style="margin-bottom: 1.5rem;">
+        <div>
+          <span class="badge badge-coral">Flaw Deep Dive 01</span>
+          <h2 style="margin-top: 0.5rem;">Video Frame Temporal Leakage in CVC-ClinicDB</h2>
+        </div>
+        <span class="badge badge-integrity">+12% to +15% Artificial Dice Inflation</span>
+      </div>
+
+      <p>
+        The standard evaluation convention established by Fan et al. (MICCAI 2020) and inherited by more than 40 subsequent papers combines 900 images from <span class="glossary-term" data-term="kvasir-seg">Kvasir-SEG</span> and 550 frames from <span class="glossary-term" data-term="cvc-clinicdb">CVC-ClinicDB</span> into a 1,450-image training pool. Testing is conducted on 100 Kvasir-SEG test images, 62 CVC-ClinicDB test frames, and three unseen datasets (<span class="glossary-term" data-term="cvc-colondb">CVC-ColonDB</span>, <span class="glossary-term" data-term="etis-larib">ETIS-Larib</span>, and <span class="glossary-term" data-term="cvc-300">CVC-300</span>).
+      </p>
+
+      <h3>Forensic Investigation: Near-Duplicate Link Analysis</h3>
+      <p>
+        Our forensic audit subjected all 612 ClinicDB frames to an automated dual-verification pipeline combining perceptual center-crop color correlation ($\ge 0.95$) and geometric feature matching using <strong>ORB descriptors with RANSAC affine consensus ($\ge 20$ geometric inliers)</strong>.
+      </p>
+
+      <div class="grid grid-2" style="margin: 2rem 0;">
+        <div class="card">
+          <h4 style="color: var(--color-coral);">The 30 Verified Near-Duplicate Links</h4>
+          <p style="font-size: 0.9rem; color: var(--text-secondary);">
+            The audit identified exactly <strong>30 verified near-duplicate links</strong> directly connecting the 550 training frames to the 62 test frames. For instance:
+          </p>
+          <ul style="padding-left: 1.25rem; font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 1rem;">
+            <li><code>train_180.png</code> &harr; <code>clinicdb_181.png</code>: Consecutive video frames recorded ~40 milliseconds apart with 38 RANSAC inliers.</li>
+            <li><code>train_302.png</code> &harr; <code>clinicdb_304.png</code>: 2 video frames apart, identical colon lumen lighting, 42 RANSAC inliers.</li>
+            <li><code>train_589.png</code> &harr; <code>clinicdb_590.png</code>: Consecutive frames showing identical polyp stalk and margin.</li>
+          </ul>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0;">
+            Not a single frame in the 62-image test set originates from an unseen patient or novel endoscopy procedure.
+          </p>
+        </div>
+
+        <div class="card">
+          <h4 style="color: var(--color-amber);">Random Split Flaw (v1 Split Drift)</h4>
+          <p style="font-size: 0.9rem; color: var(--text-secondary);">
+            In standard machine learning implementations, researchers routinely take the 1,450-image pool and apply a uniform random split (e.g., 85% train, 15% val) without grouping by video sequence. In our initial v1 baseline:
+          </p>
+          <ul style="padding-left: 1.25rem; font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 1rem;">
+            <li>Frame <code>train_368.png</code> assigned to Train; frame <code>train_369.png</code> assigned to Val.</li>
+            <li>Frame <code>train_62.png</code> assigned to Train; frame <code>train_63.png</code> assigned to Val.</li>
+            <li><strong>27 duplicate/sequence groups spanned both training and validation sets simultaneously.</strong></li>
+          </ul>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0;">
+            This invalidates early-stopping and model checkpoint selection, as models are rewarded for memorizing sequence frames.
+          </p>
+        </div>
+      </div>
+
+      <!-- Split Comparison Diagram -->
+      <div class="split-comparison-grid">
+        <div class="split-box bad">
+          <h4 style="color: var(--color-danger); margin-bottom: 0.5rem;">❌ Flawed v1 Split (Random Partition)</h4>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.75rem;">1,232 Train / 218 Val frames partitioned uniformly at random.</p>
+          <ul style="padding-left: 1.25rem; font-size: 0.85rem; color: var(--text-muted);">
+            <li><strong>27 sequence groups</strong> cross the train/val barrier.</li>
+            <li>Consecutive frames (368 & 369) split across training and validation.</li>
+            <li>Validation mDice artificially elevated to 0.94+.</li>
+            <li>Model selection overfits memorized sequence trajectories.</li>
+          </ul>
+        </div>
+
+        <div class="split-box good">
+          <h4 style="color: var(--color-emerald); margin-bottom: 0.5rem;">✓ Fixed splits_v2 Protocol (Group-Aware)</h4>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.75rem;">1,228 Train / 222 Val frames partitioned via connected component video grouping.</p>
+          <ul style="padding-left: 1.25rem; font-size: 0.85rem; color: var(--text-muted);">
+            <li><strong>EXACTLY ZERO groups</strong> cross between train and val splits.</li>
+            <li>Entire video sequences and ORB clusters kept intact.</li>
+            <li>Honest validation mDice that tracks true out-of-domain performance.</li>
+            <li>Rigorous foundation for all ChakraModel Stage 1 benchmarks.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Deep Dive: Flaw 2 -->
+    <section class="section" id="flaw-2">
+      <div class="flex-between flex-wrap gap-md" style="margin-bottom: 1.5rem;">
+        <div>
+          <span class="badge badge-coral">Flaw Deep Dive 02</span>
+          <h2 style="margin-top: 0.5rem;">The CVC-ColonDB ↔ CVC-300 Exact Overlap</h2>
+        </div>
+        <span class="badge badge-danger">58 Identical Image Pairs (96.7%)</span>
+      </div>
+
+      <p>
+        In the standard benchmark quintet, <span class="glossary-term" data-term="cvc-colondb">CVC-ColonDB</span> (380 frames) and <span class="glossary-term" data-term="cvc-300">CVC-300</span> (60 frames, originally released as the EndoScene test partition) are presented as two distinct, independent out-of-distribution evaluation benchmarks.
+      </p>
+
+      <div class="table-container">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Dataset Pair</th>
+              <th>Test Set Size</th>
+              <th>Identical Frames</th>
+              <th>Overlap %</th>
+              <th>Audit Method</th>
+              <th>Benchmark Policy</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="warning-row">
+              <td><strong>CVC-ColonDB ↔ CVC-300</strong></td>
+              <td>380 vs 60</td>
+              <td class="numeric"><strong>58 Frames</strong></td>
+              <td class="numeric" style="color: var(--color-danger); font-weight: 700;">96.7%</td>
+              <td>SHA-256 + Pixel Matrix Exact Match</td>
+              <td><span class="badge badge-coral">NEVER POOL OR AVERAGE</span></td>
+            </tr>
+            <tr>
+              <td><strong>PolypDB ↔ Kvasir-SEG</strong></td>
+              <td>3,934 vs 1,000</td>
+              <td class="numeric">&ge;25 Frames</td>
+              <td class="numeric">Contaminated</td>
+              <td>Nearest-Neighbor + ORB RANSAC</td>
+              <td><span class="badge badge-coral">EXCLUDE FROM PRETRAINING</span></td>
+            </tr>
+            <tr>
+              <td><strong>CVC-ColonDB Internal</strong></td>
+              <td>380 Frames</td>
+              <td class="numeric">15 Duplicate Groups</td>
+              <td class="numeric">Internal Skew</td>
+              <td>SHA-256 Hash Matching</td>
+              <td><span class="badge badge-amber">SAMPLE WEIGHT CORRECTION</span></td>
+            </tr>
+            <tr>
+              <td><strong>ETIS-Larib Internal</strong></td>
+              <td>196 Frames</td>
+              <td class="numeric">3 Duplicate Groups</td>
+              <td class="numeric">Internal Skew</td>
+              <td>SHA-256 Hash Matching</td>
+              <td><span class="badge badge-amber">SAMPLE WEIGHT CORRECTION</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="alert alert-technical">
+        <div class="alert-icon">🔬</div>
+        <div class="alert-content">
+          <div class="alert-title">Why Metric Pooling is Scientific Malpractice</div>
+          <p>
+            Because 58 out of 60 frames in CVC-300 are pixel-for-pixel copies of frames already present in CVC-ColonDB (specifically matching <code>colondb_149.png</code> through <code>colondb_208.png</code> to <code>cvc300_149.png</code> through <code>cvc300_208.png</code>), calculating an unweighted composite score such as <em>"Mean Out-of-Distribution Dice = (ColonDB + ETIS + CVC-300) / 3"</em> counts those 58 lesions twice. This inflates reported performance and artificially rewards models that happen to fit the color distribution of Hospital Clínic Barcelona.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Deep Dive: Flaw 3 -->
+    <section class="section" id="flaw-3">
+      <div class="flex-between flex-wrap gap-md" style="margin-bottom: 1.5rem;">
+        <div>
+          <span class="badge badge-purple">Flaw Deep Dive 03</span>
+          <h2 style="margin-top: 0.5rem;">HyperKvasir: The 1,000/1,000 Duplicate Mask Finding</h2>
+        </div>
+        <span class="badge badge-purple">0 Extra Segmented Pairs</span>
+      </div>
+
+      <p>
+        In 2020, Borgli et al. published the landmark <em>HyperKvasir</em> dataset in <em>Scientific Data (Nature)</em>, an enormous archive containing 110,079 images and video frames from Bærum Hospital in Norway. Included in the repository is a dedicated folder containing 1,000 segmented polyp images and expert ground-truth masks.
+      </p>
+
+      <div class="card" style="margin: 2rem 0; border-left: 4px solid var(--color-purple);">
+        <h4 style="color: var(--color-purple);">Cryptographic Verification Proof</h4>
+        <p style="color: var(--text-secondary);">
+          During the ChakraModel audit, an automated SHA-256 checksum scan was executed across all 1,000 segmented files in HyperKvasir against the 1,000 files in Kvasir-SEG (Jha et al., 2020):
+        </p>
+        <div class="leakage-diagram-box">
+For all i in {1, 2, ..., 1000}:
+  SHA-256(HyperKvasir/segmented-images/polyp_[i].jpg) == SHA-256(Kvasir-SEG/images/cju[...].jpg)
+  SHA-256(HyperKvasir/segmented-masks/polyp_[i].png)  == SHA-256(Kvasir-SEG/masks/cju[...].png)
+
+RESULT: 1,000 / 1,000 Byte-for-Byte Identical Files (100.0% Match)
+        </div>
+        <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0;">
+          <strong>Correction to Published Literature:</strong> Numerous published machine learning papers have claimed to train on <em>"an augmented dataset of 2,000 polyp images combining Kvasir-SEG and HyperKvasir."</em> Our audit conclusively proves that these studies were unwittingly training on 1,000 duplicate pairs, effectively double-sampling the identical patients and masks. HyperKvasir provides <strong>zero additional segmented data</strong> beyond Kvasir-SEG.
+        </p>
+      </div>
+    </section>
+
+    <!-- Deep Dive: Flaw 4 -->
+    <section class="section" id="flaw-4">
+      <div class="flex-between flex-wrap gap-md" style="margin-bottom: 1.5rem;">
+        <div>
+          <span class="badge badge-emerald">Flaw Deep Dive 04</span>
+          <h2 style="margin-top: 0.5rem;">The False Alarm Blind Spot on Healthy Mucosa</h2>
+        </div>
+        <span class="badge badge-clinical">Clinical Safety & Alarm Fatigue</span>
+      </div>
+
+      <p>
+        The most dangerous blind spot in academic colonoscopy AI is the assumption of <strong>100% polyp prevalence</strong>. Across all five canonical benchmark test sets (802 frames total), every single frame contains a polyp. Not a single image of normal, healthy colonic mucosa is evaluated.
+      </p>
+
+      <div class="grid grid-2" style="margin: 2rem 0;">
+        <div class="card" style="border-top: 3px solid var(--color-coral);">
+          <h4 style="color: var(--color-coral);">The Academic Benchmark Mirage</h4>
+          <ul style="padding-left: 1.25rem; font-size: 0.9rem; color: var(--text-secondary); line-height: 1.8;">
+            <li><strong>Polyp Prevalence:</strong> 100.0% (802/802 frames).</li>
+            <li><strong>Healthy Mucosa Frames:</strong> 0 (0.0%).</li>
+            <li><strong>False Positive Measurement:</strong> Impossible.</li>
+            <li><strong>Tested Capability:</strong> Delineating lesions known to exist.</li>
+            <li><strong>Clinical Validity:</strong> Completely unverified for screening.</li>
+          </ul>
+        </div>
+
+        <div class="card" style="border-top: 3px solid var(--color-emerald);">
+          <h4 style="color: var(--color-emerald);">Real-World Clinical Reality</h4>
+          <ul style="padding-left: 1.25rem; font-size: 0.9rem; color: var(--text-secondary); line-height: 1.8;">
+            <li><strong>Polyp Prevalence:</strong> &lt; 5.0% (&lt; 500 frames per procedure).</li>
+            <li><strong>Healthy Mucosa Frames:</strong> &gt; 95.0% (&gt; 10,000 frames per procedure).</li>
+            <li><strong>Primary Clinical Hazard:</strong> <span class="glossary-term" data-term="alarm-fatigue">Alarm fatigue</span> from false alerts.</li>
+            <li><strong>Distractors:</strong> Specular glints, bile pools, haustral folds.</li>
+            <li><strong>Physician Reaction:</strong> Clinicians switch off annoying AI units.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>The ChakraModel Solution: 4,275 Polyp-Free Control Frames</h3>
+      <p>
+        To eliminate this blind spot, our research platform integrates <strong>4,275 verified polyp-free negative video frames</strong> extracted from 23 distinct <span class="glossary-term" data-term="polypgen">PolypGen</span> video sequences. Models are evaluated for <span class="glossary-term" data-term="far">False Alarm Rate (FAR)</span> across three clinically motivated sensitivity thresholds:
+      </p>
+      <div class="grid grid-3" style="margin: 1.5rem 0;">
+        <div class="card" style="text-align: center;">
+          <div style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; color: var(--color-teal); margin-bottom: 0.25rem;">FAR @ &gt; 0%</div>
+          <div style="font-size: 0.85rem; color: var(--text-muted);">Zero-Tolerance Threshold</div>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.5rem;">Flags any single false positive pixel predicted anywhere on normal mucosa.</p>
+        </div>
+        <div class="card" style="text-align: center;">
+          <div style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; color: var(--color-amber); margin-bottom: 0.25rem;">FAR @ &ge; 0.1%</div>
+          <div style="font-size: 0.85rem; color: var(--text-muted);">Clinical Filtering Threshold</div>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.5rem;">Ignores sub-visual noise speckles; triggers if a false cluster spans &ge;120 pixels.</p>
+        </div>
+        <div class="card" style="text-align: center;">
+          <div style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; color: var(--color-coral); margin-bottom: 0.25rem;">FAR @ &ge; 1.0%</div>
+          <div style="font-size: 0.85rem; color: var(--text-muted);">Disruptive Alarm Threshold</div>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.5rem;">Measures massive false alarms (e.g. bounding full fold) causing direct physician distraction.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Forensic Audit Methodology & Reproducibility -->
+    <section class="section" id="audit-methodology">
+      <div class="card" style="background: var(--surface-card-alt);">
+        <h3>Independent Forensic Verification & Reproducibility</h3>
+        <p style="color: var(--text-secondary);">
+          In accordance with our scientific integrity mandate, all forensic claims in this ledger are fully reproducible. Independent auditors can re-verify each claim using the scripts located in the project repository:
+        </p>
+        <div class="table-container">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Audit Phase</th>
+                <th>Target Datasets</th>
+                <th>Verification Script</th>
+                <th>Key Mathematical Criterion</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Cryptographic Audit</strong></td>
+                <td>Kvasir-SEG, HyperKvasir, CVC-300, ColonDB</td>
+                <td><code>audit_scan.py</code></td>
+                <td>Exact SHA-256 match on byte stream</td>
+              </tr>
+              <tr>
+                <td><strong>Geometric Feature Match</strong></td>
+                <td>CVC-ClinicDB Train vs Test</td>
+                <td><code>audit_orb.py</code></td>
+                <td>ORB Descriptors + RANSAC affine inliers &ge; 20</td>
+              </tr>
+              <tr>
+                <td><strong>Perceptual Correlation</strong></td>
+                <td>Near-duplicate video sequences</td>
+                <td><code>audit_feat.py</code></td>
+                <td>Center-crop RGB histogram Pearson $r \ge 0.95$</td>
+              </tr>
+              <tr>
+                <td><strong>Group-Aware Partition</strong></td>
+                <td>ClinicDB + Kvasir</td>
+                <td><code>build_split_v2.py 0.3</code></td>
+                <td>Graph connected components cutting at $r &lt; 0.3$</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Next Page Transition Banner -->
+    <section class="section-sm" style="text-align: center;">
+      <div class="card" style="display: inline-block; max-width: 720px; padding: 2.5rem; text-align: center;">
+        <span class="badge badge-teal" style="margin-bottom: 1rem;">The Research Response</span>
+        <h3 style="margin-bottom: 1rem;">How ChakraModel Solved Benchmark Inflation</h3>
+        <p style="color: var(--text-secondary); margin-bottom: 2rem;">
+          Discover how the ChakraModel research project pivoted from building "another lightweight transformer" to scientifically quantifying benchmark inflation, establishing the <span class="glossary-term" data-term="group-aware-splitting">splits_v2</span> protocol, and engineering ChakraXAttnUNet v2.
+        </p>
+        <a href="09-chakramodel.html" class="btn btn-primary">
+          <span>Explore ChakraModel Research Project</span>
+          <span>&rarr;</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h4>Colonoscopy AI Guide</h4>
+          <p>
+            An authoritative, scientifically audited educational platform and research compendium dedicated to colonoscopy artificial intelligence, benchmark integrity, and clinical validation.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Clinical Education</h5>
+          <ul class="footer-links">
+            <li><a href="01-what-is-colonoscopy.html">Procedure & Anatomy</a></li>
+            <li><a href="02-polyp-types.html">Polyp Morphology</a></li>
+            <li><a href="06b-clinical-evidence.html">Clinical Trials & RCTs</a></li>
+            <li><a href="12-glossary.html">Medical Glossary</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Technical Research</h5>
+          <ul class="footer-links">
+            <li><a href="03-ai-history.html">AI History Timeline</a></li>
+            <li><a href="04-architectures.html">Model Architectures</a></li>
+            <li><a href="05-datasets.html">Dataset Catalog</a></li>
+            <li><a href="06-benchmarks.html">Performance Leaderboard</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Integrity & Chakra</h5>
+          <ul class="footer-links">
+            <li><a href="08-benchmark-integrity.html">Benchmark Integrity Audit</a></li>
+            <li><a href="09-chakramodel.html">ChakraModel Project</a></li>
+            <li><a href="10-future.html">Future & Foundation Models</a></li>
+            <li><a href="11-references.html">49 Master References</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Colonoscopy AI Research Consortium. All rights reserved. Open-access educational platform.</div>
+        <div style="font-family: var(--font-mono); font-size: 0.8rem;">Audit Hash: <code>CHAKRA-AUDIT-v2-PASS</code></div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interactive Integrity Map Script -->
+  <script src="../assets/js/main.js"></script>
+  <script>
+    const INTEGRITY_NODES = {
+      clinicdb: {
+        title: "Flaw 1: Video Frame Temporal Leakage in CVC-ClinicDB",
+        badge: "30 Verified Links",
+        badgeClass: "badge-coral",
+        desc: "In 2020, the PraNet benchmark protocol partitioned CVC-ClinicDB into 550 training frames and 62 test frames. However, CVC-ClinicDB consists of 612 consecutive frames extracted from approximately 31 endoscopic video sequences. Every single one of the 62 test frames originates from the identical patient video sequences used in training.",
+        diagram: "TRAINING SET (550 Frames)                           TEST SET (62 Frames)\n[Video Seq 04, Frame 180] ────── RANSAC Inliers ≥ 20 ─────> [Video Seq 04, Frame 181]\n[Video Seq 12, Frame 368] ──── Time Delta Δt ≈ 40ms ────> [Video Seq 12, Frame 369]\nStatus: SEEN-DOMAIN INTERPOLATION (+12% to +15% Artificial Dice Inflation)",
+        impact: "Impact on Medical AI: A model evaluated on ClinicDB test does not demonstrate generalized polyp detection; it interpolates memorized sequential transitions of polyps seen during backpropagation."
+      },
+      colondb_cvc300: {
+        title: "Flaw 2: CVC-ColonDB ↔ CVC-300 Exact Overlap (96.7%)",
+        badge: "58 / 60 Identical Frames",
+        badgeClass: "badge-coral",
+        desc: "CVC-ColonDB (380 frames) and CVC-300 (also known as EndoScene test, 60 frames) are presented in over 35 papers as separate, independent validation benchmarks. In truth, 58 of the 60 frames in CVC-300 are pixel-identical duplicates of ColonDB frames (matching colondb_149-208 to cvc300_149-208).",
+        diagram: "CVC-ColonDB (380 Frames)                             CVC-300 (60 Frames)\n[Frame colondb_149.png] ────── SHA-256 Exact Match ─────> [Frame cvc300_149.png]\n[Frame colondb_150.png] ────── SHA-256 Exact Match ─────> [Frame cvc300_150.png]\n... (58 Consecutive Identical Pairs) ...\nStatus: UNACCEPTABLE TO POOL INTO COMPOSITE METRICS",
+        impact: "Impact on Medical AI: Pooling ColonDB and CVC-300 into a single composite metric double-counts 58 lesions, distorting statistical variance and artificially rewarding models that overfit these specific Spanish patient procedures."
+      },
+      hyperkvasir: {
+        title: "Flaw 3: HyperKvasir 1,000/1,000 Byte-Identical Duplicate Masks",
+        badge: "1,000 SHA-256 Clones",
+        badgeClass: "badge-purple",
+        desc: "HyperKvasir (Scientific Data 2020) contains 110,079 images, including a dedicated sub-directory of 1,000 segmented polyp images with pixel-level ground truth. SHA-256 hashing reveals that every single segmented image and mask is a byte-for-byte clone of Kvasir-SEG (Jha et al., 2020).",
+        diagram: "Kvasir-SEG (2020)                                    HyperKvasir Segmented (2020)\n[1,000 Polyp Images] ────── SHA-256 Byte Match ───────> [1,000 Segmented Images]\n[1,000 Mask Files]   ────── SHA-256 Byte Match ───────> [1,000 Segmented Masks]\nStatus: EXACTLY ZERO ADDITIONAL SEGMENTED CLINICAL DATA",
+        impact: "Impact on Medical AI: Studies claiming to train on '2,000 images combining Kvasir-SEG and HyperKvasir' were unwittingly double-sampling 1,000 identical frames. HyperKvasir provides zero new segmentation data."
+      },
+      polypdb: {
+        title: "Candidate Contamination: PolypDB Absorption of Kvasir-SEG",
+        badge: "≥ 25 Verified Copies",
+        badgeClass: "badge-coral",
+        desc: "An audit of the 3,934 image pairs in candidate multi-center dataset PolypDB discovered at least 25 verified copies of Kvasir-SEG images, including 6 frames from Kvasir's held-out test split. In several cases, identical images carry conflicting mask boundaries.",
+        diagram: "Kvasir-SEG Held-Out Test Split                       PolypDB Candidate Dataset\n[kvasir_cju1amqw6p8pw0993d9gc5crl] ── Pixel Clone ──> [PolypDB candidate 974460ee...]\nStatus: MUST BE CRYPTOGRAPHICALLY SANITIZED BEFORE USE",
+        impact: "Impact on Medical AI: Using PolypDB for pretraining or zero-shot evaluation without sanitization leaks held-out test frames into the model's weights, corrupting scientific evaluation."
+      },
+      polypgen_far: {
+        title: "Flaw 4: The 100% Prevalence Blind Spot & ChakraModel FAR Audit",
+        badge: "4,275 Polyp-Free Frames",
+        badgeClass: "badge-emerald",
+        desc: "All standard benchmarks feature 100% polyp prevalence. In real colonoscopies, >95% of frames are normal mucosa. To eliminate the false alarm blind spot, ChakraModel integrates 4,275 polyp-free negative video frames from 23 PolypGen sequences to quantify False Alarm Rate (FAR).",
+        diagram: "ACADEMIC BENCHMARK: 100% Polyps, 0% Normal Mucosa -> False Positives UNDETECTED\nREAL-WORLD COLON:   <5% Polyps, >95% Normal Mucosa -> Severe Alarm Fatigue Risk\nCHAKRAMODEL FIX:    4,275 Negative Frames Tested at >0%, ≥0.1%, and ≥1% Area Thresholds",
+        impact: "Impact on Medical AI: Prevents clinical alarm fatigue where high false alarm rates on normal haustral folds or specular glints cause endoscopists to toggle off the AI detection system in the procedure room."
+      }
+    };
+
+    function selectIntegrityNode(nodeKey) {
+      const nodeData = INTEGRITY_NODES[nodeKey];
+      if (!nodeData) return;
+
+      // Update active styling
+      document.querySelectorAll('.dataset-node').forEach(node => node.classList.remove('active'));
+      event.currentTarget.classList.add('active');
+
+      // Update panel content
+      const panel = document.getElementById('integrity-detail-display');
+      panel.style.animation = 'none';
+      panel.offsetHeight; // trigger reflow
+      panel.style.animation = 'fadeIn 0.3s ease-in-out';
+
+      document.getElementById('panel-title').textContent = nodeData.title;
+      const badge = document.getElementById('panel-badge');
+      badge.textContent = nodeData.badge;
+      badge.className = `badge ${nodeData.badgeClass}`;
+      document.getElementById('panel-desc').textContent = nodeData.desc;
+      document.getElementById('panel-diagram').textContent = nodeData.diagram;
+      document.getElementById('panel-impact').innerHTML = `<strong>Impact on Medical AI:</strong> ${nodeData.impact.replace('Impact on Medical AI: ', '')}`;
+    }
+  </script>
+</body>
+</html>

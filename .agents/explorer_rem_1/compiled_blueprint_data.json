@@ -1,0 +1,1007 @@
+{
+  "index.html": [
+    {
+      "lineNum": 33,
+      "before": "          <li><a href=\"pages/08-failure-modes.html\" class=\"nav-link\">Integrity Audit</a></li>",
+      "after": "          <li><a href=\"pages/08-benchmark-integrity.html\" class=\"nav-link\">Integrity Audit</a></li>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '08-failure-modes.html' with canonical '08-benchmark-integrity.html'"
+    },
+    {
+      "lineNum": 34,
+      "before": "          <li><a href=\"pages/09-chakramodel-case-study.html\" class=\"nav-link\">ChakraModel</a></li>",
+      "after": "          <li><a href=\"pages/09-chakramodel.html\" class=\"nav-link\">ChakraModel</a></li>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '09-chakramodel-case-study.html' with canonical '09-chakramodel.html'"
+    },
+    {
+      "lineNum": 78,
+      "before": "    <a href=\"pages/08-failure-modes.html\" class=\"nav-link\">08. Failure Modes & Video Leakage</a>",
+      "after": "    <a href=\"pages/08-benchmark-integrity.html\" class=\"nav-link\">08. Failure Modes & Video Leakage</a>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '08-failure-modes.html' with canonical '08-benchmark-integrity.html'"
+    },
+    {
+      "lineNum": 79,
+      "before": "    <a href=\"pages/09-chakramodel-case-study.html\" class=\"nav-link\">09. ChakraModel Research Case Study</a>",
+      "after": "    <a href=\"pages/09-chakramodel.html\" class=\"nav-link\">09. ChakraModel Research Case Study</a>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '09-chakramodel-case-study.html' with canonical '09-chakramodel.html'"
+    },
+    {
+      "lineNum": 80,
+      "before": "    <a href=\"pages/10-future-directions.html\" class=\"nav-link\">10. Future Directions & Open Frontiers</a>",
+      "after": "    <a href=\"pages/10-future.html\" class=\"nav-link\">10. Future Directions & Open Frontiers</a>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '10-future-directions.html' with canonical '10-future.html'"
+    },
+    {
+      "lineNum": 115,
+      "before": "          <a href=\"pages/09-chakramodel-case-study.html\" class=\"btn btn-outline btn-lg\">",
+      "after": "          <a href=\"pages/09-chakramodel.html\" class=\"btn btn-outline btn-lg\">",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '09-chakramodel-case-study.html' with canonical '09-chakramodel.html'"
+    },
+    {
+      "lineNum": 256,
+      "before": "              <a href=\"pages/08-failure-modes.html\" class=\"btn btn-secondary btn-sm\">Integrity Audit</a>",
+      "after": "              <a href=\"pages/08-benchmark-integrity.html\" class=\"btn btn-secondary btn-sm\">Integrity Audit</a>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '08-failure-modes.html' with canonical '08-benchmark-integrity.html'"
+    },
+    {
+      "lineNum": 257,
+      "before": "              <a href=\"pages/09-chakramodel-case-study.html\" class=\"btn btn-outline btn-sm\">ChakraModel Study</a>",
+      "after": "              <a href=\"pages/09-chakramodel.html\" class=\"btn btn-outline btn-sm\">ChakraModel Study</a>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '09-chakramodel-case-study.html' with canonical '09-chakramodel.html'"
+    },
+    {
+      "lineNum": 295,
+      "before": "            <a href=\"pages/09-chakramodel-case-study.html\" class=\"btn btn-secondary\">",
+      "after": "            <a href=\"pages/09-chakramodel.html\" class=\"btn btn-secondary\">",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '09-chakramodel-case-study.html' with canonical '09-chakramodel.html'"
+    },
+    {
+      "lineNum": 333,
+      "before": "                  <a href=\"pages/08-failure-modes.html\" class=\"tooltip-link\" style=\"font-size: 0.85rem;\">See all 4 audit flaws &rarr;</a>",
+      "after": "                  <a href=\"pages/08-benchmark-integrity.html\" class=\"tooltip-link\" style=\"font-size: 0.85rem;\">See all 4 audit flaws &rarr;</a>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '08-failure-modes.html' with canonical '08-benchmark-integrity.html'"
+    },
+    {
+      "lineNum": 480,
+      "before": "            <h3 class=\"card-title\"><a href=\"pages/08-failure-modes.html\">Failure Modes & Video Leakage</a></h3>",
+      "after": "            <h3 class=\"card-title\"><a href=\"pages/08-benchmark-integrity.html\">Failure Modes & Video Leakage</a></h3>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '08-failure-modes.html' with canonical '08-benchmark-integrity.html'"
+    },
+    {
+      "lineNum": 485,
+      "before": "              <a href=\"pages/08-failure-modes.html\" class=\"tooltip-link\">Examine Leakage Proofs &rarr;</a>",
+      "after": "              <a href=\"pages/08-benchmark-integrity.html\" class=\"tooltip-link\">Examine Leakage Proofs &rarr;</a>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '08-failure-modes.html' with canonical '08-benchmark-integrity.html'"
+    },
+    {
+      "lineNum": 495,
+      "before": "            <h3 class=\"card-title\"><a href=\"pages/09-chakramodel-case-study.html\">ChakraModel Research Study</a></h3>",
+      "after": "            <h3 class=\"card-title\"><a href=\"pages/09-chakramodel.html\">ChakraModel Research Study</a></h3>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '09-chakramodel-case-study.html' with canonical '09-chakramodel.html'"
+    },
+    {
+      "lineNum": 500,
+      "before": "              <a href=\"pages/09-chakramodel-case-study.html\" class=\"tooltip-link\">Read Research Report &rarr;</a>",
+      "after": "              <a href=\"pages/09-chakramodel.html\" class=\"tooltip-link\">Read Research Report &rarr;</a>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '09-chakramodel-case-study.html' with canonical '09-chakramodel.html'"
+    },
+    {
+      "lineNum": 510,
+      "before": "            <h3 class=\"card-title\"><a href=\"pages/10-future-directions.html\">Future Directions & Frontiers</a></h3>",
+      "after": "            <h3 class=\"card-title\"><a href=\"pages/10-future.html\">Future Directions & Frontiers</a></h3>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '10-future-directions.html' with canonical '10-future.html'"
+    },
+    {
+      "lineNum": 515,
+      "before": "              <a href=\"pages/10-future-directions.html\" class=\"tooltip-link\">See Future Roadmap &rarr;</a>",
+      "after": "              <a href=\"pages/10-future.html\" class=\"tooltip-link\">See Future Roadmap &rarr;</a>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '10-future-directions.html' with canonical '10-future.html'"
+    },
+    {
+      "lineNum": 628,
+      "before": "            <li><a href=\"pages/10-future-directions.html\">Future Directions & Mamba</a></li>",
+      "after": "            <li><a href=\"pages/10-future.html\">Future Directions & Mamba</a></li>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '10-future-directions.html' with canonical '10-future.html'"
+    },
+    {
+      "lineNum": 635,
+      "before": "            <li><a href=\"pages/08-failure-modes.html\">Integrity & Video Leakage Audit</a></li>",
+      "after": "            <li><a href=\"pages/08-benchmark-integrity.html\">Integrity & Video Leakage Audit</a></li>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '08-failure-modes.html' with canonical '08-benchmark-integrity.html'"
+    },
+    {
+      "lineNum": 636,
+      "before": "            <li><a href=\"pages/09-chakramodel-case-study.html\">ChakraModel Case Study</a></li>",
+      "after": "            <li><a href=\"pages/09-chakramodel.html\">ChakraModel Case Study</a></li>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '09-chakramodel-case-study.html' with canonical '09-chakramodel.html'"
+    }
+  ],
+  "pages/01-what-is-colonoscopy.html": [
+    {
+      "lineNum": 33,
+      "before": "          <li><a href=\"08-failure-modes.html\" class=\"nav-link\">Integrity Audit</a></li>",
+      "after": "          <li><a href=\"08-benchmark-integrity.html\" class=\"nav-link\">Integrity Audit</a></li>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '08-failure-modes.html' with canonical '08-benchmark-integrity.html'"
+    },
+    {
+      "lineNum": 34,
+      "before": "          <li><a href=\"09-chakramodel-case-study.html\" class=\"nav-link\">ChakraModel</a></li>",
+      "after": "          <li><a href=\"09-chakramodel.html\" class=\"nav-link\">ChakraModel</a></li>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '09-chakramodel-case-study.html' with canonical '09-chakramodel.html'"
+    },
+    {
+      "lineNum": 78,
+      "before": "    <a href=\"08-failure-modes.html\" class=\"nav-link\">08. Failure Modes & Video Leakage</a>",
+      "after": "    <a href=\"08-benchmark-integrity.html\" class=\"nav-link\">08. Failure Modes & Video Leakage</a>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '08-failure-modes.html' with canonical '08-benchmark-integrity.html'"
+    },
+    {
+      "lineNum": 79,
+      "before": "    <a href=\"09-chakramodel-case-study.html\" class=\"nav-link\">09. ChakraModel Research Case Study</a>",
+      "after": "    <a href=\"09-chakramodel.html\" class=\"nav-link\">09. ChakraModel Research Case Study</a>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '09-chakramodel-case-study.html' with canonical '09-chakramodel.html'"
+    },
+    {
+      "lineNum": 80,
+      "before": "    <a href=\"10-future-directions.html\" class=\"nav-link\">10. Future Directions & Open Frontiers</a>",
+      "after": "    <a href=\"10-future.html\" class=\"nav-link\">10. Future Directions & Open Frontiers</a>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '10-future-directions.html' with canonical '10-future.html'"
+    },
+    {
+      "lineNum": 488,
+      "before": "            <a href=\"11-references.html#ref-corley2014\" class=\"btn btn-outline btn-sm\">Citation Details &rarr;</a>",
+      "after": "            <a href=\"11-references.html#ref-corley2014\" class=\"btn btn-outline btn-sm\">Citation Details &rarr;</a>",
+      "altAfter": "            <a href=\"11-references.html\" class=\"btn btn-outline btn-sm\">Citation Details &rarr;</a>",
+      "type": "ANCHOR_CORLEY",
+      "reason": "Missing target anchor #ref-corley2014 in 11-references.html"
+    },
+    {
+      "lineNum": 594,
+      "before": "            <li><a href=\"10-future-directions.html\">Future Directions & Mamba</a></li>",
+      "after": "            <li><a href=\"10-future.html\">Future Directions & Mamba</a></li>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '10-future-directions.html' with canonical '10-future.html'"
+    },
+    {
+      "lineNum": 601,
+      "before": "            <li><a href=\"08-failure-modes.html\">Integrity & Video Leakage Audit</a></li>",
+      "after": "            <li><a href=\"08-benchmark-integrity.html\">Integrity & Video Leakage Audit</a></li>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '08-failure-modes.html' with canonical '08-benchmark-integrity.html'"
+    },
+    {
+      "lineNum": 602,
+      "before": "            <li><a href=\"09-chakramodel-case-study.html\">ChakraModel Case Study</a></li>",
+      "after": "            <li><a href=\"09-chakramodel.html\">ChakraModel Case Study</a></li>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '09-chakramodel-case-study.html' with canonical '09-chakramodel.html'"
+    }
+  ],
+  "pages/02-polyp-types.html": [
+    {
+      "lineNum": 33,
+      "before": "          <li><a href=\"08-failure-modes.html\" class=\"nav-link\">Integrity Audit</a></li>",
+      "after": "          <li><a href=\"08-benchmark-integrity.html\" class=\"nav-link\">Integrity Audit</a></li>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '08-failure-modes.html' with canonical '08-benchmark-integrity.html'"
+    },
+    {
+      "lineNum": 34,
+      "before": "          <li><a href=\"09-chakramodel-case-study.html\" class=\"nav-link\">ChakraModel</a></li>",
+      "after": "          <li><a href=\"09-chakramodel.html\" class=\"nav-link\">ChakraModel</a></li>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '09-chakramodel-case-study.html' with canonical '09-chakramodel.html'"
+    },
+    {
+      "lineNum": 78,
+      "before": "    <a href=\"08-failure-modes.html\" class=\"nav-link\">08. Failure Modes & Video Leakage</a>",
+      "after": "    <a href=\"08-benchmark-integrity.html\" class=\"nav-link\">08. Failure Modes & Video Leakage</a>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '08-failure-modes.html' with canonical '08-benchmark-integrity.html'"
+    },
+    {
+      "lineNum": 79,
+      "before": "    <a href=\"09-chakramodel-case-study.html\" class=\"nav-link\">09. ChakraModel Research Case Study</a>",
+      "after": "    <a href=\"09-chakramodel.html\" class=\"nav-link\">09. ChakraModel Research Case Study</a>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '09-chakramodel-case-study.html' with canonical '09-chakramodel.html'"
+    },
+    {
+      "lineNum": 80,
+      "before": "    <a href=\"10-future-directions.html\" class=\"nav-link\">10. Future Directions & Open Frontiers</a>",
+      "after": "    <a href=\"10-future.html\" class=\"nav-link\">10. Future Directions & Open Frontiers</a>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '10-future-directions.html' with canonical '10-future.html'"
+    },
+    {
+      "lineNum": 566,
+      "before": "            <li><a href=\"10-future-directions.html\">Future Directions & Mamba</a></li>",
+      "after": "            <li><a href=\"10-future.html\">Future Directions & Mamba</a></li>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '10-future-directions.html' with canonical '10-future.html'"
+    },
+    {
+      "lineNum": 573,
+      "before": "            <li><a href=\"08-failure-modes.html\">Integrity & Video Leakage Audit</a></li>",
+      "after": "            <li><a href=\"08-benchmark-integrity.html\">Integrity & Video Leakage Audit</a></li>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '08-failure-modes.html' with canonical '08-benchmark-integrity.html'"
+    },
+    {
+      "lineNum": 574,
+      "before": "            <li><a href=\"09-chakramodel-case-study.html\">ChakraModel Case Study</a></li>",
+      "after": "            <li><a href=\"09-chakramodel.html\">ChakraModel Case Study</a></li>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '09-chakramodel-case-study.html' with canonical '09-chakramodel.html'"
+    }
+  ],
+  "pages/03-ai-history.html": [
+    {
+      "lineNum": 28,
+      "before": "          <li><a href=\"01-clinical-foundations.html\" class=\"nav-link\">Clinical</a></li>",
+      "after": "          <li><a href=\"01-what-is-colonoscopy.html\" class=\"nav-link\">Clinical</a></li>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '01-clinical-foundations.html' with canonical '01-what-is-colonoscopy.html'"
+    },
+    {
+      "lineNum": 29,
+      "before": "          <li><a href=\"02-clinical-evidence.html\" class=\"nav-link\">Trials</a></li>",
+      "after": "          <li><a href=\"06b-clinical-evidence.html\" class=\"nav-link\">Trials</a></li>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '02-clinical-evidence.html' with canonical '06b-clinical-evidence.html'"
+    },
+    {
+      "lineNum": 34,
+      "before": "          <li><a href=\"07-integrity-audit.html\" class=\"nav-link\">Integrity</a></li>",
+      "after": "          <li><a href=\"08-benchmark-integrity.html\" class=\"nav-link\">Integrity</a></li>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '07-integrity-audit.html' with canonical '08-benchmark-integrity.html'"
+    },
+    {
+      "lineNum": 51,
+      "before": "    <a href=\"01-clinical-foundations.html\" class=\"nav-link\">01 Clinical Foundations</a>",
+      "after": "    <a href=\"01-what-is-colonoscopy.html\" class=\"nav-link\">01 Clinical Foundations</a>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '01-clinical-foundations.html' with canonical '01-what-is-colonoscopy.html'"
+    },
+    {
+      "lineNum": 52,
+      "before": "    <a href=\"02-clinical-evidence.html\" class=\"nav-link\">02 Clinical Trials &amp; Evidence</a>",
+      "after": "    <a href=\"06b-clinical-evidence.html\" class=\"nav-link\">02 Clinical Trials &amp; Evidence</a>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '02-clinical-evidence.html' with canonical '06b-clinical-evidence.html'"
+    },
+    {
+      "lineNum": 57,
+      "before": "    <a href=\"07-integrity-audit.html\" class=\"nav-link\">07 Forensic Integrity Audit</a>",
+      "after": "    <a href=\"08-benchmark-integrity.html\" class=\"nav-link\">07 Forensic Integrity Audit</a>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '07-integrity-audit.html' with canonical '08-benchmark-integrity.html'"
+    },
+    {
+      "lineNum": 58,
+      "before": "    <a href=\"08-commercial-systems.html\" class=\"nav-link\">08 Commercial CADe/CADx</a>",
+      "after": "    <a href=\"07-clinical-systems.html\" class=\"nav-link\">08 Commercial CADe/CADx</a>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '08-commercial-systems.html' with canonical '07-clinical-systems.html'"
+    },
+    {
+      "lineNum": 59,
+      "before": "    <a href=\"09-implementation.html\" class=\"nav-link\">09 Implementation &amp; Latency</a>",
+      "after": "    <a href=\"09-chakramodel.html\" class=\"nav-link\">09 Implementation &amp; Latency</a>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '09-implementation.html' with canonical '09-chakramodel.html'"
+    },
+    {
+      "lineNum": 60,
+      "before": "    <a href=\"10-future-frontiers.html\" class=\"nav-link\">10 Future Frontiers</a>",
+      "after": "    <a href=\"10-future.html\" class=\"nav-link\">10 Future Frontiers</a>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '10-future-frontiers.html' with canonical '10-future.html'"
+    },
+    {
+      "lineNum": 757,
+      "before": "            <li><a href=\"01-clinical-foundations.html\">Clinical Foundations</a></li>",
+      "after": "            <li><a href=\"01-what-is-colonoscopy.html\">Clinical Foundations</a></li>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '01-clinical-foundations.html' with canonical '01-what-is-colonoscopy.html'"
+    },
+    {
+      "lineNum": 758,
+      "before": "            <li><a href=\"02-clinical-evidence.html\">Trial Evidence &amp; RCTs</a></li>",
+      "after": "            <li><a href=\"06b-clinical-evidence.html\">Trial Evidence &amp; RCTs</a></li>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '02-clinical-evidence.html' with canonical '06b-clinical-evidence.html'"
+    },
+    {
+      "lineNum": 759,
+      "before": "            <li><a href=\"08-commercial-systems.html\">Commercial Systems</a></li>",
+      "after": "            <li><a href=\"07-clinical-systems.html\">Commercial Systems</a></li>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '08-commercial-systems.html' with canonical '07-clinical-systems.html'"
+    },
+    {
+      "lineNum": 770,
+      "before": "            <li><a href=\"09-implementation.html\">Deployment &amp; Latency</a></li>",
+      "after": "            <li><a href=\"09-chakramodel.html\">Deployment &amp; Latency</a></li>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '09-implementation.html' with canonical '09-chakramodel.html'"
+    },
+    {
+      "lineNum": 776,
+      "before": "            <li><a href=\"07-integrity-audit.html\">Integrity Audit</a></li>",
+      "after": "            <li><a href=\"08-benchmark-integrity.html\">Integrity Audit</a></li>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '07-integrity-audit.html' with canonical '08-benchmark-integrity.html'"
+    },
+    {
+      "lineNum": 777,
+      "before": "            <li><a href=\"10-future-frontiers.html\">Future Frontiers</a></li>",
+      "after": "            <li><a href=\"10-future.html\">Future Frontiers</a></li>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '10-future-frontiers.html' with canonical '10-future.html'"
+    }
+  ],
+  "pages/04-architectures.html": [
+    {
+      "lineNum": 28,
+      "before": "          <li><a href=\"01-clinical-foundations.html\" class=\"nav-link\">Clinical</a></li>",
+      "after": "          <li><a href=\"01-what-is-colonoscopy.html\" class=\"nav-link\">Clinical</a></li>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '01-clinical-foundations.html' with canonical '01-what-is-colonoscopy.html'"
+    },
+    {
+      "lineNum": 29,
+      "before": "          <li><a href=\"02-clinical-evidence.html\" class=\"nav-link\">Trials</a></li>",
+      "after": "          <li><a href=\"06b-clinical-evidence.html\" class=\"nav-link\">Trials</a></li>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '02-clinical-evidence.html' with canonical '06b-clinical-evidence.html'"
+    },
+    {
+      "lineNum": 34,
+      "before": "          <li><a href=\"07-integrity-audit.html\" class=\"nav-link\">Integrity</a></li>",
+      "after": "          <li><a href=\"08-benchmark-integrity.html\" class=\"nav-link\">Integrity</a></li>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '07-integrity-audit.html' with canonical '08-benchmark-integrity.html'"
+    },
+    {
+      "lineNum": 51,
+      "before": "    <a href=\"01-clinical-foundations.html\" class=\"nav-link\">01 Clinical Foundations</a>",
+      "after": "    <a href=\"01-what-is-colonoscopy.html\" class=\"nav-link\">01 Clinical Foundations</a>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '01-clinical-foundations.html' with canonical '01-what-is-colonoscopy.html'"
+    },
+    {
+      "lineNum": 52,
+      "before": "    <a href=\"02-clinical-evidence.html\" class=\"nav-link\">02 Clinical Trials &amp; Evidence</a>",
+      "after": "    <a href=\"06b-clinical-evidence.html\" class=\"nav-link\">02 Clinical Trials &amp; Evidence</a>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '02-clinical-evidence.html' with canonical '06b-clinical-evidence.html'"
+    },
+    {
+      "lineNum": 57,
+      "before": "    <a href=\"07-integrity-audit.html\" class=\"nav-link\">07 Forensic Integrity Audit</a>",
+      "after": "    <a href=\"08-benchmark-integrity.html\" class=\"nav-link\">07 Forensic Integrity Audit</a>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '07-integrity-audit.html' with canonical '08-benchmark-integrity.html'"
+    },
+    {
+      "lineNum": 58,
+      "before": "    <a href=\"08-commercial-systems.html\" class=\"nav-link\">08 Commercial CADe/CADx</a>",
+      "after": "    <a href=\"07-clinical-systems.html\" class=\"nav-link\">08 Commercial CADe/CADx</a>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '08-commercial-systems.html' with canonical '07-clinical-systems.html'"
+    },
+    {
+      "lineNum": 59,
+      "before": "    <a href=\"09-implementation.html\" class=\"nav-link\">09 Implementation &amp; Latency</a>",
+      "after": "    <a href=\"09-chakramodel.html\" class=\"nav-link\">09 Implementation &amp; Latency</a>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '09-implementation.html' with canonical '09-chakramodel.html'"
+    },
+    {
+      "lineNum": 60,
+      "before": "    <a href=\"10-future-frontiers.html\" class=\"nav-link\">10 Future Frontiers</a>",
+      "after": "    <a href=\"10-future.html\" class=\"nav-link\">10 Future Frontiers</a>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '10-future-frontiers.html' with canonical '10-future.html'"
+    },
+    {
+      "lineNum": 667,
+      "before": "            <li><a href=\"01-clinical-foundations.html\">Clinical Foundations</a></li>",
+      "after": "            <li><a href=\"01-what-is-colonoscopy.html\">Clinical Foundations</a></li>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '01-clinical-foundations.html' with canonical '01-what-is-colonoscopy.html'"
+    },
+    {
+      "lineNum": 668,
+      "before": "            <li><a href=\"02-clinical-evidence.html\">Trial Evidence &amp; RCTs</a></li>",
+      "after": "            <li><a href=\"06b-clinical-evidence.html\">Trial Evidence &amp; RCTs</a></li>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '02-clinical-evidence.html' with canonical '06b-clinical-evidence.html'"
+    },
+    {
+      "lineNum": 669,
+      "before": "            <li><a href=\"08-commercial-systems.html\">Commercial Systems</a></li>",
+      "after": "            <li><a href=\"07-clinical-systems.html\">Commercial Systems</a></li>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '08-commercial-systems.html' with canonical '07-clinical-systems.html'"
+    },
+    {
+      "lineNum": 680,
+      "before": "            <li><a href=\"09-implementation.html\">Deployment &amp; Latency</a></li>",
+      "after": "            <li><a href=\"09-chakramodel.html\">Deployment &amp; Latency</a></li>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '09-implementation.html' with canonical '09-chakramodel.html'"
+    },
+    {
+      "lineNum": 686,
+      "before": "            <li><a href=\"07-integrity-audit.html\">Integrity Audit</a></li>",
+      "after": "            <li><a href=\"08-benchmark-integrity.html\">Integrity Audit</a></li>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '07-integrity-audit.html' with canonical '08-benchmark-integrity.html'"
+    },
+    {
+      "lineNum": 687,
+      "before": "            <li><a href=\"10-future-frontiers.html\">Future Frontiers</a></li>",
+      "after": "            <li><a href=\"10-future.html\">Future Frontiers</a></li>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '10-future-frontiers.html' with canonical '10-future.html'"
+    }
+  ],
+  "pages/05-datasets.html": [
+    {
+      "lineNum": 28,
+      "before": "          <li><a href=\"01-clinical-foundations.html\" class=\"nav-link\">Clinical</a></li>",
+      "after": "          <li><a href=\"01-what-is-colonoscopy.html\" class=\"nav-link\">Clinical</a></li>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '01-clinical-foundations.html' with canonical '01-what-is-colonoscopy.html'"
+    },
+    {
+      "lineNum": 29,
+      "before": "          <li><a href=\"02-clinical-evidence.html\" class=\"nav-link\">Trials</a></li>",
+      "after": "          <li><a href=\"06b-clinical-evidence.html\" class=\"nav-link\">Trials</a></li>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '02-clinical-evidence.html' with canonical '06b-clinical-evidence.html'"
+    },
+    {
+      "lineNum": 34,
+      "before": "          <li><a href=\"07-integrity-audit.html\" class=\"nav-link\">Integrity</a></li>",
+      "after": "          <li><a href=\"08-benchmark-integrity.html\" class=\"nav-link\">Integrity</a></li>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '07-integrity-audit.html' with canonical '08-benchmark-integrity.html'"
+    },
+    {
+      "lineNum": 51,
+      "before": "    <a href=\"01-clinical-foundations.html\" class=\"nav-link\">01 Clinical Foundations</a>",
+      "after": "    <a href=\"01-what-is-colonoscopy.html\" class=\"nav-link\">01 Clinical Foundations</a>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '01-clinical-foundations.html' with canonical '01-what-is-colonoscopy.html'"
+    },
+    {
+      "lineNum": 52,
+      "before": "    <a href=\"02-clinical-evidence.html\" class=\"nav-link\">02 Clinical Trials &amp; Evidence</a>",
+      "after": "    <a href=\"06b-clinical-evidence.html\" class=\"nav-link\">02 Clinical Trials &amp; Evidence</a>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '02-clinical-evidence.html' with canonical '06b-clinical-evidence.html'"
+    },
+    {
+      "lineNum": 57,
+      "before": "    <a href=\"07-integrity-audit.html\" class=\"nav-link\">07 Forensic Integrity Audit</a>",
+      "after": "    <a href=\"08-benchmark-integrity.html\" class=\"nav-link\">07 Forensic Integrity Audit</a>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '07-integrity-audit.html' with canonical '08-benchmark-integrity.html'"
+    },
+    {
+      "lineNum": 58,
+      "before": "    <a href=\"08-commercial-systems.html\" class=\"nav-link\">08 Commercial CADe/CADx</a>",
+      "after": "    <a href=\"07-clinical-systems.html\" class=\"nav-link\">08 Commercial CADe/CADx</a>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '08-commercial-systems.html' with canonical '07-clinical-systems.html'"
+    },
+    {
+      "lineNum": 59,
+      "before": "    <a href=\"09-implementation.html\" class=\"nav-link\">09 Implementation &amp; Latency</a>",
+      "after": "    <a href=\"09-chakramodel.html\" class=\"nav-link\">09 Implementation &amp; Latency</a>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '09-implementation.html' with canonical '09-chakramodel.html'"
+    },
+    {
+      "lineNum": 60,
+      "before": "    <a href=\"10-future-frontiers.html\" class=\"nav-link\">10 Future Frontiers</a>",
+      "after": "    <a href=\"10-future.html\" class=\"nav-link\">10 Future Frontiers</a>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '10-future-frontiers.html' with canonical '10-future.html'"
+    },
+    {
+      "lineNum": 568,
+      "before": "            <li><a href=\"01-clinical-foundations.html\">Clinical Foundations</a></li>",
+      "after": "            <li><a href=\"01-what-is-colonoscopy.html\">Clinical Foundations</a></li>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '01-clinical-foundations.html' with canonical '01-what-is-colonoscopy.html'"
+    },
+    {
+      "lineNum": 569,
+      "before": "            <li><a href=\"02-clinical-evidence.html\">Trial Evidence &amp; RCTs</a></li>",
+      "after": "            <li><a href=\"06b-clinical-evidence.html\">Trial Evidence &amp; RCTs</a></li>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '02-clinical-evidence.html' with canonical '06b-clinical-evidence.html'"
+    },
+    {
+      "lineNum": 570,
+      "before": "            <li><a href=\"08-commercial-systems.html\">Commercial Systems</a></li>",
+      "after": "            <li><a href=\"07-clinical-systems.html\">Commercial Systems</a></li>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '08-commercial-systems.html' with canonical '07-clinical-systems.html'"
+    },
+    {
+      "lineNum": 581,
+      "before": "            <li><a href=\"09-implementation.html\">Deployment &amp; Latency</a></li>",
+      "after": "            <li><a href=\"09-chakramodel.html\">Deployment &amp; Latency</a></li>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '09-implementation.html' with canonical '09-chakramodel.html'"
+    },
+    {
+      "lineNum": 587,
+      "before": "            <li><a href=\"07-integrity-audit.html\">Integrity Audit</a></li>",
+      "after": "            <li><a href=\"08-benchmark-integrity.html\">Integrity Audit</a></li>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '07-integrity-audit.html' with canonical '08-benchmark-integrity.html'"
+    },
+    {
+      "lineNum": 588,
+      "before": "            <li><a href=\"10-future-frontiers.html\">Future Frontiers</a></li>",
+      "after": "            <li><a href=\"10-future.html\">Future Frontiers</a></li>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '10-future-frontiers.html' with canonical '10-future.html'"
+    }
+  ],
+  "pages/06-benchmarks.html": [
+    {
+      "lineNum": 28,
+      "before": "          <li><a href=\"01-clinical-foundations.html\" class=\"nav-link\">Clinical</a></li>",
+      "after": "          <li><a href=\"01-what-is-colonoscopy.html\" class=\"nav-link\">Clinical</a></li>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '01-clinical-foundations.html' with canonical '01-what-is-colonoscopy.html'"
+    },
+    {
+      "lineNum": 29,
+      "before": "          <li><a href=\"02-clinical-evidence.html\" class=\"nav-link\">Trials</a></li>",
+      "after": "          <li><a href=\"06b-clinical-evidence.html\" class=\"nav-link\">Trials</a></li>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '02-clinical-evidence.html' with canonical '06b-clinical-evidence.html'"
+    },
+    {
+      "lineNum": 34,
+      "before": "          <li><a href=\"07-integrity-audit.html\" class=\"nav-link\">Integrity</a></li>",
+      "after": "          <li><a href=\"08-benchmark-integrity.html\" class=\"nav-link\">Integrity</a></li>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '07-integrity-audit.html' with canonical '08-benchmark-integrity.html'"
+    },
+    {
+      "lineNum": 51,
+      "before": "    <a href=\"01-clinical-foundations.html\" class=\"nav-link\">01 Clinical Foundations</a>",
+      "after": "    <a href=\"01-what-is-colonoscopy.html\" class=\"nav-link\">01 Clinical Foundations</a>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '01-clinical-foundations.html' with canonical '01-what-is-colonoscopy.html'"
+    },
+    {
+      "lineNum": 52,
+      "before": "    <a href=\"02-clinical-evidence.html\" class=\"nav-link\">02 Clinical Trials &amp; Evidence</a>",
+      "after": "    <a href=\"06b-clinical-evidence.html\" class=\"nav-link\">02 Clinical Trials &amp; Evidence</a>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '02-clinical-evidence.html' with canonical '06b-clinical-evidence.html'"
+    },
+    {
+      "lineNum": 57,
+      "before": "    <a href=\"07-integrity-audit.html\" class=\"nav-link\">07 Forensic Integrity Audit</a>",
+      "after": "    <a href=\"08-benchmark-integrity.html\" class=\"nav-link\">07 Forensic Integrity Audit</a>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '07-integrity-audit.html' with canonical '08-benchmark-integrity.html'"
+    },
+    {
+      "lineNum": 58,
+      "before": "    <a href=\"08-commercial-systems.html\" class=\"nav-link\">08 Commercial CADe/CADx</a>",
+      "after": "    <a href=\"07-clinical-systems.html\" class=\"nav-link\">08 Commercial CADe/CADx</a>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '08-commercial-systems.html' with canonical '07-clinical-systems.html'"
+    },
+    {
+      "lineNum": 59,
+      "before": "    <a href=\"09-implementation.html\" class=\"nav-link\">09 Implementation &amp; Latency</a>",
+      "after": "    <a href=\"09-chakramodel.html\" class=\"nav-link\">09 Implementation &amp; Latency</a>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '09-implementation.html' with canonical '09-chakramodel.html'"
+    },
+    {
+      "lineNum": 60,
+      "before": "    <a href=\"10-future-frontiers.html\" class=\"nav-link\">10 Future Frontiers</a>",
+      "after": "    <a href=\"10-future.html\" class=\"nav-link\">10 Future Frontiers</a>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '10-future-frontiers.html' with canonical '10-future.html'"
+    },
+    {
+      "lineNum": 468,
+      "before": "      <a href=\"07-integrity-audit.html\" class=\"btn btn-primary btn-lg\">",
+      "after": "      <a href=\"08-benchmark-integrity.html\" class=\"btn btn-primary btn-lg\">",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '07-integrity-audit.html' with canonical '08-benchmark-integrity.html'"
+    },
+    {
+      "lineNum": 490,
+      "before": "            <li><a href=\"01-clinical-foundations.html\">Clinical Foundations</a></li>",
+      "after": "            <li><a href=\"01-what-is-colonoscopy.html\">Clinical Foundations</a></li>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '01-clinical-foundations.html' with canonical '01-what-is-colonoscopy.html'"
+    },
+    {
+      "lineNum": 491,
+      "before": "            <li><a href=\"02-clinical-evidence.html\">Trial Evidence &amp; RCTs</a></li>",
+      "after": "            <li><a href=\"06b-clinical-evidence.html\">Trial Evidence &amp; RCTs</a></li>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '02-clinical-evidence.html' with canonical '06b-clinical-evidence.html'"
+    },
+    {
+      "lineNum": 492,
+      "before": "            <li><a href=\"08-commercial-systems.html\">Commercial Systems</a></li>",
+      "after": "            <li><a href=\"07-clinical-systems.html\">Commercial Systems</a></li>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '08-commercial-systems.html' with canonical '07-clinical-systems.html'"
+    },
+    {
+      "lineNum": 503,
+      "before": "            <li><a href=\"09-implementation.html\">Deployment &amp; Latency</a></li>",
+      "after": "            <li><a href=\"09-chakramodel.html\">Deployment &amp; Latency</a></li>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '09-implementation.html' with canonical '09-chakramodel.html'"
+    },
+    {
+      "lineNum": 509,
+      "before": "            <li><a href=\"07-integrity-audit.html\">Integrity Audit</a></li>",
+      "after": "            <li><a href=\"08-benchmark-integrity.html\">Integrity Audit</a></li>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '07-integrity-audit.html' with canonical '08-benchmark-integrity.html'"
+    },
+    {
+      "lineNum": 510,
+      "before": "            <li><a href=\"10-future-frontiers.html\">Future Frontiers</a></li>",
+      "after": "            <li><a href=\"10-future.html\">Future Frontiers</a></li>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '10-future-frontiers.html' with canonical '10-future.html'"
+    }
+  ],
+  "pages/06b-clinical-evidence.html": [
+    {
+      "lineNum": 33,
+      "before": "          <li><a href=\"08-failure-modes.html\" class=\"nav-link\">Integrity Audit</a></li>",
+      "after": "          <li><a href=\"08-benchmark-integrity.html\" class=\"nav-link\">Integrity Audit</a></li>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '08-failure-modes.html' with canonical '08-benchmark-integrity.html'"
+    },
+    {
+      "lineNum": 34,
+      "before": "          <li><a href=\"09-chakramodel-case-study.html\" class=\"nav-link\">ChakraModel</a></li>",
+      "after": "          <li><a href=\"09-chakramodel.html\" class=\"nav-link\">ChakraModel</a></li>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '09-chakramodel-case-study.html' with canonical '09-chakramodel.html'"
+    },
+    {
+      "lineNum": 78,
+      "before": "    <a href=\"08-failure-modes.html\" class=\"nav-link\">08. Failure Modes & Video Leakage</a>",
+      "after": "    <a href=\"08-benchmark-integrity.html\" class=\"nav-link\">08. Failure Modes & Video Leakage</a>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '08-failure-modes.html' with canonical '08-benchmark-integrity.html'"
+    },
+    {
+      "lineNum": 79,
+      "before": "    <a href=\"09-chakramodel-case-study.html\" class=\"nav-link\">09. ChakraModel Research Case Study</a>",
+      "after": "    <a href=\"09-chakramodel.html\" class=\"nav-link\">09. ChakraModel Research Case Study</a>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '09-chakramodel-case-study.html' with canonical '09-chakramodel.html'"
+    },
+    {
+      "lineNum": 80,
+      "before": "    <a href=\"10-future-directions.html\" class=\"nav-link\">10. Future Directions & Open Frontiers</a>",
+      "after": "    <a href=\"10-future.html\" class=\"nav-link\">10. Future Directions & Open Frontiers</a>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '10-future-directions.html' with canonical '10-future.html'"
+    },
+    {
+      "lineNum": 517,
+      "before": "            <li><a href=\"10-future-directions.html\">Future Directions & Mamba</a></li>",
+      "after": "            <li><a href=\"10-future.html\">Future Directions & Mamba</a></li>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '10-future-directions.html' with canonical '10-future.html'"
+    },
+    {
+      "lineNum": 524,
+      "before": "            <li><a href=\"08-failure-modes.html\">Integrity & Video Leakage Audit</a></li>",
+      "after": "            <li><a href=\"08-benchmark-integrity.html\">Integrity & Video Leakage Audit</a></li>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '08-failure-modes.html' with canonical '08-benchmark-integrity.html'"
+    },
+    {
+      "lineNum": 525,
+      "before": "            <li><a href=\"09-chakramodel-case-study.html\">ChakraModel Case Study</a></li>",
+      "after": "            <li><a href=\"09-chakramodel.html\">ChakraModel Case Study</a></li>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '09-chakramodel-case-study.html' with canonical '09-chakramodel.html'"
+    }
+  ],
+  "pages/07-clinical-systems.html": [
+    {
+      "lineNum": 33,
+      "before": "          <li><a href=\"08-failure-modes.html\" class=\"nav-link\">Integrity Audit</a></li>",
+      "after": "          <li><a href=\"08-benchmark-integrity.html\" class=\"nav-link\">Integrity Audit</a></li>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '08-failure-modes.html' with canonical '08-benchmark-integrity.html'"
+    },
+    {
+      "lineNum": 34,
+      "before": "          <li><a href=\"09-chakramodel-case-study.html\" class=\"nav-link\">ChakraModel</a></li>",
+      "after": "          <li><a href=\"09-chakramodel.html\" class=\"nav-link\">ChakraModel</a></li>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '09-chakramodel-case-study.html' with canonical '09-chakramodel.html'"
+    },
+    {
+      "lineNum": 78,
+      "before": "    <a href=\"08-failure-modes.html\" class=\"nav-link\">08. Failure Modes & Video Leakage</a>",
+      "after": "    <a href=\"08-benchmark-integrity.html\" class=\"nav-link\">08. Failure Modes & Video Leakage</a>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '08-failure-modes.html' with canonical '08-benchmark-integrity.html'"
+    },
+    {
+      "lineNum": 79,
+      "before": "    <a href=\"09-chakramodel-case-study.html\" class=\"nav-link\">09. ChakraModel Research Case Study</a>",
+      "after": "    <a href=\"09-chakramodel.html\" class=\"nav-link\">09. ChakraModel Research Case Study</a>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '09-chakramodel-case-study.html' with canonical '09-chakramodel.html'"
+    },
+    {
+      "lineNum": 80,
+      "before": "    <a href=\"10-future-directions.html\" class=\"nav-link\">10. Future Directions & Open Frontiers</a>",
+      "after": "    <a href=\"10-future.html\" class=\"nav-link\">10. Future Directions & Open Frontiers</a>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '10-future-directions.html' with canonical '10-future.html'"
+    },
+    {
+      "lineNum": 570,
+      "before": "          <a href=\"08-failure-modes.html\" class=\"btn btn-primary btn-lg\">",
+      "after": "          <a href=\"08-benchmark-integrity.html\" class=\"btn btn-primary btn-lg\">",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '08-failure-modes.html' with canonical '08-benchmark-integrity.html'"
+    },
+    {
+      "lineNum": 606,
+      "before": "            <li><a href=\"10-future-directions.html\">Future Directions & Mamba</a></li>",
+      "after": "            <li><a href=\"10-future.html\">Future Directions & Mamba</a></li>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '10-future-directions.html' with canonical '10-future.html'"
+    },
+    {
+      "lineNum": 613,
+      "before": "            <li><a href=\"08-failure-modes.html\">Integrity & Video Leakage Audit</a></li>",
+      "after": "            <li><a href=\"08-benchmark-integrity.html\">Integrity & Video Leakage Audit</a></li>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '08-failure-modes.html' with canonical '08-benchmark-integrity.html'"
+    },
+    {
+      "lineNum": 614,
+      "before": "            <li><a href=\"09-chakramodel-case-study.html\">ChakraModel Case Study</a></li>",
+      "after": "            <li><a href=\"09-chakramodel.html\">ChakraModel Case Study</a></li>",
+      "type": "DRAFT_REPLACEMENT",
+      "reason": "Replace draft name '09-chakramodel-case-study.html' with canonical '09-chakramodel.html'"
+    }
+  ],
+  "pages/08-benchmark-integrity.html": [],
+  "pages/09-chakramodel.html": [],
+  "pages/10-future.html": [],
+  "pages/11-references.html": [],
+  "pages/12-glossary.html": [
+    {
+      "lineNum": 160,
+      "before": "      <a href=\"#letter-A\" class=\"letter-btn\" data-letter=\"A\">A</a>",
+      "after": "      <a href=\"#letter-A\" class=\"letter-btn\" data-letter=\"A\">A</a>",
+      "type": "ANCHOR_GLOSSARY_LETTER",
+      "reason": "Target in-page anchor #letter-A missing in 12-glossary.html"
+    },
+    {
+      "lineNum": 161,
+      "before": "      <a href=\"#letter-B\" class=\"letter-btn\" data-letter=\"B\">B</a>",
+      "after": "      <a href=\"#letter-B\" class=\"letter-btn\" data-letter=\"B\">B</a>",
+      "type": "ANCHOR_GLOSSARY_LETTER",
+      "reason": "Target in-page anchor #letter-B missing in 12-glossary.html"
+    },
+    {
+      "lineNum": 162,
+      "before": "      <a href=\"#letter-C\" class=\"letter-btn\" data-letter=\"C\">C</a>",
+      "after": "      <a href=\"#letter-C\" class=\"letter-btn\" data-letter=\"C\">C</a>",
+      "type": "ANCHOR_GLOSSARY_LETTER",
+      "reason": "Target in-page anchor #letter-C missing in 12-glossary.html"
+    },
+    {
+      "lineNum": 163,
+      "before": "      <a href=\"#letter-D\" class=\"letter-btn\" data-letter=\"D\">D</a>",
+      "after": "      <a href=\"#letter-D\" class=\"letter-btn\" data-letter=\"D\">D</a>",
+      "type": "ANCHOR_GLOSSARY_LETTER",
+      "reason": "Target in-page anchor #letter-D missing in 12-glossary.html"
+    },
+    {
+      "lineNum": 164,
+      "before": "      <a href=\"#letter-E\" class=\"letter-btn\" data-letter=\"E\">E</a>",
+      "after": "      <a href=\"#letter-E\" class=\"letter-btn\" data-letter=\"E\">E</a>",
+      "type": "ANCHOR_GLOSSARY_LETTER",
+      "reason": "Target in-page anchor #letter-E missing in 12-glossary.html"
+    },
+    {
+      "lineNum": 165,
+      "before": "      <a href=\"#letter-F\" class=\"letter-btn\" data-letter=\"F\">F</a>",
+      "after": "      <a href=\"#letter-F\" class=\"letter-btn\" data-letter=\"F\">F</a>",
+      "type": "ANCHOR_GLOSSARY_LETTER",
+      "reason": "Target in-page anchor #letter-F missing in 12-glossary.html"
+    },
+    {
+      "lineNum": 166,
+      "before": "      <a href=\"#letter-G\" class=\"letter-btn\" data-letter=\"G\">G</a>",
+      "after": "      <a href=\"#letter-G\" class=\"letter-btn\" data-letter=\"G\">G</a>",
+      "type": "ANCHOR_GLOSSARY_LETTER",
+      "reason": "Target in-page anchor #letter-G missing in 12-glossary.html"
+    },
+    {
+      "lineNum": 167,
+      "before": "      <a href=\"#letter-H\" class=\"letter-btn disabled\" data-letter=\"H\">H</a>",
+      "after": "      <a href=\"#letter-H\" class=\"letter-btn disabled\" data-letter=\"H\">H</a>",
+      "type": "ANCHOR_GLOSSARY_LETTER",
+      "reason": "Target in-page anchor #letter-H missing in 12-glossary.html"
+    },
+    {
+      "lineNum": 168,
+      "before": "      <a href=\"#letter-I\" class=\"letter-btn\" data-letter=\"I\">I</a>",
+      "after": "      <a href=\"#letter-I\" class=\"letter-btn\" data-letter=\"I\">I</a>",
+      "type": "ANCHOR_GLOSSARY_LETTER",
+      "reason": "Target in-page anchor #letter-I missing in 12-glossary.html"
+    },
+    {
+      "lineNum": 169,
+      "before": "      <a href=\"#letter-J\" class=\"letter-btn disabled\" data-letter=\"J\">J</a>",
+      "after": "      <a href=\"#letter-J\" class=\"letter-btn disabled\" data-letter=\"J\">J</a>",
+      "type": "ANCHOR_GLOSSARY_LETTER",
+      "reason": "Target in-page anchor #letter-J missing in 12-glossary.html"
+    },
+    {
+      "lineNum": 170,
+      "before": "      <a href=\"#letter-K\" class=\"letter-btn\" data-letter=\"K\">K</a>",
+      "after": "      <a href=\"#letter-K\" class=\"letter-btn\" data-letter=\"K\">K</a>",
+      "type": "ANCHOR_GLOSSARY_LETTER",
+      "reason": "Target in-page anchor #letter-K missing in 12-glossary.html"
+    },
+    {
+      "lineNum": 171,
+      "before": "      <a href=\"#letter-L\" class=\"letter-btn disabled\" data-letter=\"L\">L</a>",
+      "after": "      <a href=\"#letter-L\" class=\"letter-btn disabled\" data-letter=\"L\">L</a>",
+      "type": "ANCHOR_GLOSSARY_LETTER",
+      "reason": "Target in-page anchor #letter-L missing in 12-glossary.html"
+    },
+    {
+      "lineNum": 172,
+      "before": "      <a href=\"#letter-M\" class=\"letter-btn\" data-letter=\"M\">M</a>",
+      "after": "      <a href=\"#letter-M\" class=\"letter-btn\" data-letter=\"M\">M</a>",
+      "type": "ANCHOR_GLOSSARY_LETTER",
+      "reason": "Target in-page anchor #letter-M missing in 12-glossary.html"
+    },
+    {
+      "lineNum": 173,
+      "before": "      <a href=\"#letter-N\" class=\"letter-btn\" data-letter=\"N\">N</a>",
+      "after": "      <a href=\"#letter-N\" class=\"letter-btn\" data-letter=\"N\">N</a>",
+      "type": "ANCHOR_GLOSSARY_LETTER",
+      "reason": "Target in-page anchor #letter-N missing in 12-glossary.html"
+    },
+    {
+      "lineNum": 174,
+      "before": "      <a href=\"#letter-O\" class=\"letter-btn disabled\" data-letter=\"O\">O</a>",
+      "after": "      <a href=\"#letter-O\" class=\"letter-btn disabled\" data-letter=\"O\">O</a>",
+      "type": "ANCHOR_GLOSSARY_LETTER",
+      "reason": "Target in-page anchor #letter-O missing in 12-glossary.html"
+    },
+    {
+      "lineNum": 175,
+      "before": "      <a href=\"#letter-P\" class=\"letter-btn\" data-letter=\"P\">P</a>",
+      "after": "      <a href=\"#letter-P\" class=\"letter-btn\" data-letter=\"P\">P</a>",
+      "type": "ANCHOR_GLOSSARY_LETTER",
+      "reason": "Target in-page anchor #letter-P missing in 12-glossary.html"
+    },
+    {
+      "lineNum": 176,
+      "before": "      <a href=\"#letter-Q\" class=\"letter-btn disabled\" data-letter=\"Q\">Q</a>",
+      "after": "      <a href=\"#letter-Q\" class=\"letter-btn disabled\" data-letter=\"Q\">Q</a>",
+      "type": "ANCHOR_GLOSSARY_LETTER",
+      "reason": "Target in-page anchor #letter-Q missing in 12-glossary.html"
+    },
+    {
+      "lineNum": 177,
+      "before": "      <a href=\"#letter-R\" class=\"letter-btn\" data-letter=\"R\">R</a>",
+      "after": "      <a href=\"#letter-R\" class=\"letter-btn\" data-letter=\"R\">R</a>",
+      "type": "ANCHOR_GLOSSARY_LETTER",
+      "reason": "Target in-page anchor #letter-R missing in 12-glossary.html"
+    },
+    {
+      "lineNum": 178,
+      "before": "      <a href=\"#letter-S\" class=\"letter-btn\" data-letter=\"S\">S</a>",
+      "after": "      <a href=\"#letter-S\" class=\"letter-btn\" data-letter=\"S\">S</a>",
+      "type": "ANCHOR_GLOSSARY_LETTER",
+      "reason": "Target in-page anchor #letter-S missing in 12-glossary.html"
+    },
+    {
+      "lineNum": 179,
+      "before": "      <a href=\"#letter-T\" class=\"letter-btn\" data-letter=\"T\">T</a>",
+      "after": "      <a href=\"#letter-T\" class=\"letter-btn\" data-letter=\"T\">T</a>",
+      "type": "ANCHOR_GLOSSARY_LETTER",
+      "reason": "Target in-page anchor #letter-T missing in 12-glossary.html"
+    },
+    {
+      "lineNum": 180,
+      "before": "      <a href=\"#letter-U\" class=\"letter-btn\" data-letter=\"U\">U</a>",
+      "after": "      <a href=\"#letter-U\" class=\"letter-btn\" data-letter=\"U\">U</a>",
+      "type": "ANCHOR_GLOSSARY_LETTER",
+      "reason": "Target in-page anchor #letter-U missing in 12-glossary.html"
+    },
+    {
+      "lineNum": 181,
+      "before": "      <a href=\"#letter-V\" class=\"letter-btn\" data-letter=\"V\">V</a>",
+      "after": "      <a href=\"#letter-V\" class=\"letter-btn\" data-letter=\"V\">V</a>",
+      "type": "ANCHOR_GLOSSARY_LETTER",
+      "reason": "Target in-page anchor #letter-V missing in 12-glossary.html"
+    },
+    {
+      "lineNum": 182,
+      "before": "      <a href=\"#letter-W\" class=\"letter-btn\" data-letter=\"W\">W</a>",
+      "after": "      <a href=\"#letter-W\" class=\"letter-btn\" data-letter=\"W\">W</a>",
+      "type": "ANCHOR_GLOSSARY_LETTER",
+      "reason": "Target in-page anchor #letter-W missing in 12-glossary.html"
+    },
+    {
+      "lineNum": 183,
+      "before": "      <a href=\"#letter-X\" class=\"letter-btn disabled\" data-letter=\"X\">X</a>",
+      "after": "      <a href=\"#letter-X\" class=\"letter-btn disabled\" data-letter=\"X\">X</a>",
+      "type": "ANCHOR_GLOSSARY_LETTER",
+      "reason": "Target in-page anchor #letter-X missing in 12-glossary.html"
+    },
+    {
+      "lineNum": 184,
+      "before": "      <a href=\"#letter-Y\" class=\"letter-btn disabled\" data-letter=\"Y\">Y</a>",
+      "after": "      <a href=\"#letter-Y\" class=\"letter-btn disabled\" data-letter=\"Y\">Y</a>",
+      "type": "ANCHOR_GLOSSARY_LETTER",
+      "reason": "Target in-page anchor #letter-Y missing in 12-glossary.html"
+    },
+    {
+      "lineNum": 185,
+      "before": "      <a href=\"#letter-Z\" class=\"letter-btn disabled\" data-letter=\"Z\">Z</a>",
+      "after": "      <a href=\"#letter-Z\" class=\"letter-btn disabled\" data-letter=\"Z\">Z</a>",
+      "type": "ANCHOR_GLOSSARY_LETTER",
+      "reason": "Target in-page anchor #letter-Z missing in 12-glossary.html"
+    }
+  ]
+}

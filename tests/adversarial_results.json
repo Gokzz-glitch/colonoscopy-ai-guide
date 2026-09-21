@@ -1,0 +1,216 @@
+{
+  "passed": 1549,
+  "failed": 33,
+  "warnings": 48,
+  "details": {
+    "brokenLinks": [],
+    "brokenAssets": [],
+    "brokenAnchors": [],
+    "unresolvedGlossaryTooltips": [
+      {
+        "msg": "Glossary term could not be resolved by main.js in pages\\03-ai-history.html: text=\"WM-DOVA\", data-term=\"wm-dova\"",
+        "file": "pages\\03-ai-history.html",
+        "fullTag": "<span class=\"glossary-term\" data-term=\"wm-dova\">WM-DOVA</span>",
+        "dataTerm": "wm-dova",
+        "textContent": "WM-DOVA"
+      },
+      {
+        "msg": "Glossary term could not be resolved by main.js in pages\\04-architectures.html: text=\"GCN\", data-term=\"gcn\"",
+        "file": "pages\\04-architectures.html",
+        "fullTag": "<span class=\"glossary-term\" data-term=\"gcn\">GCN</span>",
+        "dataTerm": "gcn",
+        "textContent": "GCN"
+      },
+      {
+        "msg": "Glossary term could not be resolved by main.js in pages\\10-future.html: text=\"SAM\", data-term=\"sam\"",
+        "file": "pages\\10-future.html",
+        "fullTag": "<span class=\"glossary-term\" data-term=\"sam\">SAM</span>",
+        "dataTerm": "sam",
+        "textContent": "SAM"
+      }
+    ],
+    "glossaryCardDataTermIssues": [
+      {
+        "msg": "Element with [data-term] is bound by main.js querySelectorAll('.glossary-term, [data-term]') but fails to resolve in pages\\12-glossary.html: data-term=\"Adenoma Detection Rate (ADR)\"",
+        "file": "pages\\12-glossary.html",
+        "fullTag": "<div class=\"glossary-card\" id=\"adr\" data-category=\"Clinical\" data-term=\"Adenoma Detection Rate (ADR)",
+        "dataTerm": "Adenoma Detection Rate (ADR)"
+      },
+      {
+        "msg": "Element with [data-term] is bound by main.js querySelectorAll('.glossary-term, [data-term]') but fails to resolve in pages\\12-glossary.html: data-term=\"Polyp Detection Rate (PDR)\"",
+        "file": "pages\\12-glossary.html",
+        "fullTag": "<div class=\"glossary-card\" id=\"pdr\" data-category=\"Clinical\" data-term=\"Polyp Detection Rate (PDR)\">",
+        "dataTerm": "Polyp Detection Rate (PDR)"
+      },
+      {
+        "msg": "Element with [data-term] is bound by main.js querySelectorAll('.glossary-term, [data-term]') but fails to resolve in pages\\12-glossary.html: data-term=\"Adenomas Per Colonoscopy (APC)\"",
+        "file": "pages\\12-glossary.html",
+        "fullTag": "<div class=\"glossary-card\" id=\"apc\" data-category=\"Clinical\" data-term=\"Adenomas Per Colonoscopy (AP",
+        "dataTerm": "Adenomas Per Colonoscopy (APC)"
+      },
+      {
+        "msg": "Element with [data-term] is bound by main.js querySelectorAll('.glossary-term, [data-term]') but fails to resolve in pages\\12-glossary.html: data-term=\"Adenoma Miss Rate (AMR)\"",
+        "file": "pages\\12-glossary.html",
+        "fullTag": "<div class=\"glossary-card\" id=\"amr\" data-category=\"Clinical\" data-term=\"Adenoma Miss Rate (AMR)\">\n  ",
+        "dataTerm": "Adenoma Miss Rate (AMR)"
+      },
+      {
+        "msg": "Element with [data-term] is bound by main.js querySelectorAll('.glossary-term, [data-term]') but fails to resolve in pages\\12-glossary.html: data-term=\"Sessile Serrated Lesion (SSL)\"",
+        "file": "pages\\12-glossary.html",
+        "fullTag": "<div class=\"glossary-card\" id=\"sessile-serrated-lesion\" data-category=\"Clinical\" data-term=\"Sessile ",
+        "dataTerm": "Sessile Serrated Lesion (SSL)"
+      },
+      {
+        "msg": "Element with [data-term] is bound by main.js querySelectorAll('.glossary-term, [data-term]') but fails to resolve in pages\\12-glossary.html: data-term=\"Cecal Intubation Rate (CIR)\"",
+        "file": "pages\\12-glossary.html",
+        "fullTag": "<div class=\"glossary-card\" id=\"cecal-intubation-rate\" data-category=\"Clinical\" data-term=\"Cecal Intu",
+        "dataTerm": "Cecal Intubation Rate (CIR)"
+      },
+      {
+        "msg": "Element with [data-term] is bound by main.js querySelectorAll('.glossary-term, [data-term]') but fails to resolve in pages\\12-glossary.html: data-term=\"Boston Bowel Preparation Scale (BBPS)\"",
+        "file": "pages\\12-glossary.html",
+        "fullTag": "<div class=\"glossary-card\" id=\"bbps\" data-category=\"Clinical\" data-term=\"Boston Bowel Preparation Sc",
+        "dataTerm": "Boston Bowel Preparation Scale (BBPS)"
+      },
+      {
+        "msg": "Element with [data-term] is bound by main.js querySelectorAll('.glossary-term, [data-term]') but fails to resolve in pages\\12-glossary.html: data-term=\"Dice Similarity Coefficient (DSC)\"",
+        "file": "pages\\12-glossary.html",
+        "fullTag": "<div class=\"glossary-card\" id=\"dice\" data-category=\"Metric\" data-term=\"Dice Similarity Coefficient (",
+        "dataTerm": "Dice Similarity Coefficient (DSC)"
+      },
+      {
+        "msg": "Element with [data-term] is bound by main.js querySelectorAll('.glossary-term, [data-term]') but fails to resolve in pages\\12-glossary.html: data-term=\"Intersection over Union (IoU)\"",
+        "file": "pages\\12-glossary.html",
+        "fullTag": "<div class=\"glossary-card\" id=\"iou\" data-category=\"Metric\" data-term=\"Intersection over Union (IoU)\"",
+        "dataTerm": "Intersection over Union (IoU)"
+      },
+      {
+        "msg": "Element with [data-term] is bound by main.js querySelectorAll('.glossary-term, [data-term]') but fails to resolve in pages\\12-glossary.html: data-term=\"Mean Absolute Error (MAE)\"",
+        "file": "pages\\12-glossary.html",
+        "fullTag": "<div class=\"glossary-card\" id=\"mae\" data-category=\"Metric\" data-term=\"Mean Absolute Error (MAE)\">\n  ",
+        "dataTerm": "Mean Absolute Error (MAE)"
+      },
+      {
+        "msg": "Element with [data-term] is bound by main.js querySelectorAll('.glossary-term, [data-term]') but fails to resolve in pages\\12-glossary.html: data-term=\"False Alarm Rate (FAR)\"",
+        "file": "pages\\12-glossary.html",
+        "fullTag": "<div class=\"glossary-card\" id=\"far\" data-category=\"Metric\" data-term=\"False Alarm Rate (FAR)\">\n     ",
+        "dataTerm": "False Alarm Rate (FAR)"
+      },
+      {
+        "msg": "Element with [data-term] is bound by main.js querySelectorAll('.glossary-term, [data-term]') but fails to resolve in pages\\12-glossary.html: data-term=\"Structural Measure (S-measure)\"",
+        "file": "pages\\12-glossary.html",
+        "fullTag": "<div class=\"glossary-card\" id=\"s-measure\" data-category=\"Metric\" data-term=\"Structural Measure (S-me",
+        "dataTerm": "Structural Measure (S-measure)"
+      },
+      {
+        "msg": "Element with [data-term] is bound by main.js querySelectorAll('.glossary-term, [data-term]') but fails to resolve in pages\\12-glossary.html: data-term=\"Enhanced-Alignment Measure (E-measure)\"",
+        "file": "pages\\12-glossary.html",
+        "fullTag": "<div class=\"glossary-card\" id=\"e-measure\" data-category=\"Metric\" data-term=\"Enhanced-Alignment Measu",
+        "dataTerm": "Enhanced-Alignment Measure (E-measure)"
+      },
+      {
+        "msg": "Element with [data-term] is bound by main.js querySelectorAll('.glossary-term, [data-term]') but fails to resolve in pages\\12-glossary.html: data-term=\"Frames Per Second (FPS)\"",
+        "file": "pages\\12-glossary.html",
+        "fullTag": "<div class=\"glossary-card\" id=\"fps\" data-category=\"Metric\" data-term=\"Frames Per Second (FPS)\">\n    ",
+        "dataTerm": "Frames Per Second (FPS)"
+      },
+      {
+        "msg": "Element with [data-term] is bound by main.js querySelectorAll('.glossary-term, [data-term]') but fails to resolve in pages\\12-glossary.html: data-term=\"Convolutional Neural Network (CNN)\"",
+        "file": "pages\\12-glossary.html",
+        "fullTag": "<div class=\"glossary-card\" id=\"cnn\" data-category=\"Architecture\" data-term=\"Convolutional Neural Net",
+        "dataTerm": "Convolutional Neural Network (CNN)"
+      },
+      {
+        "msg": "Element with [data-term] is bound by main.js querySelectorAll('.glossary-term, [data-term]') but fails to resolve in pages\\12-glossary.html: data-term=\"Vision Transformer (ViT)\"",
+        "file": "pages\\12-glossary.html",
+        "fullTag": "<div class=\"glossary-card\" id=\"vit\" data-category=\"Architecture\" data-term=\"Vision Transformer (ViT)",
+        "dataTerm": "Vision Transformer (ViT)"
+      },
+      {
+        "msg": "Element with [data-term] is bound by main.js querySelectorAll('.glossary-term, [data-term]') but fails to resolve in pages\\12-glossary.html: data-term=\"Pyramid Vision Transformer (PVT)\"",
+        "file": "pages\\12-glossary.html",
+        "fullTag": "<div class=\"glossary-card\" id=\"pvt\" data-category=\"Architecture\" data-term=\"Pyramid Vision Transform",
+        "dataTerm": "Pyramid Vision Transformer (PVT)"
+      },
+      {
+        "msg": "Element with [data-term] is bound by main.js querySelectorAll('.glossary-term, [data-term]') but fails to resolve in pages\\12-glossary.html: data-term=\"Reverse Attention (RA)\"",
+        "file": "pages\\12-glossary.html",
+        "fullTag": "<div class=\"glossary-card\" id=\"reverse-attention\" data-category=\"Architecture\" data-term=\"Reverse At",
+        "dataTerm": "Reverse Attention (RA)"
+      },
+      {
+        "msg": "Element with [data-term] is bound by main.js querySelectorAll('.glossary-term, [data-term]') but fails to resolve in pages\\12-glossary.html: data-term=\"Parallel Partial Decoder (PPD)\"",
+        "file": "pages\\12-glossary.html",
+        "fullTag": "<div class=\"glossary-card\" id=\"ppd\" data-category=\"Architecture\" data-term=\"Parallel Partial Decoder",
+        "dataTerm": "Parallel Partial Decoder (PPD)"
+      },
+      {
+        "msg": "Element with [data-term] is bound by main.js querySelectorAll('.glossary-term, [data-term]') but fails to resolve in pages\\12-glossary.html: data-term=\"Receptive Field Block (RFB)\"",
+        "file": "pages\\12-glossary.html",
+        "fullTag": "<div class=\"glossary-card\" id=\"rfb\" data-category=\"Architecture\" data-term=\"Receptive Field Block (R",
+        "dataTerm": "Receptive Field Block (RFB)"
+      },
+      {
+        "msg": "Element with [data-term] is bound by main.js querySelectorAll('.glossary-term, [data-term]') but fails to resolve in pages\\12-glossary.html: data-term=\"State Space Model (SSM / Mamba)\"",
+        "file": "pages\\12-glossary.html",
+        "fullTag": "<div class=\"glossary-card\" id=\"ssm-mamba\" data-category=\"Architecture\" data-term=\"State Space Model ",
+        "dataTerm": "State Space Model (SSM / Mamba)"
+      },
+      {
+        "msg": "Element with [data-term] is bound by main.js querySelectorAll('.glossary-term, [data-term]') but fails to resolve in pages\\12-glossary.html: data-term=\"Multi-Scale Feature Pyramid (FPN)\"",
+        "file": "pages\\12-glossary.html",
+        "fullTag": "<div class=\"glossary-card\" id=\"fpn\" data-category=\"Architecture\" data-term=\"Multi-Scale Feature Pyra",
+        "dataTerm": "Multi-Scale Feature Pyramid (FPN)"
+      },
+      {
+        "msg": "Element with [data-term] is bound by main.js querySelectorAll('.glossary-term, [data-term]') but fails to resolve in pages\\12-glossary.html: data-term=\"Test-Time Augmentation (TTA)\"",
+        "file": "pages\\12-glossary.html",
+        "fullTag": "<div class=\"glossary-card\" id=\"tta\" data-category=\"Architecture\" data-term=\"Test-Time Augmentation (",
+        "dataTerm": "Test-Time Augmentation (TTA)"
+      },
+      {
+        "msg": "Element with [data-term] is bound by main.js querySelectorAll('.glossary-term, [data-term]') but fails to resolve in pages\\12-glossary.html: data-term=\"CVC-ClinicDB (CVC-612)\"",
+        "file": "pages\\12-glossary.html",
+        "fullTag": "<div class=\"glossary-card\" id=\"cvc-clinicdb\" data-category=\"Dataset\" data-term=\"CVC-ClinicDB (CVC-61",
+        "dataTerm": "CVC-ClinicDB (CVC-612)"
+      },
+      {
+        "msg": "Element with [data-term] is bound by main.js querySelectorAll('.glossary-term, [data-term]') but fails to resolve in pages\\12-glossary.html: data-term=\"ETIS-LaribPolypDB\"",
+        "file": "pages\\12-glossary.html",
+        "fullTag": "<div class=\"glossary-card\" id=\"etis-larib\" data-category=\"Dataset\" data-term=\"ETIS-LaribPolypDB\">\n  ",
+        "dataTerm": "ETIS-LaribPolypDB"
+      },
+      {
+        "msg": "Element with [data-term] is bound by main.js querySelectorAll('.glossary-term, [data-term]') but fails to resolve in pages\\12-glossary.html: data-term=\"CVC-300 (EndoScene Test)\"",
+        "file": "pages\\12-glossary.html",
+        "fullTag": "<div class=\"glossary-card\" id=\"cvc-300\" data-category=\"Dataset\" data-term=\"CVC-300 (EndoScene Test)\"",
+        "dataTerm": "CVC-300 (EndoScene Test)"
+      },
+      {
+        "msg": "Element with [data-term] is bound by main.js querySelectorAll('.glossary-term, [data-term]') but fails to resolve in pages\\12-glossary.html: data-term=\"Group-Aware Splitting (splits_v2)\"",
+        "file": "pages\\12-glossary.html",
+        "fullTag": "<div class=\"glossary-card\" id=\"group-aware-splitting\" data-category=\"Integrity\" data-term=\"Group-Awa",
+        "dataTerm": "Group-Aware Splitting (splits_v2)"
+      },
+      {
+        "msg": "Element with [data-term] is bound by main.js querySelectorAll('.glossary-term, [data-term]') but fails to resolve in pages\\12-glossary.html: data-term=\"Prompt Leakage (Foundation Models)\"",
+        "file": "pages\\12-glossary.html",
+        "fullTag": "<div class=\"glossary-card\" id=\"prompt-leakage\" data-category=\"Integrity\" data-term=\"Prompt Leakage (",
+        "dataTerm": "Prompt Leakage (Foundation Models)"
+      }
+    ],
+    "missingGlossaryAnchors": [],
+    "duplicateIds": [],
+    "citationIssues": [
+      {
+        "msg": "Expected exactly 48 reference cards in 11-references.html, found 49"
+      },
+      {
+        "msg": "Reference #32 contains unrecognized or malformed URL: 08-benchmark-integrity.html",
+        "cardIndex": 32,
+        "href": "08-benchmark-integrity.html"
+      }
+    ],
+    "unresolvedCrossReferences": []
+  }
+}

@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Master Plain-English Glossary (50 Verified Terms) | Colonoscopy AI & ChakraModel</title>
+  <meta name="description" content="Master plain-English glossary of 50 standardized clinical, metric, architectural, dataset, and integrity terms in colonoscopy artificial intelligence with instant search and A-Z jump index.">
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <style>
+    .glossary-card {
+      background: var(--surface-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      margin-bottom: 1.25rem;
+      transition: all var(--transition-fast);
+      position: relative;
+    }
+    .glossary-card:hover {
+      border-color: var(--color-teal);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+    .glossary-card:target {
+      border-color: var(--color-teal);
+      background: rgba(0, 212, 255, 0.05);
+      box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
+    }
+    .glossary-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .glossary-card-title {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.25rem;
+    }
+    .glossary-acronym {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--color-teal);
+      background: var(--color-teal-tint);
+      border: 1px solid var(--border-teal-glow);
+      padding: 0.15rem 0.5rem;
+      border-radius: var(--radius-full);
+      display: inline-block;
+      margin-right: 0.5rem;
+    }
+    .glossary-def {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      margin-top: 0.5rem;
+      margin-bottom: 0;
+    }
+    .letter-target {
+      scroll-margin-top: 100px;
+      display: block;
+      height: 0;
+      visibility: hidden;
+    }
+    .letter-btn.disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Scroll Progress Indicator -->
+  <div id="scroll-progress"></div>
+
+  <!-- Main Navigation Header -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="../index.html" class="brand-logo">
+        <div class="brand-icon">📖</div>
+        <span>Colonoscopy AI</span>
+        <span class="brand-badge">Glossary</span>
+      </a>
+
+      <ul class="nav-menu">
+        <li><a href="../index.html" class="nav-link">Home</a></li>
+        <li><a href="01-what-is-colonoscopy.html" class="nav-link">Clinical</a></li>
+        <li><a href="04-architectures.html" class="nav-link">Architectures</a></li>
+        <li><a href="05-datasets.html" class="nav-link">Datasets</a></li>
+        <li><a href="06-benchmarks.html" class="nav-link">Benchmarks</a></li>
+        <li><a href="08-benchmark-integrity.html" class="nav-link">Integrity Audit</a></li>
+        <li><a href="09-chakramodel.html" class="nav-link">ChakraModel</a></li>
+        <li><a href="10-future.html" class="nav-link">Future & Mamba</a></li>
+        <li><a href="11-references.html" class="nav-link">References</a></li>
+        <li><a href="12-glossary.html" class="nav-link active">Glossary</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" aria-label="Toggle light and dark mode" title="Toggle theme">🌓</button>
+        <button class="hamburger-btn" aria-label="Toggle mobile menu" title="Open Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-drawer" id="mobile-drawer">
+    <a href="../index.html" class="nav-link">Home (Overview)</a>
+    <a href="01-what-is-colonoscopy.html" class="nav-link">01. What is Colonoscopy</a>
+    <a href="02-polyp-types.html" class="nav-link">02. Polyp Morphology & Paris</a>
+    <a href="03-ai-history.html" class="nav-link">03. AI History & Evolution</a>
+    <a href="04-architectures.html" class="nav-link">04. Deep Architectures</a>
+    <a href="05-datasets.html" class="nav-link">05. Public Datasets</a>
+    <a href="06-benchmarks.html" class="nav-link">06. Performance Benchmarks</a>
+    <a href="06b-clinical-evidence.html" class="nav-link">06b. Clinical Trial Evidence</a>
+    <a href="08-benchmark-integrity.html" class="nav-link">08. Benchmark Integrity Audit</a>
+    <a href="09-chakramodel.html" class="nav-link">09. ChakraModel Research Project</a>
+    <a href="10-future.html" class="nav-link">10. Future & Agentic Vision</a>
+    <a href="11-references.html" class="nav-link">11. Master References (49 Papers)</a>
+    <a href="12-glossary.html" class="nav-link active">12. Plain-English Glossary (50 Terms)</a>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-glow" style="background: radial-gradient(circle, rgba(16, 185, 129, 0.12) 0%, rgba(0, 212, 255, 0.08) 50%, transparent 70%);"></div>
+    <div class="container hero-content">
+      <div class="hero-badge">
+        <span class="dot" style="background: var(--color-emerald);"></span>
+        <span>Standardized Plain-English Terminology</span>
+      </div>
+      <h1 class="hero-title">
+        Master Medical & Technical <br>
+        <span class="gradient-text">Plain-English Glossary</span>
+      </h1>
+      <p class="hero-subtitle">
+        50 authoritative definitions crafted for patients, physicians, and machine learning researchers, perfectly synchronized with site-wide interactive tooltips.
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Content Container -->
+  <main class="container">
+
+    <!-- Search & Filter Toolbar -->
+    <div class="search-filter-toolbar">
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="glossary-search" class="search-input" placeholder="Search by acronym, term name, or definition text (e.g. ADR, Dice, Mamba, SSL)..." aria-label="Search glossary terms">
+      </div>
+
+      <div class="filter-group" id="glossary-filter-pills">
+        <button class="filter-pill glossary-filter-pill active" data-category="all">All (50)</button>
+        <button class="filter-pill glossary-filter-pill" data-category="clinical">Clinical (14)</button>
+        <button class="filter-pill glossary-filter-pill" data-category="metric">Metric (9)</button>
+        <button class="filter-pill glossary-filter-pill" data-category="architecture">Architecture (13)</button>
+        <button class="filter-pill glossary-filter-pill" data-category="dataset">Dataset (8)</button>
+        <button class="filter-pill glossary-filter-pill" data-category="integrity">Integrity (6)</button>
+      </div>
+    </div>
+
+    <!-- Alphabetical Jump Index (A-Z) -->
+    <nav class="letter-index" aria-label="Alphabetical jump index">
+      <a href="#letter-A" class="letter-btn" data-letter="A">A</a>
+      <a href="#letter-B" class="letter-btn" data-letter="B">B</a>
+      <a href="#letter-C" class="letter-btn" data-letter="C">C</a>
+      <a href="#letter-D" class="letter-btn" data-letter="D">D</a>
+      <a href="#letter-E" class="letter-btn" data-letter="E">E</a>
+      <a href="#letter-F" class="letter-btn" data-letter="F">F</a>
+      <a href="#letter-G" class="letter-btn" data-letter="G">G</a>
+      <a href="#letter-H" class="letter-btn disabled" data-letter="H">H</a>
+      <a href="#letter-I" class="letter-btn" data-letter="I">I</a>
+      <a href="#letter-J" class="letter-btn disabled" data-letter="J">J</a>
+      <a href="#letter-K" class="letter-btn" data-letter="K">K</a>
+      <a href="#letter-L" class="letter-btn disabled" data-letter="L">L</a>
+      <a href="#letter-M" class="letter-btn" data-letter="M">M</a>
+      <a href="#letter-N" class="letter-btn" data-letter="N">N</a>
+      <a href="#letter-O" class="letter-btn disabled" data-letter="O">O</a>
+      <a href="#letter-P" class="letter-btn" data-letter="P">P</a>
+      <a href="#letter-Q" class="letter-btn disabled" data-letter="Q">Q</a>
+      <a href="#letter-R" class="letter-btn" data-letter="R">R</a>
+      <a href="#letter-S" class="letter-btn" data-letter="S">S</a>
+      <a href="#letter-T" class="letter-btn" data-letter="T">T</a>
+      <a href="#letter-U" class="letter-btn" data-letter="U">U</a>
+      <a href="#letter-V" class="letter-btn" data-letter="V">V</a>
+      <a href="#letter-W" class="letter-btn" data-letter="W">W</a>
+      <a href="#letter-X" class="letter-btn disabled" data-letter="X">X</a>
+      <a href="#letter-Y" class="letter-btn disabled" data-letter="Y">Y</a>
+      <a href="#letter-Z" class="letter-btn disabled" data-letter="Z">Z</a>
+    </nav>
+
+    <!-- Active Count Display -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+      <div id="glossary-count" style="font-family: var(--font-mono); font-size: 0.9rem; color: var(--color-teal);">
+        50 of 50 terms displayed
+      </div>
+      <span class="badge badge-teal">Site-Wide Tooltip Standard</span>
+    </div>
+
+    <!-- Master Terms Container -->
+    <div id="glossary-items-container">
+
+      <!-- Category 1: Clinical Endoscopy (1 - 14) -->
+
+      <span id="letter-A" class="letter-target"></span>
+      <div class="glossary-card" id="adr" data-category="Clinical" data-term="Adenoma Detection Rate (ADR)">
+        <div class="glossary-card-header">
+          <div>
+            <span class="glossary-acronym">ADR</span>
+            <h3 class="glossary-card-title">Adenoma Detection Rate</h3>
+          </div>
+          <span class="badge badge-clinical">Clinical</span>
+        </div>
+        <p class="glossary-def">
+          The proportion of screening colonoscopies in which an endoscopist detects at least one precancerous adenomatous polyp. It is the primary quality benchmark in clinical colonoscopy, where every 1% increase in ADR corresponds to a 3% reduction in interval colorectal cancer risk.
+        </p>
+      </div>
+
+      <span id="letter-O" class="letter-target"></span>
+      <span id="letter-P" class="letter-target"></span>
+      <div class="glossary-card" id="pdr" data-category="Clinical" data-term="Polyp Detection Rate (PDR)">
+        <div class="glossary-card-header">
+          <div>
+            <span class="glossary-acronym">PDR</span>
+            <h3 class="glossary-card-title">Polyp Detection Rate</h3>
+          </div>
+          <span class="badge badge-clinical">Clinical</span>
+        </div>
+        <p class="glossary-def">
+          The percentage of colonoscopy procedures where any polypoid tissue is resected, regardless of whether pathology confirms it as precancerous. While easier to compute than ADR because it requires no histology report, it can be artificially inflated by removing benign non-neoplastic tissue.
+        </p>
+      </div>
+
+      <div class="glossary-card" id="apc" data-category="Clinical" data-term="Adenomas Per Colonoscopy (APC)">
+        <div class="glossary-card-header">
+          <div>
+            <span class="glossary-acronym">APC / PPC</span>
+            <h3 class="glossary-card-title">Adenomas Per Colonoscopy</h3>
+          </div>
+          <span class="badge badge-clinical">Clinical</span>
+        </div>
+        <p class="glossary-def">
+          A quantitative quality metric calculated as the total number of histologically confirmed adenomas removed divided by the total number of completed colonoscopies. Unlike ADR, which treats finding one polyp the same as finding five, APC measures an endoscopist's thoroughness in clearing multiple synchronous lesions.
+        </p>
+      </div>
+
+      <div class="glossary-card" id="amr" data-category="Clinical" data-term="Adenoma Miss Rate (AMR)">
+        <div class="glossary-card-header">
+          <div>
+            <span class="glossary-acronym">AMR</span>
+            <h3 class="glossary-card-title">Adenoma Miss Rate</h3>
+          </div>
+          <span class="badge badge-clinical">Clinical</span>
+        </div>
+        <p class="glossary-def">
+          The fraction of true adenomatous polyps present in a patient's colon that are completely overlooked during an initial examination, traditionally measured via same-day back-to-back tandem colonoscopies. Tandem trials show human endoscopists miss 20% to 25% of adenomas, a gap AI detection systems aim to close.
+        </p>
+      </div>
+
+      <div class="glossary-card" id="paris-classification" data-category="Clinical" data-term="Paris Classification">
+        <div class="glossary-card-header">
+          <div>
+            <span class="glossary-acronym">Paris</span>
+            <h3 class="glossary-card-title">Paris Classification</h3>
+          </div>
+          <span class="badge badge-clinical">Clinical</span>
+        </div>
+        <p class="glossary-def">
+          An international endoscopic classification system that categorizes superficial gastrointestinal lesions based on their morphological height and profile. Lesions are classified into pedunculated (0-I p), sessile (0-I s), slightly elevated flat (0-II a), completely flat (0-II b), slightly depressed (0-II c), or ulcerated (0-III).
+        </p>
+      </div>
+
+      <span id="letter-N" class="letter-target"></span>
+      <div class="glossary-card" id="nice-classification" data-category="Clinical" data-term="NICE Classification">
+        <div class="glossary-card-header">
+          <div>
+            <span class="glossary-acronym">NICE</span>
+            <h3 class="glossary-card-title">NICE Classification</h3>
+          </div>
+          <span class="badge badge-clinical">Clinical</span>
+        </div>
+        <p class="glossary-def">
+          The NBI International Colorectal Endoscopic classification criteria used to optically differentiate hyperplastic polyps from precancerous adenomas without physical biopsy. It evaluates lesion color relative to background mucosa, micro-vascular vessels, and surface pit patterns under Narrow Band Imaging.
+        </p>
+      </div>
+
+      <span id="letter-J" class="letter-target"></span>
+      <span id="letter-K" class="letter-target"></span>
+      <div class="glossary-card" id="kudo-pit-pattern" data-category="Clinical" data-term="Kudo Pit Pattern">
+        <div class="glossary-card-header">
+          <div>
+            <span class="glossary-acronym">Kudo</span>
+            <h3 class="glossary-card-title">Kudo Pit Pattern</h3>
+          </div>
+          <span class="badge badge-clinical">Clinical</span>
+        </div>
+        <p class="glossary-def">
+          A diagnostic grading scale that examines the mucosal crypt architecture and gland opening patterns of a polyp under high-magnification chromoendoscopy. Patterns range from Type I (normal circular pits) and Type II (stellate hyperplastic pits) to Types III-IV (tubular/sulcular adenomas) and Type V (non-structural invasive carcinoma).
+        </p>
+      </div>
+
+      <span id="letter-S" class="letter-target"></span>
+      <div class="glossary-card" id="sessile-serrated-lesion" data-category="Clinical" data-term="Sessile Serrated Lesion (SSL)">
+        <div class="glossary-card-header">
+          <div>
+            <span class="glossary-acronym">SSL / SSA/P</span>
+            <h3 class="glossary-card-title">Sessile Serrated Lesion</h3>
+          </div>
+          <span class="badge badge-clinical">Clinical</span>
+        </div>
+        <p class="glossary-def">
+          A subtle, flat precancerous lesion typically found in the right proximal colon that develops into cancer via the alternative microsatellite instability pathway. Because SSLs exhibit pale coloration, indistinct borders, and frequently conceal themselves beneath an adherent mucus cap, they are the most frequently missed lesions in routine endoscopy.
+        </p>
+      </div>
+
+      <span id="letter-D" class="letter-target"></span>
+      <div class="glossary-card" id="diminutive-polyp" data-category="Clinical" data-term="Diminutive Polyp">
+        <div class="glossary-card-header">
+          <div>
+            <span class="glossary-acronym">&le; 5mm</span>
+            <h3 class="glossary-card-title">Diminutive Polyp</h3>
+          </div>
+          <span class="badge badge-clinical">Clinical</span>
+        </div>
+        <p class="glossary-def">
+          Any colorectal polyp measuring 5 millimeters or less in maximum physical diameter. Although diminutive polyps carry a very low individual risk of invasive malignancy (&lt;0.5%), they account for over 70% of all polyps encountered during screening examinations.
+        </p>
+      </div>
+
+      <span id="letter-Q" class="letter-target"></span>
+      <span id="letter-R" class="letter-target"></span>
+      <div class="glossary-card" id="resect-and-discard" data-category="Clinical" data-term="Resect and Discard">
+        <div class="glossary-card-header">
+          <div>
+            <span class="glossary-acronym">R&D</span>
+            <h3 class="glossary-card-title">Resect and Discard</h3>
+          </div>
+          <span class="badge badge-clinical">Clinical</span>
+        </div>
+        <p class="glossary-def">
+          A cost-saving clinical paradigm where diminutive polyps are optically characterized as benign or adenomatous in real-time by AI and immediately discarded rather than being sent for formal laboratory pathology. The European and American endoscopy societies require AI characterization systems to achieve &ge;90% negative predictive value before approving this protocol.
+        </p>
+      </div>
+
+      <span id="letter-W" class="letter-target"></span>
+      <div class="glossary-card" id="withdrawal-time" data-category="Clinical" data-term="Withdrawal Time">
+        <div class="glossary-card-header">
+          <div>
+            <span class="glossary-acronym">WT</span>
+            <h3 class="glossary-card-title">Withdrawal Time</h3>
+          </div>
+          <span class="badge badge-clinical">Clinical</span>
+        </div>
+        <p class="glossary-def">
+          The time spent by an endoscopist carefully inspecting the colonic mucosal surface as the endoscope is retracted from the cecum back to the anal verge. Clinical guidelines mandate a minimum inspection time of 6 minutes in normal colons, as shorter withdrawal times directly correlate with higher polyp miss rates.
+        </p>
+      </div>
+
+      <span id="letter-C" class="letter-target"></span>
+      <div class="glossary-card" id="cecal-intubation-rate" data-category="Clinical" data-term="Cecal Intubation Rate (CIR)">
+        <div class="glossary-card-header">
+          <div>
+            <span class="glossary-acronym">CIR</span>
+            <h3 class="glossary-card-title">Cecal Intubation Rate</h3>
+          </div>
+          <span class="badge badge-clinical">Clinical</span>
+        </div>
+        <p class="glossary-def">
+          The percentage of colonoscopy examinations where the endoscopist successfully navigates the scope tip all the way to the medial cecal wall, clearly visualizing the appendiceal orifice and ileocecal valve. High-quality clinical screening programs require a verified cecal intubation rate of at least 95% in routine screening cases.
+        </p>
+      </div>
+
+      <span id="letter-B" class="letter-target"></span>
+      <div class="glossary-card" id="bbps" data-category="Clinical" data-term="Boston Bowel Preparation Scale (BBPS)">
+        <div class="glossary-card-header">
+          <div>
+            <span class="glossary-acronym">BBPS</span>
+            <h3 class="glossary-card-title">Boston Bowel Preparation Scale</h3>
+          </div>
+          <span class="badge badge-clinical">Clinical</span>
+        </div>
+        <p class="glossary-def">
+          A validated ten-point clinical scoring system assessing colonic cleanliness across three anatomical segments: the right, transverse, and left colon. Each segment is scored from 0 (unprepared mucosa obscured by solid stool) to 3 (perfectly clear mucosa), with total scores below 6 requiring an early repeat exam.
+        </p>
+      </div>
+
+      <div class="glossary-card" id="alarm-fatigue" data-category="Clinical" data-term="Alarm Fatigue">
+        <div class="glossary-card-header">
+          <div>
+            <span class="glossary-acronym">Alarm Fatigue</span>
+            <h3 class="glossary-card-title">Alarm Fatigue</h3>
+          </div>
+          <span class="badge badge-clinical">Clinical</span>
+        </div>
+        <p class="glossary-def">
+          A dangerous cognitive desensitization state where clinicians become overwhelmed by frequent, repetitive, or irrelevant auditory and visual alerts generated by medical devices. In AI colonoscopy, high false-alarm rates on normal mucosal folds or bubbles lead endoscopists to distrust and ultimately power down the CADe software.
+        </p>
+      </div>
+
+      <!-- Category 2: Evaluation Metrics (15 - 23) -->
+
+      <div class="glossary-card" id="dice" data-category="Metric" data-term="Dice Similarity Coefficient (DSC)">
+        <div class="glossary-card-header">
+          <div>
+            <span class="glossary-acronym">Dice / DSC</span>
+            <h3 class="glossary-card-title">Dice Similarity Coefficient</h3>
+          </div>
+          <span class="badge badge-metric">Metric</span>
+        </div>
+        <p class="glossary-def">
+          A statistical spatial overlap index that quantifies the harmonic agreement between a predicted binary segmentation mask and ground-truth physician annotations. Calculated as 2|P &cap; G| / (|P| + |G|), a Dice score of 1.0 indicates perfect pixel alignment, while 0.0 indicates zero overlap.
+        </p>
+      </div>
+
+      <span id="letter-H" class="letter-target"></span>
+      <span id="letter-I" class="letter-target"></span>
+      <div class="glossary-card" id="iou" data-category="Metric" data-term="Intersection over Union (IoU)">
+        <div class="glossary-card-header">
+          <div>
+            <span class="glossary-acronym">IoU / Jaccard</span>
+            <h3 class="glossary-card-title">Intersection over Union</h3>
+          </div>
+          <span class="badge badge-metric">Metric</span>
+        </div>
+        <p class="glossary-def">
+          A strict geometric overlap metric defined as the area of overlap between the predicted and target masks divided by the total area of their combined union. In polyp segmentation, IoU penalizes boundary deviations and false positive pixels more severely than the Dice coefficient.
+        </p>
+      </div>
+
+      <span id="letter-L" class="letter-target"></span>
+      <span id="letter-M" class="letter-target"></span>
+      <div class="glossary-card" id="mae" data-category="Metric" data-term="Mean Absolute Error (MAE)">
+        <div class="glossary-card-header">
+          <div>
+            <span class="glossary-acronym">MAE</span>
+            <h3 class="glossary-card-title">Mean Absolute Error</h3>
+          </div>
+          <span class="badge badge-metric">Metric</span>
+        </div>
+        <p class="glossary-def">
+          The pixel-wise average absolute difference between the continuous predicted saliency map and the binary ground-truth segmentation mask. Unlike overlap metrics that threshold predictions at 0.5, MAE directly assesses how cleanly and decisively the model separates background from foreground across all probabilities.
+        </p>
+      </div>
+
+      <span id="letter-F" class="letter-target"></span>
+      <div class="glossary-card" id="far" data-category="Metric" data-term="False Alarm Rate (FAR)">
+        <div class="glossary-card-header">
+          <div>
+            <span class="glossary-acronym">FAR</span>
+            <h3 class="glossary-card-title">False Alarm Rate</h3>
+          </div>
+          <span class="badge badge-metric">Metric</span>
+        </div>
+        <p class="glossary-def">
+          The percentage of completely healthy, polyp-free endoscopic video frames that erroneously trigger a positive polyp segmentation or detection alert. Measuring FAR on negative video frames is essential to prevent clinical alarm fatigue during long screening procedures.
+        </p>
+      </div>
+
+      <div class="glossary-card" id="s-measure" data-category="Metric" data-term="Structural Measure (S-measure)">
+        <div class="glossary-card-header">
+          <div>
+            <span class="glossary-acronym">S-measure</span>
+            <h3 class="glossary-card-title">Structural Measure</h3>
+          </div>
+          <span class="badge badge-metric">Metric</span>
+        </div>
+        <p class="glossary-def">
+          A modern computer vision evaluation metric that evaluates foreground map quality by combining region-aware structural similarity with object-aware edge contour similarity. Unlike standard Dice, S-measure correlates strongly with human subjective visual perception of polyp boundary fidelity.
+        </p>
+      </div>
+
+      <span id="letter-E" class="letter-target"></span>
+      <div class="glossary-card" id="e-measure" data-category="Metric" data-term="Enhanced-Alignment Measure (E-measure)">
+        <div class="glossary-card-header">
+          <div>
+            <span class="glossary-acronym">E-measure</span>
+            <h3 class="glossary-card-title">Enhanced-Alignment Measure</h3>
+          </div>
+          <span class="badge badge-metric">Metric</span>
+        </div>
+        <p class="glossary-def">
+          An advanced segmentation metric that jointly captures pixel-level alignment errors and image-level global statistics via an enhanced alignment matrix. It penalizes scatter artifacts and phantom predictions across the colonic wall far more effectively than traditional F-measure.
+        </p>
+      </div>
+
+      <div class="glossary-card" id="fps" data-category="Metric" data-term="Frames Per Second (FPS)">
+        <div class="glossary-card-header">
+          <div>
+            <span class="glossary-acronym">FPS</span>
+            <h3 class="glossary-card-title">Frames Per Second</h3>
+          </div>
+          <span class="badge badge-metric">Metric</span>
+        </div>
+        <p class="glossary-def">
+          The operational throughput metric measuring the number of video frames an artificial intelligence model can process and display per second. In live clinical colonoscopy, systems must operate at 25 FPS or higher to achieve smooth, real-time video synchronization without perceptible video stutter.
+        </p>
+      </div>
+
+      <div class="glossary-card" id="inference-latency" data-category="Metric" data-term="Inference Latency">
+        <div class="glossary-card-header">
+          <div>
+            <span class="glossary-acronym">Latency</span>
+            <h3 class="glossary-card-title">Inference Latency</h3>
+          </div>
+          <span class="badge badge-metric">Metric</span>
+        </div>
+        <p class="glossary-def">
+          The physical duration, measured in milliseconds, required for an image frame to travel through neural network computation and render a boundary box on the surgical monitor. For clinical comfort, end-to-end processing latency must remain under 30 to 40 milliseconds to prevent noticeable visual lag.
+        </p>
+      </div>
+
+      <div class="glossary-card" id="peak-vram" data-category="Metric" data-term="Peak VRAM">
+        <div class="glossary-card-header">
+          <div>
+            <span class="glossary-acronym">VRAM</span>
+            <h3 class="glossary-card-title">Peak VRAM</h3>
+          </div>
+          <span class="badge badge-metric">Metric</span>
+        </div>
+        <p class="glossary-def">
+          The maximum amount of dedicated video memory allocated by the graphics processing unit during model training or real-time inference passes. Low peak VRAM consumption is critical for embedding advanced AI models onto resource-constrained edge computers inside hospital endoscopy towers.
+        </p>
+      </div>
+
+      <!-- Category 3: Model Architectures & Computer Vision (24 - 36) -->
+
+      <div class="glossary-card" id="cnn" data-category="Architecture" data-term="Convolutional Neural Network (CNN)">
+        <div class="glossary-card-header">
+          <div>
+            <span class="glossary-acronym">CNN</span>
+            <h3 class="glossary-card-title">Convolutional Neural Network</h3>
+          </div>
+          <span class="badge badge-arch">Architecture</span>
+        </div>
+        <p class="glossary-def">
+          A class of deep neural networks that utilizes sliding parameterized kernels to extract hierarchical visual features such as edges, textures, and shapes. CNNs possess built-in translation equivariance and strong local inductive biases, making them exceptionally stable for biomedical image analysis.
+        </p>
+      </div>
+
+      <span id="letter-U" class="letter-target"></span>
+      <span id="letter-V" class="letter-target"></span>
+      <div class="glossary-card" id="vit" data-category="Architecture" data-term="Vision Transformer (ViT)">
+        <div class="glossary-card-header">
+          <div>
+            <span class="glossary-acronym">ViT</span>
+            <h3 class="glossary-card-title">Vision Transformer</h3>
+          </div>
+          <span class="badge badge-arch">Architecture</span>
+        </div>
+        <p class="glossary-def">
+          A neural architecture that flattens images into non-overlapping spatial patches and processes them as sequence tokens using multi-head self-attention mechanisms. While ViTs capture long-range global image context, standard non-hierarchical variants lack multi-scale feature pyramids and require massive training datasets to converge.
+        </p>
+      </div>
+
+      <div class="glossary-card" id="pvt" data-category="Architecture" data-term="Pyramid Vision Transformer (PVT)">
+        <div class="glossary-card-header">
+          <div>
+            <span class="glossary-acronym">PVT</span>
+            <h3 class="glossary-card-title">Pyramid Vision Transformer</h3>
+          </div>
+          <span class="badge badge-arch">Architecture</span>
+        </div>
+        <p class="glossary-def">
+          A hierarchical transformer backbone that progressively shrinks token spatial dimensions while expanding channel capacity, generating multi-scale feature maps analogous to a CNN pyramid. In models like Polyp-PVT, it allows self-attention to operate efficiently across dense semantic segmentation tasks.
+        </p>
+      </div>
+
+      <div class="glossary-card" id="swin-transformer" data-category="Architecture" data-term="Swin Transformer">
+        <div class="glossary-card-header">
+          <div>
+            <span class="glossary-acronym">Swin</span>
+            <h3 class="glossary-card-title">Swin Transformer</h3>
+          </div>
+          <span class="badge badge-arch">Architecture</span>
+        </div>
+        <p class="glossary-def">
+          A hierarchical vision transformer that calculates self-attention exclusively within localized non-overlapping windows that systematically shift across adjacent layers. This shifted window approach yields linear computational complexity relative to image size while maintaining cross-window connectivity for boundary tracing.
+        </p>
+      </div>
+
+      <div class="glossary-card" id="reverse-attention" data-category="Architecture" data-term="Reverse Attention (RA)">
+        <div class="glossary-card-header">
+          <div>
+            <span class="glossary-acronym">RA</span>
+            <h3 class="glossary-card-title">Reverse Attention</h3>
+          </div>
+          <span class="badge badge-arch">Architecture</span>
+        </div>
+        <p class="glossary-def">
+          A specialized decoder module that subtracts high-level coarse prediction maps from foreground masks to explicitly force subsequent layers to focus on missing boundary regions. Popularized by PraNet, reverse attention acts as an active contour model that refines ambiguous lesion margins.
+        </p>
+      </div>
+
+      <div class="glossary-card" id="ppd" data-category="Architecture" data-term="Parallel Partial Decoder (PPD)">
+        <div class="glossary-card-header">
+          <div>
+            <span class="glossary-acronym">PPD</span>
+            <h3 class="glossary-card-title">Parallel Partial Decoder</h3>
+          </div>
+          <span class="badge badge-arch">Architecture</span>
+        </div>
+        <p class="glossary-def">
+          A structural decoder component that aggregates and fuses only high-level semantic feature maps while intentionally bypassing low-level noisy layers. This design prevents shallow feature noise from contaminating global polyp localization maps while cutting computational parameters.
+        </p>
+      </div>
+
+      <div class="glossary-card" id="rfb" data-category="Architecture" data-term="Receptive Field Block (RFB)">
+        <div class="glossary-card-header">
+          <div>
+            <span class="glossary-acronym">RFB</span>
+            <h3 class="glossary-card-title">Receptive Field Block</h3>
+          </div>
+          <span class="badge badge-arch">Architecture</span>
+        </div>
+        <p class="glossary-def">
+          An architectural block inspired by human visual cortex receptive fields that combines multi-branch dilated convolutions with differing dilation rates. RFBs enlarge the effective receptive field without losing spatial resolution, allowing networks to recognize both small and sprawling polyps.
+        </p>
+      </div>
+
+      <div class="glossary-card" id="ssm-mamba" data-category="Architecture" data-term="State Space Model (SSM / Mamba)">
+        <div class="glossary-card-header">
+          <div>
+            <span class="glossary-acronym">SSM / Mamba</span>
+            <h3 class="glossary-card-title">State Space Model</h3>
+          </div>
+          <span class="badge badge-arch">Architecture</span>
+        </div>
+        <p class="glossary-def">
+          A modern sequence modeling architecture that maps continuous input signals through time-invariant hidden states with linear computational complexity in sequence length. In endoscopic video architectures like EndoMamba, Mamba models replace quadratic attention to capture long-range temporal history without crashing GPU memory.
+        </p>
+      </div>
+
+      <div class="glossary-card" id="dual-path-skip-routing" data-category="Architecture" data-term="Dual-Path Skip Routing">
+        <div class="glossary-card-header">
+          <div>
+            <span class="glossary-acronym">Dual-Path</span>
+            <h3 class="glossary-card-title">Dual-Path Skip Routing</h3>
+          </div>
+          <span class="badge badge-arch">Architecture</span>
+        </div>
+        <p class="glossary-def">
+          An innovative U-Net skip connection design used in ChakraXAttnUNet v2 that combines context-gated attention selection with a direct unpooled convolutional bypass. This dual routing mechanism ensures global semantic guidance modulates features without sacrificing high-frequency sub-millimeter edge contours.
+        </p>
+      </div>
+
+      <div class="glossary-card" id="fpn" data-category="Architecture" data-term="Multi-Scale Feature Pyramid (FPN)">
+        <div class="glossary-card-header">
+          <div>
+            <span class="glossary-acronym">FPN</span>
+            <h3 class="glossary-card-title">Multi-Scale Feature Pyramid</h3>
+          </div>
+          <span class="badge badge-arch">Architecture</span>
+        </div>
+        <p class="glossary-def">
+          A network topology that combines low-resolution, semantically rich features with high-resolution, semantically weak features via top-down pathways and lateral skip connections. This pyramid structure enables computer vision models to accurately segment both tiny 2 mm mucosal lesions and massive 40 mm circumferential polyps.
+        </p>
+      </div>
+
+      <span id="letter-T" class="letter-target"></span>
+      <div class="glossary-card" id="tta" data-category="Architecture" data-term="Test-Time Augmentation (TTA)">
+        <div class="glossary-card-header">
+          <div>
+            <span class="glossary-acronym">TTA</span>
+            <h3 class="glossary-card-title">Test-Time Augmentation</h3>
+          </div>
+          <span class="badge badge-arch">Architecture</span>
+        </div>
+        <p class="glossary-def">
+          An inference ensemble strategy where an input image is evaluated across multiple geometric transformations (such as horizontal flips, vertical flips, and rotations) and the predictions are averaged. TTA typically adds 0.010 to 0.015 points of Dice accuracy at the direct cost of multiplying inference latency.
+        </p>
+      </div>
+
+      <div class="glossary-card" id="inductive-bias" data-category="Architecture" data-term="Inductive Bias">
+        <div class="glossary-card-header">
+          <div>
+            <span class="glossary-acronym">Inductive Bias</span>
+            <h3 class="glossary-card-title">Inductive Bias</h3>
+          </div>
+          <span class="badge badge-arch">Architecture</span>
+        </div>
+        <p class="glossary-def">
+          The set of mathematical assumptions baked directly into an algorithm's architecture that biases it toward learning certain spatial and structural relationships. Convolutional networks have strong spatial locality biases, whereas standard vision transformers must learn spatial relationships entirely from data.
+        </p>
+      </div>
+
+      <div class="glossary-card" id="deep-supervision" data-category="Architecture" data-term="Deep Supervision">
+        <div class="glossary-card-header">
+          <div>
+            <span class="glossary-acronym">Deep Supervision</span>
+            <h3 class="glossary-card-title">Deep Supervision</h3>
+          </div>
+          <span class="badge badge-arch">Architecture</span>
+        </div>
+        <p class="glossary-def">
+          A training technique where auxiliary loss functions are applied to intermediate decoder layers rather than solely at the final output head. This technique combats vanishing gradients in deep networks and forces intermediate feature layers to learn distinctive, semantically meaningful lesion representations.
+        </p>
+      </div>
+
+      <!-- Category 4: Benchmark Datasets (37 - 44) -->
+
+      <div class="glossary-card" id="kvasir-seg" data-category="Dataset" data-term="Kvasir-SEG">
+        <div class="glossary-card-header">
+          <div>
+            <span class="glossary-acronym">Kvasir-SEG</span>
+            <h3 class="glossary-card-title">Kvasir-SEG</h3>
+          </div>
+          <span class="badge badge-dataset">Dataset</span>
+        </div>
+        <p class="glossary-def">
+          A landmark public gastrointestinal dataset released in 2020 by Simula Research Laboratory comprising 1,000 polyp images with expert pixel-level annotations. Collected from patient procedures in Norway, its 100-image held-out partition serves as the universal benchmark for seen-domain segmentation accuracy.
+        </p>
+      </div>
+
+      <div class="glossary-card" id="cvc-clinicdb" data-category="Dataset" data-term="CVC-ClinicDB (CVC-612)">
+        <div class="glossary-card-header">
+          <div>
+            <span class="glossary-acronym">ClinicDB</span>
+            <h3 class="glossary-card-title">CVC-ClinicDB</h3>
+          </div>
+          <span class="badge badge-dataset">Dataset</span>
+        </div>
+        <p class="glossary-def">
+          A foundational dataset created by the Computer Vision Center containing 612 still video frames extracted from 29 colonoscopy procedures at Hospital Clínic Barcelona. Although widely cited as an out-of-domain benchmark, forensic audits reveal its 62 test frames share video sequences directly with the 550 training frames.
+        </p>
+      </div>
+
+      <div class="glossary-card" id="cvc-colondb" data-category="Dataset" data-term="CVC-ColonDB">
+        <div class="glossary-card-header">
+          <div>
+            <span class="glossary-acronym">ColonDB</span>
+            <h3 class="glossary-card-title">CVC-ColonDB</h3>
+          </div>
+          <span class="badge badge-dataset">Dataset</span>
+        </div>
+        <p class="glossary-def">
+          An early benchmark dataset established in 2012 featuring 380 colonoscopy frames extracted from 15 operational colonoscopy videos. ColonDB serves as a primary out-of-distribution generalization test, though researchers must account for its 15 internal duplicate groups and overlap with CVC-300.
+        </p>
+      </div>
+
+      <div class="glossary-card" id="etis-larib" data-category="Dataset" data-term="ETIS-LaribPolypDB">
+        <div class="glossary-card-header">
+          <div>
+            <span class="glossary-acronym">ETIS</span>
+            <h3 class="glossary-card-title">ETIS-LaribPolypDB</h3>
+          </div>
+          <span class="badge badge-dataset">Dataset</span>
+        </div>
+        <p class="glossary-def">
+          A challenging benchmark containing 196 high-resolution (1225 &times; 966) colonoscopy frames acquired from 34 different polyps at Lariboisière Hospital in Paris. ETIS represents the most demanding out-of-domain benchmark in the literature because its images feature tiny, low-contrast, and specularly washed-out polyps.
+        </p>
+      </div>
+
+      <div class="glossary-card" id="cvc-300" data-category="Dataset" data-term="CVC-300 (EndoScene Test)">
+        <div class="glossary-card-header">
+          <div>
+            <span class="glossary-acronym">CVC-300</span>
+            <h3 class="glossary-card-title">CVC-300 (EndoScene)</h3>
+          </div>
+          <span class="badge badge-dataset">Dataset</span>
+        </div>
+        <p class="glossary-def">
+          A 60-frame held-out test split derived from the EndoScene challenge repository, historically utilized to evaluate algorithm generalizability. Forensic analysis shows that 58 of its 60 frames are exact-pixel duplicates of frames in CVC-ColonDB, requiring strict independent reporting.
+        </p>
+      </div>
+
+      <div class="glossary-card" id="polypgen" data-category="Dataset" data-term="PolypGen">
+        <div class="glossary-card-header">
+          <div>
+            <span class="glossary-acronym">PolypGen</span>
+            <h3 class="glossary-card-title">PolypGen</h3>
+          </div>
+          <span class="badge badge-dataset">Dataset</span>
+        </div>
+        <p class="glossary-def">
+          A comprehensive multi-center benchmark dataset released in 2021/2023 containing both single frames and video sequences collected across 6 distinct international hospitals. It provides multi-center generalization test frames along with 4,275 verified polyp-free negative frames crucial for false alarm auditing.
+        </p>
+      </div>
+
+      <div class="glossary-card" id="piccolo" data-category="Dataset" data-term="PICCOLO">
+        <div class="glossary-card-header">
+          <div>
+            <span class="glossary-acronym">PICCOLO</span>
+            <h3 class="glossary-card-title">PICCOLO</h3>
+          </div>
+          <span class="badge badge-dataset">Dataset</span>
+        </div>
+        <p class="glossary-def">
+          A Spanish multi-center high-definition clinical dataset containing 3,433 frames across 76 individual lesions with zero video overlap between official splits. It is uniquely valuable for research because every lesion includes granular clinical metadata: millimeter size (21 diminutive), Paris morphology (35 flat), and histology.
+        </p>
+      </div>
+
+      <div class="glossary-card" id="sun-seg" data-category="Dataset" data-term="SUN-SEG">
+        <div class="glossary-card-header">
+          <div>
+            <span class="glossary-acronym">SUN-SEG</span>
+            <h3 class="glossary-card-title">SUN-SEG</h3>
+          </div>
+          <span class="badge badge-dataset">Dataset</span>
+        </div>
+        <p class="glossary-def">
+          A comprehensive video polyp segmentation benchmark established in 2022 featuring 158,690 frames across 1,106 video sequences annotated with pixel masks and bounding boxes. It serves as the primary evaluation standard for spatiotemporal architectures, incorporating explicit attributes for small and occluded polyps.
+        </p>
+      </div>
+
+      <!-- Category 5: Benchmark Integrity & Data Hygiene (45 - 50) -->
+
+      <div class="glossary-card" id="video-frame-leakage" data-category="Integrity" data-term="Video Frame Leakage">
+        <div class="glossary-card-header">
+          <div>
+            <span class="glossary-acronym">Video Leakage</span>
+            <h3 class="glossary-card-title">Video Frame Leakage</h3>
+          </div>
+          <span class="badge badge-integrity">Integrity</span>
+        </div>
+        <p class="glossary-def">
+          A fatal experimental flaw that occurs when adjacent or nearby video frames from the same clinical endoscopy recording are distributed across training and validation sets. Because sequential frames captured 40 milliseconds apart are visually near-identical, models memorize specific sequence frames rather than learning generalized features.
+        </p>
+      </div>
+
+      <div class="glossary-card" id="in-sequence-evaluation" data-category="Integrity" data-term="In-Sequence Evaluation">
+        <div class="glossary-card-header">
+          <div>
+            <span class="glossary-acronym">In-Sequence</span>
+            <h3 class="glossary-card-title">In-Sequence Evaluation</h3>
+          </div>
+          <span class="badge badge-integrity">Integrity</span>
+        </div>
+        <p class="glossary-def">
+          An evaluation regime where test frames originate from the exact same video sequences, patients, or hardware configurations as the training data. While useful for measuring temporal video interpolation, it must be clearly disclosed as seen-domain testing and never masqueraded as out-of-domain clinical generalization.
+        </p>
+      </div>
+
+      <div class="glossary-card" id="cross-dataset-contamination" data-category="Integrity" data-term="Cross-Dataset Contamination">
+        <div class="glossary-card-header">
+          <div>
+            <span class="glossary-acronym">Contamination</span>
+            <h3 class="glossary-card-title">Cross-Dataset Contamination</h3>
+          </div>
+          <span class="badge badge-integrity">Integrity</span>
+        </div>
+        <p class="glossary-def">
+          The unauthorized or undisclosed presence of identical or near-duplicate images across two supposedly independent medical datasets. Contamination invalidates zero-shot generalization claims, as seen when candidate datasets like PolypDB inadvertently absorb held-out test frames from Kvasir-SEG.
+        </p>
+      </div>
+
+      <div class="glossary-card" id="sha-256-cryptographic-audit" data-category="Integrity" data-term="SHA-256 Cryptographic Audit">
+        <div class="glossary-card-header">
+          <div>
+            <span class="glossary-acronym">SHA-256 Audit</span>
+            <h3 class="glossary-card-title">SHA-256 Cryptographic Audit</h3>
+          </div>
+          <span class="badge badge-integrity">Integrity</span>
+        </div>
+        <p class="glossary-def">
+          The process of calculating 256-bit cryptographic hash signatures on every file and pixel matrix within a dataset to mathematically verify uniqueness. In our audit, SHA-256 matching proved that all 1,000 segmented images in HyperKvasir are byte-identical clones of Kvasir-SEG.
+        </p>
+      </div>
+
+      <span id="letter-G" class="letter-target"></span>
+      <div class="glossary-card" id="group-aware-splitting" data-category="Integrity" data-term="Group-Aware Splitting (splits_v2)">
+        <div class="glossary-card-header">
+          <div>
+            <span class="glossary-acronym">splits_v2</span>
+            <h3 class="glossary-card-title">Group-Aware Splitting</h3>
+          </div>
+          <span class="badge badge-integrity">Integrity</span>
+        </div>
+        <p class="glossary-def">
+          A rigorous data-partitioning protocol that enforces video sequences, lesion clusters, and connected duplicate components to remain strictly within either the training set or the validation set. Our splits_v2 protocol eliminated all 27 sequence groups crossing splits in CVC-ClinicDB, guaranteeing zero temporal leakage.
+        </p>
+      </div>
+
+      <div class="glossary-card" id="prompt-leakage" data-category="Integrity" data-term="Prompt Leakage (Foundation Models)">
+        <div class="glossary-card-header">
+          <div>
+            <span class="glossary-acronym">Prompt Leakage</span>
+            <h3 class="glossary-card-title">Prompt Leakage (Foundation Models)</h3>
+          </div>
+      <span id="letter-X" class="letter-target"></span>
+      <span id="letter-Y" class="letter-target"></span>
+      <span id="letter-Z" class="letter-target"></span>
+          <span class="badge badge-integrity">Integrity</span>
+        </div>
+        <p class="glossary-def">
+          An evaluation artifact where interactive vision foundation models (such as SAM or MedSAM) are scored using bounding box prompts derived directly from the ground-truth target mask. In academic polyp segmentation, ground-truth box prompting artificially inflates reported Dice scores by roughly +0.35, obscuring the model's true autonomous detection capabilities.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Navigation Transition Banner -->
+    <section class="section-sm" style="text-align: center;">
+      <div class="card" style="display: inline-block; max-width: 720px; padding: 2.5rem; text-align: center;">
+        <span class="badge badge-teal" style="margin-bottom: 1rem;">Complete Documentation</span>
+        <h3 style="margin-bottom: 1rem;">Back to Platform Overview</h3>
+        <p style="color: var(--text-secondary); margin-bottom: 2rem;">
+          Return to the home landing page or inspect the complete architecture, benchmark, and clinical trial evidence sections.
+        </p>
+        <a href="../index.html" class="btn btn-primary">
+          <span>Return to Homepage</span>
+          <span>&rarr;</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h4>Colonoscopy AI Guide</h4>
+          <p>
+            An authoritative, scientifically audited educational platform and research compendium dedicated to colonoscopy artificial intelligence, benchmark integrity, and clinical validation.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Clinical Education</h5>
+          <ul class="footer-links">
+            <li><a href="01-what-is-colonoscopy.html">Procedure & Anatomy</a></li>
+            <li><a href="02-polyp-types.html">Polyp Morphology</a></li>
+            <li><a href="06b-clinical-evidence.html">Clinical Trials & RCTs</a></li>
+            <li><a href="12-glossary.html">Medical Glossary</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Technical Research</h5>
+          <ul class="footer-links">
+            <li><a href="03-ai-history.html">AI History Timeline</a></li>
+            <li><a href="04-architectures.html">Model Architectures</a></li>
+            <li><a href="05-datasets.html">Dataset Catalog</a></li>
+            <li><a href="06-benchmarks.html">Performance Leaderboard</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Integrity & Chakra</h5>
+          <ul class="footer-links">
+            <li><a href="08-benchmark-integrity.html">Benchmark Integrity Audit</a></li>
+            <li><a href="09-chakramodel.html">ChakraModel Project</a></li>
+            <li><a href="10-future.html">Future & Foundation Models</a></li>
+            <li><a href="11-references.html">49 Master References</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Colonoscopy AI Research Consortium. All rights reserved. Open-access educational platform.</div>
+        <div style="font-family: var(--font-mono); font-size: 0.8rem;">Glossary Integrity: <code>50-TERMS-VERIFIED</code></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      ColonoscopyAI.initGlossaryPage({
+        searchInputId: 'glossary-search',
+        categorySelector: '.glossary-filter-pill',
+        itemSelector: '.glossary-card',
+        letterSelector: '.letter-btn',
+        counterId: 'glossary-count'
+      });
+    });
+  </script>
+</body>
+</html>

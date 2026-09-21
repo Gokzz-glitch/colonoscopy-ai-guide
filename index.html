@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Colonoscopy AI Education & ChakraModel Research Platform. Bridging clinical colorectal cancer prevention with deep learning architectures, randomized controlled trial evidence, and dataset integrity audits.">
+  <title>Colonoscopy AI & ChakraModel Research Platform</title>
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+  <!-- Fixed Scroll Progress Bar -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- Sticky Site Navigation Header -->
+  <header class="site-header" role="banner">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="Colonoscopy AI Home">
+        <div class="brand-icon">AI</div>
+        <span>Colonoscopy AI</span>
+        <span class="brand-badge">Research & Clinical</span>
+      </a>
+
+      <nav role="navigation" aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="pages/01-what-is-colonoscopy.html" class="nav-link">Anatomy & Prep</a></li>
+          <li><a href="pages/02-polyp-types.html" class="nav-link">Polyps & Histology</a></li>
+          <li><a href="pages/04-architectures.html" class="nav-link">Architectures</a></li>
+          <li><a href="pages/06b-clinical-evidence.html" class="nav-link">Clinical Trials</a></li>
+          <li><a href="pages/07-clinical-systems.html" class="nav-link">Commercial Systems</a></li>
+          <li><a href="pages/08-benchmark-integrity.html" class="nav-link">Integrity Audit</a></li>
+          <li><a href="pages/09-chakramodel.html" class="nav-link">ChakraModel</a></li>
+          <li><a href="pages/12-glossary.html" class="nav-link">Glossary</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" type="button" aria-label="Toggle dark and light theme">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+        <button class="hamburger-btn" type="button" aria-label="Open Navigation Menu" aria-expanded="false">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+    <div style="font-family: var(--font-heading); font-size: 0.8rem; text-transform: uppercase; color: var(--color-teal); letter-spacing: 0.08em; margin-bottom: 0.5rem;">Clinical Education</div>
+    <a href="index.html" class="nav-link active">00. Home / Portal Overview</a>
+    <a href="pages/01-what-is-colonoscopy.html" class="nav-link">01. What is Colonoscopy? Anatomy & Prep</a>
+    <a href="pages/02-polyp-types.html" class="nav-link">02. Polyp Types & Morphology</a>
+    <a href="pages/06b-clinical-evidence.html" class="nav-link">06b. Clinical Trials & Real-World Evidence</a>
+    <a href="pages/07-clinical-systems.html" class="nav-link">07. Commercial CADe/CADx Systems</a>
+
+    <div style="font-family: var(--font-heading); font-size: 0.8rem; text-transform: uppercase; color: var(--color-purple); letter-spacing: 0.08em; margin: 1.25rem 0 0.5rem;">AI Engineering & Research</div>
+    <a href="pages/03-ai-history.html" class="nav-link">03. History of AI in Colonoscopy</a>
+    <a href="pages/04-architectures.html" class="nav-link">04. Deep Learning Architectures</a>
+    <a href="pages/05-datasets.html" class="nav-link">05. Benchmark Datasets</a>
+    <a href="pages/06-benchmarks.html" class="nav-link">06. Academic Benchmarks</a>
+    <a href="pages/08-benchmark-integrity.html" class="nav-link">08. Benchmark Integrity Audit</a>
+    <a href="pages/09-chakramodel.html" class="nav-link">09. ChakraModel Research Project</a>
+    <a href="pages/10-future.html" class="nav-link">10. Future Directions & Open Frontiers</a>
+
+    <div style="font-family: var(--font-heading); font-size: 0.8rem; text-transform: uppercase; color: var(--color-amber); letter-spacing: 0.08em; margin: 1.25rem 0 0.5rem;">Knowledge Resources</div>
+    <a href="pages/11-references.html" class="nav-link">11. Scientific References (49 Papers)</a>
+    <a href="pages/12-glossary.html" class="nav-link">12. Medical & Technical Glossary (50 Terms)</a>
+  </div>
+
+  <main id="main-content">
+    <!-- Hero Section with Glowing Backdrop -->
+    <section class="hero">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="container hero-content">
+        <div class="hero-badge">
+          <span class="dot" aria-hidden="true"></span>
+          <span>Dual Mission: Patient Advocacy &bull; AI Integrity Research</span>
+        </div>
+
+        <h1 class="hero-title">
+          Colonoscopy AI & <span class="gradient-text">ChakraModel Research</span> Platform
+        </h1>
+
+        <p class="hero-subtitle">
+          The definitive compendium bridging gastroenterological cancer screening with computer vision. 
+          Demystifying procedures for patients while conducting forensic evaluations of deep learning models, 
+          randomized controlled trial evidence, and benchmark integrity flaws.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#audience-paths" class="btn btn-primary btn-lg">
+            Choose Your Learning Path
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
+          </a>
+          <a href="#quick-navigation" class="btn btn-secondary btn-lg">
+            Browse All 12 Modules
+          </a>
+          <a href="pages/09-chakramodel.html" class="btn btn-outline btn-lg">
+            Read ChakraModel Audit
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Statistics Verified Counters Section -->
+    <section class="section section-sm" style="background: var(--bg-secondary); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+      <div class="container">
+        <div style="text-align: center; max-width: 720px; margin: 0 auto 1.5rem;">
+          <h2 style="font-size: 1.35rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-teal); margin-bottom: 0.35rem;">
+            Verified Clinical & Benchmark Invariants
+          </h2>
+          <p style="font-size: 0.95rem; margin-bottom: 0;">
+            Grounded in peer-reviewed clinical trials, the American Gastroenterological Association (<span class="glossary-term" data-term="adr">AGA</span> 2025) synthesis, and forensic dataset audits.
+          </p>
+        </div>
+
+        <div class="stat-grid">
+          <div class="stat-card">
+            <div class="stat-value">41</div>
+            <div class="stat-label">Randomized Controlled Trials</div>
+            <div class="stat-delta">31,789 patients evaluated</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-value">55%</div>
+            <div class="stat-label">Adenoma Miss Rate Drop</div>
+            <div class="stat-delta"><span class="glossary-term" data-term="amr">AMR</span> RR 0.45 (95% CI 0.35–0.58)</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-value">3.0%</div>
+            <div class="stat-label">Cancer Drop Per 1% ADR</div>
+            <div class="stat-delta">Corley et al. (<a href="pages/01-what-is-colonoscopy.html#corley-evidence" style="color: inherit; text-decoration: underline;">NEJM 2014</a>)</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-value">&lt;40 ms</div>
+            <div class="stat-label">Real-Time Latency Budget</div>
+            <div class="stat-delta">Inline hardware video pass-through</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-value">6</div>
+            <div class="stat-label">FDA & CE Cleared Systems</div>
+            <div class="stat-delta">Commercial CADe & CADx devices</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-value">4,275</div>
+            <div class="stat-label">Polyp-Free Video Frames</div>
+            <div class="stat-delta"><span class="glossary-term" data-term="far">False Alarm Rate</span> (<span class="glossary-term" data-term="far">FAR</span>) audit</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dual Audience Paths -->
+    <section id="audience-paths" class="section">
+      <div class="container">
+        <div style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">
+          <span class="badge badge-teal">Audience Segmentation</span>
+          <h2 style="margin-top: 0.75rem;">Tailored Pathways for Two Vital Audiences</h2>
+          <p class="lead">
+            Whether you are preparing for your first colonoscopy or training state-of-the-art vision transformers, 
+            explore our rigorous, evidence-grounded resources.
+          </p>
+        </div>
+
+        <div class="audience-grid">
+          <!-- Pathway 1: Public & Patients -->
+          <article class="audience-card audience-card--public">
+            <div>
+              <span class="audience-tag">For Patients & The Public</span>
+              <h3>Understand Your Procedure & How AI Protects You</h3>
+              <p>
+                Colorectal cancer is the second leading cause of cancer death worldwide, yet it is nearly 90% preventable when precancerous polyps are removed early. Learn how standard colonoscopy works, why physicians miss up to 26% of polyps, and how artificial intelligence assists your gastroenterologist in real time.
+              </p>
+
+              <ul class="audience-card-features">
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span><strong>8 Anatomical Colon Zones:</strong> Interactive inspection map from cecum to rectum</span>
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span><strong>Bowel Preparation Demystified:</strong> Split-dose diet & the 10-point <span class="glossary-term" data-term="bbps">BBPS</span> scale</span>
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span><strong>Polyp Morphologies & Risks:</strong> Flat vs stalked polyps & the dangerous <span class="glossary-term" data-term="sessile-serrated-lesion">SSL</span> pathway</span>
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span><strong>Clinical Trial Realities:</strong> The 41 RCTs, diminutive polyps, and cognitive deskilling</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="flex flex-wrap gap-sm" style="margin-top: 1.5rem;">
+              <a href="pages/01-what-is-colonoscopy.html" class="btn btn-primary btn-sm">Start Anatomy Guide</a>
+              <a href="pages/02-polyp-types.html" class="btn btn-secondary btn-sm">Polyp Types</a>
+              <a href="pages/06b-clinical-evidence.html" class="btn btn-secondary btn-sm">Clinical Evidence</a>
+              <a href="pages/12-glossary.html" class="btn btn-outline btn-sm">Medical Glossary</a>
+            </div>
+          </article>
+
+          <!-- Pathway 2: Researchers & Engineers -->
+          <article class="audience-card audience-card--researcher">
+            <div>
+              <span class="audience-tag">For AI Researchers & Engineers</span>
+              <h3>Explore Architectures, Benchmarks & Dataset Flaws</h3>
+              <p>
+                From 2015 U-Net to 2024 EndoMamba, colorectal polyp segmentation is an active field. However, standard evaluation protocols suffer from severe methodological artifacts. Discover why high benchmark numbers frequently fail to translate to clinical safety.
+              </p>
+
+              <ul class="audience-card-features">
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span><strong>Model Lineage & Evolution:</strong> UNet, PraNet, PVT, ColonFormer & State Space Models</span>
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span><strong>The 5-Dataset Benchmark:</strong> Standardized <span class="glossary-term" data-term="dice">Dice</span> & <span class="glossary-term" data-term="iou">IoU</span> leaderboards</span>
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span><strong>Forensic Integrity Audit:</strong> <span class="glossary-term" data-term="video-frame-leakage">Video frame leakage</span> in ClinicDB & 58 duplicate frames</span>
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span><strong>ChakraModel Investigation:</strong> ViT-L/16 failure analysis & clean <span class="glossary-term" data-term="splits_v2">splits_v2</span> protocol</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="flex flex-wrap gap-sm" style="margin-top: 1.5rem;">
+              <a href="pages/04-architectures.html" class="btn btn-primary btn-sm">Explore Architectures</a>
+              <a href="pages/06-benchmarks.html" class="btn btn-secondary btn-sm">View Benchmarks</a>
+              <a href="pages/08-benchmark-integrity.html" class="btn btn-secondary btn-sm">Integrity Audit</a>
+              <a href="pages/09-chakramodel.html" class="btn btn-outline btn-sm">ChakraModel Study</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- The ChakraModel Project & Benchmark Integrity Revelation -->
+    <section class="section" style="background: var(--bg-tertiary); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+      <div class="container">
+        <div class="grid grid-2" style="align-items: center; gap: 3rem;">
+          <div>
+            <span class="badge badge-integrity">Research Discovery &bull; Integrity Audit</span>
+            <h2 style="margin-top: 0.75rem;">The ChakraModel Pivot: From Model Building to Forensic Science</h2>
+            <p>
+              The ChakraModel project began with an ambitious goal: engineering a lightweight vision transformer capable of matching clinical-grade polyp detection at ultra-low inference latency.
+            </p>
+            <p>
+              However, rigorous empirical validation uncovered a startling reality. When our 309-million parameter ChakraTransformer (ViT-L/16) was evaluated across standard datasets, it scored a disappointing <strong>0.771 Dice</strong> on CVC-ClinicDB—trailing behind a 2015 U-Net baseline.
+            </p>
+            <p>
+              Investigating this discrepancy led to our most consequential discovery: <strong>the academic benchmark itself was fundamentally compromised</strong>. Standard evaluation splits were leaking consecutive video frames between training and test sets, inflating reported scores by 12% to 15% across dozens of published medical AI papers.
+            </p>
+
+            <div class="alert alert-integrity" style="margin: 1.5rem 0;">
+              <div class="alert-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+              </div>
+              <div class="alert-content">
+                <div class="alert-title">Forensic Audit Highlights</div>
+                <p>
+                  1. <strong>CVC-ClinicDB Video Leakage:</strong> All 62 test frames in the canonical PraNet split originate from the identical video sequences as training frames (30 near-duplicate links).<br>
+                  2. <strong>ColonDB & CVC-300 Overlap:</strong> Share 58 exact-pixel identical images—pooling them constitutes scientific double-counting.<br>
+                  3. <strong>Negative Frame Blindness:</strong> Standard benchmarks test models only on frames with polyps, completely ignoring <span class="glossary-term" data-term="alarm-fatigue">alarm fatigue</span> caused by false positives on healthy tissue.
+                </p>
+              </div>
+            </div>
+
+            <a href="pages/09-chakramodel.html" class="btn btn-secondary">
+              Read Full Forensic Report &rarr;
+            </a>
+          </div>
+
+          <!-- Visual Artifact Representation -->
+          <div>
+            <div class="card card-glass" style="border-left: 4px solid var(--color-coral);">
+              <div class="card-header">
+                <h3 class="card-title" style="font-size: 1.15rem; display: flex; align-items: center; gap: 0.5rem;">
+                  <span class="badge badge-coral">Integrity Alert</span>
+                  Canonical Benchmark Flaw Anatomy
+                </h3>
+              </div>
+              <div class="card-body">
+                <div style="font-family: var(--font-mono); font-size: 0.85rem; background: var(--bg-primary); padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle); line-height: 1.7;">
+                  <div style="color: var(--color-teal); font-weight: 600;">[EXHIBIT A: CVC-ClinicDB Temporal Link]</div>
+                  <div style="color: var(--text-secondary); margin-top: 0.25rem;">
+                    Frame train_180.png (Training Split)<br>
+                    Frame clinicdb_181.png (Test Split)<br>
+                    &rarr; Captured 40 ms apart; same patient & polyp.<br>
+                    &rarr; ORB Inliers: 42 | Center-Crop Corr: 0.974<br>
+                    <span style="color: var(--color-coral);">&Delta; Result: In-sequence memorization masquerading as generalized clinical accuracy.</span>
+                  </div>
+
+                  <hr style="margin: 1rem 0; border-color: var(--border-subtle);">
+
+                  <div style="color: var(--color-teal); font-weight: 600;">[EXHIBIT B: False Alarm Blind Spot]</div>
+                  <div style="color: var(--text-secondary); margin-top: 0.25rem;">
+                    Clinical Video Reality: &gt;95% healthy mucosa.<br>
+                    SUN-SEG Dataset: 109,554 negative frames (69%).<br>
+                    Standard Benchmarks: 0 negative frames tested.<br>
+                    <span style="color: var(--color-amber);">&Delta; Consequence: Models firing constantly on bubbles achieve top Dice scores without penalty.</span>
+                  </div>
+                </div>
+
+                <div style="margin-top: 1.25rem; display: flex; justify-content: space-between; align-items: center;">
+                  <span style="font-size: 0.85rem; color: var(--text-muted);">Protocol: ChakraModel leakbench (splits_v2)</span>
+                  <a href="pages/08-benchmark-integrity.html" class="tooltip-link" style="font-size: 0.85rem;">See all 4 audit flaws &rarr;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comprehensive 12-Module Quick Navigation Grid -->
+    <section id="quick-navigation" class="section">
+      <div class="container">
+        <div style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">
+          <span class="badge badge-purple">Curriculum Index</span>
+          <h2 style="margin-top: 0.75rem;">Complete Platform Knowledge Base</h2>
+          <p class="lead">
+            Twelve interconnected modules detailing every dimension of clinical colonoscopy, deep learning computer vision, real-world randomized trials, and benchmark integrity.
+          </p>
+        </div>
+
+        <div class="grid grid-3">
+          <!-- Card 01 -->
+          <article class="card card-interactive">
+            <div class="card-header">
+              <span class="badge badge-clinical">Module 01</span>
+              <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">Clinical Core</span>
+            </div>
+            <h3 class="card-title"><a href="pages/01-what-is-colonoscopy.html">What is Colonoscopy?</a></h3>
+            <p class="card-body">
+              Anatomy of the 8 colonic zones, dietary and split-dose bowel prep protocols, the 10-point <span class="glossary-term" data-term="bbps">BBPS</span> scale, withdrawal inspection standards, and the Corley et al. evidence.
+            </p>
+            <div class="card-footer">
+              <a href="pages/01-what-is-colonoscopy.html" class="tooltip-link">Explore Anatomy & Prep &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Card 02 -->
+          <article class="card card-interactive">
+            <div class="card-header">
+              <span class="badge badge-clinical">Module 02</span>
+              <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">Pathology</span>
+            </div>
+            <h3 class="card-title"><a href="pages/02-polyp-types.html">Polyp Types & Histology</a></h3>
+            <p class="card-body">
+              The <span class="glossary-term" data-term="paris-classification">Paris classification</span> (0-I to 0-III), size stratification, conventional vs serrated neoplastic pathways, and optical diagnosis standards (<span class="glossary-term" data-term="kudo-pit-pattern">Kudo</span>, <span class="glossary-term" data-term="nice-classification">NICE</span>, JNET).
+            </p>
+            <div class="card-footer">
+              <a href="pages/02-polyp-types.html" class="tooltip-link">Explore Classifications &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Card 03 -->
+          <article class="card card-interactive">
+            <div class="card-header">
+              <span class="badge badge-arch">Module 03</span>
+              <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">Evolution</span>
+            </div>
+            <h3 class="card-title"><a href="pages/03-ai-history.html">History of AI in Colonoscopy</a></h3>
+            <p class="card-body">
+              From 1990s color co-occurrence matrices and hand-crafted wavelets to the deep learning revolution, landmark Wang 2018 SegNet, and FDA clearances.
+            </p>
+            <div class="card-footer">
+              <a href="pages/03-ai-history.html" class="tooltip-link">View Historical Timeline &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Card 04 -->
+          <article class="card card-interactive">
+            <div class="card-header">
+              <span class="badge badge-arch">Module 04</span>
+              <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">Deep Learning</span>
+            </div>
+            <h3 class="card-title"><a href="pages/04-architectures.html">Deep Learning Architectures</a></h3>
+            <p class="card-body">
+              Technical breakdown of U-Net, PraNet (Reverse Attention), HarDNet-MSEG, Polyp-PVT, ColonFormer, and modern selective state-space models (EndoMamba).
+            </p>
+            <div class="card-footer">
+              <a href="pages/04-architectures.html" class="tooltip-link">Compare Architectures &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Card 05 -->
+          <article class="card card-interactive">
+            <div class="card-header">
+              <span class="badge badge-dataset">Module 05</span>
+              <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">Corpora</span>
+            </div>
+            <h3 class="card-title"><a href="pages/05-datasets.html">Benchmark Datasets</a></h3>
+            <p class="card-body">
+              Deep catalog of Kvasir-SEG, CVC-ClinicDB, CVC-ColonDB, ETIS-Larib, PolypGen, SUN-SEG, and PICCOLO. Modalities, resolutions, and annotation caveats.
+            </p>
+            <div class="card-footer">
+              <a href="pages/05-datasets.html" class="tooltip-link">Explore Datasets &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Card 06 -->
+          <article class="card card-interactive">
+            <div class="card-header">
+              <span class="badge badge-metric">Module 06</span>
+              <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">Evaluation</span>
+            </div>
+            <h3 class="card-title"><a href="pages/06-benchmarks.html">Academic Benchmarks</a></h3>
+            <p class="card-body">
+              Standard 5-dataset leaderboards for Mean <span class="glossary-term" data-term="dice">Dice</span> and Mean <span class="glossary-term" data-term="iou">IoU</span> across 12 canonical models, latency vs parameter scaling curves, and metric formulas.
+            </p>
+            <div class="card-footer">
+              <a href="pages/06-benchmarks.html" class="tooltip-link">View SOTA Leaderboards &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Card 06b -->
+          <article class="card card-interactive">
+            <div class="card-header">
+              <span class="badge badge-clinical">Module 06b</span>
+              <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">RCT Evidence</span>
+            </div>
+            <h3 class="card-title"><a href="pages/06b-clinical-evidence.html">Clinical Trials & Real-World Evidence</a></h3>
+            <p class="card-body">
+              Analysis of 41 RCTs (31,789 patients), the AGA 2025 microsimulation model, diminutive polyp inflation, cognitive deskilling in the ACCEPT trial, and ASGE PVI.
+            </p>
+            <div class="card-footer">
+              <a href="pages/06b-clinical-evidence.html" class="tooltip-link">Inspect Clinical Trials &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Card 07 -->
+          <article class="card card-interactive">
+            <div class="card-header">
+              <span class="badge badge-clinical">Module 07</span>
+              <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">Commercial</span>
+            </div>
+            <h3 class="card-title"><a href="pages/07-clinical-systems.html">Commercial CADe/CADx Systems</a></h3>
+            <p class="card-body">
+              Profiles of Medtronic GI Genius, Fujifilm CAD EYE, Olympus ENDO-AID, NEC WISE VISION, Pentax Discovery, and MAGENTIQ-COLO. Hardware pass-through and &lt;40ms budgets.
+            </p>
+            <div class="card-footer">
+              <a href="pages/07-clinical-systems.html" class="tooltip-link">Review Clinical Systems &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Card 08 -->
+          <article class="card card-interactive">
+            <div class="card-header">
+              <span class="badge badge-integrity">Module 08</span>
+              <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">Forensics</span>
+            </div>
+            <h3 class="card-title"><a href="pages/08-benchmark-integrity.html">Benchmark Integrity Audit</a></h3>
+            <p class="card-body">
+              Visual proof of video frame leakage in ClinicDB, 58 duplicated frames between ColonDB and CVC-300, HyperKvasir SHA-256 replication, and false alarm blind spots.
+            </p>
+            <div class="card-footer">
+              <a href="pages/08-benchmark-integrity.html" class="tooltip-link">Examine Leakage Proofs &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Card 09 -->
+          <article class="card card-interactive">
+            <div class="card-header">
+              <span class="badge badge-integrity">Module 09</span>
+              <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">Case Study</span>
+            </div>
+            <h3 class="card-title"><a href="pages/09-chakramodel.html">ChakraModel Research Study</a></h3>
+            <p class="card-body">
+              The full empirical case study: ViT-L/16 failure analysis, the ChakraXAttnUNet v2 cross-attention architecture, and the multi-seed <span class="glossary-term" data-term="splits_v2">splits_v2</span> protocol.
+            </p>
+            <div class="card-footer">
+              <a href="pages/09-chakramodel.html" class="tooltip-link">Read Research Report &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Card 10 -->
+          <article class="card card-interactive">
+            <div class="card-header">
+              <span class="badge badge-arch">Module 10</span>
+              <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">Frontiers</span>
+            </div>
+            <h3 class="card-title"><a href="pages/10-future.html">Future Directions & Frontiers</a></h3>
+            <p class="card-body">
+              Foundation models (MedSAM), prompt leakage risks, Spatiotemporal video segmentation, multicenter federated learning, and optical characterization without biopsy.
+            </p>
+            <div class="card-footer">
+              <a href="pages/10-future.html" class="tooltip-link">See Future Roadmap &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Card 11 & 12 Combo -->
+          <article class="card card-interactive">
+            <div class="card-header">
+              <span class="badge badge-teal">Modules 11 & 12</span>
+              <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">Knowledge</span>
+            </div>
+            <h3 class="card-title"><a href="pages/12-glossary.html">References & Glossary</a></h3>
+            <p class="card-body">
+              Master searchable catalog of 49 peer-reviewed scientific citations (DOIs, arXiv links) and 50 standardized medical and AI terms with instant interactive definitions.
+            </p>
+            <div class="card-footer flex flex-between">
+              <a href="pages/11-references.html" class="tooltip-link">49 References &rarr;</a>
+              <a href="pages/12-glossary.html" class="tooltip-link">50-Term Glossary &rarr;</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Clinical vs Engineering Reality Check Section -->
+    <section class="section" style="background: var(--bg-secondary); border-top: 1px solid var(--border-subtle);">
+      <div class="container">
+        <div style="text-align: center; max-width: 800px; margin: 0 auto 2.5rem;">
+          <span class="badge badge-amber">The Ground Truth Gap</span>
+          <h2 style="margin-top: 0.75rem;">Bridging Two Disconnected Worlds</h2>
+          <p class="lead">
+            Medical AI literature and clinical practice often speak entirely different languages. Here is how key realities contrast across domains.
+          </p>
+        </div>
+
+        <div class="table-container">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Domain Dimension</th>
+                <th>Academic Machine Learning Conception</th>
+                <th>Clinical Gastroenterology Reality</th>
+                <th>The ChakraModel Resolution</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Primary Success Metric</strong></td>
+                <td>Pixel-wise <span class="glossary-term" data-term="dice">Dice Similarity</span> (&gt;0.92) and <span class="glossary-term" data-term="iou">IoU</span> on tightly cropped polyp images.</td>
+                <td><span class="glossary-term" data-term="adr">Adenoma Detection Rate</span> (<span class="glossary-term" data-term="adr">ADR</span>), reducing interval cancer deaths (Corley 2014), and minimizing complications.</td>
+                <td>Evaluate models on per-polyp detection latency and false-alarm frequency per minute of withdrawal.</td>
+              </tr>
+              <tr>
+                <td><strong>Dataset Composition</strong></td>
+                <td>100% positive frames containing prominent polyps under optimal lighting.</td>
+                <td>&gt;95% healthy mucosa, residual stool, bile pools, active bleeding, and suction artifacts.</td>
+                <td>Mandatory inclusion of 4,275 verified negative frames to measure <span class="glossary-term" data-term="far">False Alarm Rate</span> (<span class="glossary-term" data-term="far">FAR</span>).</td>
+              </tr>
+              <tr>
+                <td><strong>Polyps of Highest Value</strong></td>
+                <td>Large, protruding pedunculated polyps (&gt;10 mm) that yield high spatial overlap scores.</td>
+                <td>Subtle, flat, pale <span class="glossary-term" data-term="sessile-serrated-lesion">Sessile Serrated Lesions</span> (<span class="glossary-term" data-term="sessile-serrated-lesion">SSLs</span>) that human endoscopists miss at rates up to 35%.</td>
+                <td>Size and morphology stratification (diminutive &le;5mm vs advanced &ge;10mm) in evaluation benchmarks.</td>
+              </tr>
+              <tr>
+                <td><strong>Inference Constraints</strong></td>
+                <td>Unconstrained batch GPU offline processing (often &gt;100 ms per image).</td>
+                <td>Strict real-time inline hardware appliance budget strictly <strong>&lt;40 ms latency</strong> to avoid motion lag.</td>
+                <td>Hardware-aware benchmarking on realistic edge video streams without frame-buffering delays.</td>
+              </tr>
+              <tr>
+                <td><strong>Evaluation Integrity</strong></td>
+                <td>Random frame splitting of video sequences, leading to extensive <span class="glossary-term" data-term="video-frame-leakage">temporal leakage</span>.</td>
+                <td>Independent patients, diverse endoscope manufacturers, and distinct hospital centers.</td>
+                <td>Cryptographically verified <span class="glossary-term" data-term="splits_v2">splits_v2</span> protocol with zero cross-split video or sequence contamination.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Global Site Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h4>Colonoscopy AI & ChakraModel</h4>
+          <p>
+            An open educational and research initiative bridging gastroenterology, deep learning vision, and forensic data science. Dedicated to improving patient safety and upholding scientific integrity.
+          </p>
+          <div style="margin-top: 1.25rem; font-size: 0.8rem; color: var(--text-muted);">
+            Project Lead: Worker M3 & Orchestrator &bull; Milestone 3 Platform
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>Clinical Education</h5>
+          <ul class="footer-links">
+            <li><a href="pages/01-what-is-colonoscopy.html">Anatomy & Bowel Prep</a></li>
+            <li><a href="pages/02-polyp-types.html">Polyp Morphologies & Histology</a></li>
+            <li><a href="pages/06b-clinical-evidence.html">41 RCTs & Clinical Paradox</a></li>
+            <li><a href="pages/07-clinical-systems.html">Commercial AI Systems</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>AI & Engineering</h5>
+          <ul class="footer-links">
+            <li><a href="pages/03-ai-history.html">History of AI in Colonoscopy</a></li>
+            <li><a href="pages/04-architectures.html">Deep Learning Architectures</a></li>
+            <li><a href="pages/05-datasets.html">Benchmark Datasets</a></li>
+            <li><a href="pages/06-benchmarks.html">Academic Benchmarks</a></li>
+            <li><a href="pages/10-future.html">Future Directions & Mamba</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Integrity & Research</h5>
+          <ul class="footer-links">
+            <li><a href="pages/08-benchmark-integrity.html">Integrity & Video Leakage Audit</a></li>
+            <li><a href="pages/09-chakramodel.html">ChakraModel Case Study</a></li>
+            <li><a href="pages/11-references.html">49 Academic References</a></li>
+            <li><a href="pages/12-glossary.html">50-Term Medical Glossary</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 Colonoscopy AI & ChakraModel Research Platform. All medical data grounded in peer-reviewed clinical literature.
+        </div>
+        <div class="flex gap-md" style="font-family: var(--font-mono); font-size: 0.8rem;">
+          <span>Integrity: Zero Hallucination Standard</span>
+          <span>&bull;</span>
+          <span>Dark / Light Responsive</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

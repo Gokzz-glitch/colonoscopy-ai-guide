@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Clinical Guide to Colonoscopy: Colorectal Anatomy, Bowel Preparation (BBPS), Quality Metrics (ADR, CIR, WT, AMR), and the Corley et al. Landmark Prevention Evidence.">
+  <title>What is Colonoscopy? Anatomy, Preparation & Quality Standards | Colonoscopy AI</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+  <!-- Fixed Scroll Progress Bar -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- Sticky Site Navigation Header -->
+  <header class="site-header" role="banner">
+    <div class="container nav-container">
+      <a href="../index.html" class="brand-logo" aria-label="Colonoscopy AI Home">
+        <div class="brand-icon">AI</div>
+        <span>Colonoscopy AI</span>
+        <span class="brand-badge">Clinical Guide</span>
+      </a>
+
+      <nav role="navigation" aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="../index.html" class="nav-link">Home</a></li>
+          <li><a href="01-what-is-colonoscopy.html" class="nav-link active">Anatomy & Prep</a></li>
+          <li><a href="02-polyp-types.html" class="nav-link">Polyps & Histology</a></li>
+          <li><a href="04-architectures.html" class="nav-link">Architectures</a></li>
+          <li><a href="06b-clinical-evidence.html" class="nav-link">Clinical Trials</a></li>
+          <li><a href="07-clinical-systems.html" class="nav-link">Commercial Systems</a></li>
+          <li><a href="08-benchmark-integrity.html" class="nav-link">Integrity Audit</a></li>
+          <li><a href="09-chakramodel.html" class="nav-link">ChakraModel</a></li>
+          <li><a href="12-glossary.html" class="nav-link">Glossary</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" type="button" aria-label="Toggle dark and light theme">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+        <button class="hamburger-btn" type="button" aria-label="Open Navigation Menu" aria-expanded="false">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+    <div style="font-family: var(--font-heading); font-size: 0.8rem; text-transform: uppercase; color: var(--color-teal); letter-spacing: 0.08em; margin-bottom: 0.5rem;">Clinical Education</div>
+    <a href="../index.html" class="nav-link">00. Home / Portal Overview</a>
+    <a href="01-what-is-colonoscopy.html" class="nav-link active">01. What is Colonoscopy? Anatomy & Prep</a>
+    <a href="02-polyp-types.html" class="nav-link">02. Polyp Types & Morphology</a>
+    <a href="06b-clinical-evidence.html" class="nav-link">06b. Clinical Trials & Real-World Evidence</a>
+    <a href="07-clinical-systems.html" class="nav-link">07. Commercial CADe/CADx Systems</a>
+
+    <div style="font-family: var(--font-heading); font-size: 0.8rem; text-transform: uppercase; color: var(--color-purple); letter-spacing: 0.08em; margin: 1.25rem 0 0.5rem;">AI Engineering & Research</div>
+    <a href="03-ai-history.html" class="nav-link">03. History of AI in Colonoscopy</a>
+    <a href="04-architectures.html" class="nav-link">04. Deep Learning Architectures</a>
+    <a href="05-datasets.html" class="nav-link">05. Benchmark Datasets</a>
+    <a href="06-benchmarks.html" class="nav-link">06. Academic Benchmarks</a>
+    <a href="08-benchmark-integrity.html" class="nav-link">08. Benchmark Integrity Audit</a>
+    <a href="09-chakramodel.html" class="nav-link">09. ChakraModel Research Project</a>
+    <a href="10-future.html" class="nav-link">10. Future Directions & Open Frontiers</a>
+
+    <div style="font-family: var(--font-heading); font-size: 0.8rem; text-transform: uppercase; color: var(--color-amber); letter-spacing: 0.08em; margin: 1.25rem 0 0.5rem;">Knowledge Resources</div>
+    <a href="11-references.html" class="nav-link">11. Scientific References (49 Papers)</a>
+    <a href="12-glossary.html" class="nav-link">12. Medical & Technical Glossary (50 Terms)</a>
+  </div>
+
+  <main id="main-content">
+    <!-- Breadcrumb & Page Hero -->
+    <section class="hero" style="padding: 3.5rem 0 2.5rem;">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="container hero-content">
+        <div style="display: flex; justify-content: center; gap: 0.5rem; margin-bottom: 1rem; font-family: var(--font-mono); font-size: 0.85rem;">
+          <a href="../index.html" style="color: var(--text-muted);">Home</a>
+          <span style="color: var(--text-muted);">&gt;</span>
+          <span style="color: var(--color-teal);">Module 01: Anatomy & Quality Standards</span>
+        </div>
+
+        <div class="hero-badge">
+          <span class="dot" aria-hidden="true"></span>
+          <span>Clinical Foundations &bull; Module 01</span>
+        </div>
+
+        <h1 class="hero-title" style="font-size: clamp(2rem, 4vw, 3.25rem);">
+          What is a Colonoscopy?<br>
+          <span class="gradient-text">Anatomy, Procedure & Quality Standards</span>
+        </h1>
+
+        <p class="hero-subtitle" style="max-width: 820px;">
+          The large intestine spans 1.5 meters across 8 distinct anatomical zones. 
+          Discover how systematic bowel preparation, complete cecal intubation, and thorough mucosal inspection 
+          form the foundation of colorectal cancer prevention—and why computer-aided detection has emerged as a vital safeguard.
+        </p>
+      </div>
+    </section>
+
+    <!-- Key Takeaway Alert -->
+    <section class="container" style="margin-top: -1rem; margin-bottom: 2rem;">
+      <div class="alert alert-clinical">
+        <div class="alert-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+        </div>
+        <div class="alert-content">
+          <div class="alert-title">The Foundational Clinical Invariant</div>
+          <p>
+            In a landmark study of 314,845 screening examinations, <strong>Corley et al. (<a href="#corley-evidence" style="color: inherit; text-decoration: underline;">NEJM 2014</a>)</strong> proved that every <strong>1.0% absolute increase in an endoscopist's <span class="glossary-term" data-term="adr">Adenoma Detection Rate (ADR)</span> directly confers a 3.0% reduction in interval colorectal cancer incidence and a 5.0% reduction in fatal cancer</strong>. That single equation forms the entire clinical justification for AI assistance during withdrawal inspection.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 1: Anatomy of the Large Intestine -->
+    <section class="section">
+      <div class="container">
+        <div style="max-width: 800px; margin-bottom: 2.5rem;">
+          <span class="badge badge-clinical">Colorectal Anatomy</span>
+          <h2 style="margin-top: 0.5rem;">The 8 Anatomical Zones of Mucosal Inspection</h2>
+          <p class="lead">
+            The colon is not a uniform tube. It transitions through muscular loops, sharp flexures, and retroperitoneal anchor points, creating distinct clinical challenges for finding precancerous lesions.
+          </p>
+        </div>
+
+        <!-- Interactive Anatomy Explorer -->
+        <div class="card card-glass" style="margin-bottom: 3rem; padding: 2rem;">
+          <h3 style="margin-top: 0; margin-bottom: 1rem; font-size: 1.25rem;">Interactive Colorectal Anatomy Map</h3>
+          <p style="font-size: 0.95rem; margin-bottom: 1.5rem;">
+            Click on any anatomical segment below to reveal its anatomical characteristics, scope manipulation techniques, predominant lesion types, and endoscopic blind spots:
+          </p>
+
+          <div class="grid grid-4" id="anatomy-nav" style="gap: 0.75rem; margin-bottom: 1.5rem;">
+            <button type="button" class="btn btn-secondary btn-sm active" data-zone="cecum" style="text-align: left; justify-content: flex-start;">1. Cecum & Valve</button>
+            <button type="button" class="btn btn-secondary btn-sm" data-zone="ascending" style="text-align: left; justify-content: flex-start;">2. Ascending Colon</button>
+            <button type="button" class="btn btn-secondary btn-sm" data-zone="hepatic" style="text-align: left; justify-content: flex-start;">3. Hepatic Flexure</button>
+            <button type="button" class="btn btn-secondary btn-sm" data-zone="transverse" style="text-align: left; justify-content: flex-start;">4. Transverse Colon</button>
+            <button type="button" class="btn btn-secondary btn-sm" data-zone="splenic" style="text-align: left; justify-content: flex-start;">5. Splenic Flexure</button>
+            <button type="button" class="btn btn-secondary btn-sm" data-zone="descending" style="text-align: left; justify-content: flex-start;">6. Descending Colon</button>
+            <button type="button" class="btn btn-secondary btn-sm" data-zone="sigmoid" style="text-align: left; justify-content: flex-start;">7. Sigmoid Colon</button>
+            <button type="button" class="btn btn-secondary btn-sm" data-zone="rectum" style="text-align: left; justify-content: flex-start;">8. Rectum & Anus</button>
+          </div>
+
+          <!-- Zone Detail Display Panel -->
+          <div id="anatomy-detail" style="background: var(--bg-primary); border: 1px solid var(--border-medium); border-radius: var(--radius-md); padding: 1.75rem;">
+            <div class="flex flex-between" style="flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem;">
+              <h4 id="zone-title" style="color: var(--color-teal); font-size: 1.35rem; margin-bottom: 0;">1. Cecum & Appendiceal Orifice</h4>
+              <span id="zone-badge" class="badge badge-clinical">Proximal / Right Colon</span>
+            </div>
+            <div class="grid grid-2" style="margin-top: 1rem; gap: 1.5rem;">
+              <div>
+                <p id="zone-desc" style="color: var(--text-primary); font-size: 0.95rem;">
+                  The blind pouch marking the beginning of the large intestine (~6–7 cm breadth). Contains the crescentic appendiceal orifice and the lip-like ileocecal valve.
+                </p>
+                <div style="margin-top: 1rem;">
+                  <strong style="color: var(--text-primary); font-size: 0.9rem;">Procedural Milestone:</strong>
+                  <p id="zone-milestone" style="font-size: 0.875rem; margin-top: 0.25rem;">
+                    Reaching this landmark confirms complete <span class="glossary-term" data-term="cecal-intubation-rate">cecal intubation</span> (CIR benchmark &ge;95%). Photographic documentation of both the appendiceal orifice and ileocecal valve is clinically mandatory.
+                  </p>
+                </div>
+              </div>
+              <div style="background: var(--bg-tertiary); padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+                <strong style="color: var(--color-amber); font-size: 0.9rem;">Clinical Vulnerability & AI Value:</strong>
+                <p id="zone-vulnerability" style="font-size: 0.875rem; margin-top: 0.35rem; margin-bottom: 0.5rem;">
+                  Primary location of flat, subtle <span class="glossary-term" data-term="sessile-serrated-lesion">Sessile Serrated Lesions (SSLs)</span>. These lesions blend seamlessly with pale mucosa and are often masked by bile pools or thin mucus caps.
+                </p>
+                <div style="font-size: 0.8rem; font-family: var(--font-mono); color: var(--text-muted);" id="zone-pitfall">
+                  Pitfall: Pooling fluid can obscure the medial cecal wall; active suctioning and position change required.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- The 8-Segment Overview Table -->
+        <div class="table-container">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Segment</th>
+                <th>Anatomical Region</th>
+                <th>Approx. Length</th>
+                <th>Key Endoscopic Landmarks</th>
+                <th>High-Risk Lesion Profile</th>
+                <th>Clinical Significance</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>1. Cecum</strong></td>
+                <td>Right / Proximal</td>
+                <td class="numeric">6–7 cm</td>
+                <td>Appendiceal orifice, Ileocecal valve</td>
+                <td><span class="glossary-term" data-term="sessile-serrated-lesion">SSLs</span>, flat Paris 0-IIa</td>
+                <td>Photo-documentation mandatory; CIR quality benchmark (&ge;95%).</td>
+              </tr>
+              <tr>
+                <td><strong>2. Ascending Colon</strong></td>
+                <td>Right / Proximal</td>
+                <td class="numeric">15–20 cm</td>
+                <td>Deep haustral folds, prominent mucosal veins</td>
+                <td>Flat adenomas on proximal fold faces</td>
+                <td>Bile pooling obscures mucosa; retroflexion or dual pass recommended.</td>
+              </tr>
+              <tr>
+                <td><strong>3. Hepatic Flexure</strong></td>
+                <td>Right-to-Mid Bend</td>
+                <td class="numeric">Bend</td>
+                <td>Blue-purple liver shadow through bowel wall</td>
+                <td>Hidden lesions behind acute bend</td>
+                <td>Sharp angulation; scope torque required to prevent rapid slip-through.</td>
+              </tr>
+              <tr>
+                <td><strong>4. Transverse Colon</strong></td>
+                <td>Mid Colon</td>
+                <td class="numeric">45–50 cm</td>
+                <td>Triangular lumen, prominent haustra</td>
+                <td>Tubular adenomas, synchronous lesions</td>
+                <td>Highly mobile; susceptible to scope looping; requires slow spiral withdrawal.</td>
+              </tr>
+              <tr>
+                <td><strong>5. Splenic Flexure</strong></td>
+                <td>Mid-to-Left Bend</td>
+                <td class="numeric">Bend</td>
+                <td>Sharp high angulation under spleen</td>
+                <td>Polyps nested inside deep flexure curve</td>
+                <td>Highest anatomical bend; risk of splenic capsule traction during insertion.</td>
+              </tr>
+              <tr>
+                <td><strong>6. Descending Colon</strong></td>
+                <td>Left / Distal</td>
+                <td class="numeric">25–30 cm</td>
+                <td>Narrow cylindrical lumen, circular folds</td>
+                <td>Diverticular polyps, tubular adenomas</td>
+                <td>Common site for diverticulosis; polyps can hide within diverticular rims.</td>
+              </tr>
+              <tr>
+                <td><strong>7. Sigmoid Colon</strong></td>
+                <td>Left / Distal</td>
+                <td class="numeric">35–40 cm</td>
+                <td>Tortuous S-shaped loops, thick muscular folds</td>
+                <td>Conventional stalked (0-Ip) & sessile adenomas</td>
+                <td>Most difficult insertion segment; highest risk of mechanical perforation.</td>
+              </tr>
+              <tr>
+                <td><strong>8. Rectum & Anus</strong></td>
+                <td>Distal Terminal</td>
+                <td class="numeric">12–15 cm</td>
+                <td>Valves of Houston, dentate line</td>
+                <td>Hyperplastic polyps, low rectal adenocarcinomas</td>
+                <td>Retroflexion (180&deg; scope turn) required to inspect anorectal junction.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Bowel Preparation & The BBPS Scale -->
+    <section class="section" style="background: var(--bg-secondary); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+      <div class="container">
+        <div style="max-width: 800px; margin-bottom: 2.5rem;">
+          <span class="badge badge-clinical">Preparation Standards</span>
+          <h2 style="margin-top: 0.5rem;">Bowel Preparation & The Boston Scale (BBPS)</h2>
+          <p class="lead">
+            <em>"A clean bowel matters—poor means things get missed or the test has to be repeated."</em> 
+            Adequate preparation is essential. Stool and opaque fluid directly impair computer vision detection and blind endoscopists.
+          </p>
+        </div>
+
+        <div class="grid grid-2" style="gap: 2rem; margin-bottom: 3rem;">
+          <!-- Dietary & Split Dosing Protocol -->
+          <div class="card card-glass">
+            <h3 style="margin-top: 0; font-size: 1.25rem;">Standard 3-Step Preparation Protocol</h3>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem; margin-top: 1.25rem;">
+              <li style="display: flex; gap: 0.75rem;">
+                <span class="badge badge-teal" style="height: fit-content;">Day -3 to -5</span>
+                <div>
+                  <strong>Low-Fiber Diet:</strong>
+                  <p style="font-size: 0.9rem; margin-top: 0.25rem; margin-bottom: 0;">
+                    Eliminate seeds, nuts, whole grain breads, raw vegetables, corn, and popcorn. Reduces bulky colonic residue that resists osmotic flushing.
+                  </p>
+                </div>
+              </li>
+              <li style="display: flex; gap: 0.75rem;">
+                <span class="badge badge-amber" style="height: fit-content;">Day -1</span>
+                <div>
+                  <strong>Clear Liquids Only:</strong>
+                  <p style="font-size: 0.9rem; margin-top: 0.25rem; margin-bottom: 0;">
+                    No solid foods. Clear broths, water, black coffee/tea, apple juice, lemon gelatin. Completely avoid red and purple dyes (which mimic active bleeding).
+                  </p>
+                </div>
+              </li>
+              <li style="display: flex; gap: 0.75rem;">
+                <span class="badge badge-emerald" style="height: fit-content;">Split-Dose</span>
+                <div>
+                  <strong>Split-Dose Osmotic Purgative (PEG-ELS):</strong>
+                  <p style="font-size: 0.9rem; margin-top: 0.25rem; margin-bottom: 0;">
+                    Global clinical standard: First dose consumed the evening prior; second dose finished <strong>4 to 6 hours prior to the procedure</strong>. Split dosing drastically cleans the right colon where bile regathers overnight.
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- BBPS Score Explainer -->
+          <div class="card card-glass">
+            <h3 style="margin-top: 0; font-size: 1.25rem;">The Boston Bowel Preparation Scale (BBPS)</h3>
+            <p style="font-size: 0.925rem;">
+              Applied <strong>after washing and suctioning</strong> by the endoscopist. The colon is scored across three broad segments (Right, Mid, Left) on a 0 to 3 scale:
+            </p>
+
+            <div style="display: flex; flex-direction: column; gap: 0.65rem; font-size: 0.875rem;">
+              <div style="background: rgba(239, 68, 68, 0.1); border-left: 3px solid var(--color-danger); padding: 0.6rem 0.85rem; border-radius: var(--radius-sm);">
+                <strong>Score 0:</strong> Unprepared segment; mucosa not seen due to solid stool. Mandatory early repeat.
+              </div>
+              <div style="background: rgba(249, 115, 22, 0.1); border-left: 3px solid var(--color-coral); padding: 0.6rem 0.85rem; border-radius: var(--radius-sm);">
+                <strong>Score 1:</strong> Portions seen, but other areas obscured by staining and opaque fluid. Suboptimal.
+              </div>
+              <div style="background: rgba(0, 212, 255, 0.1); border-left: 3px solid var(--color-teal); padding: 0.6rem 0.85rem; border-radius: var(--radius-sm);">
+                <strong>Score 2:</strong> Minor staining or small stool fragments, but <strong>mucosa seen well</strong>. Clinically adequate.
+              </div>
+              <div style="background: rgba(16, 185, 129, 0.1); border-left: 3px solid var(--color-emerald); padding: 0.6rem 0.85rem; border-radius: var(--radius-sm);">
+                <strong>Score 3:</strong> Entire mucosa <strong>seen perfectly</strong> without residual staining or fluid. Pristine.
+              </div>
+            </div>
+
+            <div style="margin-top: 1rem; font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-muted);">
+              Clinical Adequacy Rule: <strong>Total BBPS &ge; 6</strong> AND <strong>Every segment score &ge; 2</strong>.
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive BBPS Simulator Widget -->
+        <div class="card card-glass" style="max-width: 900px; margin: 0 auto; padding: 2rem;">
+          <h3 style="margin-top: 0; margin-bottom: 0.5rem; text-align: center;">Interactive BBPS Score & Interval Simulator</h3>
+          <p style="text-align: center; font-size: 0.95rem; margin-bottom: 2rem;">
+            Adjust the clinical cleanliness rating for each segment to calculate the total Boston scale score and determine whether standard 10-year screening intervals apply:
+          </p>
+
+          <div class="grid grid-3" style="gap: 1.5rem; margin-bottom: 2rem;">
+            <!-- Segment 1: Right -->
+            <div style="background: var(--bg-primary); padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle); text-align: center;">
+              <h4 style="font-size: 1rem; margin-bottom: 0.5rem;">Right Colon</h4>
+              <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1rem;">Cecum & Ascending</p>
+              <select id="bbps-right" class="search-input" style="padding: 0.5rem; font-size: 0.9rem;" aria-label="Right Colon BBPS score">
+                <option value="0">Score 0: Obscured</option>
+                <option value="1">Score 1: Portions Not Seen</option>
+                <option value="2" selected>Score 2: Mucosa Seen Well</option>
+                <option value="3">Score 3: Pristine Clean</option>
+              </select>
+            </div>
+
+            <!-- Segment 2: Mid -->
+            <div style="background: var(--bg-primary); padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle); text-align: center;">
+              <h4 style="font-size: 1rem; margin-bottom: 0.5rem;">Mid Colon</h4>
+              <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1rem;">Hepatic, Transverse, Splenic</p>
+              <select id="bbps-mid" class="search-input" style="padding: 0.5rem; font-size: 0.9rem;" aria-label="Mid Colon BBPS score">
+                <option value="0">Score 0: Obscured</option>
+                <option value="1">Score 1: Portions Not Seen</option>
+                <option value="2">Score 2: Mucosa Seen Well</option>
+                <option value="3" selected>Score 3: Pristine Clean</option>
+              </select>
+            </div>
+
+            <!-- Segment 3: Left -->
+            <div style="background: var(--bg-primary); padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle); text-align: center;">
+              <h4 style="font-size: 1rem; margin-bottom: 0.5rem;">Left Colon</h4>
+              <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1rem;">Descending, Sigmoid, Rectum</p>
+              <select id="bbps-left" class="search-input" style="padding: 0.5rem; font-size: 0.9rem;" aria-label="Left Colon BBPS score">
+                <option value="0">Score 0: Obscured</option>
+                <option value="1">Score 1: Portions Not Seen</option>
+                <option value="2">Score 2: Mucosa Seen Well</option>
+                <option value="3" selected>Score 3: Pristine Clean</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Calculation Outcome Card -->
+          <div id="bbps-result-card" style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: var(--radius-md); padding: 1.5rem; text-align: center;">
+            <div style="display: flex; justify-content: center; align-items: baseline; gap: 0.75rem;">
+              <span style="font-size: 1.1rem; font-family: var(--font-heading);">Total BBPS Score:</span>
+              <span id="bbps-total-score" style="font-size: 2.25rem; font-family: var(--font-heading); font-weight: 700; color: var(--color-emerald);">8 / 9</span>
+            </div>
+            <div id="bbps-status" style="font-size: 1.05rem; font-weight: 600; color: var(--color-emerald); margin-top: 0.5rem;">
+              Adequate Cleansing Achieved (All Segments &ge; 2)
+            </div>
+            <p id="bbps-recommendation" style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.5rem; margin-bottom: 0;">
+              Standard 10-year rescreening interval is clinically valid if no precancerous adenomas are discovered.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Procedure Workflow & Quality Metrics -->
+    <section class="section">
+      <div class="container">
+        <div style="max-width: 800px; margin-bottom: 2.5rem;">
+          <span class="badge badge-metric">Quality Assurance</span>
+          <h2 style="margin-top: 0.5rem;">Procedure Workflow & Core Quality Benchmarks</h2>
+          <p class="lead">
+            Colonoscopy is operator-dependent. Clinical societies enforce four measurable quality metrics to ensure patients receive a life-saving examination.
+          </p>
+        </div>
+
+        <div class="grid grid-2" style="gap: 2rem; margin-bottom: 3rem;">
+          <!-- CIR & Withdrawal Time -->
+          <div class="card card-interactive">
+            <div class="card-header">
+              <h3 class="card-title">1. Cecal Intubation & Withdrawal Time</h3>
+              <span class="badge badge-clinical">Procedural Steps</span>
+            </div>
+            <div class="card-body">
+              <p>
+                A high-quality colonoscopy consists of two distinct procedural phases:
+              </p>
+              <div style="margin-bottom: 1rem;">
+                <strong style="color: var(--color-teal);"><span class="glossary-term" data-term="cecal-intubation-rate">Cecal Intubation Rate (CIR)</span>:</strong>
+                <p style="font-size: 0.9rem; margin-top: 0.25rem;">
+                  The scope must navigate to the cecal pole, verifying complete intubation by photographing the appendiceal orifice and ileocecal valve. Target standard: <strong>&ge;95% in screening cases</strong> (&ge;90% overall). Failure leaves the highest-risk proximal colon uninspected.
+                </p>
+              </div>
+              <div>
+                <strong style="color: var(--color-teal);"><span class="glossary-term" data-term="withdrawal-time">Withdrawal Inspection Time</span>:</strong>
+                <p style="font-size: 0.9rem; margin-top: 0.25rem; margin-bottom: 0;">
+                  Therapeutic resection occurs during withdrawal, but inspection time in normal colons must strictly meet a <strong>minimum of &ge;6 minutes</strong>. Landmark studies (Barclay et al., <em>NEJM</em> 2006) show extending inspection to <strong>8–9 minutes</strong> significantly boosts flat adenoma detection.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- ADR, PDR & AMR Metrics -->
+          <div class="card card-interactive">
+            <div class="card-header">
+              <h3 class="card-title">2. ADR vs PDR vs Miss Rate (AMR)</h3>
+              <span class="badge badge-metric">Detection Metrics</span>
+            </div>
+            <div class="card-body">
+              <div style="margin-bottom: 1rem;">
+                <strong style="color: var(--color-emerald);"><span class="glossary-term" data-term="adr">Adenoma Detection Rate (ADR)</span>:</strong>
+                <p style="font-size: 0.9rem; margin-top: 0.25rem;">
+                  Percentage of screening patients where at least one verified precancerous adenoma is detected. Benchmark: <strong>&ge;25% overall (&ge;30% men, &ge;20% women)</strong>.
+                </p>
+              </div>
+              <div style="margin-bottom: 1rem;">
+                <strong style="color: var(--color-amber);"><span class="glossary-term" data-term="pdr">Polyp Detection Rate (PDR)</span>:</strong>
+                <p style="font-size: 0.9rem; margin-top: 0.25rem;">
+                  Percentage of procedures where any polypoid tissue is resected (including benign hyperplastic tags). ADR is roughly 0.65 to 0.70 &times; PDR. PDR is easier to measure in real time but can be falsely inflated.
+                </p>
+              </div>
+              <div>
+                <strong style="color: var(--color-coral);"><span class="glossary-term" data-term="amr">Adenoma Miss Rate (AMR)</span>:</strong>
+                <p style="font-size: 0.9rem; margin-top: 0.25rem; margin-bottom: 0;">
+                  The fraction of true adenomas overlooked by the physician, determined by tandem (back-to-back) colonoscopy. Baseline human AMR is <strong>20% to 26%</strong>, rising to <strong>34%–35% for flat lesions</strong>.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- The Corley et al. 2014 Deep Dive -->
+        <div id="corley-evidence" class="card card-glass" style="border-left: 4px solid var(--color-teal); padding: 2.25rem;">
+          <div class="flex flex-between" style="flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem;">
+            <div>
+              <span class="badge badge-clinical">Landmark Clinical Evidence</span>
+              <h3 style="margin-top: 0.5rem; margin-bottom: 0.25rem;">Corley et al. (NEJM 2014): The Epidemiological Foundation</h3>
+              <div style="font-size: 0.85rem; color: var(--text-muted); font-family: var(--font-mono);">
+                New England Journal of Medicine 2014; 370:1298-1306 &bull; Kaiser Permanente Northern California
+              </div>
+            </div>
+            <a href="11-references.html#ref-corley2014" class="btn btn-outline btn-sm">Citation Details &rarr;</a>
+          </div>
+
+          <p style="font-size: 1rem; line-height: 1.7;">
+            In the largest epidemiological investigation of colonoscopy quality ever published, Corley and colleagues analyzed <strong>314,845 colonoscopies performed by 136 experienced gastroenterologists</strong> over a 10-year longitudinal follow-up period.
+          </p>
+
+          <div class="grid grid-3" style="gap: 1.25rem; margin: 1.5rem 0;">
+            <div style="background: var(--bg-primary); padding: 1.25rem; border-radius: var(--radius-md); text-align: center; border: 1px solid var(--border-subtle);">
+              <div style="font-size: 2.25rem; font-family: var(--font-heading); color: var(--color-teal); font-weight: 700;">-3.0%</div>
+              <div style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.25rem;">
+                Drop in Post-Colonoscopy CRC Incidence per 1.0% Absolute Rise in ADR
+              </div>
+            </div>
+            <div style="background: var(--bg-primary); padding: 1.25rem; border-radius: var(--radius-md); text-align: center; border: 1px solid var(--border-subtle);">
+              <div style="font-size: 2.25rem; font-family: var(--font-heading); color: var(--color-emerald); font-weight: 700;">-5.0%</div>
+              <div style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.25rem;">
+                Drop in Fatal Colorectal Cancer Mortality per 1.0% Absolute Rise in ADR
+              </div>
+            </div>
+            <div style="background: var(--bg-primary); padding: 1.25rem; border-radius: var(--radius-md); text-align: center; border: 1px solid var(--border-subtle);">
+              <div style="font-size: 2.25rem; font-family: var(--font-heading); color: var(--color-purple); font-weight: 700;">48%</div>
+              <div style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.25rem;">
+                Lower Cancer Risk for Patients in Highest vs Lowest Physician Quintile
+              </div>
+            </div>
+          </div>
+
+          <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 0;">
+            <strong>Clinical Significance:</strong> The study proved that an endoscopist's detection rate is not an arbitrary academic statistic—it is a direct determinant of whether a patient survives. However, endoscopist ADR in the cohort ranged wildly from <strong>7.4% to 52.5%</strong>. This dramatic human variability gave birth to the field of computer-aided detection (CADe).
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Why AI Matters in Colonoscopy -->
+    <section class="section" style="background: var(--bg-tertiary); border-top: 1px solid var(--border-subtle);">
+      <div class="container">
+        <div style="max-width: 800px; margin-bottom: 2.5rem;">
+          <span class="badge badge-arch">Computer Vision Role</span>
+          <h2 style="margin-top: 0.5rem;">Why Artificial Intelligence Matters in Colonoscopy</h2>
+          <p class="lead">
+            Human visual perception is constrained by fatigue, fast withdrawal speed, and subtle lesion textures. AI acts as an indefatigable co-pilot during mucosal withdrawal.
+          </p>
+        </div>
+
+        <div class="grid grid-3" style="gap: 1.5rem;">
+          <div class="card card-glass">
+            <h3 style="font-size: 1.15rem; color: var(--color-teal); margin-top: 0;">1. Eliminating Human Fatigue</h3>
+            <p style="font-size: 0.9rem;">
+              Endoscopists often perform 8 to 12 intensive procedures per day. Studies show ADR drops significantly in afternoon sessions compared to morning slots. Real-time CADe algorithms process 60 frames per second with identical attentiveness on patient #12 as on patient #1.
+            </p>
+          </div>
+
+          <div class="card card-glass">
+            <h3 style="font-size: 1.15rem; color: var(--color-amber); margin-top: 0;">2. Catching Flat & Serrated Polyps</h3>
+            <p style="font-size: 0.9rem;">
+              While large stalked polyps are obvious, subtle non-polypoid lesions (<span class="glossary-term" data-term="paris-classification">Paris 0-II</span>) and <span class="glossary-term" data-term="sessile-serrated-lesion">Sessile Serrated Lesions</span> (<span class="glossary-term" data-term="sessile-serrated-lesion">SSLs</span>) are flush with normal mucosa. Convolutional networks detect subtle micro-vascular disruptions invisible to casual inspection.
+            </p>
+          </div>
+
+          <div class="card card-glass">
+            <h3 style="font-size: 1.15rem; color: var(--color-emerald); margin-top: 0;">3. Raising Baseline Quality</h3>
+            <p style="font-size: 0.9rem;">
+              Randomized trials reveal that CADe confers the greatest benefit to endoscopists with lower baseline detection rates (&lt;25%), closing the quality gap across community practices and providing patients with uniform diagnostic security.
+            </p>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+          <a href="02-polyp-types.html" class="btn btn-primary btn-lg">
+            Proceed to Module 02: Polyp Types & Histology &rarr;
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Global Site Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h4>Colonoscopy AI & ChakraModel</h4>
+          <p>
+            An open educational and research initiative bridging gastroenterology, deep learning vision, and forensic data science. Dedicated to improving patient safety and upholding scientific integrity.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Clinical Education</h5>
+          <ul class="footer-links">
+            <li><a href="01-what-is-colonoscopy.html">Anatomy & Bowel Prep</a></li>
+            <li><a href="02-polyp-types.html">Polyp Morphologies & Histology</a></li>
+            <li><a href="06b-clinical-evidence.html">41 RCTs & Clinical Paradox</a></li>
+            <li><a href="07-clinical-systems.html">Commercial AI Systems</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>AI & Engineering</h5>
+          <ul class="footer-links">
+            <li><a href="03-ai-history.html">History of AI in Colonoscopy</a></li>
+            <li><a href="04-architectures.html">Deep Learning Architectures</a></li>
+            <li><a href="05-datasets.html">Benchmark Datasets</a></li>
+            <li><a href="06-benchmarks.html">Academic Benchmarks</a></li>
+            <li><a href="10-future.html">Future Directions & Mamba</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Integrity & Research</h5>
+          <ul class="footer-links">
+            <li><a href="08-benchmark-integrity.html">Integrity & Video Leakage Audit</a></li>
+            <li><a href="09-chakramodel.html">ChakraModel Case Study</a></li>
+            <li><a href="11-references.html">49 Academic References</a></li>
+            <li><a href="12-glossary.html">50-Term Medical Glossary</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 Colonoscopy AI & ChakraModel Research Platform. All clinical metrics verified against peer-reviewed trials.
+        </div>
+        <div class="flex gap-md" style="font-family: var(--font-mono); font-size: 0.8rem;">
+          <span>Module 01: Anatomy & Prep</span>
+          <span>&bull;</span>
+          <span>Corley et al. Invariant</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../assets/js/main.js"></script>
+  <script>
+    // Module 01 Interactive Features: Anatomy Zone Selector & BBPS Simulator
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Anatomy Zone Interactive Selector
+      const ANATOMY_DATA = {
+        cecum: {
+          title: "1. Cecum & Appendiceal Orifice",
+          badge: "Proximal / Right Colon",
+          desc: "The blind pouch marking the beginning of the large intestine (~6–7 cm breadth). Contains the crescentic appendiceal orifice and the lip-like ileocecal valve.",
+          milestone: "Reaching this landmark confirms complete cecal intubation (CIR benchmark ≥95%). Photographic documentation of both landmarks is mandatory.",
+          vulnerability: "Primary location of flat, subtle Sessile Serrated Lesions (SSLs). These lesions blend seamlessly with pale mucosa and are often masked by bile pools or thin mucus caps.",
+          pitfall: "Pitfall: Pooling fluid can obscure the medial cecal wall; active suctioning and patient repositioning are required."
+        },
+        ascending: {
+          title: "2. Ascending Colon",
+          badge: "Proximal / Right Colon",
+          desc: "Retroperitoneal segment extending vertically 15–20 cm from cecum to the right hepatic flexure. Characterized by deep haustral folds.",
+          milestone: "Inspection requires peering onto the proximal (reverse) side of every haustral fold, where flat adenomas hide from straight-ahead view.",
+          vulnerability: "Heavy bile pooling shifts mucosal hue. High risk for missed flat Paris 0-IIa and 0-IIb lesions.",
+          pitfall: "Pitfall: Rapid withdrawal slips past folds. Retroflexion or forward double-inspection recommended in high-risk patients."
+        },
+        hepatic: {
+          title: "3. Hepatic Flexure",
+          badge: "Right-to-Mid Transition",
+          desc: "Sharp anatomical bend beneath the liver where the ascending colon meets the transverse colon. Often shows a bluish liver shadow through the thin wall.",
+          milestone: "Requires scope torque and simultaneous tip deflection to navigate without losing mucosal visualization.",
+          vulnerability: "Blind spots on the inner acute curve of the flexure where the scope tip springs forward uncontrollably.",
+          pitfall: "Pitfall: Endoscope 'whip-around' causes rapid passage, completely bypassing polyps on the inner bend."
+        },
+        transverse: {
+          title: "4. Transverse Colon",
+          badge: "Mid Colon",
+          desc: "Longest and most mobile segment (~45–50 cm) suspended by the transverse mesocolon, characterized by distinctive triangular haustral rings.",
+          milestone: "Inspection requires rotational scanning and controlled fold flattening during gentle scope withdrawal.",
+          vulnerability: "High susceptibility to scope looping (splenic or sigmoid loops) which causes paradoxical motion.",
+          pitfall: "Pitfall: Incomplete circular inspection; polyps tucked into the corners of the triangular lumen can be overlooked."
+        },
+        splenic: {
+          title: "5. Splenic Flexure",
+          badge: "Mid-to-Left Transition",
+          desc: "Acute anatomical bend situated high in the left upper quadrant, inferior to the spleen. Higher and deeper than the hepatic flexure.",
+          milestone: "Navigation requires torque control and desufflation to minimize splenic capsule traction.",
+          vulnerability: "Extremely sharp angle creates deep blind crevices behind prominent muscular folds.",
+          pitfall: "Pitfall: Excessive mechanical force risks traction injury to splenic ligaments."
+        },
+        descending: {
+          title: "6. Descending Colon",
+          badge: "Distal / Left Colon",
+          desc: "Retroperitoneal segment extending 25–30 cm downwards along the left abdominal wall to the pelvic brim. Narrower cylindrical lumen.",
+          milestone: "Withdrawal inspection is typically straightforward due to cylindrical geometry, but requires careful circular scan.",
+          vulnerability: "Common site of muscular hypertrophy and diverticulosis. Polyps frequently nest inside diverticular orifices.",
+          pitfall: "Pitfall: Mistaking an inverted diverticulum for a polyp, or missing a small adenoma nestled in a diverticular rim."
+        },
+        sigmoid: {
+          title: "7. Sigmoid Colon",
+          badge: "Distal / Left Colon",
+          desc: "Tortuous, mobile S-shaped segment (~35–40 cm) suspended by the sigmoid mesocolon, leading into the pelvic cavity.",
+          milestone: "Most common site of conventional adenomas and the most technically demanding segment to negotiate.",
+          vulnerability: "Muscular spasm and acute folding can conceal large pedunculated polyps between adjacent fold surfaces.",
+          pitfall: "Pitfall: Highest site of mechanical perforation from scope bowing or excessive air insufflation."
+        },
+        rectum: {
+          title: "8. Rectum & Anal Verge",
+          badge: "Distal Terminal",
+          desc: "Final 12–15 cm of large bowel, lacking haustra and mesentery, terminating at the anal verge. Features transverse rectal folds (Valves of Houston).",
+          milestone: "Inspection requires both straight withdrawal and retroflexion (turning scope tip 180° back on itself) to examine distal rectum.",
+          vulnerability: "Low rectal lesions just above the dentate line can be missed entirely without formal retroflexion.",
+          pitfall: "Pitfall: Overlooking low rectal polyps hidden directly behind the anal sphincter threshold."
+        }
+      };
+
+      const zoneButtons = document.querySelectorAll('#anatomy-nav button');
+      const zoneTitle = document.getElementById('zone-title');
+      const zoneBadge = document.getElementById('zone-badge');
+      const zoneDesc = document.getElementById('zone-desc');
+      const zoneMilestone = document.getElementById('zone-milestone');
+      const zoneVulnerability = document.getElementById('zone-vulnerability');
+      const zonePitfall = document.getElementById('zone-pitfall');
+
+      zoneButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          zoneButtons.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const zoneKey = btn.getAttribute('data-zone');
+          const data = ANATOMY_DATA[zoneKey];
+          if (data) {
+            zoneTitle.textContent = data.title;
+            zoneBadge.textContent = data.badge;
+            zoneDesc.textContent = data.desc;
+            zoneMilestone.textContent = data.milestone;
+            zoneVulnerability.textContent = data.vulnerability;
+            zonePitfall.textContent = data.pitfall;
+          }
+        });
+      });
+
+      // 2. BBPS Simulator
+      const bbpsRight = document.getElementById('bbps-right');
+      const bbpsMid = document.getElementById('bbps-mid');
+      const bbpsLeft = document.getElementById('bbps-left');
+      const totalScoreEl = document.getElementById('bbps-total-score');
+      const statusEl = document.getElementById('bbps-status');
+      const recEl = document.getElementById('bbps-recommendation');
+      const cardEl = document.getElementById('bbps-result-card');
+
+      function updateBBPS() {
+        const r = parseInt(bbpsRight.value, 10);
+        const m = parseInt(bbpsMid.value, 10);
+        const l = parseInt(bbpsLeft.value, 10);
+        const total = r + m + l;
+        const isAdequate = (total >= 6 && r >= 2 && m >= 2 && l >= 2);
+
+        totalScoreEl.textContent = `${total} / 9`;
+
+        if (isAdequate) {
+          totalScoreEl.style.color = 'var(--color-emerald)';
+          statusEl.style.color = 'var(--color-emerald)';
+          statusEl.textContent = 'Adequate Cleansing Achieved (Total ≥ 6 & All Segments ≥ 2)';
+          recEl.textContent = 'Standard 10-year rescreening interval is clinically valid if no precancerous adenomas are discovered.';
+          cardEl.style.background = 'rgba(16, 185, 129, 0.08)';
+          cardEl.style.borderColor = 'rgba(16, 185, 129, 0.3)';
+        } else {
+          totalScoreEl.style.color = 'var(--color-coral)';
+          statusEl.style.color = 'var(--color-coral)';
+          statusEl.textContent = 'Inadequate Preparation (Total < 6 OR Any Segment < 2)';
+          recEl.textContent = 'Suboptimal visualization carries a high adenoma miss rate. Early repeat examination (within 1 year or immediate re-prep) is clinically recommended.';
+          cardEl.style.background = 'rgba(249, 115, 22, 0.08)';
+          cardEl.style.borderColor = 'rgba(249, 115, 22, 0.35)';
+        }
+      }
+
+      [bbpsRight, bbpsMid, bbpsLeft].forEach(select => {
+        select.addEventListener('change', updateBBPS);
+      });
+    });
+  </script>
+</body>
+</html>

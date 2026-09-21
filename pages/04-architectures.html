@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="In-depth component breakdown of 6 iconic colonoscopy AI architectures: U-Net, PraNet, HarDNet-MSEG, Polyp-PVT, ColonFormer, and EndoMamba. Interactive node explorer, tensor shapes, and loss formulations.">
+  <meta name="keywords" content="U-Net, PraNet, HarDNet-MSEG, Polyp-PVT, ColonFormer, EndoMamba, Reverse Attention, State Space Model, Medical Image Segmentation, Deep Learning Architecture">
+  <title>Architectural Deep Dives: Component-by-Component Dissection | ColonoscopyAI Guide</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+  <!-- Top Horizontal Scroll Progress Indicator -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- Sticky Navigation Header -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="../index.html" class="brand-logo">
+        <div class="brand-icon">C</div>
+        <span>Colonoscopy<span style="color: var(--color-teal);">AI</span></span>
+        <span class="brand-badge">RESEARCH</span>
+      </a>
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="../index.html" class="nav-link">Home</a></li>
+          <li><a href="01-what-is-colonoscopy.html" class="nav-link">Clinical</a></li>
+          <li><a href="06b-clinical-evidence.html" class="nav-link">Trials</a></li>
+          <li><a href="03-ai-history.html" class="nav-link">AI History</a></li>
+          <li><a href="04-architectures.html" class="nav-link active">Architectures</a></li>
+          <li><a href="05-datasets.html" class="nav-link">Datasets</a></li>
+          <li><a href="06-benchmarks.html" class="nav-link">Benchmarks</a></li>
+          <li><a href="08-benchmark-integrity.html" class="nav-link">Integrity</a></li>
+          <li><a href="11-references.html" class="nav-link">References</a></li>
+          <li><a href="12-glossary.html" class="nav-link">Glossary</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" aria-label="Toggle dark/light theme" type="button"></button>
+        <button class="hamburger-btn" aria-label="Open mobile navigation menu" aria-expanded="false" type="button">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav-drawer" aria-label="Mobile Navigation Drawer">
+    <a href="../index.html" class="nav-link">Home</a>
+    <a href="01-what-is-colonoscopy.html" class="nav-link">01 Clinical Foundations</a>
+    <a href="06b-clinical-evidence.html" class="nav-link">06b Clinical Trials &amp; Evidence</a>
+    <a href="03-ai-history.html" class="nav-link">03 AI History &amp; Evolution</a>
+    <a href="04-architectures.html" class="nav-link active">04 Model Architectures</a>
+    <a href="05-datasets.html" class="nav-link">05 Benchmark Datasets</a>
+    <a href="06-benchmarks.html" class="nav-link">06 SOTA Benchmarks</a>
+    <a href="08-benchmark-integrity.html" class="nav-link">08 Forensic Integrity Audit</a>
+    <a href="07-clinical-systems.html" class="nav-link">07 Commercial CADe/CADx</a>
+    <a href="09-chakramodel.html" class="nav-link">09 ChakraModel Research</a>
+    <a href="10-future.html" class="nav-link">10 Future Frontiers</a>
+    <a href="11-references.html" class="nav-link">11 Master References</a>
+    <a href="12-glossary.html" class="nav-link">12 Medical-AI Glossary</a>
+  </div>
+
+  <main class="container section">
+    <!-- Breadcrumb Navigation -->
+    <nav aria-label="Breadcrumb" style="margin-bottom: 2rem;">
+      <ol style="display: flex; gap: 0.5rem; list-style: none; font-size: 0.85rem; color: var(--text-muted); padding: 0;">
+        <li><a href="../index.html" style="color: var(--text-secondary); text-decoration: none;">Home</a></li>
+        <li>/</li>
+        <li><a href="04-architectures.html" style="color: var(--color-teal); text-decoration: none;">AI Technical</a></li>
+        <li>/</li>
+        <li style="color: var(--text-primary); font-weight: 500;">Model Architectures</li>
+      </ol>
+    </nav>
+
+    <!-- Hero Header -->
+    <header class="hero" style="padding-top: 1rem; padding-bottom: 3rem;">
+      <div class="hero-glow"></div>
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="dot"></span>
+          <span>DISSECTION OF 6 ICONIC ARCHITECTURES</span>
+        </div>
+        <h1 class="hero-title">
+          Architectural Deep Dives: <span class="gradient-text">Encoders, Decoders &amp; Loss Formulations</span>
+        </h1>
+        <p class="hero-subtitle">
+          Examine the exact mathematical formulations, tensor dimensions, receptive field mechanics, and hardware execution bottlenecks underpinning the seminal models of colorectal cancer detection.
+        </p>
+      </div>
+    </header>
+
+    <!-- Architecture Explorer High-Level Stats -->
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="stat-value">6</div>
+        <div class="stat-label">Iconic Models</div>
+        <div class="stat-delta">CNN &bull; Transformer &bull; SSM</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">10.4 &ndash; 25.9</div>
+        <div class="stat-label">GFLOPs Range</div>
+        <div class="stat-delta">312&times;312 vs 352&times;352</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">22 &ndash; 88</div>
+        <div class="stat-label">FPS Dynamic Range</div>
+        <div class="stat-delta">RTX 2080 Ti Benchmark</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">&rho; = -0.20</div>
+        <div class="stat-label">Param-Speed Correlation</div>
+        <div class="stat-delta">DRAM Traffic Dominates</div>
+      </div>
+    </div>
+
+    <!-- Interactive Architecture Explorer Engine -->
+    <section class="arch-diagram-card" id="interactive-explorer" aria-labelledby="explorer-heading">
+      <div class="flex-between flex-wrap gap-md" style="margin-bottom: 1.5rem;">
+        <div>
+          <h2 id="explorer-heading" style="font-size: 1.75rem; margin-bottom: 0.25rem;">Interactive Architecture Explorer</h2>
+          <p style="color: var(--text-secondary); font-size: 0.95rem;">Select an iconic architecture and click any component node to inspect its internal mechanics, tensor shapes, and mathematical formulation.</p>
+        </div>
+        <!-- Model Selector Tabs -->
+        <div class="filter-group" id="arch-model-selector">
+          <button class="filter-pill active" data-model="pranet" type="button">PraNet (2020)</button>
+          <button class="filter-pill" data-model="hardnet" type="button">HarDNet-MSEG (2021)</button>
+          <button class="filter-pill" data-model="polyp_pvt" type="button">Polyp-PVT (2021)</button>
+          <button class="filter-pill" data-model="colonformer" type="button">ColonFormer (2022)</button>
+          <button class="filter-pill" data-model="endomamba" type="button">EndoMamba (2024)</button>
+          <button class="filter-pill" data-model="unet" type="button">U-Net (2015)</button>
+        </div>
+      </div>
+
+      <!-- Component Nodes Grid -->
+      <div class="arch-node-grid" id="arch-nodes">
+        <div class="arch-node active" data-component="encoder">
+          <div class="arch-node-title">1. Encoder Backbone</div>
+          <div class="arch-node-subtitle" id="node-sub-encoder">Res2Net-50 Multi-Branch</div>
+          <div class="arch-node-desc">Feature extraction &amp; multi-scale receptive field aggregation</div>
+        </div>
+        <div class="arch-node" data-component="bottleneck">
+          <div class="arch-node-title">2. Bottleneck / Partial Decoding</div>
+          <div class="arch-node-subtitle" id="node-sub-bottleneck">Parallel Partial Decoder (PPD)</div>
+          <div class="arch-node-desc">Discards shallow noise; extracts coarse global saliency</div>
+        </div>
+        <div class="arch-node" data-component="decoder">
+          <div class="arch-node-title">3. Decoder &amp; Skip Routing</div>
+          <div class="arch-node-subtitle" id="node-sub-decoder">Reverse Attention (RA) Cascade</div>
+          <div class="arch-node-desc">Erases lesion interior to mine fine boundary cues</div>
+        </div>
+        <div class="arch-node" data-component="loss">
+          <div class="arch-node-title">4. Loss Function</div>
+          <div class="arch-node-subtitle" id="node-sub-loss">Weighted BCE + Weighted IoU</div>
+          <div class="arch-node-desc">Center-surround edge weighting with deep supervision</div>
+        </div>
+        <div class="arch-node" data-component="innovation">
+          <div class="arch-node-title">5. Key Innovation &amp; Limits</div>
+          <div class="arch-node-subtitle" id="node-sub-innovation">Boundary Mining Paradigm</div>
+          <div class="arch-node-desc">Clinical trade-offs, hardware throughput, and caveats</div>
+        </div>
+      </div>
+
+      <!-- Interactive Node Display Detail View -->
+      <div id="node-detail-panel" style="background: var(--bg-primary); border: 1px solid var(--border-medium); border-radius: var(--radius-md); padding: 1.75rem; margin-top: 1.5rem;">
+        <div class="flex-between flex-wrap gap-sm" style="margin-bottom: 0.75rem;">
+          <span id="detail-node-badge" class="badge badge-teal">COMPONENT 1: ENCODER BACKBONE</span>
+          <span id="detail-node-shapes" style="font-family: var(--font-mono); font-size: 0.825rem; color: var(--color-teal);">INPUT: [B, 3, 352, 352] &rarr; OUTPUTS: [f2, f3, f4, f5]</span>
+        </div>
+        <h3 id="detail-node-title" style="font-size: 1.4rem; margin-bottom: 0.5rem;">Res2Net-50 Hierarchical Multi-Branch Grouping</h3>
+        <p id="detail-node-desc" style="color: var(--text-secondary); line-height: 1.6; font-size: 0.95rem; margin-bottom: 1rem;">
+          Replaces standard $3\times3$ bottleneck convolutions with hierarchical sub-feature groups ($s=4$). The input feature map is split into 4 filter subsets $\{x_1, x_2, x_3, x_4\}$. Each subset $x_i$ passes through a $3\times3$ conv $K_i()$, where $y_i = K_i(x_i + y_{i-1})$. This enables an exponential expansion of receptive fields within a single residual block, perfectly handling polyps ranging from 2mm to 40mm.
+        </p>
+        <!-- Dynamic Benchmark & Integrity Caveat Callout -->
+        <div id="detail-node-caveat" style="display: none; background: rgba(249, 115, 22, 0.08); border-left: 3px solid var(--color-coral); padding: 0.75rem 1rem; border-radius: var(--radius-xs); margin-bottom: 1rem; font-size: 0.825rem; color: var(--text-secondary);">
+          <strong style="color: var(--color-coral);">⚠️ Benchmark Integrity Caveat:</strong> <span id="detail-caveat-text"></span>
+        </div>
+        <div id="detail-node-code" style="background: var(--bg-secondary); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 1rem 1.25rem; font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-primary); overflow-x: auto; margin-bottom: 1rem;">
+# Res2Net-50 Multi-Branch Feature Aggregation
+y_1 = x_1
+y_2 = Conv3x3_2(x_2)
+y_3 = Conv3x3_3(x_3 + y_2)
+y_4 = Conv3x3_4(x_4 + y_3)
+out = Concat([y_1, y_2, y_3, y_4])  # Output shape: [B, C, H/32, W/32]
+        </div>
+        <div class="flex-between flex-wrap gap-sm" style="font-size: 0.85rem; color: var(--text-muted); border-top: 1px dashed var(--border-subtle); padding-top: 0.75rem;">
+          <div><strong style="color: var(--text-primary);">Parameters Allocated:</strong> <span id="detail-node-params">25.56M (Backbone)</span></div>
+          <div><strong style="color: var(--text-primary);">GFLOPs Contribution:</strong> <span id="detail-node-flops">8.9 GFLOPs</span></div>
+          <div><strong style="color: var(--text-primary);">Hardware Bottleneck:</strong> <span id="detail-node-hw">DRAM memory reads on multi-branch tensor splits</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 1: U-Net (Ronneberger et al. 2015) -->
+    <section class="card card-glass" style="margin: 3.5rem 0;" id="arch-unet">
+      <div class="card-header">
+        <div>
+          <span class="badge badge-teal" style="margin-bottom: 0.5rem;">FOUNDATIONAL ARCHITECTURE &bull; 2015</span>
+          <h2 style="font-size: 2rem; margin: 0;">1. U-Net: Convolutional Networks for Biomedical Segmentation</h2>
+          <div style="font-size: 0.875rem; color: var(--text-muted); margin-top: 0.25rem;">
+            Olaf Ronneberger, Philipp Fischer, Thomas Brox &bull; <em>MICCAI 2015</em>, LNCS 9351, pp. 234&ndash;241
+          </div>
+        </div>
+        <div style="text-align: right;">
+          <div style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; color: var(--color-teal);">31.03M</div>
+          <div style="font-size: 0.8rem; color: var(--text-muted);">Parameters &bull; 53 FPS</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <p>
+          U-Net established the dominant structural paradigm in medical imaging: an encoder-decoder network consisting of a contracting path to capture multi-scale semantic context and an expanding symmetric path that enables precise pixel-level localization.
+        </p>
+        
+        <div class="grid grid-2" style="margin: 1.5rem 0;">
+          <div style="background: var(--bg-primary); padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+            <h4 style="color: var(--color-teal); font-size: 1.1rem; margin-bottom: 0.75rem;">Contracting Path (Encoder)</h4>
+            <ul style="padding-left: 1.25rem; font-size: 0.9rem; color: var(--text-secondary); line-height: 1.7;">
+              <li>Repeated application of two $3\times3$ unpadded convolutions followed by a Rectified Linear Unit (<span class="glossary-term" data-term="cnn">ReLU</span>).</li>
+              <li>$2\times2$ max-pooling operation with stride 2 for spatial downsampling.</li>
+              <li>Channel progression doubles at each stage: $64 \rightarrow 128 \rightarrow 256 \rightarrow 512 \rightarrow 1024$.</li>
+              <li>Bottleneck connects deep semantics at spatial resolution $H/16 \times W/16$ with 1024 feature channels.</li>
+            </ul>
+          </div>
+          <div style="background: var(--bg-primary); padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+            <h4 style="color: var(--color-teal); font-size: 1.1rem; margin-bottom: 0.75rem;">Expanding Path &amp; Skip Connections</h4>
+            <ul style="padding-left: 1.25rem; font-size: 0.9rem; color: var(--text-secondary); line-height: 1.7;">
+              <li>Every expanding step applies an up-convolution ($2\times2$ transposed convolution) halving channel dimensions.</li>
+              <li><strong>Identity Skip Connections:</strong> Direct channel concatenation with the cropped feature map from the corresponding contracting path stage.</li>
+              <li>Two consecutive $3\times3$ convolutions followed by ReLU to reassemble high-resolution spatial boundaries.</li>
+              <li>Final layer: $1\times1$ convolution mapping 64-channel features to 2-class background/polyp logits.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Loss Formulation -->
+        <h4 style="font-size: 1.1rem; margin-top: 1.5rem; margin-bottom: 0.5rem;">Weighted Cross-Entropy Loss with Distance Boundary Penalty</h4>
+        <p style="font-size: 0.9rem; color: var(--text-secondary);">
+          To enforce crisp separation between touching cell margins and mucosal borders, Ronneberger et al. formulated a precomputed morphological distance weight map:
+        </p>
+        <div style="background: var(--bg-secondary); border: 1px solid var(--border-subtle); padding: 1rem 1.25rem; border-radius: var(--radius-sm); font-family: var(--font-mono); font-size: 0.85rem; margin: 1rem 0;">
+          $$\mathcal{L}_{UNet} = \sum_{x \in \Omega} w(x) \log\left(p_{l(x)}(x)\right)$$
+          $$w(x) = w_c(x) + w_0 \cdot \exp\left( -\frac{(d_1(x) + d_2(x))^2}{2\sigma^2} \right)$$
+        </div>
+        <p style="font-size: 0.875rem; color: var(--text-muted);">
+          Where $w_c(x)$ balances background-to-polyp class frequencies, and $d_1(x), d_2(x)$ represent Euclidean distances to the nearest and second-nearest object boundaries.
+        </p>
+
+        <!-- Clinical Failure Mode Alert -->
+        <div class="alert alert-integrity" style="margin-top: 1.5rem;">
+          <div class="alert-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          </div>
+          <div class="alert-content">
+            <div class="alert-title">Failure Modes in Endoscopic Practice</div>
+            <p>
+              When evaluated on out-of-distribution multicenter datasets, U-Net collapses catastrophically: achieving only <strong>0.398 m<span class="glossary-term" data-term="dice">Dice</span> on ETIS-Larib</strong> and 0.512 on <span class="glossary-term" data-term="cvc-colondb">CVC-ColonDB</span>. Plain skip connections propagate specular lighting glare and mucosal folds, producing ragged, leaky boundaries around sessile lesions.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: PraNet (Fan et al. 2020) -->
+    <section class="card card-glass" style="margin: 3.5rem 0;" id="arch-pranet">
+      <div class="card-header">
+        <div>
+          <span class="badge badge-teal" style="margin-bottom: 0.5rem;">MICCAI 2020 ORAL &bull; SOTA BASELINE</span>
+          <h2 style="font-size: 2rem; margin: 0;">2. PraNet: Parallel Reverse Attention Network</h2>
+          <div style="font-size: 0.875rem; color: var(--text-muted); margin-top: 0.25rem;">
+            Deng-Ping Fan, Ge-Peng Ji, Tao Zhou, Geng Chen, Huazhu Fu, Jianbing Shen, Ling Shao &bull; <em>MICCAI 2020</em>
+          </div>
+        </div>
+        <div style="text-align: right;">
+          <div style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; color: var(--color-teal);">32.55M</div>
+          <div style="font-size: 0.8rem; color: var(--text-muted);">Parameters &bull; 50 FPS</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <p>
+          PraNet transformed polyp segmentation by introducing the <em>Boundary Mining Paradigm</em>: instead of attempting to predict boundaries directly from noisy low-level features, PraNet first locates the polyp core using a coarse global saliency map, erases the core via inverted attention, and forces subsequent decoder layers to refine the remaining peripheral tissue margins.
+        </p>
+
+        <div class="grid grid-3" style="margin: 1.5rem 0;">
+          <div style="background: var(--bg-primary); padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+            <h4 style="color: var(--color-teal); font-size: 1.05rem; margin-bottom: 0.5rem;">1. Res2Net-50 Backbone</h4>
+            <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6;">
+              Splits $3\times3$ filters into 4 multi-scale scale-dimension sub-groups ($s=4$). Yields an exponential expansion of receptive fields, matching diverse polyp morphologies from 2mm diminutive lesions to large adenomas.
+            </p>
+          </div>
+          <div style="background: var(--bg-primary); padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+            <h4 style="color: var(--color-teal); font-size: 1.05rem; margin-bottom: 0.5rem;">2. <span class="glossary-term" data-term="ppd">PPD Module</span></h4>
+            <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6;">
+              Discards shallow features $f_1, f_2$ entirely. Fuses top semantic stages $\{f_3, f_4, f_5\}$ to generate a coarse initial saliency map $S_g$ that pinpoints the lesion body without crisp borders.
+            </p>
+          </div>
+          <div style="background: var(--bg-primary); padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+            <h4 style="color: var(--color-teal); font-size: 1.05rem; margin-bottom: 0.5rem;">3. <span class="glossary-term" data-term="reverse-attention">Reverse Attention</span></h4>
+            <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6;">
+              Stacked modules ($RA_5 \rightarrow RA_4 \rightarrow RA_3$) multiply high-level features by the inverted prediction: $A_i = 1 - \sigma(P_{i+1})$. Forces the network to ignore the interior and recover fine perimeter transitions.
+            </p>
+          </div>
+        </div>
+
+        <!-- Benchmark Summary & Leakage Caveat -->
+        <div style="background: var(--bg-primary); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 0.85rem 1.25rem; margin: 1.5rem 0; font-size: 0.85rem;">
+          <div style="font-weight: 600; color: var(--text-primary); margin-bottom: 0.25rem;">
+            PraNet Protocol A Benchmark Results:
+          </div>
+          <div style="color: var(--text-secondary);">
+            Kvasir-SEG: <strong>0.898 mDice</strong> &bull; CVC-ColonDB: <strong>0.709 mDice</strong> &bull; ETIS-Larib: <strong>0.628 mDice</strong> &bull; CVC-ClinicDB: <strong>0.899 mDice<span style="color: var(--color-coral); font-weight: 700;">*</span></strong>
+          </div>
+          <div style="margin-top: 0.4rem; padding: 0.4rem 0.65rem; background: rgba(249, 115, 22, 0.08); border-left: 3px solid var(--color-coral); border-radius: var(--radius-xs); font-size: 0.775rem; color: var(--text-secondary);">
+            <strong style="color: var(--color-coral);">*Video Leakage Caveat:</strong> The 0.899 ClinicDB score evaluates on 62 test frames sharing identical video sequences with training frames (30 near-duplicate links with $\ge 20$ RANSAC inliers), causing +12% to +15% artificial Dice inflation via seen-domain memorization. See <a href="08-benchmark-integrity.html" style="color: var(--color-teal); text-decoration: underline;">Benchmark Integrity Audit</a>.
+          </div>
+        </div>
+
+        <!-- Structure Loss Formulation -->
+        <h4 style="font-size: 1.1rem; margin-top: 1.5rem; margin-bottom: 0.5rem;">PraNet Structure Loss Formulation</h4>
+        <p style="font-size: 0.9rem; color: var(--text-secondary);">
+          PraNet employs a boundary-weighted combination of Weighted Binary Cross-Entropy ($\mathcal{L}_{wbce}$) and Weighted IoU ($\mathcal{L}_{wiou}$) with deep supervision across all 4 decoder heads:
+        </p>
+        <div style="background: var(--bg-secondary); border: 1px solid var(--border-subtle); padding: 1rem 1.25rem; border-radius: var(--radius-sm); font-family: var(--font-mono); font-size: 0.85rem; margin: 1rem 0;">
+          $$\mathcal{L}_{total} = \mathcal{L}(S_g, G) + \sum_{i=3}^5 \mathcal{L}(S_i, G)$$
+          $$\mathcal{L}(P, G) = \mathcal{L}_{wbce}(P, G) + \mathcal{L}_{wiou}(P, G)$$
+          $$\text{weight}_{ij} = 1 + 5 \cdot \alpha_{ij}, \quad \alpha_{ij} = \left| \frac{\sum_{k,l \in A_{ij}} G_{kl}}{|A_{ij}|} - G_{ij} \right|$$
+        </div>
+        <p style="font-size: 0.875rem; color: var(--text-muted);">
+          A $31\times31$ average pooling filter over ground truth mask $G$ computes pixel significance $\alpha_{ij}$. For uniform background or interior, $\alpha_{ij} \approx 0 \implies \text{weight} \approx 1.0$; near lesion margins, $\alpha_{ij} \approx 0.5 \implies \text{weight} \approx 3.5$, boosting boundary gradients by 350%.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECTION 3: HarDNet-MSEG (Huang et al. 2021) -->
+    <section class="card card-glass" style="margin: 3.5rem 0;" id="arch-hardnet">
+      <div class="card-header">
+        <div>
+          <span class="badge badge-teal" style="margin-bottom: 0.5rem;">EFFICIENCY BREAKTHROUGH &bull; 2021</span>
+          <h2 style="font-size: 2rem; margin: 0;">3. HarDNet-MSEG: Memory-Traffic Optimized Real-Time Segmentation</h2>
+          <div style="font-size: 0.875rem; color: var(--text-muted); margin-top: 0.25rem;">
+            Chien-Hsiang Huang, Hung-Yu Wu, Youn-Long Lin &bull; <em>National Tsing Hua University, Taiwan</em>
+          </div>
+        </div>
+        <div style="text-align: right;">
+          <div style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; color: var(--color-amber);">88 FPS</div>
+          <div style="font-size: 0.8rem; color: var(--text-muted);">33.34M Params &bull; 10.4 GFLOPs</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <p>
+          Huang et al. identified that theoretical FLOPs correlate poorly with real-world GPU latency. Instead, modern GPU inference is constrained by <strong>DRAM memory bandwidth</strong>. HarDNet-MSEG minimizes <strong>Convolutional Input/Output (CIO)</strong> traffic while maintaining SOTA segmentation accuracy.
+        </p>
+
+        <div class="grid grid-2" style="margin: 1.5rem 0;">
+          <div style="background: var(--bg-primary); padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+            <h4 style="color: var(--color-amber); font-size: 1.1rem; margin-bottom: 0.75rem;">Harmonic Dense Connections (HarDNet68)</h4>
+            <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6;">
+              DenseNet concatenates all preceding layers, creating severe GPU memory read bottlenecks. HarDNet introduces power-of-two harmonic connections: layer $k$ connects only to layer $k + 2^n$. This keeps shortcut connections sparse, maximizes channel widths, and slashes DRAM access latency.
+            </p>
+            <div style="background: var(--bg-secondary); padding: 0.75rem; border-radius: var(--radius-sm); font-family: var(--font-mono); font-size: 0.8rem; margin-top: 0.75rem;">
+              $$\text{CIO} = \sum_{l} \left( C_{in}^{(l)} \times H_{in} \times W_{in} + C_{out}^{(l)} \times H_{out} \times W_{out} \right)$$
+            </div>
+          </div>
+          <div style="background: var(--bg-primary); padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+            <h4 style="color: var(--color-amber); font-size: 1.1rem; margin-bottom: 0.75rem;">Cascaded Partial Decoder &amp; RFB</h4>
+            <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6;">
+              Employs a Cascaded Partial Decoder combined with Receptive Field Blocks (RFB) on skip connections. Crucially, the authors deliberately placed <strong>zero HarDBlocks in the decoder</strong>: keeping the decoder computationally lightweight prevents memory stalls and enables 86&ndash;88 FPS on standard GeForce RTX 2080 Ti GPUs.
+            </p>
+            <div style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-muted);">
+              Metrics: Kvasir-SEG: <strong>0.904 mDice</strong> (0.857 mIoU) &bull; ETIS-Larib: <strong>0.677 mDice</strong> &bull; CVC-ClinicDB: <strong>0.932 mDice<span style="color: var(--color-coral); font-weight: 700;">*</span></strong>
+              <div style="margin-top: 0.35rem; font-size: 0.775rem; color: var(--text-secondary); background: rgba(249, 115, 22, 0.08); padding: 0.4rem 0.65rem; border-left: 2px solid var(--color-coral); border-radius: var(--radius-xs);">
+                <span style="color: var(--color-coral); font-weight: 600;">*Video Leakage Caveat:</span> 0.932 ClinicDB score is an in-sequence video memorization artifact (+12–15% inflation). See <a href="08-benchmark-integrity.html" style="color: var(--color-teal); text-decoration: underline;">Benchmark Integrity Audit</a>.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- The Resolution Mismatch Nuance -->
+        <div class="alert alert-technical" style="margin-top: 1rem;">
+          <div class="alert-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          </div>
+          <div class="alert-content">
+            <div class="alert-title">The Resolution Mismatch Nuance</div>
+            <p>
+              HarDNet-MSEG trains and tests at <strong>$312 \times 312$ resolution (97,344 pixels)</strong>, whereas PraNet, SANet, Polyp-PVT, and ColonFormer evaluate at <strong>$352 \times 352$ (123,904 pixels)</strong>. HarDNet processes <strong>21.4% fewer pixels</strong> per frame, giving it an inherent structural latency advantage. Cross-paper latency rankings must account for input resolution normalization.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: Polyp-PVT (Dong et al. 2021) -->
+    <section class="card card-glass" style="margin: 3.5rem 0;" id="arch-polyp-pvt">
+      <div class="card-header">
+        <div>
+          <span class="badge badge-purple" style="margin-bottom: 0.5rem;">TRANSFORMER MILESTONE &bull; 2021</span>
+          <h2 style="font-size: 2rem; margin: 0;">4. Polyp-PVT: Pyramid Vision Transformer with Graph Reasoning</h2>
+          <div style="font-size: 0.875rem; color: var(--text-muted); margin-top: 0.25rem;">
+            Bo Dong, Wenhai Wang, Deng-Ping Fan, Jinpeng Li, Huazhu Fu, Ling Shao &bull; <em>arXiv:2108.07368 / CAAI TIT</em>
+          </div>
+        </div>
+        <div style="text-align: right;">
+          <div style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; color: var(--color-purple);">44.60M</div>
+          <div style="font-size: 0.8rem; color: var(--text-muted);">Params &bull; 0.808 ColonDB Dice</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <p>
+          Polyp-PVT replaced convolutional backbones with a hierarchical <span class="glossary-term" data-term="pvt">Pyramid Vision Transformer (PVTv2-B2)</span>. By formulating polyp segmentation as a camouflaged object detection challenge and incorporating Graph Convolutional Networks (<span class="glossary-term" data-term="gcn">GCN</span>), Polyp-PVT achieved unprecedented rotational invariance against colonoscope torque.
+        </p>
+
+        <div class="grid grid-3" style="margin: 1.5rem 0;">
+          <div style="background: var(--bg-primary); padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+            <h4 style="color: var(--color-purple); font-size: 1.05rem; margin-bottom: 0.5rem;">PVTv2-B2 Backbone</h4>
+            <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6;">
+              Non-overlapping $4\times4$ patch projection. Uses Linear Spatial-Reduction Attention (SRA) to cut attention complexity from $\mathcal{O}(N^2)$ to $\mathcal{O}(N^2/R)$. Mix-FFN depth-wise convs dynamically inject positional bias without fixed coordinate embeddings.
+            </p>
+          </div>
+          <div style="background: var(--bg-primary); padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+            <h4 style="color: var(--color-purple); font-size: 1.05rem; margin-bottom: 0.5rem;">Camouflaged Detection (CIM)</h4>
+            <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6;">
+              Operates on shallow feature $f_2$. Applies sequential channel attention followed by large-kernel ($7\times7$) spatial attention to unmask lesions whose color and mucosal pit patterns blend seamlessly with surrounding healthy tissue.
+            </p>
+          </div>
+          <div style="background: var(--bg-primary); padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+            <h4 style="color: var(--color-purple); font-size: 1.05rem; margin-bottom: 0.5rem;">Graph-SAM (Rotational Invariance)</h4>
+            <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6;">
+              Fuses high-level semantic tokens $T_h$ with boundary features $T_l$ using Graph Convolution Networks: $\mathcal{G} = \tilde{D}^{-\frac{1}{2}} \tilde{A} \tilde{D}^{-\frac{1}{2}} X W$. In an ablation with $180^\circ$ scope rotation, GCN retained <strong>0.806 mDice vs 0.756 without GCN</strong>.
+            </p>
+          </div>
+        </div>
+
+        <div style="background: var(--bg-secondary); border: 1px solid var(--border-subtle); padding: 1.25rem; border-radius: var(--radius-md); font-size: 0.9rem;">
+          <strong style="color: var(--color-purple);">Historical Milestone:</strong> Polyp-PVT was the first architecture in published medical literature to surpass the <strong>0.80 mDice barrier on unseen CVC-ColonDB (0.808)</strong>, establishing Vision Transformers as the benchmark standard for out-of-distribution generalizability.
+        </div>
+
+        <div style="background: var(--bg-primary); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 0.85rem 1.25rem; margin: 1.5rem 0; font-size: 0.85rem;">
+          <div style="color: var(--text-secondary);">
+            Kvasir-SEG: <strong>0.917 mDice</strong> &bull; CVC-ColonDB: <strong>0.808 mDice</strong> &bull; ETIS-Larib: <strong>0.787 mDice</strong> &bull; CVC-ClinicDB: <strong>0.937 mDice<span style="color: var(--color-coral); font-weight: 700;">*</span></strong>
+          </div>
+          <div style="margin-top: 0.4rem; font-size: 0.775rem; color: var(--text-secondary); background: rgba(249, 115, 22, 0.08); padding: 0.4rem 0.65rem; border-left: 2px solid var(--color-coral); border-radius: var(--radius-xs);">
+            <span style="color: var(--color-coral); font-weight: 600;">*Video Leakage Caveat:</span> While Polyp-PVT achieved genuine breakthrough generalization on unseen ColonDB (0.808), its 0.937 ClinicDB score represents seen-domain video interpolation. See <a href="08-benchmark-integrity.html" style="color: var(--color-teal); text-decoration: underline;">Benchmark Integrity Audit</a>.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: ColonFormer (Duc et al. 2022) -->
+    <section class="card card-glass" style="margin: 3.5rem 0;" id="arch-colonformer">
+      <div class="card-header">
+        <div>
+          <span class="badge badge-purple" style="margin-bottom: 0.5rem;">IEEE ACCESS / JBHI 2022 &bull; HIERARCHICAL VIT</span>
+          <h2 style="font-size: 2rem; margin: 0;">5. ColonFormer: Residual Axial Reverse Attention</h2>
+          <div style="font-size: 0.875rem; color: var(--text-muted); margin-top: 0.25rem;">
+            Nguyen Thanh Duc, Nguyen Thi Oanh, Nguyen Thi Thuy, Tran Minh Triet, Dinh Viet Sang &bull; <em>IEEE Access 2022</em>
+          </div>
+        </div>
+        <div style="text-align: right;">
+          <div style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; color: var(--color-teal);">46.64M</div>
+          <div style="font-size: 0.8rem; color: var(--text-muted);">MiT-B3 &bull; 0.801 ETIS Dice</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <p>
+          ColonFormer couples SegFormer's Mix Transformer (MiT-B3) with a UPer Decoder, Pyramid Pooling Module (PPM), Cross-level Feature Pyramid (CFP), and Residual Axial Reverse Attention (RA-RA).
+        </p>
+
+        <div class="grid grid-2" style="margin: 1.5rem 0;">
+          <div style="background: var(--bg-primary); padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+            <h4 style="color: var(--color-teal); font-size: 1.1rem; margin-bottom: 0.75rem;">Residual Axial Reverse Attention (RA-RA)</h4>
+            <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6;">
+              Replaces conventional reverse attention with axial attention decomposed along horizontal and vertical image axes. Crucially, ColonFormer incorporates an <strong>identity residual escape hatch</strong>: because axial attention can over-suppress valid features in irregularly shaped polyps, the network dynamically bypasses axial layers when they fail to provide constructive gradients.
+            </p>
+          </div>
+          <div style="background: var(--bg-primary); padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+            <h4 style="color: var(--color-teal); font-size: 1.1rem; margin-bottom: 0.75rem;">Weighted Focal &amp; IoU Loss Averaging</h4>
+            <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6;">
+              ColonFormer replaces Binary Cross-Entropy with Weighted Focal Loss ($\mathcal{L}_{wfocal}$) and <strong>averages</strong> rather than sums the two loss components:
+            </p>
+            <div style="background: var(--bg-secondary); padding: 0.5rem 0.75rem; border-radius: var(--radius-sm); font-family: var(--font-mono); font-size: 0.8rem; margin-top: 0.5rem;">
+              $$\mathcal{L}_{ColonFormer} = \frac{1}{2} \left( \mathcal{L}_{wfocal} + \mathcal{L}_{wiou} \right)$$
+            </div>
+            <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.4rem;">
+              This halving of effective gradient magnitude stabilized transformer fine-tuning on limited medical samples.
+            </p>
+          </div>
+        </div>
+
+        <!-- The Non-Monotonic Scaling Discovery -->
+        <div class="alert alert-technical" style="margin-top: 1rem;">
+          <div class="alert-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+          </div>
+          <div class="alert-content">
+            <div class="alert-title">The Non-Monotonic Backbone Scaling Discovery</div>
+            <p>
+              Duc et al. evaluated scaling across Mix Transformer variants (MiT-B1 to B5):
+              <br>&bull; <strong>MiT-B1 (XS):</strong> 0.913 Kvasir / 0.779 ETIS
+              <br>&bull; <strong>MiT-B2 (S):</strong> 0.927 Kvasir / 0.789 ETIS
+              <br>&bull; <strong>MiT-B3 (L):</strong> 0.924 Kvasir / <strong>0.801 ETIS</strong> (Peak Performance)
+              <br>&bull; <strong>MiT-B4 (XL):</strong> 0.920 Kvasir / 0.776 ETIS
+              <br>&bull; <strong>MiT-B5 (XXL):</strong> 0.920 Kvasir / 0.775 ETIS (<strong>&minus;2.6% degradation</strong>)
+              <br><em>Core Finding:</em> Scaling beyond MiT-B3 systematically degrades out-of-distribution generalizability. Heavy foundation backbones overfit rapidly when fine-tuned on standard 1,450-image clinical training sets.
+            </p>
+          </div>
+        </div>
+
+        <div style="background: var(--bg-primary); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 0.85rem 1.25rem; margin: 1.5rem 0; font-size: 0.85rem;">
+          <div style="color: var(--text-secondary);">
+            MiT-B3 Peak Metrics: Kvasir-SEG: <strong>0.924 mDice</strong> &bull; ETIS-Larib: <strong>0.801 mDice</strong> &bull; CVC-ColonDB: <strong>0.814 mDice</strong> &bull; CVC-ClinicDB: <strong>0.941 mDice<span style="color: var(--color-coral); font-weight: 700;">*</span></strong>
+          </div>
+          <div style="margin-top: 0.4rem; font-size: 0.775rem; color: var(--text-secondary); background: rgba(249, 115, 22, 0.08); padding: 0.4rem 0.65rem; border-left: 2px solid var(--color-coral); border-radius: var(--radius-xs);">
+            <span style="color: var(--color-coral); font-weight: 600;">*Video Leakage Caveat:</span> 0.941 ClinicDB score reflects seen-domain video frame leakage across training and test sequences. See <a href="08-benchmark-integrity.html" style="color: var(--color-teal); text-decoration: underline;">Benchmark Integrity Audit</a>.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: EndoMamba (Wang et al. 2024) -->
+    <section class="card card-glass" style="margin: 3.5rem 0;" id="arch-endomamba">
+      <div class="card-header">
+        <div>
+          <span class="badge badge-emerald" style="margin-bottom: 0.5rem;">STATE SPACE FOUNDATION SOTA &bull; 2024/2025</span>
+          <h2 style="font-size: 2rem; margin: 0;">6. EndoMamba: Real-Time Selective State Space Video Foundation Model</h2>
+          <div style="font-size: 0.875rem; color: var(--text-muted); margin-top: 0.25rem;">
+            Wang et al. &bull; <em>MICCAI 2024 / Springer 2025</em>
+          </div>
+        </div>
+        <div style="text-align: right;">
+          <div style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; color: var(--color-emerald);">46.9 FPS</div>
+          <div style="font-size: 0.8rem; color: var(--text-muted);">Constant at T=128 &bull; 25.4M Params</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <p>
+          EndoMamba solved the critical <strong>Video Complexity Wall</strong> that crippled prior video transformers in clinical endoscopy. By replacing quadratic spatiotemporal attention with input-dependent selective state space models (<span class="glossary-term" data-term="ssm-mamba">Mamba S6</span>), EndoMamba processes continuous colonoscopy video with linear complexity $\mathcal{O}(P \cdot T \cdot m)$.
+        </p>
+
+        <div class="grid grid-2" style="margin: 1.5rem 0;">
+          <div style="background: var(--bg-primary); padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+            <h4 style="color: var(--color-emerald); font-size: 1.1rem; margin-bottom: 0.75rem;">The Video Complexity Wall</h4>
+            <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6;">
+              In video endoscopy, standard vision transformers (e.g., Endo-FM) compute space-time attention across patches $P$ and time frames $T$, scaling quadratically:
+            </p>
+            <div style="background: var(--bg-secondary); padding: 0.5rem 0.75rem; border-radius: var(--radius-sm); font-family: var(--font-mono); font-size: 0.8rem; margin: 0.5rem 0;">
+              $$\text{Complexity}_{Transformer} = \mathcal{O}(P^2 T^2 m)$$
+            </div>
+            <p style="font-size: 0.85rem; color: var(--color-coral); line-height: 1.5;">
+              At $T=32$ frames, Endo-FM throughput falls to 9.2 FPS; at $T=128$, it plummets to <strong>2.4 FPS</strong>, rendering it clinically unusable for live procedure assistance.
+            </p>
+          </div>
+          <div style="background: var(--bg-primary); padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+            <h4 style="color: var(--color-emerald); font-size: 1.1rem; margin-bottom: 0.75rem;">Selective State Space Mechanics (S6)</h4>
+            <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6;">
+              Replaces self-attention with continuous-time dynamical state equations discretized via Zero-Order Hold (ZOH):
+            </p>
+            <div style="background: var(--bg-secondary); padding: 0.5rem 0.75rem; border-radius: var(--radius-sm); font-family: var(--font-mono); font-size: 0.8rem; margin: 0.5rem 0;">
+              $$h_t = \bar{A} h_{t-1} + \bar{B} x_t, \quad y_t = C h_t + D x_t$$
+              $$\text{Complexity}_{EndoMamba} = \mathcal{O}(P \cdot T \cdot m)$$
+            </div>
+            <p style="font-size: 0.85rem; color: var(--color-emerald); line-height: 1.5;">
+              The recurrent hidden state $h_t$ continuously carries temporal memory. <strong>Video sequence length $T$ is computationally free during inference</strong>, sustaining flat 46.9 FPS at $T=128$ frames.
+            </p>
+          </div>
+        </div>
+
+        <div style="background: var(--bg-primary); border: 1px solid var(--border-subtle); padding: 1.25rem 1.5rem; border-radius: var(--radius-md); font-size: 0.9rem;">
+          <h4 style="color: var(--color-emerald); margin-bottom: 0.5rem;">Pretraining Scale &amp; Benchmark Performance</h4>
+          <p style="color: var(--text-secondary); margin-bottom: 0.5rem;">
+            Pretrained on <strong>MIX12</strong> (74,828 video clips comprising <strong>11,303,853 frames</strong>) using cross-view matching and dynamic motion matching across variable scope withdrawal speeds.
+          </p>
+          <div class="flex-between flex-wrap gap-sm" style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-muted); margin-top: 0.75rem;">
+            <span>CVC-12k Video Dice: <strong style="color: var(--color-emerald);">85.4%</strong> (vs Endo-FM 78.5%)</span>
+            <span>PolypDiag F1: <strong style="color: var(--color-emerald);">95.0%</strong> (vs Endo-FM 90.7%)</span>
+            <span>Throughput: <strong style="color: var(--color-emerald);">47.1 FPS (T=32) / 46.9 FPS (T=128)</strong></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Master Comparative Specifications Table -->
+    <section style="margin: 4rem 0;" aria-label="Comparative Architecture Specifications">
+      <h2 style="font-size: 1.75rem; margin-bottom: 1rem;">Master Architectural Specifications Matrix</h2>
+      <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Hardware throughput, computational complexity, loss formulations, and parameter footprints across the 6 iconic architectures.</p>
+      
+      <div class="table-container">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th class="sticky-header">Model</th>
+              <th class="sticky-header">Encoder Backbone</th>
+              <th class="sticky-header">Decoder Structure</th>
+              <th class="sticky-header">Loss Formulation</th>
+              <th class="sticky-header numeric">Params (M)</th>
+              <th class="sticky-header numeric">GFLOPs</th>
+              <th class="sticky-header numeric">FPS (FP32)</th>
+              <th class="sticky-header numeric">FPS (FP16)</th>
+              <th class="sticky-header">Key Innovation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>U-Net</strong></td>
+              <td>4-Stage Plain CNN</td>
+              <td>Up-Conv + Crop/Concat</td>
+              <td>Weighted Cross-Entropy</td>
+              <td class="numeric">31.03</td>
+              <td class="numeric">25.96 @ 352²</td>
+              <td class="numeric">53.0</td>
+              <td class="numeric">78.5</td>
+              <td>Identity skip connections bridging encoder &amp; decoder</td>
+            </tr>
+            <tr>
+              <td><strong>PraNet</strong></td>
+              <td>Res2Net-50</td>
+              <td>PPD + 3 Reverse Attention</td>
+              <td>Weighted BCE + Weighted IoU</td>
+              <td class="numeric">32.55</td>
+              <td class="numeric">13.11 @ 352²</td>
+              <td class="numeric">50.0</td>
+              <td class="numeric">74.2</td>
+              <td>Erases polyp interior to recursively mine perimeter</td>
+            </tr>
+            <tr>
+              <td><strong>HarDNet-MSEG</strong></td>
+              <td>HarDNet68</td>
+              <td>Cascaded Partial Decoder</td>
+              <td>Weighted BCE + Weighted IoU</td>
+              <td class="numeric">33.34</td>
+              <td class="numeric">10.40 @ 312²</td>
+              <td class="numeric">88.0</td>
+              <td class="numeric">124.0</td>
+              <td>DRAM traffic minimization (CIO); 88 FPS real-time</td>
+            </tr>
+            <tr>
+              <td><strong>Polyp-PVT</strong></td>
+              <td>PVTv2-B2</td>
+              <td>CFM + CIM + Graph-SAM</td>
+              <td>Weighted BCE + Weighted IoU</td>
+              <td class="numeric">44.60</td>
+              <td class="numeric">21.70 @ 352²</td>
+              <td class="numeric">30.0</td>
+              <td class="numeric">48.0</td>
+              <td>GCN rotational invariance; first to cross 0.80 on ColonDB</td>
+            </tr>
+            <tr>
+              <td><strong>ColonFormer</strong></td>
+              <td>Mix Transformer (MiT-B3)</td>
+              <td>UPer + CFP + Residual Axial RA</td>
+              <td>Weighted Focal + Weighted IoU</td>
+              <td class="numeric">46.64</td>
+              <td class="numeric">21.69 @ 352²</td>
+              <td class="numeric">22.0</td>
+              <td class="numeric">38.5</td>
+              <td>Residual bypass escape hatch; non-monotonic scaling insight</td>
+            </tr>
+            <tr class="highlight-row">
+              <td><strong>EndoMamba</strong></td>
+              <td>VideoMamba S6 (SSM)</td>
+              <td>Visual Selective Scan (VSS)</td>
+              <td>Cross-View + Motion Match</td>
+              <td class="numeric">25.40</td>
+              <td class="numeric">Linear $\mathcal{O}(PTm)$</td>
+              <td class="numeric">46.9</td>
+              <td class="numeric">68.2</td>
+              <td>Linear scan complexity; constant 47 FPS at T=128 frames</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Navigation Next Page Callout -->
+    <div class="card card-glass flex-between flex-wrap gap-md" style="margin: 4rem 0 2rem; padding: 2.25rem;">
+      <div>
+        <span class="badge badge-teal" style="margin-bottom: 0.5rem;">NEXT BENCHMARK STEP</span>
+        <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Inspect the 10 Benchmark Datasets</h3>
+        <p style="color: var(--text-secondary); max-width: 680px; margin-bottom: 0;">
+          Explore the origins, resolutions, ground truth annotations, and critical video leakage hazards of CVC-ClinicDB, ETIS-Larib, SUN-SEG, and PolypGen.
+        </p>
+      </div>
+      <a href="05-datasets.html" class="btn btn-primary btn-lg">
+        <span>View Dataset Catalog</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h4>Colonoscopy<span style="color: var(--color-teal);">AI</span> Guide</h4>
+          <p>Comprehensive educational compendium and forensic research platform covering colorectal polyp detection, segmentation architectures, clinical trials, and benchmark integrity.</p>
+          <p style="margin-top: 1rem; font-size: 0.8rem; color: var(--text-muted);">
+            Based on the 19,236-line technical compendium (Opus 1) and independent dataset forensic audits.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h5>Clinical Domain</h5>
+          <ul class="footer-links">
+            <li><a href="01-what-is-colonoscopy.html">Clinical Foundations</a></li>
+            <li><a href="06b-clinical-evidence.html">Trial Evidence &amp; RCTs</a></li>
+            <li><a href="07-clinical-systems.html">Commercial Systems</a></li>
+            <li><a href="12-glossary.html">Medical Glossary</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>AI &amp; Engineering</h5>
+          <ul class="footer-links">
+            <li><a href="03-ai-history.html">Evolution Timeline</a></li>
+            <li><a href="04-architectures.html">Model Architectures</a></li>
+            <li><a href="05-datasets.html">Dataset Catalog</a></li>
+            <li><a href="06-benchmarks.html">Benchmark Matrices</a></li>
+            <li><a href="09-chakramodel.html">ChakraModel Research</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Integrity &amp; Research</h5>
+          <ul class="footer-links">
+            <li><a href="08-benchmark-integrity.html">Integrity Audit</a></li>
+            <li><a href="10-future.html">Future Frontiers</a></li>
+            <li><a href="11-references.html">Master Bibliography</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 ColonoscopyAI Education &amp; ChakraModel Research. Open medical research platform.</div>
+        <div>Strict Forensic Integrity Standard &bull; Zero Hallucinations</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../assets/js/main.js"></script>
+  <script>
+    // Interactive Architecture Explorer Controller for 04-architectures.html
+    document.addEventListener('DOMContentLoaded', () => {
+      const ARCH_DATA = {
+        pranet: {
+          name: "PraNet",
+          year: 2020,
+          params: "32.55M",
+          flops: "13.11 GFLOPs",
+          fps: "50 FPS (RTX 2080 Ti)",
+          encoder: {
+            title: "Res2Net-50 Hierarchical Multi-Branch Grouping",
+            subtitle: "Res2Net-50 Multi-Branch",
+            shapes: "INPUT: [B, 3, 352, 352] → STAGES: f2[128], f3[256], f4[512], f5[1024]",
+            desc: "Replaces standard 3x3 bottleneck convolutions with hierarchical sub-feature groups (s=4). Feature map subsets are passed through cascaded 3x3 convs where y_i = K_i(x_i + y_{i-1}), creating an exponential expansion of receptive fields within a single residual block.",
+            code: "# Res2Net-50 Multi-Branch Feature Aggregation\ny_1 = x_1\ny_2 = Conv3x3_2(x_2)\ny_3 = Conv3x3_3(x_3 + y_2)\ny_4 = Conv3x3_4(x_4 + y_3)\nout = Concat([y_1, y_2, y_3, y_4])  # Output: [B, C, H/32, W/32]",
+            params: "25.56M (Backbone)",
+            flops: "8.9 GFLOPs",
+            hw: "DRAM memory reads on multi-branch tensor splits"
+          },
+          bottleneck: {
+            title: "Parallel Partial Decoder (PPD)",
+            subtitle: "Parallel Partial Decoder (PPD)",
+            shapes: "INPUT: {f3, f4, f5} → OUTPUT: S_g [B, 1, 352, 352]",
+            desc: "Adopts Wu et al.'s CPD principle: discards shallow features f1 and f2 to reduce computation and eliminate high-frequency noise. Aggregates deep semantics {f3, f4, f5} to produce a coarse global saliency map S_g that locates the lesion core.",
+            code: "# Parallel Partial Decoder (PPD)\nf3_conv = Conv1x1(f3)\nf4_conv = Conv1x1(f4)\nf5_conv = Conv1x1(f5)\nS_g = ConvOut(Concat([Up2(f5_conv), Up1(f4_conv), f3_conv]))",
+            params: "2.85M",
+            flops: "1.8 GFLOPs",
+            hw: "Bilinear upsampling and channel concatenation overhead"
+          },
+          decoder: {
+            title: "Top-Down Reverse Attention (RA) Cascade",
+            subtitle: "Reverse Attention (RA) Cascade",
+            shapes: "INPUTS: f_i & P_{i+1} → OUTPUT: S_i [B, 1, 352, 352]",
+            desc: "Three cascaded Reverse Attention modules (RA5 → RA4 → RA3). Inverts the deeper prediction: A_i = 1 - σ(P_{i+1}) to erase the detected polyp interior, forcing feature maps to recursively focus on subtle perimeter transitions.",
+            code: "# Reverse Attention Module\nA_i = 1.0 - torch.sigmoid(Upsample(P_deeper))\nR_i = f_i * A_i  # Inverted attention masking\nS_i = ConvBlock(R_i) + P_deeper  # Residual boundary refinement",
+            params: "4.14M",
+            flops: "2.41 GFLOPs",
+            hw: "Sequential top-down dependency prevents parallel kernel launch"
+          },
+          loss: {
+            title: "PraNet Structure Loss (Weighted BCE + Weighted IoU)",
+            subtitle: "Weighted BCE + Weighted IoU",
+            shapes: "PREDICTIONS: {S_g, S5, S4, S3} vs GROUND TRUTH: G",
+            desc: "A boundary-weighted loss calculated across 4 decoder heads. Precomputes an edge weight matrix (1 + 5*α_ij) via a 31x31 average pooling filter over G, boosting gradients at boundary pixels by 350%.",
+            code: "# PraNet Structure Loss\nalpha = torch.abs(F.avg_pool2d(G, kernel_size=31, stride=1, padding=15) - G)\nweight = 1.0 + 5.0 * alpha\nwbce = F.binary_cross_entropy_with_logits(pred, G, weight=weight)\nwiou = 1.0 - (weight * pred * G).sum() / (weight * (pred + G - pred * G)).sum()\nloss = wbce + wiou",
+            params: "0 (Training Only)",
+            flops: "N/A",
+            hw: "Requires precomputing spatial average-pool weight tensor per batch"
+          },
+          innovation: {
+            title: "Boundary Mining vs Shallow Feature Omission",
+            subtitle: "Boundary Mining Paradigm",
+            shapes: "BENCHMARKS: Kvasir 0.898 / ClinicDB 0.899* [Video Leakage] / ETIS 0.628",
+            desc: "Pioneered reverse attention boundary mining, achieving an 11-point Dice gain over U-Net on Kvasir-SEG. *Integrity Note: The 0.899 ClinicDB score reflects seen-domain video frame leakage (+12% to +15% inflation across identical patient sequences). Completely discarding f1 and f2 degraded performance on subtle diminutive (<5mm) and flat lesions.",
+            disclaimer: "CVC-ClinicDB test frames share identical patient video sequences with training frames (30 verified duplicate links). Reported 0.899 mDice represents seen-domain video interpolation, not true generalizability.",
+            code: "# PraNet Architecture Metrics Summary\nParameters: 32.55 Million\nThroughput: 50 FPS (RTX 2080 Ti FP32)\nETIS-Larib mDice: 0.628 | CVC-ColonDB mDice: 0.709\nClinicDB mDice: 0.899* (In-Sequence Video Leakage)",
+            params: "32.55M Total",
+            flops: "13.11 GFLOPs",
+            hw: "Strictly bounded within 20 ms clinical latency window"
+          }
+        },
+        hardnet: {
+          name: "HarDNet-MSEG",
+          year: 2021,
+          params: "33.34M",
+          flops: "10.40 GFLOPs",
+          fps: "88 FPS (RTX 2080 Ti)",
+          encoder: {
+            title: "HarDNet68 Harmonic Dense Connections",
+            subtitle: "HarDNet68 (Low CIO)",
+            shapes: "INPUT: [B, 3, 312, 312] → STAGES: {16, 32, 64, 128, 256, 512}",
+            desc: "Minimizes Convolutional Input/Output (CIO) memory traffic. Connects layer k to layer k + 2^n using power-of-two harmonic shortcuts. Maximizes GPU streaming multiprocessor occupancy without DRAM read thrashing.",
+            code: "# HarDNet Harmonic Connection Block\ndef hard_block(x):\n    # Connects layer k to k + 2^n\n    # Keeps DRAM access sparse and channels wide\n    return x_concat",
+            params: "26.4M",
+            flops: "7.8 GFLOPs",
+            hw: "Low memory access cost enables ultra-fast execution"
+          },
+          bottleneck: {
+            title: "Cascaded Partial Decoder with Receptive Field Blocks",
+            subtitle: "Cascaded Partial Decoder",
+            shapes: "INPUT: Multi-scale HarDNet features",
+            desc: "Applies Receptive Field Blocks (RFB) with dilated convolutions to expand receptive fields on deep stages, feeding directly into a lightweight cascaded decoder.",
+            code: "# RFB Bottleneck\nrfb_out = RFB_Block(f_deep, rates=[1, 3, 5])",
+            params: "3.2M",
+            flops: "1.4 GFLOPs",
+            hw: "Efficient dilated convolution branches"
+          },
+          decoder: {
+            title: "HarDBlock-Free Memory-Conserving Decoder",
+            subtitle: "Fast Minimal Decoder",
+            shapes: "OUTPUT: Mask [B, 1, 312, 312]",
+            desc: "Deliberately excludes HarDBlocks from the decoder to prevent memory access stalls. Kept as simple upsampling and 3x3 convolutions.",
+            code: "# Fast Decoder\nout = Conv3x3(Up2(Conv3x3(Up2(deep_feat))))",
+            params: "3.74M",
+            flops: "1.2 GFLOPs",
+            hw: "Peak memory bandwidth utilization"
+          },
+          loss: {
+            title: "Weighted BCE + Weighted IoU",
+            subtitle: "F3Net Structure Loss",
+            shapes: "MULTI-SCALE: 4 Heads",
+            desc: "Employs F3Net weighted structure loss directly matching PraNet formulation.",
+            code: "loss = wbce_loss(p, g) + wiou_loss(p, g)",
+            params: "0",
+            flops: "N/A",
+            hw: "Standard GPU element-wise operations"
+          },
+          innovation: {
+            title: "DRAM Access Traffic (CIO) Optimization",
+            subtitle: "DRAM Optimization",
+            shapes: "BENCHMARKS: Kvasir 0.904 / ClinicDB 0.932* [Video Leakage] / ETIS 0.677",
+            desc: "Achieved 88 FPS real-time speed on RTX 2080 Ti. *Integrity Note: The 0.932 ClinicDB score is an in-sequence video memorization artifact (+12% to +15% inflation). Note also that its evaluation was at 312x312 (21.4% fewer pixels than 352x352).",
+            disclaimer: "CVC-ClinicDB test frames share identical patient video sequences with training frames. The 0.932 mDice score reflects seen-domain video memorization rather than robust out-of-distribution detection.",
+            code: "# Speed vs Accuracy Profile\nParams: 33.34M | FPS: 88.0 (FP32)\nKvasir mDice: 0.904 | MAE: 0.025\nClinicDB mDice: 0.932* (In-Sequence Video Leakage)",
+            params: "33.34M Total",
+            flops: "10.40 GFLOPs",
+            hw: "Fastest clinical segmentation baseline"
+          }
+        },
+        polyp_pvt: {
+          name: "Polyp-PVT",
+          year: 2021,
+          params: "44.60M",
+          flops: "21.70 GFLOPs",
+          fps: "30 FPS (TITAN RTX)",
+          encoder: {
+            title: "Pyramid Vision Transformer v2 (PVTv2-B2)",
+            subtitle: "PVTv2-B2 Transformer",
+            shapes: "INPUT: [B, 3, 352, 352] → 4 STAGES: [64, 128, 320, 512]",
+            desc: "Non-overlapping 4x4 patch embedding with Linear Spatial-Reduction Attention (SRA) reducing self-attention complexity from O(N²) to O(N²/R). Mix-FFN depth-wise convs inject continuous positional bias.",
+            code: "# PVTv2 Linear Spatial Reduction Attention\nK_reduced = Conv_Reduce(K, ratio=R)\nV_reduced = Conv_Reduce(V, ratio=R)\nAttn = Softmax(Q @ K_reduced.T / sqrt(d)) @ V_reduced",
+            params: "25.1M",
+            flops: "14.2 GFLOPs",
+            hw: "Matrix multiplication in multi-head attention"
+          },
+          bottleneck: {
+            title: "Cascaded Fusion Module (CFM)",
+            subtitle: "Cascaded Fusion (CFM)",
+            shapes: "INPUT: {f3, f4, f5} downprojected to 32 channels",
+            desc: "Aggregates deep transformer stages using residual element-wise Hadamard products and convolutions to establish a robust coarse lesion region.",
+            code: "# Cascaded Fusion Module (CFM)\nX_34 = Concat(Conv(f3 * f4))\nT_h = Concat(Conv(X_34 * f5))  # [B, 32, H/8, W/8]",
+            params: "3.8M",
+            flops: "2.1 GFLOPs",
+            hw: "Channel projection and Hadamard multiplication"
+          },
+          decoder: {
+            title: "Camouflaged Identification (CIM) & Graph-SAM",
+            subtitle: "CIM + Graph-SAM",
+            shapes: "INPUT: T_h & f2 → OUTPUT: Rotational-Invariant Mask",
+            desc: "CIM applies channel and large-kernel 7x7 spatial attention to unmask subtle boundaries in f2. Graph Convolutional Network (GCN) aggregates semantic tokens and spatial nodes, achieving scope rotational invariance.",
+            code: "# Graph Similarity Aggregation (SAM)\n# Laplacian Normalized GCN:\nG_out = D_inv_sqrt @ Adj @ D_inv_sqrt @ X @ W",
+            params: "15.7M",
+            flops: "5.4 GFLOPs",
+            hw: "Graph adjacency matrix multiplication"
+          },
+          loss: {
+            title: "Deeply Supervised Structure Loss",
+            subtitle: "Weighted BCE + IoU",
+            shapes: "PREDICTIONS: 4 Decoder Heads",
+            desc: "Weighted BCE and weighted IoU applied across all fused transformer stages.",
+            code: "loss = L_struct(P1, G) + L_struct(P2, G) + L_struct(P3, G)",
+            params: "0",
+            flops: "N/A",
+            hw: "Standard backpropagation"
+          },
+          innovation: {
+            title: "Rotational Invariance & ColonDB SOTA Barrier",
+            subtitle: "0.808 ColonDB Breakthrough",
+            shapes: "BENCHMARKS: Kvasir 0.917 / ColonDB 0.808 / ETIS 0.787 / ClinicDB 0.937* [Leakage]",
+            desc: "First model to cross 0.80 mDice on unseen CVC-ColonDB (0.808). GCN preserves 0.806 mDice under 180° image rotation. *Integrity Note: Published 0.937 ClinicDB score suffers from in-sequence video temporal leakage.",
+            disclaimer: "CVC-ClinicDB 0.937 mDice is artificially inflated by in-sequence video frame leakage; true clinical generalization is measured by unseen ColonDB (0.808) and ETIS-Larib (0.787).",
+            code: "# Polyp-PVT Summary\nParameters: 44.60M | FPS: 30.0\nETIS-Larib Dice: 0.787 | ColonDB Dice: 0.808",
+            params: "44.60M Total",
+            flops: "21.70 GFLOPs",
+            hw: "Operates near 33 ms real-time latency threshold"
+          }
+        },
+        colonformer: {
+          name: "ColonFormer",
+          year: 2022,
+          params: "46.64M",
+          flops: "21.69 GFLOPs",
+          fps: "22 FPS (RTX 2080 Ti)",
+          encoder: {
+            title: "Mix Transformer (SegFormer MiT-B3)",
+            subtitle: "Mix Transformer (MiT-B3)",
+            shapes: "INPUT: [B, 3, 352, 352] → 4 Hierarchical Stages",
+            desc: "Overlapping patch merging (K=7, S=4, P=3 at stage 1; K=3, S=2, P=1 thereafter) maintains boundary continuity. Mix-FFN removes fixed positional embeddings.",
+            code: "# Overlapping Patch Merging\nx = Conv2D(in_c, out_c, kernel_size=7, stride=4, padding=3)(img)",
+            params: "37.4M",
+            flops: "15.8 GFLOPs",
+            hw: "Self-attention matrix computation"
+          },
+          bottleneck: {
+            title: "UPer Decoder with Pyramid Pooling Module (PPM)",
+            subtitle: "UPer Decoder + PPM",
+            shapes: "BINS: [1x1, 2x2, 3x3, 6x6] on f4",
+            desc: "Captures multi-scale contextual priors from deepest transformer representations, progressively fused with multi-scale skip features.",
+            code: "# Pyramid Pooling Module\nppm_out = [AdaptiveAvgPool2D(bin)(f4) for bin in [1, 2, 3, 6]]",
+            params: "4.2M",
+            flops: "2.3 GFLOPs",
+            hw: "Multi-bin pooling and interpolation"
+          },
+          decoder: {
+            title: "Cross-Level Feature Pyramid (CFP) & RA-RA",
+            subtitle: "Residual Axial Reverse Attn",
+            shapes: "AXIAL DILATIONS: d in {1, 2, 4, 8}",
+            desc: "Decomposes attention along horizontal and vertical axes. Incorporates an identity residual bypass escape hatch so the network dynamically bypasses axial layers when they over-suppress irregular polyps.",
+            code: "# Residual Axial Reverse Attention (RA-RA)\naxial_out = AxialAttention(f_i)\nrefined = f_i + Conv(axial_out * (1 - Sigmoid(P_deep)))  # Residual bypass",
+            params: "5.04M",
+            flops: "3.59 GFLOPs",
+            hw: "Dual-axis sequential scanning"
+          },
+          loss: {
+            title: "Averaged Weighted Focal & Weighted IoU",
+            subtitle: "Averaged Focal + IoU",
+            shapes: "HALF GRADIENT SCALE: 0.5 * (Focal + IoU)",
+            desc: "Averages weighted focal loss and weighted IoU, halving effective gradient scale to stabilize transformer fine-tuning on limited clinical data.",
+            code: "loss = 0.5 * (wfocal_loss(P, G) + wiou_loss(P, G))",
+            params: "0",
+            flops: "N/A",
+            hw: "Standard focal gradient computation"
+          },
+          innovation: {
+            title: "Non-Monotonic Backbone Scaling Discovery",
+            subtitle: "Scaling Law Discovery",
+            shapes: "BENCHMARKS: Kvasir 0.924 / ColonDB 0.814 / ETIS 0.801 / ClinicDB 0.941* [Leakage]",
+            desc: "Demonstrated that scaling beyond MiT-B3 degrades out-of-domain performance: MiT-B5 drops by 2.6 percentage points on ETIS-Larib due to small-dataset overfitting. *Integrity Note: Published 0.941 ClinicDB score reflects seen-domain video frame interpolation.",
+            disclaimer: "CVC-ClinicDB 0.941 mDice represents seen-domain video interpolation due to shared video sequences across splits.",
+            code: "# Non-Monotonic Scaling Verification\nMiT-B1: 0.779 ETIS | MiT-B2: 0.789 ETIS\nMiT-B3: 0.801 ETIS (PEAK) | MiT-B5: 0.775 ETIS (-0.026)",
+            params: "46.64M Total",
+            flops: "21.69 GFLOPs",
+            hw: "22 FPS requires GPU acceleration for clinical use"
+          }
+        },
+        endomamba: {
+          name: "EndoMamba",
+          year: 2024,
+          params: "25.40M",
+          flops: "Linear O(PTm)",
+          fps: "46.9 FPS (T=128)",
+          encoder: {
+            title: "Bidirectional Visual Selective State Space (VideoMamba)",
+            subtitle: "VideoMamba (SSM)",
+            shapes: "INPUT: [B, T, H, W, 3] → 12 Bi-Mamba Blocks",
+            desc: "Spatiotemporal patch projection with hybrid learnable spatial and sinusoidal temporal positional encodings. 12 Bi-Mamba blocks execute forward and backward visual selective scans (VSS).",
+            code: "# EndoMamba S6 Discretized State Equations\nh_t = A_bar * h_{t-1} + B_bar * x_t\ny_t = C * h_t + D * x_t\n# Complexity: Linear O(P * T * m)",
+            params: "21.2M",
+            flops: "Linear in T",
+            hw: "Specialized associative scan CUDA kernels"
+          },
+          bottleneck: {
+            title: "Continuous Recurrent Temporal Memory",
+            subtitle: "Zero-Order Hold (ZOH)",
+            shapes: "STATE DIM: Continuous h_t carrying video history",
+            desc: "Parameterizes matrices B, C and discretization step Δ as input-dependent functions of x_t. Hidden state h_t carries historical video context with constant memory consumption.",
+            code: "# Input-Dependent Discretization\nDelta = Softplus(Linear(x_t))\nA_bar = exp(Delta * A)\nB_bar = Delta * B(x_t)",
+            params: "2.1M",
+            flops: "Linear",
+            hw: "SRAM associative prefix sum caching"
+          },
+          decoder: {
+            title: "Visual Selective Scan (VSS) Segmentation Head",
+            subtitle: "Visual Selective Scan Head",
+            shapes: "OUTPUT: [B, T, 1, H, W] dense video masks",
+            desc: "Fuses temporal hidden representations with spatial tokens to generate continuous frame-by-frame binary segmentation masks without temporal flickering.",
+            code: "# Video Mask Reconstruction\nlogits = Linear(UpSample(VSS_Head(h_seq)))",
+            params: "2.1M",
+            flops: "Minimal",
+            hw: "Lightweight dense projection"
+          },
+          loss: {
+            title: "Cross-View & Dynamic Motion Matching Loss",
+            subtitle: "Cross-View + Motion Match",
+            shapes: "MULTI-VIEW: Variable Frame Rate Pairs",
+            desc: "Pretrained self-supervised on MIX12 (11.3M frames across 74k clips) using teacher-student cross-view matching and motion speed regularization.",
+            code: "loss = L_cross_view(s_view1, t_view2) + L_dyn_motion(v_fast, v_slow)",
+            params: "0",
+            flops: "N/A",
+            hw: "Self-supervised pretraining objectives"
+          },
+          innovation: {
+            title: "Sub-Quadratic Complexity & Constant FPS at T=128",
+            subtitle: "Linear Scan Video SOTA",
+            shapes: "SPEED: 47.1 FPS @ T=32 | 46.9 FPS @ T=128",
+            desc: "Overcame the quadratic wall of video transformers. Processes 128 frames at flat 46.9 FPS (vs Endo-FM 2.4 FPS), achieving 85.4% Dice on CVC-12k.",
+            code: "# EndoMamba Video Scaling Verification\nT=8:  47.5 FPS | T=16:  47.3 FPS\nT=32: 47.1 FPS | T=64:  47.0 FPS | T=128: 46.9 FPS (FLAT!)",
+            params: "25.40M Total",
+            flops: "Linear O(PTm)",
+            hw: "Maintains >45 FPS real-time clinical stream"
+          }
+        },
+        unet: {
+          name: "U-Net",
+          year: 2015,
+          params: "31.03M",
+          flops: "25.96 GFLOPs",
+          fps: "53 FPS (RTX 2080 Ti)",
+          encoder: {
+            title: "Plain 4-Stage Contracting Path",
+            subtitle: "4-Stage Plain CNN",
+            shapes: "CHANNELS: 64 → 128 → 256 → 512 → 1024",
+            desc: "Two 3x3 unpadded convolutions followed by ReLU and 2x2 max-pooling with stride 2. Spatial resolution decreases by 16x while channel depth quadruples.",
+            code: "# U-Net Encoder Contracting Step\nx = ReLU(Conv3x3(x))\nx = ReLU(Conv3x3(x))\nx_down = MaxPool2x2(x)",
+            params: "14.2M",
+            flops: "12.8 GFLOPs",
+            hw: "Standard conv2d GEMM execution"
+          },
+          bottleneck: {
+            title: "Deepest Semantic Layer (Stage 5)",
+            subtitle: "1024-Channel Bottleneck",
+            shapes: "[B, 1024, 22, 22] at 352x352 input",
+            desc: "Deepest convolutional representation capturing high-level context before upsampling.",
+            code: "# Bottleneck\nbottleneck = ReLU(Conv3x3(ReLU(Conv3x3(x_down4))))",
+            params: "8.5M",
+            flops: "6.4 GFLOPs",
+            hw: "High channel depth memory load"
+          },
+          decoder: {
+            title: "Expanding Path with Identity Skip Concatenation",
+            subtitle: "Up-Conv + Crop/Concat",
+            shapes: "CONCAT: [B, C_in + C_skip, H, W]",
+            desc: "2x2 transposed convolutions halve channels. Direct identity channel concatenation with encoder feature maps restores high-frequency spatial boundaries.",
+            code: "# U-Net Expanding Step\nx = UpConv2x2(x)\nx = Concat([x, skip_connection])\nx = ReLU(Conv3x3(ReLU(Conv3x3(x))))",
+            params: "8.33M",
+            flops: "6.76 GFLOPs",
+            hw: "DRAM memory traffic from identity skip tensors"
+          },
+          loss: {
+            title: "Morphological Distance-Weighted Cross-Entropy",
+            subtitle: "Weighted Cross-Entropy",
+            shapes: "PIXEL-WISE: w(x) * log(p(x))",
+            desc: "Pixel-wise softmax with distance-penalty map ensuring distinct separation of touching object boundaries.",
+            code: "loss = (w_map * F.cross_entropy(logits, targets, reduction='none')).mean()",
+            params: "0",
+            flops: "N/A",
+            hw: "Precomputed spatial weight tensor"
+          },
+          innovation: {
+            title: "Symmetric U-Shaped Biomedical Architecture",
+            subtitle: "Identity Skip Blueprint",
+            shapes: "BENCHMARKS: Kvasir 0.818 / ETIS 0.398",
+            desc: "The universal foundation of medical segmentation. However, suffers catastrophic out-of-distribution collapse (0.398 ETIS) and ragged margins on polyp borders.",
+            code: "# U-Net Profile\nParameters: 31.03M | 53 FPS (FP32)\nSeen Kvasir Dice: 0.818 | Unseen ETIS Dice: 0.398",
+            params: "31.03M Total",
+            flops: "25.96 GFLOPs",
+            hw: "Widely supported on all clinical edge devices"
+          }
+        }
+      };
+
+      let currentModel = 'pranet';
+      let currentComponent = 'encoder';
+
+      const modelButtons = document.querySelectorAll('#arch-model-selector button');
+      const nodes = document.querySelectorAll('.arch-node');
+
+      const nodeSubEncoder = document.getElementById('node-sub-encoder');
+      const nodeSubBottleneck = document.getElementById('node-sub-bottleneck');
+      const nodeSubDecoder = document.getElementById('node-sub-decoder');
+      const nodeSubLoss = document.getElementById('node-sub-loss');
+      const nodeSubInnovation = document.getElementById('node-sub-innovation');
+
+      const detailBadge = document.getElementById('detail-node-badge');
+      const detailShapes = document.getElementById('detail-node-shapes');
+      const detailTitle = document.getElementById('detail-node-title');
+      const detailDesc = document.getElementById('detail-node-desc');
+      const detailCode = document.getElementById('detail-node-code');
+      const detailParams = document.getElementById('detail-node-params');
+      const detailFlops = document.getElementById('detail-node-flops');
+      const detailHw = document.getElementById('detail-node-hw');
+
+      function updateExplorerView() {
+        const m = ARCH_DATA[currentModel];
+        if (!m) return;
+
+        // Update node subtitles
+        nodeSubEncoder.textContent = m.encoder.subtitle;
+        nodeSubBottleneck.textContent = m.bottleneck.subtitle;
+        nodeSubDecoder.textContent = m.decoder.subtitle;
+        nodeSubLoss.textContent = m.loss.subtitle;
+        nodeSubInnovation.textContent = m.innovation.subtitle;
+
+        // Update detail panel
+        const c = m[currentComponent];
+        detailBadge.textContent = `${m.name.toUpperCase()} • ${currentComponent.toUpperCase()}`;
+        detailShapes.textContent = c.shapes;
+        detailTitle.textContent = c.title;
+        detailDesc.textContent = c.desc;
+        detailCode.textContent = c.code;
+        detailParams.textContent = c.params;
+        detailFlops.textContent = c.flops;
+        detailHw.textContent = c.hw;
+
+        // Update caveat banner if component carries an integrity caveat
+        const caveatBox = document.getElementById('detail-node-caveat');
+        const caveatText = document.getElementById('detail-caveat-text');
+        if (caveatBox && caveatText) {
+          if (c.disclaimer) {
+            caveatText.innerHTML = `${c.disclaimer} For cryptographic frame-pair matching and RANSAC inlier analysis, see <a href="08-benchmark-integrity.html" style="color: var(--color-teal); text-decoration: underline;">Benchmark Integrity Audit</a>.`;
+            caveatBox.style.display = 'block';
+          } else {
+            caveatBox.style.display = 'none';
+          }
+        }
+      }
+
+      modelButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          modelButtons.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          currentModel = btn.getAttribute('data-model');
+          updateExplorerView();
+        });
+      });
+
+      nodes.forEach(node => {
+        node.addEventListener('click', () => {
+          nodes.forEach(n => n.classList.remove('active'));
+          node.classList.add('active');
+          currentComponent = node.getAttribute('data-component');
+          updateExplorerView();
+        });
+      });
+
+      updateExplorerView();
+    });
+  </script>
+</body>
+</html>

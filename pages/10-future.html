@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Future of Colonoscopy AI | Foundation Models, Mamba & Agentic Endoscopy</title>
+  <meta name="description" content="Explore the next frontiers in colonoscopy AI: fair-prompt foundation models, spatiotemporal video state-space models (EndoMamba), multimodal agentic endoscopy suites, and solving clinical deskilling.">
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <style>
+    .vision-hero-card {
+      background: linear-gradient(135deg, rgba(16, 24, 40, 0.95) 0%, rgba(15, 23, 42, 0.98) 100%);
+      border: 1px solid var(--border-teal-glow);
+      border-radius: var(--radius-xl);
+      padding: 3rem;
+      margin: 2rem 0 3.5rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 16px 40px rgba(0, 212, 255, 0.1);
+    }
+    .vision-hero-card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(168, 85, 247, 0.15) 0%, rgba(0, 212, 255, 0.08) 50%, transparent 70%);
+      filter: blur(50px);
+      pointer-events: none;
+    }
+    .agentic-stack-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    @media (max-width: 992px) {
+      .agentic-stack-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .agentic-layer-card {
+      background: var(--surface-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      transition: all var(--transition-normal);
+    }
+    .agentic-layer-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--color-teal);
+      box-shadow: var(--shadow-lg);
+    }
+    .layer-badge {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.25rem 0.65rem;
+      border-radius: var(--radius-full);
+      display: inline-block;
+      margin-bottom: 1rem;
+      width: fit-content;
+    }
+    .roadmap-timeline {
+      position: relative;
+      margin: 3rem 0;
+      padding-left: 2.5rem;
+      border-left: 3px solid var(--border-medium);
+    }
+    .roadmap-node {
+      position: relative;
+      margin-bottom: 3rem;
+    }
+    .roadmap-node:last-child {
+      margin-bottom: 0;
+    }
+    .roadmap-dot {
+      position: absolute;
+      left: -2.5rem;
+      top: 0.25rem;
+      transform: translateX(-50%);
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--bg-primary);
+      border: 3px solid var(--color-teal);
+      box-shadow: 0 0 12px var(--color-teal);
+    }
+    .roadmap-node.stage-2 .roadmap-dot {
+      border-color: var(--color-teal);
+      box-shadow: 0 0 12px var(--color-teal);
+    }
+    .roadmap-node.stage-3 .roadmap-dot {
+      border-color: var(--color-purple);
+      box-shadow: 0 0 12px var(--color-purple);
+    }
+    .roadmap-node.stage-agentic .roadmap-dot {
+      border-color: var(--color-emerald);
+      box-shadow: 0 0 12px var(--color-emerald);
+    }
+    .challenge-card {
+      background: var(--surface-glass);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      transition: all var(--transition-fast);
+    }
+    .challenge-card:hover {
+      border-color: var(--color-coral);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Scroll Progress Indicator -->
+  <div id="scroll-progress"></div>
+
+  <!-- Main Navigation Header -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="../index.html" class="brand-logo">
+        <div class="brand-icon">🔬</div>
+        <span>Colonoscopy AI</span>
+        <span class="brand-badge">Vision</span>
+      </a>
+
+      <ul class="nav-menu">
+        <li><a href="../index.html" class="nav-link">Home</a></li>
+        <li><a href="01-what-is-colonoscopy.html" class="nav-link">Clinical</a></li>
+        <li><a href="04-architectures.html" class="nav-link">Architectures</a></li>
+        <li><a href="05-datasets.html" class="nav-link">Datasets</a></li>
+        <li><a href="06-benchmarks.html" class="nav-link">Benchmarks</a></li>
+        <li><a href="08-benchmark-integrity.html" class="nav-link">Integrity Audit</a></li>
+        <li><a href="09-chakramodel.html" class="nav-link">ChakraModel</a></li>
+        <li><a href="10-future.html" class="nav-link active">Future & Mamba</a></li>
+        <li><a href="11-references.html" class="nav-link">References</a></li>
+        <li><a href="12-glossary.html" class="nav-link">Glossary</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" aria-label="Toggle light and dark mode" title="Toggle theme">🌓</button>
+        <button class="hamburger-btn" aria-label="Toggle mobile menu" title="Open Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-drawer" id="mobile-drawer">
+    <a href="../index.html" class="nav-link">Home (Overview)</a>
+    <a href="01-what-is-colonoscopy.html" class="nav-link">01. What is Colonoscopy</a>
+    <a href="02-polyp-types.html" class="nav-link">02. Polyp Morphology & Paris</a>
+    <a href="03-ai-history.html" class="nav-link">03. AI History & Evolution</a>
+    <a href="04-architectures.html" class="nav-link">04. Deep Architectures</a>
+    <a href="05-datasets.html" class="nav-link">05. Public Datasets</a>
+    <a href="06-benchmarks.html" class="nav-link">06. Performance Benchmarks</a>
+    <a href="06b-clinical-evidence.html" class="nav-link">06b. Clinical Trial Evidence</a>
+    <a href="08-benchmark-integrity.html" class="nav-link">08. Benchmark Integrity Audit</a>
+    <a href="09-chakramodel.html" class="nav-link">09. ChakraModel Research Project</a>
+    <a href="10-future.html" class="nav-link active">10. Future & Agentic Vision</a>
+    <a href="11-references.html" class="nav-link">11. Master References (49 Papers)</a>
+    <a href="12-glossary.html" class="nav-link">12. Plain-English Glossary (50 Terms)</a>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-glow" style="background: radial-gradient(circle, rgba(168, 85, 247, 0.15) 0%, rgba(0, 212, 255, 0.08) 50%, transparent 70%);"></div>
+    <div class="container hero-content">
+      <div class="hero-badge">
+        <span class="dot" style="background: var(--color-purple);"></span>
+        <span>The Next Frontier (2026&ndash;2030)</span>
+      </div>
+      <h1 class="hero-title">
+        The Future of <br>
+        <span class="gradient-text">Colonoscopy Artificial Intelligence</span>
+      </h1>
+      <p class="hero-subtitle">
+        Moving beyond static single-frame segmentation toward spatiotemporal state-space models, fair foundation model prompting, and autonomous multimodal agentic procedure rooms.
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Content Container -->
+  <main class="container">
+
+    <!-- Vision Card -->
+    <div class="vision-hero-card">
+      <span class="badge badge-purple" style="margin-bottom: 1rem;">Paradigm Shift</span>
+      <h2 style="font-size: 2rem; margin-bottom: 1rem;">From Bounding Boxes to Ambient Clinical Intelligence</h2>
+      <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-secondary); max-width: 900px;">
+        For a decade, colonoscopy AI has been constrained to a single repetitive paradigm: drawing a green bounding box around an obvious polyp in a frozen video frame. The next era transcends bounding boxes. It merges real-time video understanding, automated surgical quality enforcement, optical biopsy, and multimodal vision-language agents into a cohesive co-pilot that watches the entire patient examination.
+      </p>
+    </div>
+
+    <!-- The 3-Stage Roadmap -->
+    <section class="section" id="roadmap">
+      <div class="flex-between flex-wrap gap-md" style="margin-bottom: 2rem;">
+        <div>
+          <span class="badge badge-teal">ChakraModel Evolutionary Trajectory</span>
+          <h2 style="margin-top: 0.5rem;">The Strategic Roadmap: Stages 1, 2 & 3</h2>
+        </div>
+        <span class="badge badge-metric">Scientific Horizon</span>
+      </div>
+
+      <div class="roadmap-timeline">
+        <!-- Stage 1 (Current) -->
+        <div class="roadmap-node stage-1">
+          <div class="roadmap-dot" style="border-color: var(--color-teal); background: var(--color-teal);"></div>
+          <div class="card" style="background: var(--surface-card);">
+            <div class="flex-between flex-wrap gap-sm" style="margin-bottom: 0.5rem;">
+              <h3 style="color: var(--color-teal); margin-bottom: 0;">Stage 1: The Audited Benchmark Quintet (Current Release)</h3>
+              <span class="badge badge-teal">Completed / Deployed</span>
+            </div>
+            <p style="color: var(--text-secondary); font-size: 0.95rem;">
+              Eliminating benchmark inflation and video frame leakage across canonical datasets. Key milestones include:
+            </p>
+            <ul style="padding-left: 1.25rem; font-size: 0.9rem; color: var(--text-muted); line-height: 1.7;">
+              <li>Construction of <span class="glossary-term" data-term="group-aware-splitting">splits_v2</span> (1,228 train / 222 val) with exactly zero leaking sequence groups.</li>
+              <li>Execution of the 38-run <code>leakbench</code> protocol (E1, E2, E3) isolating video leakage inflation (+12-15% Dice).</li>
+              <li>Integration of 4,275 polyp-free <span class="glossary-term" data-term="polypgen">PolypGen</span> negative frames to establish baseline <span class="glossary-term" data-term="far">False Alarm Rate (FAR)</span> quantification.</li>
+              <li>ChakraXAttnUNet v2 design fixing skip-pooling bottleneck flaws with dual-path routing.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Stage 2 (Near-Term) -->
+        <div class="roadmap-node stage-2">
+          <div class="roadmap-dot" style="border-color: var(--color-purple);"></div>
+          <div class="card" style="background: var(--surface-card);">
+            <div class="flex-between flex-wrap gap-sm" style="margin-bottom: 0.5rem;">
+              <h3 style="color: var(--color-purple); margin-bottom: 0;">Stage 2: Clean Foundation Models & Clinical Strata (In Progress)</h3>
+              <span class="badge badge-purple">Active Engineering Track</span>
+            </div>
+            <p style="color: var(--text-secondary); font-size: 0.95rem;">
+              Evaluating large medical foundation models and multi-center clinical cohorts with rigorous data hygiene:
+            </p>
+            <div class="grid grid-2" style="margin-top: 1rem;">
+              <div style="background: var(--bg-tertiary); padding: 1.25rem; border-radius: var(--radius-md);">
+                <h4 style="color: var(--color-teal); font-size: 1rem;">1. Fair-Prompt Foundation Model Auditing</h4>
+                <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0;">
+                  Exposing <span class="glossary-term" data-term="prompt-leakage">prompt leakage</span> in <span class="glossary-term" data-term="sam">SAM</span> and MedSAM. Standard papers prompt SAM using bounding boxes derived directly from ground-truth masks—artificially boosting Dice by ~+0.35. Stage 2 evaluates foundation models using autonomous detection prompts or zero-shot grid points.
+                </p>
+              </div>
+              <div style="background: var(--bg-tertiary); padding: 1.25rem; border-radius: var(--radius-md);">
+                <h4 style="color: var(--color-emerald); font-size: 1rem;">2. PICCOLO & PolypGen Multi-Center Integration</h4>
+                <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0;">
+                  Evaluating algorithms on <span class="glossary-term" data-term="piccolo">PICCOLO</span> (3,433 frames, 76 lesions) stratified by millimeter size (diminutive &le;5mm vs large &ge;10mm) and <span class="glossary-term" data-term="paris-classification">Paris classification</span> (flat 0-II vs polypoid 0-I), paired with PolypGen's 6 international clinical centers.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stage 3 (Frontier) -->
+        <div class="roadmap-node stage-3">
+          <div class="roadmap-dot" style="border-color: var(--color-coral);"></div>
+          <div class="card" style="background: var(--surface-card);">
+            <div class="flex-between flex-wrap gap-sm" style="margin-bottom: 0.5rem;">
+              <h3 style="color: var(--color-coral); margin-bottom: 0;">Stage 3: Spatiotemporal Video & State-Space Models (2026&ndash;2028)</h3>
+              <span class="badge badge-coral">Frontier Research</span>
+            </div>
+            <p style="color: var(--text-secondary); font-size: 0.95rem;">
+              Abandoning frame-by-frame processing in favor of continuous temporal video reasoning:
+            </p>
+            <div class="table-container" style="margin-top: 1rem;">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Architecture</th>
+                    <th>Model Family</th>
+                    <th>Computational Complexity</th>
+                    <th>Temporal Window</th>
+                    <th>Video Throughput</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Single-Frame PVT</strong></td>
+                    <td>Hierarchical Transformer</td>
+                    <td>$O(H^2 W^2)$ per frame</td>
+                    <td>1 frame (no memory)</td>
+                    <td class="numeric">34.2 FPS</td>
+                  </tr>
+                  <tr>
+                    <td><strong>PNS-Net / PNS+</strong></td>
+                    <td>Normalized Self-Attention</td>
+                    <td>$O(T^2 \cdot HW)$ Quadratic</td>
+                    <td>5 &ndash; 10 frames</td>
+                    <td class="numeric">28.5 FPS</td>
+                  </tr>
+                  <tr class="highlight-row">
+                    <td><strong>EndoMamba / Mamba-VPS</strong></td>
+                    <td><span class="glossary-term" data-term="ssm-mamba">State-Space Model (SSM)</span></td>
+                    <td style="color: var(--color-teal); font-weight: 700;">$O(PTm)$ Linear in $T$</td>
+                    <td><strong>128+ frames</strong></td>
+                    <td class="numeric" style="color: var(--color-teal); font-weight: 700;">47.0 FPS</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.75rem; margin-bottom: 0;">
+              <strong>Why State-Space Models Matter:</strong> Video self-attention explodes in memory when analyzing long colonoscopy clips. By leveraging continuous state-space representations ($S6$ formulation), models like EndoMamba maintain temporal context across hundreds of frames without GPU memory exhaustion, filtering out single-frame glint flicker.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Ultimate Vision: Multimodal Agentic Colonoscopy Suite -->
+    <section class="section" id="agentic-suite">
+      <div class="flex-between flex-wrap gap-md" style="margin-bottom: 1.5rem;">
+        <div>
+          <span class="badge badge-emerald">The 2030 Clinical Vision</span>
+          <h2 style="margin-top: 0.5rem;">Multimodal Agentic Colonoscopy Co-Pilot</h2>
+        </div>
+        <span class="badge badge-clinical">Autonomous Quality & Workflow</span>
+      </div>
+
+      <p style="font-size: 1.05rem; color: var(--text-secondary);">
+        The clinical procedure suite of 2030 integrates three unified perception layers into a silent, autonomous intelligence co-pilot running locally on edge hardware:
+      </p>
+
+      <div class="agentic-stack-grid">
+        <!-- Layer 1 -->
+        <div class="agentic-layer-card" style="border-top: 3px solid var(--color-teal);">
+          <div>
+            <span class="layer-badge badge-teal">Layer 1: Perception</span>
+            <h3 style="font-size: 1.25rem; margin-bottom: 0.75rem;">Real-Time CADe & CADx</h3>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
+              Dual-stream spatiotemporal detection and characterization:
+            </p>
+            <ul style="padding-left: 1.25rem; font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">
+              <li>Sub-millimeter polyp boundary segmentation.</li>
+              <li>Real-time optical biopsy (<span class="glossary-term" data-term="nice-classification">NICE</span> Type 1 vs 2/3 and <span class="glossary-term" data-term="kudo-pit-pattern">Kudo pit pattern</span>).</li>
+              <li>Support for <span class="glossary-term" data-term="resect-and-discard">Resect and Discard</span> paradigm for diminutive polyps.</li>
+              <li>Temporal hysteresis to eliminate annoying visual flicker.</li>
+            </ul>
+          </div>
+          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--color-teal); margin-top: 1.5rem;">
+            Budget: &lt; 30 ms Latency | &ge; 50 FPS
+          </div>
+        </div>
+
+        <!-- Layer 2 -->
+        <div class="agentic-layer-card" style="border-top: 3px solid var(--color-amber);">
+          <div>
+            <span class="layer-badge badge-amber">Layer 2: Quality Governance</span>
+            <h3 style="font-size: 1.25rem; margin-bottom: 0.75rem;">Automated Quality Assurance</h3>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
+              Continuous objective monitoring of surgical thoroughness:
+            </p>
+            <ul style="padding-left: 1.25rem; font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">
+              <li>Continuous segment-by-segment <span class="glossary-term" data-term="bbps">Boston Bowel Prep (BBPS)</span> 0&ndash;3 scoring.</li>
+              <li>Cryptographic verification of <span class="glossary-term" data-term="cecal-intubation-rate">Cecal Intubation (CIR)</span> by detecting appendiceal orifice landmarks.</li>
+              <li>Dynamic <span class="glossary-term" data-term="withdrawal-time">withdrawal timer</span> enforcing &ge;6 min inspection.</li>
+              <li>Mucosal slippage and excessive scope speed warnings.</li>
+            </ul>
+          </div>
+          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--color-amber); margin-top: 1.5rem;">
+            Audit: Objective Video Proof of CIR & BBPS
+          </div>
+        </div>
+
+        <!-- Layer 3 -->
+        <div class="agentic-layer-card" style="border-top: 3px solid var(--color-purple);">
+          <div>
+            <span class="layer-badge badge-purple">Layer 3: Agentic Synthesis</span>
+            <h3 style="font-size: 1.25rem; margin-bottom: 0.75rem;">Autonomous EHR Generation</h3>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
+              Vision-Language Model (VLM) synthesizing procedural logs:
+            </p>
+            <ul style="padding-left: 1.25rem; font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">
+              <li>Automated capture of key pathology still frames.</li>
+              <li>Auto-populating polyp count (<span class="glossary-term" data-term="apc">APC</span>), anatomical location, and size.</li>
+              <li>Instant draft of standardized medical report before scope withdrawal.</li>
+              <li>Eliminating 10&ndash;15 minutes of manual physician charting per case.</li>
+            </ul>
+          </div>
+          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--color-purple); margin-top: 1.5rem;">
+            EHR Integration: FHIR / HL7 Auto-Posting
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Open Engineering & Clinical Challenges -->
+    <section class="section" id="challenges">
+      <div class="flex-between flex-wrap gap-md" style="margin-bottom: 1.5rem;">
+        <div>
+          <span class="badge badge-coral">Technical & Ethical Roadblocks</span>
+          <h2 style="margin-top: 0.5rem;">Open Engineering & Clinical Challenges</h2>
+        </div>
+        <span class="badge badge-integrity">Unresolved Problems</span>
+      </div>
+
+      <p style="color: var(--text-secondary);">
+        Deploying deep learning into active surgical environments involves harsh physical realities rarely simulated in benchmark research papers:
+      </p>
+
+      <div class="grid grid-3" style="margin: 2rem 0;">
+        <!-- Challenge 1 -->
+        <div class="challenge-card">
+          <h4 style="color: var(--color-coral); margin-bottom: 0.5rem;">1. Specular Glare & Mucus Caps</h4>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0;">
+            Endoscopic light sources reflect brightly off wet mucosal surfaces, creating white saturation zones that trigger false alarms. Furthermore, the most lethal polyps (<span class="glossary-term" data-term="sessile-serrated-lesion">Sessile Serrated Lesions</span>) conceal themselves beneath adherent mucus caps with virtually zero color contrast.
+          </p>
+        </div>
+
+        <!-- Challenge 2 -->
+        <div class="challenge-card">
+          <h4 style="color: var(--color-amber); margin-bottom: 0.5rem;">2. Motion Blur & Fluid Pools</h4>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0;">
+            Colonic peristalsis, cardiac pulsations, and scope repositioning introduce severe motion blur. Pooling of water, bile, and residual stool creates ambiguous visual textures that mislead convolutional kernels trained solely on pristine static still frames.
+          </p>
+        </div>
+
+        <!-- Challenge 3 -->
+        <div class="challenge-card">
+          <h4 style="color: var(--color-teal); margin-bottom: 0.5rem;">3. Edge Compute & Thermal Limits</h4>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0;">
+            Hospitals cannot stream uncompressed 4K video feeds to remote cloud servers due to HIPAA/GDPR constraints and network jitter. Models must execute on compact, fanless edge GPUs embedded inside endoscopy carts under strict &le;40 ms latency budgets.
+          </p>
+        </div>
+
+        <!-- Challenge 4 -->
+        <div class="challenge-card">
+          <h4 style="color: var(--color-purple); margin-bottom: 0.5rem;">4. Cognitive Deskilling</h4>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0;">
+            A landmark multicenter study by Budzyński et al. (<em>The Lancet Gastroenterology & Hepatology</em>, 2025) uncovered a startling reality: after practicing with CADe systems, endoscopists suffered an absolute <strong>-6.0% drop in unassisted ADR</strong> when AI was removed, proving clinical deskilling and loss of baseline vigilance.
+          </p>
+        </div>
+
+        <!-- Challenge 5 -->
+        <div class="challenge-card">
+          <h4 style="color: var(--color-danger); margin-bottom: 0.5rem;">5. Regulatory Approval & Drift</h4>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0;">
+            FDA De Novo clearance (e.g., GI Genius DEN200055) and EU MDR regulations require frozen models with rigorous post-market surveillance. Continuous learning in production is strictly prohibited to prevent catastrophic model drift across differing hospital patient demographics.
+          </p>
+        </div>
+
+        <!-- Challenge 6 -->
+        <div class="challenge-card">
+          <h4 style="color: var(--color-emerald); margin-bottom: 0.5rem;">6. Cost-Utility & Surveillance Burden</h4>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0;">
+            Because CADe predominantly increases the detection of tiny diminutive polyps with near-zero cancer risk, it triggers a surge in unnecessary biopsies and adds 6 to 35 repeat surveillance colonoscopies per 10,000 patients, straining national healthcare budgets without reducing cancer mortality.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Navigation Transition Banner -->
+    <section class="section-sm" style="text-align: center;">
+      <div class="card" style="display: inline-block; max-width: 720px; padding: 2.5rem; text-align: center;">
+        <span class="badge badge-teal" style="margin-bottom: 1rem;">Primary Sources</span>
+        <h3 style="margin-bottom: 1rem;">Inspect All 49 Master Academic References</h3>
+        <p style="color: var(--text-secondary); margin-bottom: 2rem;">
+          Every claim, benchmark number, clinical trial statistic, and architecture specification across this platform is fully documented with verified DOIs, arXiv numbers, and GitHub source code repositories.
+        </p>
+        <a href="11-references.html" class="btn btn-primary">
+          <span>Explore 49 Master References</span>
+          <span>&rarr;</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h4>Colonoscopy AI Guide</h4>
+          <p>
+            An authoritative, scientifically audited educational platform and research compendium dedicated to colonoscopy artificial intelligence, benchmark integrity, and clinical validation.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Clinical Education</h5>
+          <ul class="footer-links">
+            <li><a href="01-what-is-colonoscopy.html">Procedure & Anatomy</a></li>
+            <li><a href="02-polyp-types.html">Polyp Morphology</a></li>
+            <li><a href="06b-clinical-evidence.html">Clinical Trials & RCTs</a></li>
+            <li><a href="12-glossary.html">Medical Glossary</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Technical Research</h5>
+          <ul class="footer-links">
+            <li><a href="03-ai-history.html">AI History Timeline</a></li>
+            <li><a href="04-architectures.html">Model Architectures</a></li>
+            <li><a href="05-datasets.html">Dataset Catalog</a></li>
+            <li><a href="06-benchmarks.html">Performance Leaderboard</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Integrity & Chakra</h5>
+          <ul class="footer-links">
+            <li><a href="08-benchmark-integrity.html">Benchmark Integrity Audit</a></li>
+            <li><a href="09-chakramodel.html">ChakraModel Project</a></li>
+            <li><a href="10-future.html">Future & Foundation Models</a></li>
+            <li><a href="11-references.html">49 Master References</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Colonoscopy AI Research Consortium. All rights reserved. Open-access educational platform.</div>
+        <div style="font-family: var(--font-mono); font-size: 0.8rem;">Future Roadmap: <code>CHAKRA-STAGE-3-PREVIEW</code></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

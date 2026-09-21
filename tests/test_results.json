@@ -1,0 +1,15 @@
+{
+  "timestamp": "2026-09-21T21:34:04.587Z",
+  "totalTests": 214,
+  "passedTests": 214,
+  "failedTests": 0,
+  "warnings": 1,
+  "verdict": "CONFIRMED",
+  "findings": [
+    {
+      "test": "ColonFormer Kvasir Dice is 0.924 (matching technical_ledger.md / Opus1 MiT-B3) instead of 0.922 (from synthesis_m1.md)",
+      "status": "WARN",
+      "details": "charts.js has 0.924, technical_ledger.md lines 555 & 693 have 0.924, but synthesis_m1.md line 31 listed 0.922. The implementation prioritized the authoritative technical_ledger.md."
+    }
+  ]
+}

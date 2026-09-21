@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The ChakraModel Research Project | Colonoscopy AI & Benchmark Science</title>
+  <meta name="description" content="Inside the ChakraModel research project: from the strategic pivot and failure analysis of ChakraTransformer (309M) to ChakraXAttnUNet v2, the leakbench Stage 1 protocol, splits_v2, and PICCOLO dataset integration.">
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <style>
+    /* Architecture & Protocol Diagrams */
+    .arch-flowchart-card {
+      background: var(--surface-card);
+      border: 1px solid var(--border-medium);
+      border-radius: var(--radius-xl);
+      padding: 2.5rem;
+      margin: 2.5rem 0;
+      box-shadow: var(--shadow-glass);
+      position: relative;
+    }
+    .flow-diagram-ascii {
+      background: var(--bg-primary);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      line-height: 1.6;
+      color: #38bdf8;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+    }
+    .protocol-step-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    @media (max-width: 900px) {
+      .protocol-step-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .protocol-step-card {
+      background: var(--surface-glass);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      position: relative;
+    }
+    .protocol-step-card.active {
+      border-color: var(--color-teal);
+      box-shadow: 0 0 20px rgba(0, 212, 255, 0.15);
+    }
+    .step-number {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--color-teal);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .failure-cause-card {
+      background: rgba(239, 68, 68, 0.05);
+      border: 1px solid rgba(239, 68, 68, 0.25);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .failure-cause-title {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      color: var(--color-coral);
+      margin-bottom: 0.35rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .piccolo-strata-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.25rem;
+      margin: 1.5rem 0;
+    }
+    .piccolo-strata-card {
+      background: var(--surface-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Scroll Progress Indicator -->
+  <div id="scroll-progress"></div>
+
+  <!-- Main Navigation Header -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="../index.html" class="brand-logo">
+        <div class="brand-icon">🔬</div>
+        <span>Colonoscopy AI</span>
+        <span class="brand-badge">Research</span>
+      </a>
+
+      <ul class="nav-menu">
+        <li><a href="../index.html" class="nav-link">Home</a></li>
+        <li><a href="01-what-is-colonoscopy.html" class="nav-link">Clinical</a></li>
+        <li><a href="04-architectures.html" class="nav-link">Architectures</a></li>
+        <li><a href="05-datasets.html" class="nav-link">Datasets</a></li>
+        <li><a href="06-benchmarks.html" class="nav-link">Benchmarks</a></li>
+        <li><a href="08-benchmark-integrity.html" class="nav-link">Integrity Audit</a></li>
+        <li><a href="09-chakramodel.html" class="nav-link active">ChakraModel</a></li>
+        <li><a href="10-future.html" class="nav-link">Future & Mamba</a></li>
+        <li><a href="11-references.html" class="nav-link">References</a></li>
+        <li><a href="12-glossary.html" class="nav-link">Glossary</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" aria-label="Toggle light and dark mode" title="Toggle theme">🌓</button>
+        <button class="hamburger-btn" aria-label="Toggle mobile menu" title="Open Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-drawer" id="mobile-drawer">
+    <a href="../index.html" class="nav-link">Home (Overview)</a>
+    <a href="01-what-is-colonoscopy.html" class="nav-link">01. What is Colonoscopy</a>
+    <a href="02-polyp-types.html" class="nav-link">02. Polyp Morphology & Paris</a>
+    <a href="03-ai-history.html" class="nav-link">03. AI History & Evolution</a>
+    <a href="04-architectures.html" class="nav-link">04. Deep Architectures</a>
+    <a href="05-datasets.html" class="nav-link">05. Public Datasets</a>
+    <a href="06-benchmarks.html" class="nav-link">06. Performance Benchmarks</a>
+    <a href="06b-clinical-evidence.html" class="nav-link">06b. Clinical Trial Evidence</a>
+    <a href="08-benchmark-integrity.html" class="nav-link">08. Benchmark Integrity Audit</a>
+    <a href="09-chakramodel.html" class="nav-link active">09. ChakraModel Research Project</a>
+    <a href="10-future.html" class="nav-link">10. Future & Agentic Vision</a>
+    <a href="11-references.html" class="nav-link">11. Master References (49 Papers)</a>
+    <a href="12-glossary.html" class="nav-link">12. Plain-English Glossary (50 Terms)</a>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-glow" style="background: radial-gradient(circle, rgba(0, 212, 255, 0.15) 0%, rgba(16, 185, 129, 0.08) 50%, transparent 70%);"></div>
+    <div class="container hero-content">
+      <div class="hero-badge">
+        <span class="dot" style="background: var(--color-teal);"></span>
+        <span>The Empirical Research Project</span>
+      </div>
+      <h1 class="hero-title">
+        The ChakraModel <br>
+        <span class="gradient-text">Research Project & Protocol</span>
+      </h1>
+      <p class="hero-subtitle">
+        How a machine learning project pivoted from proposing another marginal transformer architecture to scientifically measuring and repairing benchmark inflation across colonoscopy AI.
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Content Container -->
+  <main class="container">
+
+    <!-- Executive Summary & The Great Pivot -->
+    <section class="section-sm">
+      <div class="card" style="border-left: 4px solid var(--color-teal); padding: 2.25rem;">
+        <span class="badge badge-teal" style="margin-bottom: 0.75rem;">Executive Summary</span>
+        <h2 style="margin-bottom: 1rem;">The Great Strategic Pivot</h2>
+        <p style="font-size: 1.05rem; line-height: 1.7; color: var(--text-secondary);">
+          The ChakraModel project originally commenced in mid-2026 with an orthodox deep learning ambition: engineer a high-capacity vision transformer architecture capable of setting new SOTA numbers on standard polyp segmentation leaderboards.
+        </p>
+        <p style="font-size: 1.05rem; line-height: 1.7; color: var(--text-secondary);">
+          However, rigorous empirical audits of our training logs and public datasets shattered that objective. We discovered that benchmark leaderboards were fundamentally contaminated: test sets leaked video frames from training sets, candidate datasets absorbed held-out test frames, and models were evaluated exclusively on polyps with zero testing on healthy mucosa.
+        </p>
+        <div class="alert alert-clinical" style="margin: 1.5rem 0;">
+          <div class="alert-icon">💡</div>
+          <div class="alert-content">
+            <div class="alert-title">The ChakraModel Mission Statement</div>
+            <p style="font-size: 1rem; font-weight: 500;">
+              <em>"Standard polyp-segmentation benchmarks overstate clinical progress, and we measure by how much."</em>
+            </p>
+          </div>
+        </div>
+        <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 0;">
+          Rather than publishing another incremental model claiming +0.005 Dice on compromised data, ChakraModel established <strong>leakbench</strong>: a unified, reproducible benchmarking platform measuring true out-of-distribution generalization, leak-free validation drift, and real-time inference viability.
+        </p>
+      </div>
+    </section>
+
+    <!-- Failure Analysis: ChakraTransformer & 128px Collapse -->
+    <section class="section" id="failure-analysis">
+      <div class="flex-between flex-wrap gap-md" style="margin-bottom: 1.5rem;">
+        <div>
+          <span class="badge badge-coral">Radical Scientific Transparency</span>
+          <h2 style="margin-top: 0.5rem;">Failure Analysis: What Didn't Work and Why</h2>
+        </div>
+        <span class="badge badge-integrity">ChakraTransformer & 128px Collapse</span>
+      </div>
+
+      <p>
+        Genuine scientific progress requires publishing negative results. Before converging on our final architecture and protocol, the project rigorously evaluated two flawed hypotheses: an over-parameterized Vision Transformer (<span class="glossary-term" data-term="vit">ViT</span>) and low-resolution from-scratch optimization.
+      </p>
+
+      <!-- Sub-section 1: ChakraTransformer ViT-L/16 -->
+      <div class="card" style="margin: 2rem 0;">
+        <div class="flex-between flex-wrap gap-sm" style="margin-bottom: 1rem;">
+          <h3 style="color: var(--color-coral); margin-bottom: 0;">1. ChakraTransformer (ViT-L/16 @ 384 px, 309.2M Parameters)</h3>
+          <span class="badge badge-coral">Catastrophic Underperformance</span>
+        </div>
+        <p style="color: var(--text-secondary);">
+          Evaluated on dual NVIDIA T4 GPUs on Kaggle (<code>chakra_transformer_best.pth</code>), ChakraTransformer coupled an ImageNet-21k pre-trained Vision Transformer Large encoder (307.2M params) with a minimal convolutional decoder head (2.0M params) at $384 \times 384$ input resolution.
+        </p>
+
+        <div class="table-container">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Model</th>
+                <th>Year</th>
+                <th>Backbone Family</th>
+                <th>Params (M)</th>
+                <th>Kvasir-SEG Dice</th>
+                <th>CVC-ClinicDB Dice* <span class="badge badge-coral" style="font-size: 0.65rem; vertical-align: middle; margin-left: 0.25rem;">Video Leakage</span></th>
+                <th>Inference (T4 FP32)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>U-Net</strong></td>
+                <td>2015</td>
+                <td>Plain CNN (VGG-style)</td>
+                <td class="numeric">31.0M</td>
+                <td class="numeric">0.818</td>
+                <td class="numeric" style="color: var(--color-teal); font-weight: 700;">0.823</td>
+                <td class="numeric">53.0 FPS</td>
+              </tr>
+              <tr>
+                <td><strong>PraNet</strong></td>
+                <td>2020</td>
+                <td>Res2Net-50 + Reverse Attn</td>
+                <td class="numeric">32.6M</td>
+                <td class="numeric">0.898</td>
+                <td class="numeric">0.899</td>
+                <td class="numeric">41.7 FPS</td>
+              </tr>
+              <tr>
+                <td><strong>Polyp-PVT</strong></td>
+                <td>2021</td>
+                <td>PVTv2-B2 + Cascaded Head</td>
+                <td class="numeric">25.1M</td>
+                <td class="numeric">0.917</td>
+                <td class="numeric">0.937</td>
+                <td class="numeric">34.2 FPS</td>
+              </tr>
+              <tr class="warning-row">
+                <td><strong>ChakraTransformer (Ours)</strong></td>
+                <td>2026</td>
+                <td>ViT-L/16 + Naive Conv Head</td>
+                <td class="numeric" style="color: var(--color-danger); font-weight: 700;">309.2M</td>
+                <td class="numeric">0.838 <span style="font-size: 0.75rem;">(0.847 TTA)</span></td>
+                <td class="numeric" style="color: var(--color-danger); font-weight: 700;">0.771 <span style="font-size: 0.75rem;">(0.784 TTA)</span></td>
+                <td class="numeric" style="color: var(--color-danger); font-weight: 700;">7.76 FPS</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.75rem; line-height: 1.5;">
+          <span style="color: var(--color-coral); font-weight: 600;">*Integrity Note:</span> Standard CVC-ClinicDB test scores reflect in-sequence video frame leakage (+12% to +15% artificial inflation). Under leakage-free video-grouped 5-fold cross-validation, models drop to realistic generalization levels. See <a href="08-benchmark-integrity.html" style="color: var(--color-teal); text-decoration: underline;">Benchmark Integrity Audit</a>.
+        </p>
+
+        <h4 style="margin-top: 1.5rem; margin-bottom: 1rem;">Root Causes of ChakraTransformer's Failure:</h4>
+        <div class="grid grid-2">
+          <div class="failure-cause-card">
+            <div class="failure-cause-title">❌ Non-Hierarchical Spatial Collapse</div>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0;">
+              Standard ViT operates on non-overlapping $16 \times 16$ patches. At $384 \times 384$, the entire image collapses into a single $24 \times 24$ token grid. A diminutive polyp covers only 1 or 2 tokens, destroying high-frequency boundary cues.
+            </p>
+          </div>
+
+          <div class="failure-cause-card">
+            <div class="failure-cause-title">❌ Severe Decoder Asymmetry</div>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0;">
+              A 307M backbone was paired with a rudimentary 2M convolutional decoder. Without multi-scale feature pyramids (<span class="glossary-term" data-term="fpn">FPN</span>) or reverse attention modules, the decoder could not translate abstract latent tokens back to crisp boundaries.
+            </p>
+          </div>
+
+          <div class="failure-cause-card">
+            <div class="failure-cause-title">❌ Extreme Parameter Bloat (12x SOTA)</div>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0;">
+              309 million parameters trained on ~1,000 medical images violates sample-efficiency principles. The network severely overfitted and discarded the local <span class="glossary-term" data-term="inductive-bias">inductive biases</span> that CNNs preserve.
+            </p>
+          </div>
+
+          <div class="failure-cause-card">
+            <div class="failure-cause-title">❌ Complete Real-Time Failure (7.76 FPS)</div>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0;">
+              At 7.76 FPS (FP32), the model fell drastically short of the 25 FPS clinical threshold required for live endoscopic video. Even with FP16, throughput capped at ~26 FPS with massive latency jitter.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sub-section 2: 128px Collapse -->
+      <div class="card" style="margin: 2rem 0;">
+        <h3 style="color: var(--color-amber); margin-bottom: 1rem;">2. Low-Resolution Collapse: The 128px Experiments</h3>
+        <p style="color: var(--text-secondary);">
+          An earlier experimental series investigated downsampling images to $128 \times 128$ resolution on Kvasir-SEG to enable lightweight edge deployment:
+        </p>
+        <div class="grid grid-4" style="margin: 1.5rem 0;">
+          <div class="stat-card">
+            <div class="stat-value" style="font-size: 2rem; color: var(--color-danger);">0.276</div>
+            <div class="stat-label">Vanilla U-Net (Scratch)</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" style="font-size: 2rem; color: var(--color-coral);">0.614</div>
+            <div class="stat-label">Double U-Net (Scratch)</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" style="font-size: 2rem; color: var(--color-amber);">0.768</div>
+            <div class="stat-label">Attention U-Net (Scratch)</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" style="font-size: 2rem; color: var(--color-emerald);">0.830 &plusmn; 0.21</div>
+            <div class="stat-label">UNet++ (ResNet-18)</div>
+          </div>
+        </div>
+        <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0;">
+          <strong>Finding:</strong> $128 \times 128$ provides <strong>7.6x fewer pixels</strong> than the standard $352 \times 352$ input (16,384 vs. 123,904 pixels). Flat lesions and diminutive polyps were reduced to 4 to 8 blurry pixels. Crucially, training from random initialization without ImageNet pre-training completely failed (mDice 0.28 to 0.77).
+        </p>
+      </div>
+    </section>
+
+    <!-- ChakraXAttnUNet v2 Architecture -->
+    <section class="section" id="chakra-architecture">
+      <div class="arch-flowchart-card">
+        <div class="flex-between flex-wrap gap-md" style="margin-bottom: 1rem;">
+          <div>
+            <span class="badge badge-teal">Internal Benchmark Architecture</span>
+            <h2 style="margin-top: 0.5rem;">ChakraXAttnUNet v2: Dual-Path Skip Routing</h2>
+          </div>
+          <span class="badge badge-arch">28.6M Parameters | Swin-T Backbone</span>
+        </div>
+
+        <p style="color: var(--text-secondary); font-size: 1.05rem;">
+          To anchor the internal benchmarking track within <code>leakbench</code>, **ChakraXAttnUNet v2** was designed to correct the architectural flaws of both ChakraTransformer and our initial v1 attention prototype.
+        </p>
+
+        <!-- ASCII Flowchart Diagram -->
+        <div class="flow-diagram-ascii">
+                  [Input Image: 352 x 352 x 3]
+                               │
+                               ▼
+        ┌──────────────────────────────────────────────┐
+        │  Swin-Tiny Hierarchical Transformer Encoder  │ ──> Stage 0 [88 x 88 x 96]  ───┐
+        │  (Shifted Window Self-Attention, ImageNet-1k)│ ──> Stage 1 [44 x 44 x 192] ───┼──┐
+        │                                              │ ──> Stage 2 [22 x 22 x 384] ───┼──┼──┐
+        │                                              │ ──> Stage 3 [11 x 11 x 768] ───┼──┼──┼──┐
+        └──────────────────────────────────────────────┘                                │  │  │  │
+                                                                                        │  │  │  │
+                                                  ┌─────────────────────────────────────┘  │  │  │
+                                                  │                                        │  │  │
+                                                  ▼                                        │  │  │
+        ┌──────────────────────────────────────────────────────────────────────────────┐   │  │  │
+        │ Cross-Attention Skip Block 3 [11x11 -> 22x22, 128 channels]                  │<──┘  │  │
+        │  - Query: Bilinearly Upsampled Decoder Latents                               │      │  │
+        │  - Key/Value: Context-Gated Skip Features                                    │      │  │
+        │  - Direct Path: Full-Resolution 1x1 Conv Projected Skip Bypass               │      │  │
+        └──────────────────────────────────────┬───────────────────────────────────────┘      │  │
+                                               │                                              │  │
+                                               ▼                                              │  │
+        ┌──────────────────────────────────────────────────────────────────────────────┐      │  │
+        │ Cross-Attention Skip Block 2 [22x22 -> 44x44, 96 channels]                   │<─────┘  │
+        └──────────────────────────────────────┬───────────────────────────────────────┘         │
+                                               │                                                 │
+                                               ▼                                                 │
+        ┌──────────────────────────────────────────────────────────────────────────────┐         │
+        │ Cross-Attention Skip Block 1 [44x44 -> 88x88, 64 channels]                   │<────────┘
+        └──────────────────────────────────────┬───────────────────────────────────────┘
+                                               │
+                                               ▼
+        ┌──────────────────────────────────────────────────────────────────────────────┐
+        │ Refinement Convolutions & Bilinear Upsample [352 x 352 x 32]                 │
+        └──────────────────────────────────────┬───────────────────────────────────────┘
+                                               │
+                             ┌─────────────────┴─────────────────┐
+                             ▼                                   ▼
+                ┌─────────────────────────┐         ┌─────────────────────────┐
+                │ Primary Mask Head       │         │ Auxiliary Boundary Head │
+                │ 1x1 Conv -> 352x352x1   │         │ Explicit Morphological  │
+                │ (Lesion Segmentation)   │         │ Target B(G) Dilation    │
+                └─────────────────────────┘         └─────────────────────────┘
+        </div>
+
+        <div class="grid grid-2" style="margin-top: 2rem;">
+          <div class="card" style="background: var(--surface-card-alt);">
+            <h4 style="color: var(--color-teal);">1. Fixing the Fatal v1 Skip-Pooling Flaw</h4>
+            <p style="font-size: 0.9rem; color: var(--text-secondary);">
+              In our v1 prototype, encoder skip features were average-pooled to $\le 16 \times 16$ before calculating cross-attention. This eliminated computational bottlenecks but wiped out sub-millimeter pit patterns and mucosal margins. 
+            </p>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0;">
+              <strong>The v2 Solution:</strong> <span class="glossary-term" data-term="dual-path-skip-routing">Dual-Path Skip Routing</span> routes features through two concurrent paths: a context-gated attention selection path plus an unpooled, direct $1 \times 1$ convolutionally projected skip bypass.
+            </p>
+          </div>
+
+          <div class="card" style="background: var(--surface-card-alt);">
+            <h4 style="color: var(--color-purple);">2. Auxiliary Morphological Boundary Supervision</h4>
+            <p style="font-size: 0.9rem; color: var(--text-secondary);">
+              During training, an auxiliary boundary head is supervised with the explicit mathematical morphology boundary target:
+            </p>
+            <div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--color-purple); background: var(--bg-primary); padding: 0.75rem; border-radius: var(--radius-sm); margin-bottom: 0.75rem;">
+              B(G) = MaxPool_3x3(G) - (-MaxPool_3x3(-G))
+            </div>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0;">
+              This forces intermediate feature layers to actively delineate lesion borders, preventing blurry predictions on flat Paris 0-IIa/IIb adenomas.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stage 1 Experimental Protocol (leakbench) -->
+    <section class="section" id="leakbench-protocol">
+      <div class="flex-between flex-wrap gap-md" style="margin-bottom: 1.5rem;">
+        <div>
+          <span class="badge badge-teal">Standardized Experimental Setup</span>
+          <h2 style="margin-top: 0.5rem;">Stage 1 Protocol: <code>leakbench</code></h2>
+        </div>
+        <span class="badge badge-metric">38 GPU Runs | ~20 NVIDIA T4-Hours</span>
+      </div>
+
+      <p>
+        To eliminate experimental confounding, all models are evaluated in a unified PyTorch harness with locked hyperparameters, canonical PraNet structure loss, and multi-seed execution.
+      </p>
+
+      <!-- Protocol Hyperparameter Summary -->
+      <div class="grid grid-3" style="margin: 2rem 0;">
+        <div class="card">
+          <div style="font-family: var(--font-heading); font-weight: 700; color: var(--color-teal); margin-bottom: 0.25rem;">352 &times; 352 px</div>
+          <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;">Standard Input Resolution</div>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0;">Predictions are bilinearly interpolated back to original ground-truth dimensions before metric calculation.</p>
+        </div>
+        <div class="card">
+          <div style="font-family: var(--font-heading); font-weight: 700; color: var(--color-amber); margin-bottom: 0.25rem;">AdamW + Cosine</div>
+          <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;">Optim & Schedule</div>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0;">Initial learning rate $10^{-4}$, weight decay $10^{-4}$, cosine annealing over 50 epochs, batch size 16, AMP FP16.</p>
+        </div>
+        <div class="card">
+          <div style="font-family: var(--font-heading); font-weight: 700; color: var(--color-purple); margin-bottom: 0.25rem;">PraNet Structure Loss</div>
+          <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;">Boundary-Weighted Objective</div>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0;">Weighted BCE + Weighted IoU with dynamic edge weighting: $\omega_{ij} = 1 + 5 |\text{AvgPool}_{31\times31}(G)_{ij} - G_{ij}|$.</p>
+        </div>
+      </div>
+
+      <!-- The 3 Core Experiments -->
+      <div class="protocol-step-grid">
+        <div class="protocol-step-card active">
+          <div class="step-number">E1</div>
+          <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem;">Main Benchmark Comparison</h3>
+          <span class="badge badge-teal" style="margin-bottom: 0.75rem;">12 Total Runs (4 Models &times; 3 Seeds)</span>
+          <p style="font-size: 0.85rem; color: var(--text-secondary);">
+            Evaluates <code>unet_r34</code>, <code>segformer_b2</code>, <code>fpn_pvtv2b2</code>, and <code>xattn</code> on clean <span class="glossary-term" data-term="group-aware-splitting">splits_v2</span>. Measures:
+          </p>
+          <ul style="padding-left: 1.25rem; font-size: 0.85rem; color: var(--text-muted);">
+            <li>Seen-domain (Kvasir 100, ClinicDB 62) vs Unseen (ColonDB 380, ETIS 196, CVC-300 60) mDice.</li>
+            <li>Diminutive polyp stratum (polyp area &lt; 5% frame).</li>
+            <li>False Alarm Rate (FAR) on 4,275 PolypGen negatives.</li>
+            <li>Inference latency, throughput (FPS), and peak VRAM.</li>
+          </ul>
+        </div>
+
+        <div class="protocol-step-card">
+          <div class="step-number">E2</div>
+          <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem;">Validation Leakage Drift</h3>
+          <span class="badge badge-amber" style="margin-bottom: 0.75rem;">6 Total Runs (2 Models &times; 3 Seeds)</span>
+          <p style="font-size: 0.85rem; color: var(--text-secondary);">
+            Evaluates <code>unet_r34</code> and <code>segformer_b2</code> on the leaky random v1 split. Demonstrates the mathematical divergence between artificially inflated validation mDice (0.94+) and true out-of-distribution performance on ETIS/ColonDB.
+          </p>
+        </div>
+
+        <div class="protocol-step-card">
+          <div class="step-number">E3</div>
+          <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem;">5-Fold CV Leakage Isolation</h3>
+          <span class="badge badge-coral" style="margin-bottom: 0.75rem;">20 Total Runs (2 Models &times; 2 Setups &times; 5 Folds)</span>
+          <p style="font-size: 0.85rem; color: var(--text-secondary);">
+            Evaluates on all 612 ClinicDB frames. Compares <strong>Video-Grouped 5-Fold CV</strong> against <strong>Random 5-Fold CV</strong> using identical fold sizes (216, 96, 103, 102, 95). Isolates the exact numerical inflation (+12-15%) caused by video temporal leakage.
+          </p>
+        </div>
+      </div>
+
+      <!-- The Fix: splits_v2 Table -->
+      <div class="card" style="margin-top: 2.5rem;">
+        <h3>The Partition Fix: <code>splits_v2</code> Group-Aware Protocol</h3>
+        <p style="color: var(--text-secondary);">
+          To cure the 27 leaking sequence groups of the traditional split, <code>splits_v2</code> was generated using graph connected-components cutting at severe scene changes ($r &lt; 0.3$) and verified ORB links:
+        </p>
+        <div class="table-container">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Split Partition</th>
+                <th>CVC-ClinicDB Frames</th>
+                <th>Kvasir-SEG Frames</th>
+                <th>Total Pool</th>
+                <th>Groups Crossing Splits</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Training Set</strong></td>
+                <td class="numeric">469 frames</td>
+                <td class="numeric">759 images</td>
+                <td class="numeric"><strong>1,228 pairs</strong></td>
+                <td class="numeric" style="color: var(--color-emerald); font-weight: 700;">0 Groups</td>
+              </tr>
+              <tr>
+                <td><strong>Validation Set</strong></td>
+                <td class="numeric">81 frames</td>
+                <td class="numeric">141 images</td>
+                <td class="numeric"><strong>222 pairs</strong></td>
+                <td class="numeric" style="color: var(--color-emerald); font-weight: 700;">0 Groups</td>
+              </tr>
+              <tr class="highlight-row">
+                <td><strong>Legacy v1 Split (Flawed)</strong></td>
+                <td class="numeric">Uniform Random</td>
+                <td class="numeric">Uniform Random</td>
+                <td class="numeric">1,450 pairs</td>
+                <td class="numeric" style="color: var(--color-danger); font-weight: 700;">27 Groups Crossing</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- PICCOLO Dataset Integration -->
+    <section class="section" id="piccolo-integration">
+      <div class="flex-between flex-wrap gap-md" style="margin-bottom: 1.5rem;">
+        <div>
+          <span class="badge badge-emerald">Clinical Stratification Standard</span>
+          <h2 style="margin-top: 0.5rem;">PICCOLO Dataset Integration</h2>
+        </div>
+        <span class="badge badge-clinical">3,433 Frames | 76 Lesions | 40 Videos</span>
+      </div>
+
+      <p>
+        A key pillar of ChakraModel Stage 2 is the integration of <span class="glossary-term" data-term="piccolo">PICCOLO</span> (Sánchez-Peralta et al., 2020), a high-definition video dataset recorded across two Spanish university hospitals (Hospital Universitario de Basurto and Hospital Universitario Donostia). PICCOLO is one of the few public datasets providing granular clinical metadata without cross-split video leakage.
+      </p>
+
+      <div class="piccolo-strata-grid">
+        <div class="piccolo-strata-card">
+          <div style="font-family: var(--font-heading); font-size: 1.75rem; font-weight: 700; color: var(--color-teal);">21 Lesions</div>
+          <div style="font-size: 0.85rem; font-weight: 600; color: var(--text-primary);">Diminutive (&le; 5mm)</div>
+          <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem;">Key clinical testing stratum</div>
+        </div>
+        <div class="piccolo-strata-card">
+          <div style="font-family: var(--font-heading); font-size: 1.75rem; font-weight: 700; color: var(--color-amber);">16 Lesions</div>
+          <div style="font-size: 0.85rem; font-weight: 600; color: var(--text-primary);">Small (6 &ndash; 9mm)</div>
+          <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem;">Intermediate risk group</div>
+        </div>
+        <div class="piccolo-strata-card">
+          <div style="font-family: var(--font-heading); font-size: 1.75rem; font-weight: 700; color: var(--color-purple);">31 Lesions</div>
+          <div style="font-size: 0.85rem; font-weight: 600; color: var(--text-primary);">Large (&ge; 10mm)</div>
+          <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem;">High malignant potential</div>
+        </div>
+        <div class="piccolo-strata-card">
+          <div style="font-family: var(--font-heading); font-size: 1.75rem; font-weight: 700; color: var(--color-coral);">35 Lesions</div>
+          <div style="font-size: 0.85rem; font-weight: 600; color: var(--text-primary);">Flat / Elevated (Paris 0-II)</div>
+          <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem;">Most frequently missed</div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top: 1.5rem;">
+        <h4 style="color: var(--color-teal); margin-bottom: 0.5rem;">Histological Distribution & Clinical Value</h4>
+        <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 0;">
+          PICCOLO includes complete histological ground truth: <strong>50 tubular/tubulovillous adenomas</strong>, <strong>17 non-neoplastic hyperplastic polyps</strong>, and <strong>9 invasive adenocarcinomas</strong>. By evaluating models across these exact clinical strata, ChakraModel transitions medical computer vision from generic pixel overlap scoring to clinically meaningful diagnostic risk assessment.
+        </p>
+      </div>
+    </section>
+
+    <!-- Next Step Banner -->
+    <section class="section-sm" style="text-align: center;">
+      <div class="card" style="display: inline-block; max-width: 720px; padding: 2.5rem; text-align: center;">
+        <span class="badge badge-purple" style="margin-bottom: 1rem;">Looking Ahead</span>
+        <h3 style="margin-bottom: 1rem;">The Future of Colonoscopy AI</h3>
+        <p style="color: var(--text-secondary); margin-bottom: 2rem;">
+          Explore Stages 2 and 3 of the ChakraModel roadmap: from fair-prompt foundation model evaluation (<span class="glossary-term" data-term="prompt-leakage">SAM</span> / MedSAM) to spatiotemporal video architectures (<span class="glossary-term" data-term="ssm-mamba">EndoMamba</span>) and autonomous multimodal agentic suites.
+        </p>
+        <a href="10-future.html" class="btn btn-primary">
+          <span>Explore Future Frontiers & Mamba</span>
+          <span>&rarr;</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h4>Colonoscopy AI Guide</h4>
+          <p>
+            An authoritative, scientifically audited educational platform and research compendium dedicated to colonoscopy artificial intelligence, benchmark integrity, and clinical validation.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Clinical Education</h5>
+          <ul class="footer-links">
+            <li><a href="01-what-is-colonoscopy.html">Procedure & Anatomy</a></li>
+            <li><a href="02-polyp-types.html">Polyp Morphology</a></li>
+            <li><a href="06b-clinical-evidence.html">Clinical Trials & RCTs</a></li>
+            <li><a href="12-glossary.html">Medical Glossary</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Technical Research</h5>
+          <ul class="footer-links">
+            <li><a href="03-ai-history.html">AI History Timeline</a></li>
+            <li><a href="04-architectures.html">Model Architectures</a></li>
+            <li><a href="05-datasets.html">Dataset Catalog</a></li>
+            <li><a href="06-benchmarks.html">Performance Leaderboard</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Integrity & Chakra</h5>
+          <ul class="footer-links">
+            <li><a href="08-benchmark-integrity.html">Benchmark Integrity Audit</a></li>
+            <li><a href="09-chakramodel.html">ChakraModel Project</a></li>
+            <li><a href="10-future.html">Future & Foundation Models</a></li>
+            <li><a href="11-references.html">49 Master References</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Colonoscopy AI Research Consortium. All rights reserved. Open-access educational platform.</div>
+        <div style="font-family: var(--font-mono); font-size: 0.8rem;">Architecture Spec: <code>CHAKRA-XATTN-v2-STABLE</code></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

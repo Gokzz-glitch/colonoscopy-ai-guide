@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Comprehensive technical catalog of all 10 public colonoscopy datasets: CVC-ClinicDB, CVC-ColonDB, ETIS-Larib, Kvasir-SEG, HyperKvasir, BKAI-IGH NeoPolyp, PICCOLO, LDPolypVideo, SUN-SEG, and PolypGen 2021. Complete metadata, resolutions, and cryptographic integrity audits.">
+  <meta name="keywords" content="Colonoscopy Datasets, CVC-ClinicDB, Kvasir-SEG, ETIS-Larib, HyperKvasir, PICCOLO, SUN-SEG, PolypGen, Medical Image Datasets, Data Leakage Audit">
+  <title>Comprehensive Benchmark Dataset Catalog | ColonoscopyAI Guide</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+  <!-- Top Horizontal Scroll Progress Indicator -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- Sticky Navigation Header -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="../index.html" class="brand-logo">
+        <div class="brand-icon">C</div>
+        <span>Colonoscopy<span style="color: var(--color-teal);">AI</span></span>
+        <span class="brand-badge">RESEARCH</span>
+      </a>
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="../index.html" class="nav-link">Home</a></li>
+          <li><a href="01-what-is-colonoscopy.html" class="nav-link">Clinical</a></li>
+          <li><a href="06b-clinical-evidence.html" class="nav-link">Trials</a></li>
+          <li><a href="03-ai-history.html" class="nav-link">AI History</a></li>
+          <li><a href="04-architectures.html" class="nav-link">Architectures</a></li>
+          <li><a href="05-datasets.html" class="nav-link active">Datasets</a></li>
+          <li><a href="06-benchmarks.html" class="nav-link">Benchmarks</a></li>
+          <li><a href="08-benchmark-integrity.html" class="nav-link">Integrity</a></li>
+          <li><a href="11-references.html" class="nav-link">References</a></li>
+          <li><a href="12-glossary.html" class="nav-link">Glossary</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" aria-label="Toggle dark/light theme" type="button"></button>
+        <button class="hamburger-btn" aria-label="Open mobile navigation menu" aria-expanded="false" type="button">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav-drawer" aria-label="Mobile Navigation Drawer">
+    <a href="../index.html" class="nav-link">Home</a>
+    <a href="01-what-is-colonoscopy.html" class="nav-link">01 Clinical Foundations</a>
+    <a href="06b-clinical-evidence.html" class="nav-link">06b Clinical Trials &amp; Evidence</a>
+    <a href="03-ai-history.html" class="nav-link">03 AI History &amp; Evolution</a>
+    <a href="04-architectures.html" class="nav-link">04 Model Architectures</a>
+    <a href="05-datasets.html" class="nav-link active">05 Benchmark Datasets</a>
+    <a href="06-benchmarks.html" class="nav-link">06 SOTA Benchmarks</a>
+    <a href="08-benchmark-integrity.html" class="nav-link">08 Forensic Integrity Audit</a>
+    <a href="07-clinical-systems.html" class="nav-link">07 Commercial CADe/CADx</a>
+    <a href="09-chakramodel.html" class="nav-link">09 ChakraModel Research</a>
+    <a href="10-future.html" class="nav-link">10 Future Frontiers</a>
+    <a href="11-references.html" class="nav-link">11 Master References</a>
+    <a href="12-glossary.html" class="nav-link">12 Medical-AI Glossary</a>
+  </div>
+
+  <main class="container section">
+    <!-- Breadcrumb Navigation -->
+    <nav aria-label="Breadcrumb" style="margin-bottom: 2rem;">
+      <ol style="display: flex; gap: 0.5rem; list-style: none; font-size: 0.85rem; color: var(--text-muted); padding: 0;">
+        <li><a href="../index.html" style="color: var(--text-secondary); text-decoration: none;">Home</a></li>
+        <li>/</li>
+        <li><a href="05-datasets.html" style="color: var(--color-teal); text-decoration: none;">AI Technical</a></li>
+        <li>/</li>
+        <li style="color: var(--text-primary); font-weight: 500;">Dataset Catalog</li>
+      </ol>
+    </nav>
+
+    <!-- Hero Header -->
+    <header class="hero" style="padding-top: 1rem; padding-bottom: 3rem;">
+      <div class="hero-glow"></div>
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="dot"></span>
+          <span>MASTER PUBLIC CATALOG &bull; 10 DATASETS</span>
+        </div>
+        <h1 class="hero-title">
+          The <span class="gradient-text">Master Dataset Catalog</span> &amp; Integrity Analysis
+        </h1>
+        <p class="hero-subtitle">
+          An authoritative reference guide to all ten public colonoscopy vision datasets: clinical origins, imaging modalities, pixel resolutions, annotation schemas, and cryptographic data leakage audits.
+        </p>
+      </div>
+    </header>
+
+    <!-- Stat Grid -->
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="stat-value">10</div>
+        <div class="stat-label">Public Datasets</div>
+        <div class="stat-delta">Static &amp; Video Streams</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">330k+</div>
+        <div class="stat-label">Total Curated Frames</div>
+        <div class="stat-delta">Europe, Asia &amp; Americas</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">58 Frames</div>
+        <div class="stat-label">ColonDB &harr; CVC-300 Overlap</div>
+        <div class="stat-delta negative">96.7% Identical Pixels</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">1,000 / 1,000</div>
+        <div class="stat-label">HyperKvasir Duplication</div>
+        <div class="stat-delta negative">Byte-Identical SHA-256</div>
+      </div>
+    </div>
+
+    <!-- Forensic Integrity Warning Box -->
+    <div class="alert alert-integrity">
+      <div class="alert-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      </div>
+      <div class="alert-content">
+        <div class="alert-title">Dataset Integrity &amp; Evaluation Guardrails</div>
+        <p>
+          Scientific benchmark integrity requires strict adherence to three verified rules:
+          <br>1. <strong>Never pool or merge <span class="glossary-term" data-term="cvc-colondb">CVC-ColonDB</span> (380 frames) and <span class="glossary-term" data-term="cvc-300">CVC-300</span> (60 frames)</strong>: 58 of the 60 frames in CVC-300 are exact-pixel duplicates of CVC-ColonDB.
+          <br>2. <strong>Acknowledge CVC-ClinicDB Video Leakage</strong>: All 62 test frames in PraNet's Protocol A share identical video sequences with training frames, creating artificial seen-domain memorization (+12% to +15% <span class="glossary-term" data-term="dice">mDice</span>).
+          <br>3. <strong>Zero New Segmented Data in HyperKvasir</strong>: All 1,000 segmented polyp images in HyperKvasir are byte-for-byte SHA-256 identical copies of <span class="glossary-term" data-term="kvasir-seg">Kvasir-SEG</span>.
+        </p>
+      </div>
+    </div>
+
+    <!-- Search & Filter Toolbar -->
+    <div class="search-filter-toolbar">
+      <div class="search-box">
+        <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="dataset-search" class="search-input" placeholder="Search by dataset name, hospital, center, or modality..." aria-label="Search datasets">
+      </div>
+      <div class="filter-group" id="modality-filter-group">
+        <button class="filter-pill active" data-filter="all" type="button">All (10)</button>
+        <button class="filter-pill" data-filter="wli" type="button">WLI Only</button>
+        <button class="filter-pill" data-filter="nbi" type="button">Multi-Modal (WLI + NBI)</button>
+        <button class="filter-pill" data-filter="video" type="button">Video Sequences</button>
+        <button class="filter-pill" data-filter="integrity" type="button">Integrity Hazard Flagged</button>
+      </div>
+    </div>
+
+    <!-- Dataset Cards Grid Section -->
+    <section aria-label="Dataset Profiles">
+      <div class="flex-between flex-wrap gap-sm" style="margin-bottom: 1.5rem;">
+        <h2 style="font-size: 1.75rem; margin: 0;">Detailed Dataset Profiles</h2>
+        <span id="dataset-counter" style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--color-teal);">Displaying 10 of 10 datasets</span>
+      </div>
+
+      <div class="dataset-grid" id="dataset-cards-container">
+
+        <!-- DATASET 1: CVC-ClinicDB -->
+        <article class="dataset-card has-integrity-issue" data-modalities="wli" data-has-leakage="true" data-type="video-frames">
+          <div>
+            <div class="flex-between flex-wrap gap-xs" style="margin-bottom: 0.5rem;">
+              <span class="badge badge-amber">Barcelona, Spain &bull; 2015</span>
+              <span class="badge badge-integrity">Video Leakage Hazard</span>
+            </div>
+            <h3 style="font-size: 1.4rem; margin-bottom: 0.35rem;"><span class="glossary-term" data-term="cvc-clinicdb">CVC-ClinicDB</span> (CVC-612)</h3>
+            <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 1rem;">
+              Bernal et al. (<em>Computerized Medical Imaging and Graphics</em>, 2015). Captured at Hospital Cl&iacute;nic de Barcelona. Standard baseline for polyp localization.
+            </p>
+            <ul class="dataset-meta-list">
+              <li class="dataset-meta-item"><span class="dataset-meta-label">Scale:</span><span class="dataset-meta-val">612 frames (31 clips, 13 patients)</span></li>
+              <li class="dataset-meta-item"><span class="dataset-meta-label">Resolution:</span><span class="dataset-meta-val">384 &times; 288 (SD WLI)</span></li>
+              <li class="dataset-meta-item"><span class="dataset-meta-label">Modality:</span><span class="dataset-meta-val">White Light Imaging (WLI)</span></li>
+              <li class="dataset-meta-item"><span class="dataset-meta-label">Annotations:</span><span class="dataset-meta-val">Dense Binary Pixel Masks</span></li>
+              <li class="dataset-meta-item"><span class="dataset-meta-label">Benchmark Split:</span><span class="dataset-meta-val">Protocol A Train (550) / Seen Test (62)</span></li>
+            </ul>
+          </div>
+          <div style="background: rgba(249, 115, 22, 0.08); border: 1px solid rgba(249, 115, 22, 0.25); padding: 0.75rem 1rem; border-radius: var(--radius-sm); font-size: 0.8rem; color: var(--color-coral); margin-top: 1rem;">
+            <strong>Forensic Finding:</strong> All 62 test frames originate from the same 13-patient video sequences as training frames (30 verified near-duplicate links). Tests seen-domain memorization, not OOD generalization.
+          </div>
+        </article>
+
+        <!-- DATASET 2: CVC-ColonDB -->
+        <article class="dataset-card has-integrity-issue" data-modalities="wli" data-has-leakage="true" data-type="video-frames">
+          <div>
+            <div class="flex-between flex-wrap gap-xs" style="margin-bottom: 0.5rem;">
+              <span class="badge badge-amber">Barcelona, Spain &bull; 2012</span>
+              <span class="badge badge-integrity">CVC-300 Overlap (58)</span>
+            </div>
+            <h3 style="font-size: 1.4rem; margin-bottom: 0.35rem;"><span class="glossary-term" data-term="cvc-colondb">CVC-ColonDB</span></h3>
+            <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 1rem;">
+              Bernal et al. (2012, IEEE TMI). Foundational dataset developed to evaluate Window Median Depth of Valleys Accumulation (WM-DOVA).
+            </p>
+            <ul class="dataset-meta-list">
+              <li class="dataset-meta-item"><span class="dataset-meta-label">Scale:</span><span class="dataset-meta-val">380 static frames (15 colonoscopies)</span></li>
+              <li class="dataset-meta-item"><span class="dataset-meta-label">Resolution:</span><span class="dataset-meta-val">574 &times; 500 (or 500 &times; 574)</span></li>
+              <li class="dataset-meta-item"><span class="dataset-meta-label">Modality:</span><span class="dataset-meta-val">White Light Imaging (WLI)</span></li>
+              <li class="dataset-meta-item"><span class="dataset-meta-label">Annotations:</span><span class="dataset-meta-val">Binary Pixel Segmentation Masks</span></li>
+              <li class="dataset-meta-item"><span class="dataset-meta-label">Benchmark Split:</span><span class="dataset-meta-val">Protocol A Unseen Out-of-Distribution Test</span></li>
+            </ul>
+          </div>
+          <div style="background: rgba(249, 115, 22, 0.08); border: 1px solid rgba(249, 115, 22, 0.25); padding: 0.75rem 1rem; border-radius: var(--radius-sm); font-size: 0.8rem; color: var(--color-coral); margin-top: 1rem;">
+            <strong>Integrity Mandate:</strong> Never pool with CVC-300 / EndoScene. 58 of the 60 frames in CVC-300 are exact-pixel duplicates of CVC-ColonDB. Contains 15 internal duplicate clusters.
+          </div>
+        </article>
+
+        <!-- DATASET 3: ETIS-LaribPolypDB -->
+        <article class="dataset-card" data-modalities="wli" data-has-leakage="false" data-type="video-frames">
+          <div>
+            <div class="flex-between flex-wrap gap-xs" style="margin-bottom: 0.5rem;">
+              <span class="badge badge-teal">Paris, France &bull; 2014</span>
+              <span class="badge badge-emerald">Verified Clean OOD</span>
+            </div>
+            <h3 style="font-size: 1.4rem; margin-bottom: 0.35rem;"><span class="glossary-term" data-term="etis-larib">ETIS-LaribPolypDB</span></h3>
+            <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 1rem;">
+              Silva et al. (2014). Captured at Lariboisi&egrave;re Hospital, Paris. The gold-standard clinical challenge benchmark for out-of-distribution generalizability.
+            </p>
+            <ul class="dataset-meta-list">
+              <li class="dataset-meta-item"><span class="dataset-meta-label">Scale:</span><span class="dataset-meta-val">196 static images (34 unique polyps)</span></li>
+              <li class="dataset-meta-item"><span class="dataset-meta-label">Resolution:</span><span class="dataset-meta-val">1225 &times; 970 (High Definition)</span></li>
+              <li class="dataset-meta-item"><span class="dataset-meta-label">Modality:</span><span class="dataset-meta-val">HD White Light Imaging (HD-WLI)</span></li>
+              <li class="dataset-meta-item"><span class="dataset-meta-label">Annotations:</span><span class="dataset-meta-val">Gastroenterologist-Verified Masks</span></li>
+              <li class="dataset-meta-item"><span class="dataset-meta-label">Benchmark Split:</span><span class="dataset-meta-val">Protocol A Hard Unseen Test (196 images)</span></li>
+            </ul>
+          </div>
+          <div style="background: var(--bg-primary); border: 1px solid var(--border-subtle); padding: 0.75rem 1rem; border-radius: var(--radius-sm); font-size: 0.8rem; color: var(--text-secondary); margin-top: 1rem;">
+            <strong>Clinical Nuance:</strong> Contains flat (<span class="glossary-term" data-term="paris-classification">Paris IIb</span>), sessile, and diminutive (<span class="glossary-term" data-term="diminutive-polyp">&le;5mm</span>) polyps under challenging lighting. Models dropping from 0.93 to 0.40 reflect real-world clinical risk.
+          </div>
+        </article>
+
+        <!-- DATASET 4: Kvasir-SEG -->
+        <article class="dataset-card" data-modalities="wli" data-has-leakage="false" data-type="static-images">
+          <div>
+            <div class="flex-between flex-wrap gap-xs" style="margin-bottom: 0.5rem;">
+              <span class="badge badge-teal">B&aelig;rum, Norway &bull; 2020</span>
+              <span class="badge badge-dataset">Standard Training Pool</span>
+            </div>
+            <h3 style="font-size: 1.4rem; margin-bottom: 0.35rem;"><span class="glossary-term" data-term="kvasir-seg">Kvasir-SEG</span></h3>
+            <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 1rem;">
+              Jha et al. (<em>MMM 2020</em>, SimulaMet). Captured at B&aelig;rum Hospital, Vestre Viken Health Trust using Olympus Europe colonoscopy systems.
+            </p>
+            <ul class="dataset-meta-list">
+              <li class="dataset-meta-item"><span class="dataset-meta-label">Scale:</span><span class="dataset-meta-val">1,000 polyp images (routine screening)</span></li>
+              <li class="dataset-meta-item"><span class="dataset-meta-label">Resolution:</span><span class="dataset-meta-val">332 &times; 487 to 1920 &times; 1072 (Multi-Res)</span></li>
+              <li class="dataset-meta-item"><span class="dataset-meta-label">Modality:</span><span class="dataset-meta-val">White Light Imaging (WLI)</span></li>
+              <li class="dataset-meta-item"><span class="dataset-meta-label">Annotations:</span><span class="dataset-meta-val">Pixel Masks + Bounding Boxes + JSON</span></li>
+              <li class="dataset-meta-item"><span class="dataset-meta-label">Benchmark Split:</span><span class="dataset-meta-val">Protocol A Train (548) / Test (100)</span></li>
+            </ul>
+          </div>
+          <div style="background: var(--bg-primary); border: 1px solid var(--border-subtle); padding: 0.75rem 1rem; border-radius: var(--radius-sm); font-size: 0.8rem; color: var(--text-secondary); margin-top: 1rem;">
+            <strong>Size Stratification Bias:</strong> 700 large polyps (&gt;160px; 70%), 323 medium (32.3%), and <strong>only 48 small polyps (&lt;64px; 4.8%)</strong>. High aggregate Dice masks failure on diminutive lesions.
+          </div>
+        </article>
+
+        <!-- DATASET 5: HyperKvasir -->
+        <article class="dataset-card has-integrity-issue" data-modalities="wli nbi" data-has-leakage="true" data-type="multi-class">
+          <div>
+            <div class="flex-between flex-wrap gap-xs" style="margin-bottom: 0.5rem;">
+              <span class="badge badge-amber">Oslo, Norway &bull; 2020</span>
+              <span class="badge badge-integrity">1,000 Byte-for-Byte Copies</span>
+            </div>
+            <h3 style="font-size: 1.4rem; margin-bottom: 0.35rem;">HyperKvasir</h3>
+            <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 1rem;">
+              Borgli et al. (<em>Nature Scientific Data</em>, 2020). Massive multi-modal GI dataset comprising 110,079 images and 374 video recordings across 23 classes.
+            </p>
+            <ul class="dataset-meta-list">
+              <li class="dataset-meta-item"><span class="dataset-meta-label">Scale:</span><span class="dataset-meta-val">110,079 images total (1,000 segmented)</span></li>
+              <li class="dataset-meta-item"><span class="dataset-meta-label">Resolution:</span><span class="dataset-meta-val">Variable SD to Full HD</span></li>
+              <li class="dataset-meta-item"><span class="dataset-meta-label">Modality:</span><span class="dataset-meta-val">WLI + Narrow Band Imaging (NBI)</span></li>
+              <li class="dataset-meta-item"><span class="dataset-meta-label">Annotations:</span><span class="dataset-meta-val">1k Masks, 8.2k Anatomical Labels</span></li>
+              <li class="dataset-meta-item"><span class="dataset-meta-label">Pretraining Role:</span><span class="dataset-meta-val">Self-supervised / anatomical classification</span></li>
+            </ul>
+          </div>
+          <div style="background: rgba(249, 115, 22, 0.08); border: 1px solid rgba(249, 115, 22, 0.25); padding: 0.75rem 1rem; border-radius: var(--radius-sm); font-size: 0.8rem; color: var(--color-coral); margin-top: 1rem;">
+            <strong>Cryptographic Audit:</strong> All 1,000 segmented images are <strong>1,000/1,000 SHA-256 byte-identical duplicates of Kvasir-SEG</strong>. Provides zero additional segmented training data.
+          </div>
+        </article>
+
+        <!-- DATASET 6: BKAI-IGH NeoPolyp -->
+        <article class="dataset-card" data-modalities="wli nbi" data-has-leakage="false" data-type="multi-class">
+          <div>
+            <div class="flex-between flex-wrap gap-xs" style="margin-bottom: 0.5rem;">
+              <span class="badge badge-teal">Hanoi, Vietnam &bull; 2021</span>
+              <span class="badge badge-clinical">CADx Multi-Class</span>
+            </div>
+            <h3 style="font-size: 1.4rem; margin-bottom: 0.35rem;">BKAI-IGH NeoPolyp</h3>
+            <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 1rem;">
+              VinUni-VinBrain &amp; Institute of Gastroenterology and Hepatology (IGH), Hanoi, Vietnam. First public multi-class neoplastic segmentation challenge.
+            </p>
+            <ul class="dataset-meta-list">
+              <li class="dataset-meta-item"><span class="dataset-meta-label">Scale:</span><span class="dataset-meta-val">1,200 endoscopic images</span></li>
+              <li class="dataset-meta-item"><span class="dataset-meta-label">Resolution:</span><span class="dataset-meta-val">1280 &times; 1024 (HD)</span></li>
+              <li class="dataset-meta-item"><span class="dataset-meta-label">Modality:</span><span class="dataset-meta-val">Paired WLI &amp; NBI</span></li>
+              <li class="dataset-meta-item"><span class="dataset-meta-label">Annotations:</span><span class="dataset-meta-val">Neoplastic vs Non-Neoplastic Masks</span></li>
+              <li class="dataset-meta-item"><span class="dataset-meta-label">Clinical Paradigm:</span><span class="dataset-meta-val">Bridges CADe and CADx Optical Biopsy</span></li>
+            </ul>
+          </div>
+          <div style="background: var(--bg-primary); border: 1px solid var(--border-subtle); padding: 0.75rem 1rem; border-radius: var(--radius-sm); font-size: 0.8rem; color: var(--text-secondary); margin-top: 1rem;">
+            <strong>Clinical Role:</strong> Evaluates the <span class="glossary-term" data-term="resect-and-discard">Resect and Discard</span> paradigm: optical differentiation of precancerous adenomas from benign hyperplastic polyps.
+          </div>
+        </article>
+
+        <!-- DATASET 7: PICCOLO -->
+        <article class="dataset-card" data-modalities="wli nbi" data-has-leakage="false" data-type="video-frames">
+          <div>
+            <div class="flex-between flex-wrap gap-xs" style="margin-bottom: 0.5rem;">
+              <span class="badge badge-teal">M&oacute;stoles, Spain &bull; 2021</span>
+              <span class="badge badge-emerald">Verified Zero Leakage</span>
+            </div>
+            <h3 style="font-size: 1.4rem; margin-bottom: 0.35rem;"><span class="glossary-term" data-term="piccolo">PICCOLO</span></h3>
+            <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 1rem;">
+              S&aacute;nchez-Peralta et al. (2021). Hospital Universitario de M&oacute;stoles, Madrid. High-definition multi-modal cohort with exhaustive clinical morphological metadata.
+            </p>
+            <ul class="dataset-meta-list">
+              <li class="dataset-meta-item"><span class="dataset-meta-label">Scale:</span><span class="dataset-meta-val">3,433 frames (76 lesions, 40 videos)</span></li>
+              <li class="dataset-meta-item"><span class="dataset-meta-label">Resolution:</span><span class="dataset-meta-val">1920 &times; 1080 (Full HD)</span></li>
+              <li class="dataset-meta-item"><span class="dataset-meta-label">Modality:</span><span class="dataset-meta-val">Paired WLI and NBI</span></li>
+              <li class="dataset-meta-item"><span class="dataset-meta-label">Annotations:</span><span class="dataset-meta-val">Masks + Paris + Size + Histology</span></li>
+              <li class="dataset-meta-item"><span class="dataset-meta-label">Size Breakdown:</span><span class="dataset-meta-val">21 Diminutive (&le;5mm), 16 Small, 31 Large</span></li>
+            </ul>
+          </div>
+          <div style="background: var(--bg-primary); border: 1px solid var(--border-subtle); padding: 0.75rem 1rem; border-radius: var(--radius-sm); font-size: 0.8rem; color: var(--text-secondary); margin-top: 1rem;">
+            <strong>Integrity Excellence:</strong> Sequence-aware patient-level partitioning with <strong>zero split leakage</strong>. Complete histopathology and Paris classification (0-I vs 0-II).
+          </div>
+        </article>
+
+        <!-- DATASET 8: LDPolypVideo -->
+        <article class="dataset-card" data-modalities="wli" data-has-leakage="false" data-type="video-frames">
+          <div>
+            <div class="flex-between flex-wrap gap-xs" style="margin-bottom: 0.5rem;">
+              <span class="badge badge-teal">Multi-Center China &bull; 2021</span>
+              <span class="badge badge-dataset">Video Detection</span>
+            </div>
+            <h3 style="font-size: 1.4rem; margin-bottom: 0.35rem;">LDPolypVideo</h3>
+            <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 1rem;">
+              Ma et al. (2021). Large-scale multi-center video dataset documenting real-world clinical noise, water-jet debris, camera motion blur, and specular glare.
+            </p>
+            <ul class="dataset-meta-list">
+              <li class="dataset-meta-item"><span class="dataset-meta-label">Scale:</span><span class="dataset-meta-val">160+ polyp videos (~42,000 frames)</span></li>
+              <li class="dataset-meta-item"><span class="dataset-meta-label">Negative Control:</span><span class="dataset-meta-val">61 polyp-free negative videos</span></li>
+              <li class="dataset-meta-item"><span class="dataset-meta-label">Modality:</span><span class="dataset-meta-val">White Light Video Colonoscopy</span></li>
+              <li class="dataset-meta-item"><span class="dataset-meta-label">Annotations:</span><span class="dataset-meta-val">Per-Frame Bounding Boxes</span></li>
+              <li class="dataset-meta-item"><span class="dataset-meta-label">Clinical Nuance:</span><span class="dataset-meta-val">Realistic colonoscope motion blur &amp; lens glare</span></li>
+            </ul>
+          </div>
+          <div style="background: var(--bg-primary); border: 1px solid var(--border-subtle); padding: 0.75rem 1rem; border-radius: var(--radius-sm); font-size: 0.8rem; color: var(--text-secondary); margin-top: 1rem;">
+            <strong>Benchmark Role:</strong> Crucial for measuring real-time temporal detection stability and bounding box tracker jitter during rapid scope insertion and withdrawal.
+          </div>
+        </article>
+
+        <!-- DATASET 9: SUN-SEG -->
+        <article class="dataset-card has-integrity-issue" data-modalities="wli" data-has-leakage="true" data-type="video-frames">
+          <div>
+            <div class="flex-between flex-wrap gap-xs" style="margin-bottom: 0.5rem;">
+              <span class="badge badge-amber">Yokohama, Japan &bull; 2022</span>
+              <span class="badge badge-integrity">69% Negative Omission</span>
+            </div>
+            <h3 style="font-size: 1.4rem; margin-bottom: 0.35rem;"><span class="glossary-term" data-term="sun-seg">SUN-SEG</span> (SUN Database)</h3>
+            <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 1rem;">
+              Ji et al. (<em>MICCAI 2022</em>, Showa University Northern Yokohama Hospital). Premier video polyp segmentation (VPS) benchmark with 10 fine-grained clinical attributes.
+            </p>
+            <ul class="dataset-meta-list">
+              <li class="dataset-meta-item"><span class="dataset-meta-label">Total Scale:</span><span class="dataset-meta-val">158,690 frames (1,013 sequences)</span></li>
+              <li class="dataset-meta-item"><span class="dataset-meta-label">Positive Frames:</span><span class="dataset-meta-val">49,136 frames (378 positive clips)</span></li>
+              <li class="dataset-meta-item"><span class="dataset-meta-label">Negative Frames:</span><span class="dataset-meta-val">109,554 frames (728 polyp-free clips)</span></li>
+              <li class="dataset-meta-item"><span class="dataset-meta-label">Resolution:</span><span class="dataset-meta-val">1280 &times; 720 (HD)</span></li>
+              <li class="dataset-meta-item"><span class="dataset-meta-label">Attribute Tags:</span><span class="dataset-meta-val">Small Objects, Motion Blur, Specular Glare</span></li>
+            </ul>
+          </div>
+          <div style="background: rgba(249, 115, 22, 0.08); border: 1px solid rgba(249, 115, 22, 0.25); padding: 0.75rem 1rem; border-radius: var(--radius-sm); font-size: 0.8rem; color: var(--color-coral); margin-top: 1rem;">
+            <strong>Structural Omission:</strong> 69% of SUN-SEG (109,554 frames) consists of healthy mucosa. Standard VPS papers discard all negative clips, evaluating only on positive frames and concealing false alarm rates.
+          </div>
+        </article>
+
+        <!-- DATASET 10: PolypGen 2021 -->
+        <article class="dataset-card" data-modalities="wli" data-has-leakage="false" data-type="video-frames">
+          <div>
+            <div class="flex-between flex-wrap gap-xs" style="margin-bottom: 0.5rem;">
+              <span class="badge badge-teal">6 European Centers &bull; 2021/2023</span>
+              <span class="badge badge-emerald">Multi-Center Gold Standard</span>
+            </div>
+            <h3 style="font-size: 1.4rem; margin-bottom: 0.35rem;"><span class="glossary-term" data-term="polypgen">PolypGen 2021</span></h3>
+            <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 1rem;">
+              Ali et al. (<em>Nature Scientific Data</em>, 2023). Multi-Center Consortium across 6 European hospitals (UK, France, Italy, Norway, Egypt) capturing multi-vendor diversity.
+            </p>
+            <ul class="dataset-meta-list">
+              <li class="dataset-meta-item"><span class="dataset-meta-label">Scale:</span><span class="dataset-meta-val">&gt;10,000 curated frames</span></li>
+              <li class="dataset-meta-item"><span class="dataset-meta-label">Sequence Positives:</span><span class="dataset-meta-val">2,409 video frames</span></li>
+              <li class="dataset-meta-item"><span class="dataset-meta-label">Single Positives:</span><span class="dataset-meta-val">3,762 still images</span></li>
+              <li class="dataset-meta-item"><span class="dataset-meta-label">Sequence Negatives:</span><span class="dataset-meta-val">4,275 polyp-free mucosa frames</span></li>
+              <li class="dataset-meta-item"><span class="dataset-meta-label">Hardware Vendors:</span><span class="dataset-meta-val">Olympus, Fujifilm, Pentax HD systems</span></li>
+            </ul>
+          </div>
+          <div style="background: var(--bg-primary); border: 1px solid var(--border-subtle); padding: 0.75rem 1rem; border-radius: var(--radius-sm); font-size: 0.8rem; color: var(--text-secondary); margin-top: 1rem;">
+            <strong>Clinical Benchmark Role:</strong> The most rigorous public benchmark for true multi-center domain generalization. Evaluates cross-vendor sensor noise, white balance shifts, and false alarms on negative mucosa.
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Master Dataset Comparison Matrix Table -->
+    <section style="margin: 4.5rem 0;" aria-label="Master Dataset Comparison Matrix">
+      <h2 style="font-size: 1.75rem; margin-bottom: 1rem;">Master Dataset Comparison Matrix</h2>
+      <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Comprehensive side-by-side synthesis across all 10 public colonoscopy datasets.</p>
+      
+      <div class="table-container">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th class="sticky-header">Dataset</th>
+              <th class="sticky-header">Year</th>
+              <th class="sticky-header">Center / Origin</th>
+              <th class="sticky-header numeric">Total Frames</th>
+              <th class="sticky-header">Resolution</th>
+              <th class="sticky-header">Modalities</th>
+              <th class="sticky-header">Ground Truth</th>
+              <th class="sticky-header">Protocol Role</th>
+              <th class="sticky-header">Integrity Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="warning-row">
+              <td><strong>CVC-ClinicDB (CVC-612)</strong></td>
+              <td>2015</td>
+              <td>Hosp. Cl&iacute;nic Barcelona, Spain</td>
+              <td class="numeric">612</td>
+              <td>384 &times; 288</td>
+              <td>WLI</td>
+              <td>Pixel Masks</td>
+              <td>Protocol A Train/Seen Test</td>
+              <td><span class="badge badge-integrity">Video Leakage (+15% Dice)</span></td>
+            </tr>
+            <tr class="warning-row">
+              <td><strong>CVC-ColonDB</strong></td>
+              <td>2012</td>
+              <td>Hosp. Cl&iacute;nic Barcelona, Spain</td>
+              <td class="numeric">380</td>
+              <td>574 &times; 500</td>
+              <td>WLI</td>
+              <td>Pixel Masks</td>
+              <td>Protocol A Unseen Test</td>
+              <td><span class="badge badge-integrity">58 Duplicates with CVC-300</span></td>
+            </tr>
+            <tr>
+              <td><strong>ETIS-LaribPolypDB</strong></td>
+              <td>2014</td>
+              <td>Lariboisi&egrave;re Hosp., Paris</td>
+              <td class="numeric">196</td>
+              <td>1225 &times; 970</td>
+              <td>HD-WLI</td>
+              <td>Pixel Masks</td>
+              <td>Protocol A Hard Unseen Test</td>
+              <td><span class="badge badge-emerald">Verified Clean OOD</span></td>
+            </tr>
+            <tr>
+              <td><strong>Kvasir-SEG</strong></td>
+              <td>2020</td>
+              <td>B&aelig;rum Hospital, Norway</td>
+              <td class="numeric">1,000</td>
+              <td>332&times;487 to 1920&times;1072</td>
+              <td>WLI</td>
+              <td>Masks + BBoxes</td>
+              <td>Protocol A Train/Seen Test</td>
+              <td><span class="badge badge-teal">Verified (4.8% Diminutive)</span></td>
+            </tr>
+            <tr class="warning-row">
+              <td><strong>HyperKvasir</strong></td>
+              <td>2020</td>
+              <td>B&aelig;rum / OsloMet, Norway</td>
+              <td class="numeric">110,079</td>
+              <td>Variable HD</td>
+              <td>WLI + NBI</td>
+              <td>1k Masks, 8.2k Class</td>
+              <td>Pretraining / Classification</td>
+              <td><span class="badge badge-coral">1,000 Byte-Identical Kvasir Copies</span></td>
+            </tr>
+            <tr>
+              <td><strong>BKAI-IGH NeoPolyp</strong></td>
+              <td>2021</td>
+              <td>IGH Hanoi, Vietnam</td>
+              <td class="numeric">1,200</td>
+              <td>1280 &times; 1024</td>
+              <td>WLI + NBI</td>
+              <td>Multi-Class Masks</td>
+              <td>CADx Optical Biopsy</td>
+              <td><span class="badge badge-teal">Verified Clean CADx</span></td>
+            </tr>
+            <tr>
+              <td><strong>PICCOLO</strong></td>
+              <td>2021</td>
+              <td>Hosp. M&oacute;stoles, Spain</td>
+              <td class="numeric">3,433</td>
+              <td>1920 &times; 1080 (FHD)</td>
+              <td>WLI + NBI</td>
+              <td>Masks + Paris + Size</td>
+              <td>Morphological Benchmark</td>
+              <td><span class="badge badge-emerald">Zero Split Leakage</span></td>
+            </tr>
+            <tr>
+              <td><strong>LDPolypVideo</strong></td>
+              <td>2021</td>
+              <td>Multi-Center China</td>
+              <td class="numeric">~42,000</td>
+              <td>Variable SD</td>
+              <td>WLI</td>
+              <td>Video Bounding Boxes</td>
+              <td>Video Detection Benchmark</td>
+              <td><span class="badge badge-teal">Includes 61 Negative Videos</span></td>
+            </tr>
+            <tr class="warning-row">
+              <td><strong>SUN-SEG</strong></td>
+              <td>2022</td>
+              <td>Showa Univ., Japan</td>
+              <td class="numeric">158,690</td>
+              <td>1280 &times; 720</td>
+              <td>Video WLI</td>
+              <td>Masks + Attributes</td>
+              <td>Video Segmentation (VPS)</td>
+              <td><span class="badge badge-amber">69% Negative Frames Omitted</span></td>
+            </tr>
+            <tr class="highlight-row">
+              <td><strong>PolypGen 2021</strong></td>
+              <td>2023</td>
+              <td>6 European Centers</td>
+              <td class="numeric">&gt;10,000</td>
+              <td>Multi-Vendor HD</td>
+              <td>Olympus/Fuji/Pentax</td>
+              <td>Masks + BBoxes</td>
+              <td>Multi-Center Generalization</td>
+              <td><span class="badge badge-emerald">Multi-Center Gold Standard</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Navigation Next Page Callout -->
+    <div class="card card-glass flex-between flex-wrap gap-md" style="margin: 4rem 0 2rem; padding: 2.25rem;">
+      <div>
+        <span class="badge badge-teal" style="margin-bottom: 0.5rem;">NEXT BENCHMARK STEP</span>
+        <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Interactive Benchmark Leaderboard</h3>
+        <p style="color: var(--text-secondary); max-width: 680px; margin-bottom: 0;">
+          Explore interactive Chart.js comparisons across the 5 canonical benchmarks, review small polyp accuracy drops, and inspect video throughput scaling.
+        </p>
+      </div>
+      <a href="06-benchmarks.html" class="btn btn-primary btn-lg">
+        <span>Explore Benchmarks</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h4>Colonoscopy<span style="color: var(--color-teal);">AI</span> Guide</h4>
+          <p>Comprehensive educational compendium and forensic research platform covering colorectal polyp detection, segmentation architectures, clinical trials, and benchmark integrity.</p>
+          <p style="margin-top: 1rem; font-size: 0.8rem; color: var(--text-muted);">
+            Based on the 19,236-line technical compendium (Opus 1) and independent dataset forensic audits.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h5>Clinical Domain</h5>
+          <ul class="footer-links">
+            <li><a href="01-what-is-colonoscopy.html">Clinical Foundations</a></li>
+            <li><a href="06b-clinical-evidence.html">Trial Evidence &amp; RCTs</a></li>
+            <li><a href="07-clinical-systems.html">Commercial Systems</a></li>
+            <li><a href="12-glossary.html">Medical Glossary</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>AI &amp; Engineering</h5>
+          <ul class="footer-links">
+            <li><a href="03-ai-history.html">Evolution Timeline</a></li>
+            <li><a href="04-architectures.html">Model Architectures</a></li>
+            <li><a href="05-datasets.html">Dataset Catalog</a></li>
+            <li><a href="06-benchmarks.html">Benchmark Matrices</a></li>
+            <li><a href="09-chakramodel.html">ChakraModel Research</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Integrity &amp; Research</h5>
+          <ul class="footer-links">
+            <li><a href="08-benchmark-integrity.html">Integrity Audit</a></li>
+            <li><a href="10-future.html">Future Frontiers</a></li>
+            <li><a href="11-references.html">Master Bibliography</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 ColonoscopyAI Education &amp; ChakraModel Research. Open medical research platform.</div>
+        <div>Strict Forensic Integrity Standard &bull; Zero Hallucinations</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../assets/js/main.js"></script>
+  <script>
+    // Search & Filter Controller for 05-datasets.html
+    document.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.getElementById('dataset-search');
+      const filterButtons = document.querySelectorAll('#modality-filter-group button');
+      const cards = document.querySelectorAll('.dataset-card');
+      const counter = document.getElementById('dataset-counter');
+
+      let activeFilter = 'all';
+      let searchQuery = '';
+
+      function filterDatasets() {
+        let visibleCount = 0;
+        cards.forEach(card => {
+          const text = card.textContent.toLowerCase();
+          const modalities = card.getAttribute('data-modalities') || '';
+          const hasLeakage = card.getAttribute('data-has-leakage') === 'true';
+          const type = card.getAttribute('data-type') || '';
+
+          const matchesSearch = !searchQuery || text.includes(searchQuery);
+          let matchesFilter = true;
+
+          if (activeFilter === 'wli') {
+            matchesFilter = modalities.includes('wli') && !modalities.includes('nbi');
+          } else if (activeFilter === 'nbi') {
+            matchesFilter = modalities.includes('nbi');
+          } else if (activeFilter === 'video') {
+            matchesFilter = type.includes('video');
+          } else if (activeFilter === 'integrity') {
+            matchesFilter = hasLeakage;
+          }
+
+          if (matchesSearch && matchesFilter) {
+            card.style.display = 'flex';
+            visibleCount++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        counter.textContent = `Displaying ${visibleCount} of ${cards.length} datasets`;
+      }
+
+      if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+          searchQuery = e.target.value.trim().toLowerCase();
+          filterDatasets();
+        });
+      }
+
+      filterButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterButtons.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          activeFilter = btn.getAttribute('data-filter');
+          filterDatasets();
+        });
+      });
+    });
+  </script>
+</body>
+</html>

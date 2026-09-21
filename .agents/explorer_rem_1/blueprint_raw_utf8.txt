@@ -1,0 +1,616 @@
+
+======================================================
+FILE: index.html (19 issues)
+======================================================
+[#1] Line 33:
+  Current:  <li><a href="pages/08-failure-modes.html" class="nav-link">Integrity Audit</a></li>
+  Href:     "pages/08-failure-modes.html"
+  Target:   "pages/08-benchmark-integrity.html"
+[#2] Line 34:
+  Current:  <li><a href="pages/09-chakramodel-case-study.html" class="nav-link">ChakraModel</a></li>
+  Href:     "pages/09-chakramodel-case-study.html"
+  Target:   "pages/09-chakramodel.html"
+[#3] Line 78:
+  Current:  <a href="pages/08-failure-modes.html" class="nav-link">08. Failure Modes & Video Leakage</a>
+  Href:     "pages/08-failure-modes.html"
+  Target:   "pages/08-benchmark-integrity.html"
+[#4] Line 79:
+  Current:  <a href="pages/09-chakramodel-case-study.html" class="nav-link">09. ChakraModel Research Case Study</a>
+  Href:     "pages/09-chakramodel-case-study.html"
+  Target:   "pages/09-chakramodel.html"
+[#5] Line 80:
+  Current:  <a href="pages/10-future-directions.html" class="nav-link">10. Future Directions & Open Frontiers</a>
+  Href:     "pages/10-future-directions.html"
+  Target:   "pages/10-future.html"
+[#6] Line 115:
+  Current:  <a href="pages/09-chakramodel-case-study.html" class="btn btn-outline btn-lg">
+  Href:     "pages/09-chakramodel-case-study.html"
+  Target:   "pages/09-chakramodel.html"
+[#7] Line 256:
+  Current:  <a href="pages/08-failure-modes.html" class="btn btn-secondary btn-sm">Integrity Audit</a>
+  Href:     "pages/08-failure-modes.html"
+  Target:   "pages/08-benchmark-integrity.html"
+[#8] Line 257:
+  Current:  <a href="pages/09-chakramodel-case-study.html" class="btn btn-outline btn-sm">ChakraModel Study</a>
+  Href:     "pages/09-chakramodel-case-study.html"
+  Target:   "pages/09-chakramodel.html"
+[#9] Line 295:
+  Current:  <a href="pages/09-chakramodel-case-study.html" class="btn btn-secondary">
+  Href:     "pages/09-chakramodel-case-study.html"
+  Target:   "pages/09-chakramodel.html"
+[#10] Line 333:
+  Current:  <a href="pages/08-failure-modes.html" class="tooltip-link" style="font-size: 0.85rem;">See all 4 audit flaws &rarr;</a>
+  Href:     "pages/08-failure-modes.html"
+  Target:   "pages/08-benchmark-integrity.html"
+[#11] Line 480:
+  Current:  <h3 class="card-title"><a href="pages/08-failure-modes.html">Failure Modes & Video Leakage</a></h3>
+  Href:     "pages/08-failure-modes.html"
+  Target:   "pages/08-benchmark-integrity.html"
+[#12] Line 485:
+  Current:  <a href="pages/08-failure-modes.html" class="tooltip-link">Examine Leakage Proofs &rarr;</a>
+  Href:     "pages/08-failure-modes.html"
+  Target:   "pages/08-benchmark-integrity.html"
+[#13] Line 495:
+  Current:  <h3 class="card-title"><a href="pages/09-chakramodel-case-study.html">ChakraModel Research Study</a></h3>
+  Href:     "pages/09-chakramodel-case-study.html"
+  Target:   "pages/09-chakramodel.html"
+[#14] Line 500:
+  Current:  <a href="pages/09-chakramodel-case-study.html" class="tooltip-link">Read Research Report &rarr;</a>
+  Href:     "pages/09-chakramodel-case-study.html"
+  Target:   "pages/09-chakramodel.html"
+[#15] Line 510:
+  Current:  <h3 class="card-title"><a href="pages/10-future-directions.html">Future Directions & Frontiers</a></h3>
+  Href:     "pages/10-future-directions.html"
+  Target:   "pages/10-future.html"
+[#16] Line 515:
+  Current:  <a href="pages/10-future-directions.html" class="tooltip-link">See Future Roadmap &rarr;</a>
+  Href:     "pages/10-future-directions.html"
+  Target:   "pages/10-future.html"
+[#17] Line 628:
+  Current:  <li><a href="pages/10-future-directions.html">Future Directions & Mamba</a></li>
+  Href:     "pages/10-future-directions.html"
+  Target:   "pages/10-future.html"
+[#18] Line 635:
+  Current:  <li><a href="pages/08-failure-modes.html">Integrity & Video Leakage Audit</a></li>
+  Href:     "pages/08-failure-modes.html"
+  Target:   "pages/08-benchmark-integrity.html"
+[#19] Line 636:
+  Current:  <li><a href="pages/09-chakramodel-case-study.html">ChakraModel Case Study</a></li>
+  Href:     "pages/09-chakramodel-case-study.html"
+  Target:   "pages/09-chakramodel.html"
+
+======================================================
+FILE: pages\01-what-is-colonoscopy.html (9 issues)
+======================================================
+[#1] Line 33:
+  Current:  <li><a href="08-failure-modes.html" class="nav-link">Integrity Audit</a></li>
+  Href:     "08-failure-modes.html"
+  Target:   "08-benchmark-integrity.html"
+[#2] Line 34:
+  Current:  <li><a href="09-chakramodel-case-study.html" class="nav-link">ChakraModel</a></li>
+  Href:     "09-chakramodel-case-study.html"
+  Target:   "09-chakramodel.html"
+[#3] Line 78:
+  Current:  <a href="08-failure-modes.html" class="nav-link">08. Failure Modes & Video Leakage</a>
+  Href:     "08-failure-modes.html"
+  Target:   "08-benchmark-integrity.html"
+[#4] Line 79:
+  Current:  <a href="09-chakramodel-case-study.html" class="nav-link">09. ChakraModel Research Case Study</a>
+  Href:     "09-chakramodel-case-study.html"
+  Target:   "09-chakramodel.html"
+[#5] Line 80:
+  Current:  <a href="10-future-directions.html" class="nav-link">10. Future Directions & Open Frontiers</a>
+  Href:     "10-future-directions.html"
+  Target:   "10-future.html"
+[#6] Line 488:
+  Current:  <a href="11-references.html#ref-corley2014" class="btn btn-outline btn-sm">Citation Details &rarr;</a>
+  Href:     "11-references.html#ref-corley2014"
+  Target:   "needs target anchor in 11-references.html"
+[#7] Line 594:
+  Current:  <li><a href="10-future-directions.html">Future Directions & Mamba</a></li>
+  Href:     "10-future-directions.html"
+  Target:   "10-future.html"
+[#8] Line 601:
+  Current:  <li><a href="08-failure-modes.html">Integrity & Video Leakage Audit</a></li>
+  Href:     "08-failure-modes.html"
+  Target:   "08-benchmark-integrity.html"
+[#9] Line 602:
+  Current:  <li><a href="09-chakramodel-case-study.html">ChakraModel Case Study</a></li>
+  Href:     "09-chakramodel-case-study.html"
+  Target:   "09-chakramodel.html"
+
+======================================================
+FILE: pages\02-polyp-types.html (8 issues)
+======================================================
+[#1] Line 33:
+  Current:  <li><a href="08-failure-modes.html" class="nav-link">Integrity Audit</a></li>
+  Href:     "08-failure-modes.html"
+  Target:   "08-benchmark-integrity.html"
+[#2] Line 34:
+  Current:  <li><a href="09-chakramodel-case-study.html" class="nav-link">ChakraModel</a></li>
+  Href:     "09-chakramodel-case-study.html"
+  Target:   "09-chakramodel.html"
+[#3] Line 78:
+  Current:  <a href="08-failure-modes.html" class="nav-link">08. Failure Modes & Video Leakage</a>
+  Href:     "08-failure-modes.html"
+  Target:   "08-benchmark-integrity.html"
+[#4] Line 79:
+  Current:  <a href="09-chakramodel-case-study.html" class="nav-link">09. ChakraModel Research Case Study</a>
+  Href:     "09-chakramodel-case-study.html"
+  Target:   "09-chakramodel.html"
+[#5] Line 80:
+  Current:  <a href="10-future-directions.html" class="nav-link">10. Future Directions & Open Frontiers</a>
+  Href:     "10-future-directions.html"
+  Target:   "10-future.html"
+[#6] Line 566:
+  Current:  <li><a href="10-future-directions.html">Future Directions & Mamba</a></li>
+  Href:     "10-future-directions.html"
+  Target:   "10-future.html"
+[#7] Line 573:
+  Current:  <li><a href="08-failure-modes.html">Integrity & Video Leakage Audit</a></li>
+  Href:     "08-failure-modes.html"
+  Target:   "08-benchmark-integrity.html"
+[#8] Line 574:
+  Current:  <li><a href="09-chakramodel-case-study.html">ChakraModel Case Study</a></li>
+  Href:     "09-chakramodel-case-study.html"
+  Target:   "09-chakramodel.html"
+
+======================================================
+FILE: pages\03-ai-history.html (15 issues)
+======================================================
+[#1] Line 28:
+  Current:  <li><a href="01-clinical-foundations.html" class="nav-link">Clinical</a></li>
+  Href:     "01-clinical-foundations.html"
+  Target:   "01-what-is-colonoscopy.html"
+[#2] Line 29:
+  Current:  <li><a href="02-clinical-evidence.html" class="nav-link">Trials</a></li>
+  Href:     "02-clinical-evidence.html"
+  Target:   "06b-clinical-evidence.html"
+[#3] Line 34:
+  Current:  <li><a href="07-integrity-audit.html" class="nav-link">Integrity</a></li>
+  Href:     "07-integrity-audit.html"
+  Target:   "08-benchmark-integrity.html"
+[#4] Line 51:
+  Current:  <a href="01-clinical-foundations.html" class="nav-link">01 Clinical Foundations</a>
+  Href:     "01-clinical-foundations.html"
+  Target:   "01-what-is-colonoscopy.html"
+[#5] Line 52:
+  Current:  <a href="02-clinical-evidence.html" class="nav-link">02 Clinical Trials &amp; Evidence</a>
+  Href:     "02-clinical-evidence.html"
+  Target:   "06b-clinical-evidence.html"
+[#6] Line 57:
+  Current:  <a href="07-integrity-audit.html" class="nav-link">07 Forensic Integrity Audit</a>
+  Href:     "07-integrity-audit.html"
+  Target:   "08-benchmark-integrity.html"
+[#7] Line 58:
+  Current:  <a href="08-commercial-systems.html" class="nav-link">08 Commercial CADe/CADx</a>
+  Href:     "08-commercial-systems.html"
+  Target:   "07-clinical-systems.html"
+[#8] Line 59:
+  Current:  <a href="09-implementation.html" class="nav-link">09 Implementation &amp; Latency</a>
+  Href:     "09-implementation.html"
+  Target:   "09-chakramodel.html"
+[#9] Line 60:
+  Current:  <a href="10-future-frontiers.html" class="nav-link">10 Future Frontiers</a>
+  Href:     "10-future-frontiers.html"
+  Target:   "10-future.html"
+[#10] Line 757:
+  Current:  <li><a href="01-clinical-foundations.html">Clinical Foundations</a></li>
+  Href:     "01-clinical-foundations.html"
+  Target:   "01-what-is-colonoscopy.html"
+[#11] Line 758:
+  Current:  <li><a href="02-clinical-evidence.html">Trial Evidence &amp; RCTs</a></li>
+  Href:     "02-clinical-evidence.html"
+  Target:   "06b-clinical-evidence.html"
+[#12] Line 759:
+  Current:  <li><a href="08-commercial-systems.html">Commercial Systems</a></li>
+  Href:     "08-commercial-systems.html"
+  Target:   "07-clinical-systems.html"
+[#13] Line 770:
+  Current:  <li><a href="09-implementation.html">Deployment &amp; Latency</a></li>
+  Href:     "09-implementation.html"
+  Target:   "09-chakramodel.html"
+[#14] Line 776:
+  Current:  <li><a href="07-integrity-audit.html">Integrity Audit</a></li>
+  Href:     "07-integrity-audit.html"
+  Target:   "08-benchmark-integrity.html"
+[#15] Line 777:
+  Current:  <li><a href="10-future-frontiers.html">Future Frontiers</a></li>
+  Href:     "10-future-frontiers.html"
+  Target:   "10-future.html"
+
+======================================================
+FILE: pages\04-architectures.html (15 issues)
+======================================================
+[#1] Line 28:
+  Current:  <li><a href="01-clinical-foundations.html" class="nav-link">Clinical</a></li>
+  Href:     "01-clinical-foundations.html"
+  Target:   "01-what-is-colonoscopy.html"
+[#2] Line 29:
+  Current:  <li><a href="02-clinical-evidence.html" class="nav-link">Trials</a></li>
+  Href:     "02-clinical-evidence.html"
+  Target:   "06b-clinical-evidence.html"
+[#3] Line 34:
+  Current:  <li><a href="07-integrity-audit.html" class="nav-link">Integrity</a></li>
+  Href:     "07-integrity-audit.html"
+  Target:   "08-benchmark-integrity.html"
+[#4] Line 51:
+  Current:  <a href="01-clinical-foundations.html" class="nav-link">01 Clinical Foundations</a>
+  Href:     "01-clinical-foundations.html"
+  Target:   "01-what-is-colonoscopy.html"
+[#5] Line 52:
+  Current:  <a href="02-clinical-evidence.html" class="nav-link">02 Clinical Trials &amp; Evidence</a>
+  Href:     "02-clinical-evidence.html"
+  Target:   "06b-clinical-evidence.html"
+[#6] Line 57:
+  Current:  <a href="07-integrity-audit.html" class="nav-link">07 Forensic Integrity Audit</a>
+  Href:     "07-integrity-audit.html"
+  Target:   "08-benchmark-integrity.html"
+[#7] Line 58:
+  Current:  <a href="08-commercial-systems.html" class="nav-link">08 Commercial CADe/CADx</a>
+  Href:     "08-commercial-systems.html"
+  Target:   "07-clinical-systems.html"
+[#8] Line 59:
+  Current:  <a href="09-implementation.html" class="nav-link">09 Implementation &amp; Latency</a>
+  Href:     "09-implementation.html"
+  Target:   "09-chakramodel.html"
+[#9] Line 60:
+  Current:  <a href="10-future-frontiers.html" class="nav-link">10 Future Frontiers</a>
+  Href:     "10-future-frontiers.html"
+  Target:   "10-future.html"
+[#10] Line 667:
+  Current:  <li><a href="01-clinical-foundations.html">Clinical Foundations</a></li>
+  Href:     "01-clinical-foundations.html"
+  Target:   "01-what-is-colonoscopy.html"
+[#11] Line 668:
+  Current:  <li><a href="02-clinical-evidence.html">Trial Evidence &amp; RCTs</a></li>
+  Href:     "02-clinical-evidence.html"
+  Target:   "06b-clinical-evidence.html"
+[#12] Line 669:
+  Current:  <li><a href="08-commercial-systems.html">Commercial Systems</a></li>
+  Href:     "08-commercial-systems.html"
+  Target:   "07-clinical-systems.html"
+[#13] Line 680:
+  Current:  <li><a href="09-implementation.html">Deployment &amp; Latency</a></li>
+  Href:     "09-implementation.html"
+  Target:   "09-chakramodel.html"
+[#14] Line 686:
+  Current:  <li><a href="07-integrity-audit.html">Integrity Audit</a></li>
+  Href:     "07-integrity-audit.html"
+  Target:   "08-benchmark-integrity.html"
+[#15] Line 687:
+  Current:  <li><a href="10-future-frontiers.html">Future Frontiers</a></li>
+  Href:     "10-future-frontiers.html"
+  Target:   "10-future.html"
+
+======================================================
+FILE: pages\05-datasets.html (15 issues)
+======================================================
+[#1] Line 28:
+  Current:  <li><a href="01-clinical-foundations.html" class="nav-link">Clinical</a></li>
+  Href:     "01-clinical-foundations.html"
+  Target:   "01-what-is-colonoscopy.html"
+[#2] Line 29:
+  Current:  <li><a href="02-clinical-evidence.html" class="nav-link">Trials</a></li>
+  Href:     "02-clinical-evidence.html"
+  Target:   "06b-clinical-evidence.html"
+[#3] Line 34:
+  Current:  <li><a href="07-integrity-audit.html" class="nav-link">Integrity</a></li>
+  Href:     "07-integrity-audit.html"
+  Target:   "08-benchmark-integrity.html"
+[#4] Line 51:
+  Current:  <a href="01-clinical-foundations.html" class="nav-link">01 Clinical Foundations</a>
+  Href:     "01-clinical-foundations.html"
+  Target:   "01-what-is-colonoscopy.html"
+[#5] Line 52:
+  Current:  <a href="02-clinical-evidence.html" class="nav-link">02 Clinical Trials &amp; Evidence</a>
+  Href:     "02-clinical-evidence.html"
+  Target:   "06b-clinical-evidence.html"
+[#6] Line 57:
+  Current:  <a href="07-integrity-audit.html" class="nav-link">07 Forensic Integrity Audit</a>
+  Href:     "07-integrity-audit.html"
+  Target:   "08-benchmark-integrity.html"
+[#7] Line 58:
+  Current:  <a href="08-commercial-systems.html" class="nav-link">08 Commercial CADe/CADx</a>
+  Href:     "08-commercial-systems.html"
+  Target:   "07-clinical-systems.html"
+[#8] Line 59:
+  Current:  <a href="09-implementation.html" class="nav-link">09 Implementation &amp; Latency</a>
+  Href:     "09-implementation.html"
+  Target:   "09-chakramodel.html"
+[#9] Line 60:
+  Current:  <a href="10-future-frontiers.html" class="nav-link">10 Future Frontiers</a>
+  Href:     "10-future-frontiers.html"
+  Target:   "10-future.html"
+[#10] Line 568:
+  Current:  <li><a href="01-clinical-foundations.html">Clinical Foundations</a></li>
+  Href:     "01-clinical-foundations.html"
+  Target:   "01-what-is-colonoscopy.html"
+[#11] Line 569:
+  Current:  <li><a href="02-clinical-evidence.html">Trial Evidence &amp; RCTs</a></li>
+  Href:     "02-clinical-evidence.html"
+  Target:   "06b-clinical-evidence.html"
+[#12] Line 570:
+  Current:  <li><a href="08-commercial-systems.html">Commercial Systems</a></li>
+  Href:     "08-commercial-systems.html"
+  Target:   "07-clinical-systems.html"
+[#13] Line 581:
+  Current:  <li><a href="09-implementation.html">Deployment &amp; Latency</a></li>
+  Href:     "09-implementation.html"
+  Target:   "09-chakramodel.html"
+[#14] Line 587:
+  Current:  <li><a href="07-integrity-audit.html">Integrity Audit</a></li>
+  Href:     "07-integrity-audit.html"
+  Target:   "08-benchmark-integrity.html"
+[#15] Line 588:
+  Current:  <li><a href="10-future-frontiers.html">Future Frontiers</a></li>
+  Href:     "10-future-frontiers.html"
+  Target:   "10-future.html"
+
+======================================================
+FILE: pages\06-benchmarks.html (16 issues)
+======================================================
+[#1] Line 28:
+  Current:  <li><a href="01-clinical-foundations.html" class="nav-link">Clinical</a></li>
+  Href:     "01-clinical-foundations.html"
+  Target:   "01-what-is-colonoscopy.html"
+[#2] Line 29:
+  Current:  <li><a href="02-clinical-evidence.html" class="nav-link">Trials</a></li>
+  Href:     "02-clinical-evidence.html"
+  Target:   "06b-clinical-evidence.html"
+[#3] Line 34:
+  Current:  <li><a href="07-integrity-audit.html" class="nav-link">Integrity</a></li>
+  Href:     "07-integrity-audit.html"
+  Target:   "08-benchmark-integrity.html"
+[#4] Line 51:
+  Current:  <a href="01-clinical-foundations.html" class="nav-link">01 Clinical Foundations</a>
+  Href:     "01-clinical-foundations.html"
+  Target:   "01-what-is-colonoscopy.html"
+[#5] Line 52:
+  Current:  <a href="02-clinical-evidence.html" class="nav-link">02 Clinical Trials &amp; Evidence</a>
+  Href:     "02-clinical-evidence.html"
+  Target:   "06b-clinical-evidence.html"
+[#6] Line 57:
+  Current:  <a href="07-integrity-audit.html" class="nav-link">07 Forensic Integrity Audit</a>
+  Href:     "07-integrity-audit.html"
+  Target:   "08-benchmark-integrity.html"
+[#7] Line 58:
+  Current:  <a href="08-commercial-systems.html" class="nav-link">08 Commercial CADe/CADx</a>
+  Href:     "08-commercial-systems.html"
+  Target:   "07-clinical-systems.html"
+[#8] Line 59:
+  Current:  <a href="09-implementation.html" class="nav-link">09 Implementation &amp; Latency</a>
+  Href:     "09-implementation.html"
+  Target:   "09-chakramodel.html"
+[#9] Line 60:
+  Current:  <a href="10-future-frontiers.html" class="nav-link">10 Future Frontiers</a>
+  Href:     "10-future-frontiers.html"
+  Target:   "10-future.html"
+[#10] Line 468:
+  Current:  <a href="07-integrity-audit.html" class="btn btn-primary btn-lg">
+  Href:     "07-integrity-audit.html"
+  Target:   "08-benchmark-integrity.html"
+[#11] Line 490:
+  Current:  <li><a href="01-clinical-foundations.html">Clinical Foundations</a></li>
+  Href:     "01-clinical-foundations.html"
+  Target:   "01-what-is-colonoscopy.html"
+[#12] Line 491:
+  Current:  <li><a href="02-clinical-evidence.html">Trial Evidence &amp; RCTs</a></li>
+  Href:     "02-clinical-evidence.html"
+  Target:   "06b-clinical-evidence.html"
+[#13] Line 492:
+  Current:  <li><a href="08-commercial-systems.html">Commercial Systems</a></li>
+  Href:     "08-commercial-systems.html"
+  Target:   "07-clinical-systems.html"
+[#14] Line 503:
+  Current:  <li><a href="09-implementation.html">Deployment &amp; Latency</a></li>
+  Href:     "09-implementation.html"
+  Target:   "09-chakramodel.html"
+[#15] Line 509:
+  Current:  <li><a href="07-integrity-audit.html">Integrity Audit</a></li>
+  Href:     "07-integrity-audit.html"
+  Target:   "08-benchmark-integrity.html"
+[#16] Line 510:
+  Current:  <li><a href="10-future-frontiers.html">Future Frontiers</a></li>
+  Href:     "10-future-frontiers.html"
+  Target:   "10-future.html"
+
+======================================================
+FILE: pages\06b-clinical-evidence.html (8 issues)
+======================================================
+[#1] Line 33:
+  Current:  <li><a href="08-failure-modes.html" class="nav-link">Integrity Audit</a></li>
+  Href:     "08-failure-modes.html"
+  Target:   "08-benchmark-integrity.html"
+[#2] Line 34:
+  Current:  <li><a href="09-chakramodel-case-study.html" class="nav-link">ChakraModel</a></li>
+  Href:     "09-chakramodel-case-study.html"
+  Target:   "09-chakramodel.html"
+[#3] Line 78:
+  Current:  <a href="08-failure-modes.html" class="nav-link">08. Failure Modes & Video Leakage</a>
+  Href:     "08-failure-modes.html"
+  Target:   "08-benchmark-integrity.html"
+[#4] Line 79:
+  Current:  <a href="09-chakramodel-case-study.html" class="nav-link">09. ChakraModel Research Case Study</a>
+  Href:     "09-chakramodel-case-study.html"
+  Target:   "09-chakramodel.html"
+[#5] Line 80:
+  Current:  <a href="10-future-directions.html" class="nav-link">10. Future Directions & Open Frontiers</a>
+  Href:     "10-future-directions.html"
+  Target:   "10-future.html"
+[#6] Line 517:
+  Current:  <li><a href="10-future-directions.html">Future Directions & Mamba</a></li>
+  Href:     "10-future-directions.html"
+  Target:   "10-future.html"
+[#7] Line 524:
+  Current:  <li><a href="08-failure-modes.html">Integrity & Video Leakage Audit</a></li>
+  Href:     "08-failure-modes.html"
+  Target:   "08-benchmark-integrity.html"
+[#8] Line 525:
+  Current:  <li><a href="09-chakramodel-case-study.html">ChakraModel Case Study</a></li>
+  Href:     "09-chakramodel-case-study.html"
+  Target:   "09-chakramodel.html"
+
+======================================================
+FILE: pages\07-clinical-systems.html (9 issues)
+======================================================
+[#1] Line 33:
+  Current:  <li><a href="08-failure-modes.html" class="nav-link">Integrity Audit</a></li>
+  Href:     "08-failure-modes.html"
+  Target:   "08-benchmark-integrity.html"
+[#2] Line 34:
+  Current:  <li><a href="09-chakramodel-case-study.html" class="nav-link">ChakraModel</a></li>
+  Href:     "09-chakramodel-case-study.html"
+  Target:   "09-chakramodel.html"
+[#3] Line 78:
+  Current:  <a href="08-failure-modes.html" class="nav-link">08. Failure Modes & Video Leakage</a>
+  Href:     "08-failure-modes.html"
+  Target:   "08-benchmark-integrity.html"
+[#4] Line 79:
+  Current:  <a href="09-chakramodel-case-study.html" class="nav-link">09. ChakraModel Research Case Study</a>
+  Href:     "09-chakramodel-case-study.html"
+  Target:   "09-chakramodel.html"
+[#5] Line 80:
+  Current:  <a href="10-future-directions.html" class="nav-link">10. Future Directions & Open Frontiers</a>
+  Href:     "10-future-directions.html"
+  Target:   "10-future.html"
+[#6] Line 570:
+  Current:  <a href="08-failure-modes.html" class="btn btn-primary btn-lg">
+  Href:     "08-failure-modes.html"
+  Target:   "08-benchmark-integrity.html"
+[#7] Line 606:
+  Current:  <li><a href="10-future-directions.html">Future Directions & Mamba</a></li>
+  Href:     "10-future-directions.html"
+  Target:   "10-future.html"
+[#8] Line 613:
+  Current:  <li><a href="08-failure-modes.html">Integrity & Video Leakage Audit</a></li>
+  Href:     "08-failure-modes.html"
+  Target:   "08-benchmark-integrity.html"
+[#9] Line 614:
+  Current:  <li><a href="09-chakramodel-case-study.html">ChakraModel Case Study</a></li>
+  Href:     "09-chakramodel-case-study.html"
+  Target:   "09-chakramodel.html"
+
+======================================================
+FILE: pages\08-benchmark-integrity.html (0 issues)
+======================================================
+
+======================================================
+FILE: pages\09-chakramodel.html (0 issues)
+======================================================
+
+======================================================
+FILE: pages\10-future.html (0 issues)
+======================================================
+
+======================================================
+FILE: pages\11-references.html (0 issues)
+======================================================
+
+======================================================
+FILE: pages\12-glossary.html (26 issues)
+======================================================
+[#1] Line 160:
+  Current:  <a href="#letter-A" class="letter-btn" data-letter="A">A</a>
+  Href:     "#letter-A"
+  Target:   "needs matching section id in 12-glossary.html"
+[#2] Line 161:
+  Current:  <a href="#letter-B" class="letter-btn" data-letter="B">B</a>
+  Href:     "#letter-B"
+  Target:   "needs matching section id in 12-glossary.html"
+[#3] Line 162:
+  Current:  <a href="#letter-C" class="letter-btn" data-letter="C">C</a>
+  Href:     "#letter-C"
+  Target:   "needs matching section id in 12-glossary.html"
+[#4] Line 163:
+  Current:  <a href="#letter-D" class="letter-btn" data-letter="D">D</a>
+  Href:     "#letter-D"
+  Target:   "needs matching section id in 12-glossary.html"
+[#5] Line 164:
+  Current:  <a href="#letter-E" class="letter-btn" data-letter="E">E</a>
+  Href:     "#letter-E"
+  Target:   "needs matching section id in 12-glossary.html"
+[#6] Line 165:
+  Current:  <a href="#letter-F" class="letter-btn" data-letter="F">F</a>
+  Href:     "#letter-F"
+  Target:   "needs matching section id in 12-glossary.html"
+[#7] Line 166:
+  Current:  <a href="#letter-G" class="letter-btn" data-letter="G">G</a>
+  Href:     "#letter-G"
+  Target:   "needs matching section id in 12-glossary.html"
+[#8] Line 167:
+  Current:  <a href="#letter-H" class="letter-btn disabled" data-letter="H">H</a>
+  Href:     "#letter-H"
+  Target:   "needs matching section id in 12-glossary.html"
+[#9] Line 168:
+  Current:  <a href="#letter-I" class="letter-btn" data-letter="I">I</a>
+  Href:     "#letter-I"
+  Target:   "needs matching section id in 12-glossary.html"
+[#10] Line 169:
+  Current:  <a href="#letter-J" class="letter-btn disabled" data-letter="J">J</a>
+  Href:     "#letter-J"
+  Target:   "needs matching section id in 12-glossary.html"
+[#11] Line 170:
+  Current:  <a href="#letter-K" class="letter-btn" data-letter="K">K</a>
+  Href:     "#letter-K"
+  Target:   "needs matching section id in 12-glossary.html"
+[#12] Line 171:
+  Current:  <a href="#letter-L" class="letter-btn disabled" data-letter="L">L</a>
+  Href:     "#letter-L"
+  Target:   "needs matching section id in 12-glossary.html"
+[#13] Line 172:
+  Current:  <a href="#letter-M" class="letter-btn" data-letter="M">M</a>
+  Href:     "#letter-M"
+  Target:   "needs matching section id in 12-glossary.html"
+[#14] Line 173:
+  Current:  <a href="#letter-N" class="letter-btn" data-letter="N">N</a>
+  Href:     "#letter-N"
+  Target:   "needs matching section id in 12-glossary.html"
+[#15] Line 174:
+  Current:  <a href="#letter-O" class="letter-btn disabled" data-letter="O">O</a>
+  Href:     "#letter-O"
+  Target:   "needs matching section id in 12-glossary.html"
+[#16] Line 175:
+  Current:  <a href="#letter-P" class="letter-btn" data-letter="P">P</a>
+  Href:     "#letter-P"
+  Target:   "needs matching section id in 12-glossary.html"
+[#17] Line 176:
+  Current:  <a href="#letter-Q" class="letter-btn disabled" data-letter="Q">Q</a>
+  Href:     "#letter-Q"
+  Target:   "needs matching section id in 12-glossary.html"
+[#18] Line 177:
+  Current:  <a href="#letter-R" class="letter-btn" data-letter="R">R</a>
+  Href:     "#letter-R"
+  Target:   "needs matching section id in 12-glossary.html"
+[#19] Line 178:
+  Current:  <a href="#letter-S" class="letter-btn" data-letter="S">S</a>
+  Href:     "#letter-S"
+  Target:   "needs matching section id in 12-glossary.html"
+[#20] Line 179:
+  Current:  <a href="#letter-T" class="letter-btn" data-letter="T">T</a>
+  Href:     "#letter-T"
+  Target:   "needs matching section id in 12-glossary.html"
+[#21] Line 180:
+  Current:  <a href="#letter-U" class="letter-btn" data-letter="U">U</a>
+  Href:     "#letter-U"
+  Target:   "needs matching section id in 12-glossary.html"
+[#22] Line 181:
+  Current:  <a href="#letter-V" class="letter-btn" data-letter="V">V</a>
+  Href:     "#letter-V"
+  Target:   "needs matching section id in 12-glossary.html"
+[#23] Line 182:
+  Current:  <a href="#letter-W" class="letter-btn" data-letter="W">W</a>
+  Href:     "#letter-W"
+  Target:   "needs matching section id in 12-glossary.html"
+[#24] Line 183:
+  Current:  <a href="#letter-X" class="letter-btn disabled" data-letter="X">X</a>
+  Href:     "#letter-X"
+  Target:   "needs matching section id in 12-glossary.html"
+[#25] Line 184:
+  Current:  <a href="#letter-Y" class="letter-btn disabled" data-letter="Y">Y</a>
+  Href:     "#letter-Y"
+  Target:   "needs matching section id in 12-glossary.html"
+[#26] Line 185:
+  Current:  <a href="#letter-Z" class="letter-btn disabled" data-letter="Z">Z</a>
+  Href:     "#letter-Z"
+  Target:   "needs matching section id in 12-glossary.html"

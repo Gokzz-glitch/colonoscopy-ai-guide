@@ -1,0 +1,1809 @@
+{
+  "index.html": {
+    "headerLinks": [
+      {
+        "href": "index.html",
+        "text": "Home"
+      },
+      {
+        "href": "pages/01-what-is-colonoscopy.html",
+        "text": "Anatomy & Prep"
+      },
+      {
+        "href": "pages/02-polyp-types.html",
+        "text": "Polyps & Histology"
+      },
+      {
+        "href": "pages/04-architectures.html",
+        "text": "Architectures"
+      },
+      {
+        "href": "pages/06b-clinical-evidence.html",
+        "text": "Clinical Trials"
+      },
+      {
+        "href": "pages/07-clinical-systems.html",
+        "text": "Commercial Systems"
+      },
+      {
+        "href": "pages/08-failure-modes.html",
+        "text": "Integrity Audit"
+      },
+      {
+        "href": "pages/09-chakramodel-case-study.html",
+        "text": "ChakraModel"
+      },
+      {
+        "href": "pages/12-glossary.html",
+        "text": "Glossary"
+      }
+    ],
+    "drawerLinks": [],
+    "footerLinks": [
+      {
+        "href": "pages/01-what-is-colonoscopy.html",
+        "text": "Anatomy & Bowel Prep"
+      },
+      {
+        "href": "pages/02-polyp-types.html",
+        "text": "Polyp Morphologies & Histology"
+      },
+      {
+        "href": "pages/06b-clinical-evidence.html",
+        "text": "41 RCTs & Clinical Paradox"
+      },
+      {
+        "href": "pages/07-clinical-systems.html",
+        "text": "Commercial AI Systems"
+      },
+      {
+        "href": "pages/03-ai-history.html",
+        "text": "History of AI in Colonoscopy"
+      },
+      {
+        "href": "pages/04-architectures.html",
+        "text": "Deep Learning Architectures"
+      },
+      {
+        "href": "pages/05-datasets.html",
+        "text": "Benchmark Datasets"
+      },
+      {
+        "href": "pages/06-benchmarks.html",
+        "text": "Academic Benchmarks"
+      },
+      {
+        "href": "pages/10-future-directions.html",
+        "text": "Future Directions & Mamba"
+      },
+      {
+        "href": "pages/08-failure-modes.html",
+        "text": "Integrity & Video Leakage Audit"
+      },
+      {
+        "href": "pages/09-chakramodel-case-study.html",
+        "text": "ChakraModel Case Study"
+      },
+      {
+        "href": "pages/11-references.html",
+        "text": "48 Academic References"
+      },
+      {
+        "href": "pages/12-glossary.html",
+        "text": "50-Term Medical Glossary"
+      }
+    ]
+  },
+  "pages\\01-what-is-colonoscopy.html": {
+    "headerLinks": [
+      {
+        "href": "../index.html",
+        "text": "Home"
+      },
+      {
+        "href": "01-what-is-colonoscopy.html",
+        "text": "Anatomy & Prep"
+      },
+      {
+        "href": "02-polyp-types.html",
+        "text": "Polyps & Histology"
+      },
+      {
+        "href": "04-architectures.html",
+        "text": "Architectures"
+      },
+      {
+        "href": "06b-clinical-evidence.html",
+        "text": "Clinical Trials"
+      },
+      {
+        "href": "07-clinical-systems.html",
+        "text": "Commercial Systems"
+      },
+      {
+        "href": "08-failure-modes.html",
+        "text": "Integrity Audit"
+      },
+      {
+        "href": "09-chakramodel-case-study.html",
+        "text": "ChakraModel"
+      },
+      {
+        "href": "12-glossary.html",
+        "text": "Glossary"
+      }
+    ],
+    "drawerLinks": [],
+    "footerLinks": [
+      {
+        "href": "01-what-is-colonoscopy.html",
+        "text": "Anatomy & Bowel Prep"
+      },
+      {
+        "href": "02-polyp-types.html",
+        "text": "Polyp Morphologies & Histology"
+      },
+      {
+        "href": "06b-clinical-evidence.html",
+        "text": "41 RCTs & Clinical Paradox"
+      },
+      {
+        "href": "07-clinical-systems.html",
+        "text": "Commercial AI Systems"
+      },
+      {
+        "href": "03-ai-history.html",
+        "text": "History of AI in Colonoscopy"
+      },
+      {
+        "href": "04-architectures.html",
+        "text": "Deep Learning Architectures"
+      },
+      {
+        "href": "05-datasets.html",
+        "text": "Benchmark Datasets"
+      },
+      {
+        "href": "06-benchmarks.html",
+        "text": "Academic Benchmarks"
+      },
+      {
+        "href": "10-future-directions.html",
+        "text": "Future Directions & Mamba"
+      },
+      {
+        "href": "08-failure-modes.html",
+        "text": "Integrity & Video Leakage Audit"
+      },
+      {
+        "href": "09-chakramodel-case-study.html",
+        "text": "ChakraModel Case Study"
+      },
+      {
+        "href": "11-references.html",
+        "text": "48 Academic References"
+      },
+      {
+        "href": "12-glossary.html",
+        "text": "50-Term Medical Glossary"
+      }
+    ]
+  },
+  "pages\\02-polyp-types.html": {
+    "headerLinks": [
+      {
+        "href": "../index.html",
+        "text": "Home"
+      },
+      {
+        "href": "01-what-is-colonoscopy.html",
+        "text": "Anatomy & Prep"
+      },
+      {
+        "href": "02-polyp-types.html",
+        "text": "Polyps & Histology"
+      },
+      {
+        "href": "04-architectures.html",
+        "text": "Architectures"
+      },
+      {
+        "href": "06b-clinical-evidence.html",
+        "text": "Clinical Trials"
+      },
+      {
+        "href": "07-clinical-systems.html",
+        "text": "Commercial Systems"
+      },
+      {
+        "href": "08-failure-modes.html",
+        "text": "Integrity Audit"
+      },
+      {
+        "href": "09-chakramodel-case-study.html",
+        "text": "ChakraModel"
+      },
+      {
+        "href": "12-glossary.html",
+        "text": "Glossary"
+      }
+    ],
+    "drawerLinks": [],
+    "footerLinks": [
+      {
+        "href": "01-what-is-colonoscopy.html",
+        "text": "Anatomy & Bowel Prep"
+      },
+      {
+        "href": "02-polyp-types.html",
+        "text": "Polyp Morphologies & Histology"
+      },
+      {
+        "href": "06b-clinical-evidence.html",
+        "text": "41 RCTs & Clinical Paradox"
+      },
+      {
+        "href": "07-clinical-systems.html",
+        "text": "Commercial AI Systems"
+      },
+      {
+        "href": "03-ai-history.html",
+        "text": "History of AI in Colonoscopy"
+      },
+      {
+        "href": "04-architectures.html",
+        "text": "Deep Learning Architectures"
+      },
+      {
+        "href": "05-datasets.html",
+        "text": "Benchmark Datasets"
+      },
+      {
+        "href": "06-benchmarks.html",
+        "text": "Academic Benchmarks"
+      },
+      {
+        "href": "10-future-directions.html",
+        "text": "Future Directions & Mamba"
+      },
+      {
+        "href": "08-failure-modes.html",
+        "text": "Integrity & Video Leakage Audit"
+      },
+      {
+        "href": "09-chakramodel-case-study.html",
+        "text": "ChakraModel Case Study"
+      },
+      {
+        "href": "11-references.html",
+        "text": "48 Academic References"
+      },
+      {
+        "href": "12-glossary.html",
+        "text": "50-Term Medical Glossary"
+      }
+    ]
+  },
+  "pages\\03-ai-history.html": {
+    "headerLinks": [
+      {
+        "href": "../index.html",
+        "text": "Home"
+      },
+      {
+        "href": "01-clinical-foundations.html",
+        "text": "Clinical"
+      },
+      {
+        "href": "02-clinical-evidence.html",
+        "text": "Trials"
+      },
+      {
+        "href": "03-ai-history.html",
+        "text": "AI History"
+      },
+      {
+        "href": "04-architectures.html",
+        "text": "Architectures"
+      },
+      {
+        "href": "05-datasets.html",
+        "text": "Datasets"
+      },
+      {
+        "href": "06-benchmarks.html",
+        "text": "Benchmarks"
+      },
+      {
+        "href": "07-integrity-audit.html",
+        "text": "Integrity"
+      },
+      {
+        "href": "11-references.html",
+        "text": "References"
+      },
+      {
+        "href": "12-glossary.html",
+        "text": "Glossary"
+      }
+    ],
+    "drawerLinks": [
+      {
+        "href": "../index.html",
+        "text": "Home"
+      },
+      {
+        "href": "01-clinical-foundations.html",
+        "text": "01 Clinical Foundations"
+      },
+      {
+        "href": "02-clinical-evidence.html",
+        "text": "02 Clinical Trials &amp; Evidence"
+      },
+      {
+        "href": "03-ai-history.html",
+        "text": "03 AI History &amp; Evolution"
+      },
+      {
+        "href": "04-architectures.html",
+        "text": "04 Model Architectures"
+      },
+      {
+        "href": "05-datasets.html",
+        "text": "05 Benchmark Datasets"
+      },
+      {
+        "href": "06-benchmarks.html",
+        "text": "06 SOTA Benchmarks"
+      },
+      {
+        "href": "07-integrity-audit.html",
+        "text": "07 Forensic Integrity Audit"
+      },
+      {
+        "href": "08-commercial-systems.html",
+        "text": "08 Commercial CADe/CADx"
+      },
+      {
+        "href": "09-implementation.html",
+        "text": "09 Implementation &amp; Latency"
+      },
+      {
+        "href": "10-future-frontiers.html",
+        "text": "10 Future Frontiers"
+      },
+      {
+        "href": "11-references.html",
+        "text": "11 Master References"
+      },
+      {
+        "href": "12-glossary.html",
+        "text": "12 Medical-AI Glossary"
+      }
+    ],
+    "footerLinks": [
+      {
+        "href": "01-clinical-foundations.html",
+        "text": "Clinical Foundations"
+      },
+      {
+        "href": "02-clinical-evidence.html",
+        "text": "Trial Evidence &amp; RCTs"
+      },
+      {
+        "href": "08-commercial-systems.html",
+        "text": "Commercial Systems"
+      },
+      {
+        "href": "12-glossary.html",
+        "text": "Medical Glossary"
+      },
+      {
+        "href": "03-ai-history.html",
+        "text": "Evolution Timeline"
+      },
+      {
+        "href": "04-architectures.html",
+        "text": "Model Architectures"
+      },
+      {
+        "href": "05-datasets.html",
+        "text": "Dataset Catalog"
+      },
+      {
+        "href": "06-benchmarks.html",
+        "text": "Benchmark Matrices"
+      },
+      {
+        "href": "09-implementation.html",
+        "text": "Deployment &amp; Latency"
+      },
+      {
+        "href": "07-integrity-audit.html",
+        "text": "Integrity Audit"
+      },
+      {
+        "href": "10-future-frontiers.html",
+        "text": "Future Frontiers"
+      },
+      {
+        "href": "11-references.html",
+        "text": "Master Bibliography"
+      }
+    ]
+  },
+  "pages\\04-architectures.html": {
+    "headerLinks": [
+      {
+        "href": "../index.html",
+        "text": "Home"
+      },
+      {
+        "href": "01-clinical-foundations.html",
+        "text": "Clinical"
+      },
+      {
+        "href": "02-clinical-evidence.html",
+        "text": "Trials"
+      },
+      {
+        "href": "03-ai-history.html",
+        "text": "AI History"
+      },
+      {
+        "href": "04-architectures.html",
+        "text": "Architectures"
+      },
+      {
+        "href": "05-datasets.html",
+        "text": "Datasets"
+      },
+      {
+        "href": "06-benchmarks.html",
+        "text": "Benchmarks"
+      },
+      {
+        "href": "07-integrity-audit.html",
+        "text": "Integrity"
+      },
+      {
+        "href": "11-references.html",
+        "text": "References"
+      },
+      {
+        "href": "12-glossary.html",
+        "text": "Glossary"
+      }
+    ],
+    "drawerLinks": [
+      {
+        "href": "../index.html",
+        "text": "Home"
+      },
+      {
+        "href": "01-clinical-foundations.html",
+        "text": "01 Clinical Foundations"
+      },
+      {
+        "href": "02-clinical-evidence.html",
+        "text": "02 Clinical Trials &amp; Evidence"
+      },
+      {
+        "href": "03-ai-history.html",
+        "text": "03 AI History &amp; Evolution"
+      },
+      {
+        "href": "04-architectures.html",
+        "text": "04 Model Architectures"
+      },
+      {
+        "href": "05-datasets.html",
+        "text": "05 Benchmark Datasets"
+      },
+      {
+        "href": "06-benchmarks.html",
+        "text": "06 SOTA Benchmarks"
+      },
+      {
+        "href": "07-integrity-audit.html",
+        "text": "07 Forensic Integrity Audit"
+      },
+      {
+        "href": "08-commercial-systems.html",
+        "text": "08 Commercial CADe/CADx"
+      },
+      {
+        "href": "09-implementation.html",
+        "text": "09 Implementation &amp; Latency"
+      },
+      {
+        "href": "10-future-frontiers.html",
+        "text": "10 Future Frontiers"
+      },
+      {
+        "href": "11-references.html",
+        "text": "11 Master References"
+      },
+      {
+        "href": "12-glossary.html",
+        "text": "12 Medical-AI Glossary"
+      }
+    ],
+    "footerLinks": [
+      {
+        "href": "01-clinical-foundations.html",
+        "text": "Clinical Foundations"
+      },
+      {
+        "href": "02-clinical-evidence.html",
+        "text": "Trial Evidence &amp; RCTs"
+      },
+      {
+        "href": "08-commercial-systems.html",
+        "text": "Commercial Systems"
+      },
+      {
+        "href": "12-glossary.html",
+        "text": "Medical Glossary"
+      },
+      {
+        "href": "03-ai-history.html",
+        "text": "Evolution Timeline"
+      },
+      {
+        "href": "04-architectures.html",
+        "text": "Model Architectures"
+      },
+      {
+        "href": "05-datasets.html",
+        "text": "Dataset Catalog"
+      },
+      {
+        "href": "06-benchmarks.html",
+        "text": "Benchmark Matrices"
+      },
+      {
+        "href": "09-implementation.html",
+        "text": "Deployment &amp; Latency"
+      },
+      {
+        "href": "07-integrity-audit.html",
+        "text": "Integrity Audit"
+      },
+      {
+        "href": "10-future-frontiers.html",
+        "text": "Future Frontiers"
+      },
+      {
+        "href": "11-references.html",
+        "text": "Master Bibliography"
+      }
+    ]
+  },
+  "pages\\05-datasets.html": {
+    "headerLinks": [
+      {
+        "href": "../index.html",
+        "text": "Home"
+      },
+      {
+        "href": "01-clinical-foundations.html",
+        "text": "Clinical"
+      },
+      {
+        "href": "02-clinical-evidence.html",
+        "text": "Trials"
+      },
+      {
+        "href": "03-ai-history.html",
+        "text": "AI History"
+      },
+      {
+        "href": "04-architectures.html",
+        "text": "Architectures"
+      },
+      {
+        "href": "05-datasets.html",
+        "text": "Datasets"
+      },
+      {
+        "href": "06-benchmarks.html",
+        "text": "Benchmarks"
+      },
+      {
+        "href": "07-integrity-audit.html",
+        "text": "Integrity"
+      },
+      {
+        "href": "11-references.html",
+        "text": "References"
+      },
+      {
+        "href": "12-glossary.html",
+        "text": "Glossary"
+      }
+    ],
+    "drawerLinks": [
+      {
+        "href": "../index.html",
+        "text": "Home"
+      },
+      {
+        "href": "01-clinical-foundations.html",
+        "text": "01 Clinical Foundations"
+      },
+      {
+        "href": "02-clinical-evidence.html",
+        "text": "02 Clinical Trials &amp; Evidence"
+      },
+      {
+        "href": "03-ai-history.html",
+        "text": "03 AI History &amp; Evolution"
+      },
+      {
+        "href": "04-architectures.html",
+        "text": "04 Model Architectures"
+      },
+      {
+        "href": "05-datasets.html",
+        "text": "05 Benchmark Datasets"
+      },
+      {
+        "href": "06-benchmarks.html",
+        "text": "06 SOTA Benchmarks"
+      },
+      {
+        "href": "07-integrity-audit.html",
+        "text": "07 Forensic Integrity Audit"
+      },
+      {
+        "href": "08-commercial-systems.html",
+        "text": "08 Commercial CADe/CADx"
+      },
+      {
+        "href": "09-implementation.html",
+        "text": "09 Implementation &amp; Latency"
+      },
+      {
+        "href": "10-future-frontiers.html",
+        "text": "10 Future Frontiers"
+      },
+      {
+        "href": "11-references.html",
+        "text": "11 Master References"
+      },
+      {
+        "href": "12-glossary.html",
+        "text": "12 Medical-AI Glossary"
+      }
+    ],
+    "footerLinks": [
+      {
+        "href": "01-clinical-foundations.html",
+        "text": "Clinical Foundations"
+      },
+      {
+        "href": "02-clinical-evidence.html",
+        "text": "Trial Evidence &amp; RCTs"
+      },
+      {
+        "href": "08-commercial-systems.html",
+        "text": "Commercial Systems"
+      },
+      {
+        "href": "12-glossary.html",
+        "text": "Medical Glossary"
+      },
+      {
+        "href": "03-ai-history.html",
+        "text": "Evolution Timeline"
+      },
+      {
+        "href": "04-architectures.html",
+        "text": "Model Architectures"
+      },
+      {
+        "href": "05-datasets.html",
+        "text": "Dataset Catalog"
+      },
+      {
+        "href": "06-benchmarks.html",
+        "text": "Benchmark Matrices"
+      },
+      {
+        "href": "09-implementation.html",
+        "text": "Deployment &amp; Latency"
+      },
+      {
+        "href": "07-integrity-audit.html",
+        "text": "Integrity Audit"
+      },
+      {
+        "href": "10-future-frontiers.html",
+        "text": "Future Frontiers"
+      },
+      {
+        "href": "11-references.html",
+        "text": "Master Bibliography"
+      }
+    ]
+  },
+  "pages\\06-benchmarks.html": {
+    "headerLinks": [
+      {
+        "href": "../index.html",
+        "text": "Home"
+      },
+      {
+        "href": "01-clinical-foundations.html",
+        "text": "Clinical"
+      },
+      {
+        "href": "02-clinical-evidence.html",
+        "text": "Trials"
+      },
+      {
+        "href": "03-ai-history.html",
+        "text": "AI History"
+      },
+      {
+        "href": "04-architectures.html",
+        "text": "Architectures"
+      },
+      {
+        "href": "05-datasets.html",
+        "text": "Datasets"
+      },
+      {
+        "href": "06-benchmarks.html",
+        "text": "Benchmarks"
+      },
+      {
+        "href": "07-integrity-audit.html",
+        "text": "Integrity"
+      },
+      {
+        "href": "11-references.html",
+        "text": "References"
+      },
+      {
+        "href": "12-glossary.html",
+        "text": "Glossary"
+      }
+    ],
+    "drawerLinks": [
+      {
+        "href": "../index.html",
+        "text": "Home"
+      },
+      {
+        "href": "01-clinical-foundations.html",
+        "text": "01 Clinical Foundations"
+      },
+      {
+        "href": "02-clinical-evidence.html",
+        "text": "02 Clinical Trials &amp; Evidence"
+      },
+      {
+        "href": "03-ai-history.html",
+        "text": "03 AI History &amp; Evolution"
+      },
+      {
+        "href": "04-architectures.html",
+        "text": "04 Model Architectures"
+      },
+      {
+        "href": "05-datasets.html",
+        "text": "05 Benchmark Datasets"
+      },
+      {
+        "href": "06-benchmarks.html",
+        "text": "06 SOTA Benchmarks"
+      },
+      {
+        "href": "07-integrity-audit.html",
+        "text": "07 Forensic Integrity Audit"
+      },
+      {
+        "href": "08-commercial-systems.html",
+        "text": "08 Commercial CADe/CADx"
+      },
+      {
+        "href": "09-implementation.html",
+        "text": "09 Implementation &amp; Latency"
+      },
+      {
+        "href": "10-future-frontiers.html",
+        "text": "10 Future Frontiers"
+      },
+      {
+        "href": "11-references.html",
+        "text": "11 Master References"
+      },
+      {
+        "href": "12-glossary.html",
+        "text": "12 Medical-AI Glossary"
+      }
+    ],
+    "footerLinks": [
+      {
+        "href": "01-clinical-foundations.html",
+        "text": "Clinical Foundations"
+      },
+      {
+        "href": "02-clinical-evidence.html",
+        "text": "Trial Evidence &amp; RCTs"
+      },
+      {
+        "href": "08-commercial-systems.html",
+        "text": "Commercial Systems"
+      },
+      {
+        "href": "12-glossary.html",
+        "text": "Medical Glossary"
+      },
+      {
+        "href": "03-ai-history.html",
+        "text": "Evolution Timeline"
+      },
+      {
+        "href": "04-architectures.html",
+        "text": "Model Architectures"
+      },
+      {
+        "href": "05-datasets.html",
+        "text": "Dataset Catalog"
+      },
+      {
+        "href": "06-benchmarks.html",
+        "text": "Benchmark Matrices"
+      },
+      {
+        "href": "09-implementation.html",
+        "text": "Deployment &amp; Latency"
+      },
+      {
+        "href": "07-integrity-audit.html",
+        "text": "Integrity Audit"
+      },
+      {
+        "href": "10-future-frontiers.html",
+        "text": "Future Frontiers"
+      },
+      {
+        "href": "11-references.html",
+        "text": "Master Bibliography"
+      }
+    ]
+  },
+  "pages\\06b-clinical-evidence.html": {
+    "headerLinks": [
+      {
+        "href": "../index.html",
+        "text": "Home"
+      },
+      {
+        "href": "01-what-is-colonoscopy.html",
+        "text": "Anatomy & Prep"
+      },
+      {
+        "href": "02-polyp-types.html",
+        "text": "Polyps & Histology"
+      },
+      {
+        "href": "04-architectures.html",
+        "text": "Architectures"
+      },
+      {
+        "href": "06b-clinical-evidence.html",
+        "text": "Clinical Trials"
+      },
+      {
+        "href": "07-clinical-systems.html",
+        "text": "Commercial Systems"
+      },
+      {
+        "href": "08-failure-modes.html",
+        "text": "Integrity Audit"
+      },
+      {
+        "href": "09-chakramodel-case-study.html",
+        "text": "ChakraModel"
+      },
+      {
+        "href": "12-glossary.html",
+        "text": "Glossary"
+      }
+    ],
+    "drawerLinks": [],
+    "footerLinks": [
+      {
+        "href": "01-what-is-colonoscopy.html",
+        "text": "Anatomy & Bowel Prep"
+      },
+      {
+        "href": "02-polyp-types.html",
+        "text": "Polyp Morphologies & Histology"
+      },
+      {
+        "href": "06b-clinical-evidence.html",
+        "text": "41 RCTs & Clinical Paradox"
+      },
+      {
+        "href": "07-clinical-systems.html",
+        "text": "Commercial AI Systems"
+      },
+      {
+        "href": "03-ai-history.html",
+        "text": "History of AI in Colonoscopy"
+      },
+      {
+        "href": "04-architectures.html",
+        "text": "Deep Learning Architectures"
+      },
+      {
+        "href": "05-datasets.html",
+        "text": "Benchmark Datasets"
+      },
+      {
+        "href": "06-benchmarks.html",
+        "text": "Academic Benchmarks"
+      },
+      {
+        "href": "10-future-directions.html",
+        "text": "Future Directions & Mamba"
+      },
+      {
+        "href": "08-failure-modes.html",
+        "text": "Integrity & Video Leakage Audit"
+      },
+      {
+        "href": "09-chakramodel-case-study.html",
+        "text": "ChakraModel Case Study"
+      },
+      {
+        "href": "11-references.html",
+        "text": "48 Academic References"
+      },
+      {
+        "href": "12-glossary.html",
+        "text": "50-Term Medical Glossary"
+      }
+    ]
+  },
+  "pages\\07-clinical-systems.html": {
+    "headerLinks": [
+      {
+        "href": "../index.html",
+        "text": "Home"
+      },
+      {
+        "href": "01-what-is-colonoscopy.html",
+        "text": "Anatomy & Prep"
+      },
+      {
+        "href": "02-polyp-types.html",
+        "text": "Polyps & Histology"
+      },
+      {
+        "href": "04-architectures.html",
+        "text": "Architectures"
+      },
+      {
+        "href": "06b-clinical-evidence.html",
+        "text": "Clinical Trials"
+      },
+      {
+        "href": "07-clinical-systems.html",
+        "text": "Commercial Systems"
+      },
+      {
+        "href": "08-failure-modes.html",
+        "text": "Integrity Audit"
+      },
+      {
+        "href": "09-chakramodel-case-study.html",
+        "text": "ChakraModel"
+      },
+      {
+        "href": "12-glossary.html",
+        "text": "Glossary"
+      }
+    ],
+    "drawerLinks": [],
+    "footerLinks": [
+      {
+        "href": "01-what-is-colonoscopy.html",
+        "text": "Anatomy & Bowel Prep"
+      },
+      {
+        "href": "02-polyp-types.html",
+        "text": "Polyp Morphologies & Histology"
+      },
+      {
+        "href": "06b-clinical-evidence.html",
+        "text": "41 RCTs & Clinical Paradox"
+      },
+      {
+        "href": "07-clinical-systems.html",
+        "text": "Commercial AI Systems"
+      },
+      {
+        "href": "03-ai-history.html",
+        "text": "History of AI in Colonoscopy"
+      },
+      {
+        "href": "04-architectures.html",
+        "text": "Deep Learning Architectures"
+      },
+      {
+        "href": "05-datasets.html",
+        "text": "Benchmark Datasets"
+      },
+      {
+        "href": "06-benchmarks.html",
+        "text": "Academic Benchmarks"
+      },
+      {
+        "href": "10-future-directions.html",
+        "text": "Future Directions & Mamba"
+      },
+      {
+        "href": "08-failure-modes.html",
+        "text": "Integrity & Video Leakage Audit"
+      },
+      {
+        "href": "09-chakramodel-case-study.html",
+        "text": "ChakraModel Case Study"
+      },
+      {
+        "href": "11-references.html",
+        "text": "48 Academic References"
+      },
+      {
+        "href": "12-glossary.html",
+        "text": "50-Term Medical Glossary"
+      }
+    ]
+  },
+  "pages\\08-benchmark-integrity.html": {
+    "headerLinks": [
+      {
+        "href": "../index.html",
+        "text": "Home"
+      },
+      {
+        "href": "01-what-is-colonoscopy.html",
+        "text": "Anatomy & Clinical"
+      },
+      {
+        "href": "04-architectures.html",
+        "text": "Architectures"
+      },
+      {
+        "href": "05-datasets.html",
+        "text": "Datasets"
+      },
+      {
+        "href": "06-benchmarks.html",
+        "text": "Benchmarks"
+      },
+      {
+        "href": "08-benchmark-integrity.html",
+        "text": "Integrity Audit"
+      },
+      {
+        "href": "09-chakramodel.html",
+        "text": "ChakraModel"
+      },
+      {
+        "href": "10-future.html",
+        "text": "Future & Mamba"
+      },
+      {
+        "href": "11-references.html",
+        "text": "References"
+      },
+      {
+        "href": "12-glossary.html",
+        "text": "Glossary"
+      }
+    ],
+    "drawerLinks": [
+      {
+        "href": "../index.html",
+        "text": "Home (Overview)"
+      },
+      {
+        "href": "01-what-is-colonoscopy.html",
+        "text": "01. What is Colonoscopy"
+      },
+      {
+        "href": "02-polyp-types.html",
+        "text": "02. Polyp Morphology & Paris"
+      },
+      {
+        "href": "03-ai-history.html",
+        "text": "03. AI History & Evolution"
+      },
+      {
+        "href": "04-architectures.html",
+        "text": "04. Deep Architectures"
+      },
+      {
+        "href": "05-datasets.html",
+        "text": "05. Public Datasets"
+      },
+      {
+        "href": "06-benchmarks.html",
+        "text": "06. Performance Benchmarks"
+      },
+      {
+        "href": "06b-clinical-evidence.html",
+        "text": "06b. Clinical Trial Evidence"
+      },
+      {
+        "href": "08-benchmark-integrity.html",
+        "text": "08. Benchmark Integrity Audit"
+      },
+      {
+        "href": "09-chakramodel.html",
+        "text": "09. ChakraModel Research Project"
+      },
+      {
+        "href": "10-future.html",
+        "text": "10. Future & Agentic Vision"
+      },
+      {
+        "href": "11-references.html",
+        "text": "11. Master References (48 Papers)"
+      },
+      {
+        "href": "12-glossary.html",
+        "text": "12. Plain-English Glossary (50 Terms)"
+      }
+    ],
+    "footerLinks": [
+      {
+        "href": "01-what-is-colonoscopy.html",
+        "text": "Procedure & Anatomy"
+      },
+      {
+        "href": "02-polyp-types.html",
+        "text": "Polyp Morphology"
+      },
+      {
+        "href": "06b-clinical-evidence.html",
+        "text": "Clinical Trials & RCTs"
+      },
+      {
+        "href": "12-glossary.html",
+        "text": "Medical Glossary"
+      },
+      {
+        "href": "03-ai-history.html",
+        "text": "AI History Timeline"
+      },
+      {
+        "href": "04-architectures.html",
+        "text": "Model Architectures"
+      },
+      {
+        "href": "05-datasets.html",
+        "text": "Dataset Catalog"
+      },
+      {
+        "href": "06-benchmarks.html",
+        "text": "Performance Leaderboard"
+      },
+      {
+        "href": "08-benchmark-integrity.html",
+        "text": "Benchmark Integrity Audit"
+      },
+      {
+        "href": "09-chakramodel.html",
+        "text": "ChakraModel Project"
+      },
+      {
+        "href": "10-future.html",
+        "text": "Future & Foundation Models"
+      },
+      {
+        "href": "11-references.html",
+        "text": "48 Master References"
+      }
+    ]
+  },
+  "pages\\09-chakramodel.html": {
+    "headerLinks": [
+      {
+        "href": "../index.html",
+        "text": "Home"
+      },
+      {
+        "href": "01-what-is-colonoscopy.html",
+        "text": "Clinical"
+      },
+      {
+        "href": "04-architectures.html",
+        "text": "Architectures"
+      },
+      {
+        "href": "05-datasets.html",
+        "text": "Datasets"
+      },
+      {
+        "href": "06-benchmarks.html",
+        "text": "Benchmarks"
+      },
+      {
+        "href": "08-benchmark-integrity.html",
+        "text": "Integrity Audit"
+      },
+      {
+        "href": "09-chakramodel.html",
+        "text": "ChakraModel"
+      },
+      {
+        "href": "10-future.html",
+        "text": "Future & Mamba"
+      },
+      {
+        "href": "11-references.html",
+        "text": "References"
+      },
+      {
+        "href": "12-glossary.html",
+        "text": "Glossary"
+      }
+    ],
+    "drawerLinks": [
+      {
+        "href": "../index.html",
+        "text": "Home (Overview)"
+      },
+      {
+        "href": "01-what-is-colonoscopy.html",
+        "text": "01. What is Colonoscopy"
+      },
+      {
+        "href": "02-polyp-types.html",
+        "text": "02. Polyp Morphology & Paris"
+      },
+      {
+        "href": "03-ai-history.html",
+        "text": "03. AI History & Evolution"
+      },
+      {
+        "href": "04-architectures.html",
+        "text": "04. Deep Architectures"
+      },
+      {
+        "href": "05-datasets.html",
+        "text": "05. Public Datasets"
+      },
+      {
+        "href": "06-benchmarks.html",
+        "text": "06. Performance Benchmarks"
+      },
+      {
+        "href": "06b-clinical-evidence.html",
+        "text": "06b. Clinical Trial Evidence"
+      },
+      {
+        "href": "08-benchmark-integrity.html",
+        "text": "08. Benchmark Integrity Audit"
+      },
+      {
+        "href": "09-chakramodel.html",
+        "text": "09. ChakraModel Research Project"
+      },
+      {
+        "href": "10-future.html",
+        "text": "10. Future & Agentic Vision"
+      },
+      {
+        "href": "11-references.html",
+        "text": "11. Master References (48 Papers)"
+      },
+      {
+        "href": "12-glossary.html",
+        "text": "12. Plain-English Glossary (50 Terms)"
+      }
+    ],
+    "footerLinks": [
+      {
+        "href": "01-what-is-colonoscopy.html",
+        "text": "Procedure & Anatomy"
+      },
+      {
+        "href": "02-polyp-types.html",
+        "text": "Polyp Morphology"
+      },
+      {
+        "href": "06b-clinical-evidence.html",
+        "text": "Clinical Trials & RCTs"
+      },
+      {
+        "href": "12-glossary.html",
+        "text": "Medical Glossary"
+      },
+      {
+        "href": "03-ai-history.html",
+        "text": "AI History Timeline"
+      },
+      {
+        "href": "04-architectures.html",
+        "text": "Model Architectures"
+      },
+      {
+        "href": "05-datasets.html",
+        "text": "Dataset Catalog"
+      },
+      {
+        "href": "06-benchmarks.html",
+        "text": "Performance Leaderboard"
+      },
+      {
+        "href": "08-benchmark-integrity.html",
+        "text": "Benchmark Integrity Audit"
+      },
+      {
+        "href": "09-chakramodel.html",
+        "text": "ChakraModel Project"
+      },
+      {
+        "href": "10-future.html",
+        "text": "Future & Foundation Models"
+      },
+      {
+        "href": "11-references.html",
+        "text": "48 Master References"
+      }
+    ]
+  },
+  "pages\\10-future.html": {
+    "headerLinks": [
+      {
+        "href": "../index.html",
+        "text": "Home"
+      },
+      {
+        "href": "01-what-is-colonoscopy.html",
+        "text": "Clinical"
+      },
+      {
+        "href": "04-architectures.html",
+        "text": "Architectures"
+      },
+      {
+        "href": "05-datasets.html",
+        "text": "Datasets"
+      },
+      {
+        "href": "06-benchmarks.html",
+        "text": "Benchmarks"
+      },
+      {
+        "href": "08-benchmark-integrity.html",
+        "text": "Integrity Audit"
+      },
+      {
+        "href": "09-chakramodel.html",
+        "text": "ChakraModel"
+      },
+      {
+        "href": "10-future.html",
+        "text": "Future & Mamba"
+      },
+      {
+        "href": "11-references.html",
+        "text": "References"
+      },
+      {
+        "href": "12-glossary.html",
+        "text": "Glossary"
+      }
+    ],
+    "drawerLinks": [
+      {
+        "href": "../index.html",
+        "text": "Home (Overview)"
+      },
+      {
+        "href": "01-what-is-colonoscopy.html",
+        "text": "01. What is Colonoscopy"
+      },
+      {
+        "href": "02-polyp-types.html",
+        "text": "02. Polyp Morphology & Paris"
+      },
+      {
+        "href": "03-ai-history.html",
+        "text": "03. AI History & Evolution"
+      },
+      {
+        "href": "04-architectures.html",
+        "text": "04. Deep Architectures"
+      },
+      {
+        "href": "05-datasets.html",
+        "text": "05. Public Datasets"
+      },
+      {
+        "href": "06-benchmarks.html",
+        "text": "06. Performance Benchmarks"
+      },
+      {
+        "href": "06b-clinical-evidence.html",
+        "text": "06b. Clinical Trial Evidence"
+      },
+      {
+        "href": "08-benchmark-integrity.html",
+        "text": "08. Benchmark Integrity Audit"
+      },
+      {
+        "href": "09-chakramodel.html",
+        "text": "09. ChakraModel Research Project"
+      },
+      {
+        "href": "10-future.html",
+        "text": "10. Future & Agentic Vision"
+      },
+      {
+        "href": "11-references.html",
+        "text": "11. Master References (48 Papers)"
+      },
+      {
+        "href": "12-glossary.html",
+        "text": "12. Plain-English Glossary (50 Terms)"
+      }
+    ],
+    "footerLinks": [
+      {
+        "href": "01-what-is-colonoscopy.html",
+        "text": "Procedure & Anatomy"
+      },
+      {
+        "href": "02-polyp-types.html",
+        "text": "Polyp Morphology"
+      },
+      {
+        "href": "06b-clinical-evidence.html",
+        "text": "Clinical Trials & RCTs"
+      },
+      {
+        "href": "12-glossary.html",
+        "text": "Medical Glossary"
+      },
+      {
+        "href": "03-ai-history.html",
+        "text": "AI History Timeline"
+      },
+      {
+        "href": "04-architectures.html",
+        "text": "Model Architectures"
+      },
+      {
+        "href": "05-datasets.html",
+        "text": "Dataset Catalog"
+      },
+      {
+        "href": "06-benchmarks.html",
+        "text": "Performance Leaderboard"
+      },
+      {
+        "href": "08-benchmark-integrity.html",
+        "text": "Benchmark Integrity Audit"
+      },
+      {
+        "href": "09-chakramodel.html",
+        "text": "ChakraModel Project"
+      },
+      {
+        "href": "10-future.html",
+        "text": "Future & Foundation Models"
+      },
+      {
+        "href": "11-references.html",
+        "text": "48 Master References"
+      }
+    ]
+  },
+  "pages\\11-references.html": {
+    "headerLinks": [
+      {
+        "href": "../index.html",
+        "text": "Home"
+      },
+      {
+        "href": "01-what-is-colonoscopy.html",
+        "text": "Clinical"
+      },
+      {
+        "href": "04-architectures.html",
+        "text": "Architectures"
+      },
+      {
+        "href": "05-datasets.html",
+        "text": "Datasets"
+      },
+      {
+        "href": "06-benchmarks.html",
+        "text": "Benchmarks"
+      },
+      {
+        "href": "08-benchmark-integrity.html",
+        "text": "Integrity Audit"
+      },
+      {
+        "href": "09-chakramodel.html",
+        "text": "ChakraModel"
+      },
+      {
+        "href": "10-future.html",
+        "text": "Future & Mamba"
+      },
+      {
+        "href": "11-references.html",
+        "text": "References"
+      },
+      {
+        "href": "12-glossary.html",
+        "text": "Glossary"
+      }
+    ],
+    "drawerLinks": [
+      {
+        "href": "../index.html",
+        "text": "Home (Overview)"
+      },
+      {
+        "href": "01-what-is-colonoscopy.html",
+        "text": "01. What is Colonoscopy"
+      },
+      {
+        "href": "02-polyp-types.html",
+        "text": "02. Polyp Morphology & Paris"
+      },
+      {
+        "href": "03-ai-history.html",
+        "text": "03. AI History & Evolution"
+      },
+      {
+        "href": "04-architectures.html",
+        "text": "04. Deep Architectures"
+      },
+      {
+        "href": "05-datasets.html",
+        "text": "05. Public Datasets"
+      },
+      {
+        "href": "06-benchmarks.html",
+        "text": "06. Performance Benchmarks"
+      },
+      {
+        "href": "06b-clinical-evidence.html",
+        "text": "06b. Clinical Trial Evidence"
+      },
+      {
+        "href": "08-benchmark-integrity.html",
+        "text": "08. Benchmark Integrity Audit"
+      },
+      {
+        "href": "09-chakramodel.html",
+        "text": "09. ChakraModel Research Project"
+      },
+      {
+        "href": "10-future.html",
+        "text": "10. Future & Agentic Vision"
+      },
+      {
+        "href": "11-references.html",
+        "text": "11. Master References (48 Papers)"
+      },
+      {
+        "href": "12-glossary.html",
+        "text": "12. Plain-English Glossary (50 Terms)"
+      }
+    ],
+    "footerLinks": [
+      {
+        "href": "01-what-is-colonoscopy.html",
+        "text": "Procedure & Anatomy"
+      },
+      {
+        "href": "02-polyp-types.html",
+        "text": "Polyp Morphology"
+      },
+      {
+        "href": "06b-clinical-evidence.html",
+        "text": "Clinical Trials & RCTs"
+      },
+      {
+        "href": "12-glossary.html",
+        "text": "Medical Glossary"
+      },
+      {
+        "href": "03-ai-history.html",
+        "text": "AI History Timeline"
+      },
+      {
+        "href": "04-architectures.html",
+        "text": "Model Architectures"
+      },
+      {
+        "href": "05-datasets.html",
+        "text": "Dataset Catalog"
+      },
+      {
+        "href": "06-benchmarks.html",
+        "text": "Performance Leaderboard"
+      },
+      {
+        "href": "08-benchmark-integrity.html",
+        "text": "Benchmark Integrity Audit"
+      },
+      {
+        "href": "09-chakramodel.html",
+        "text": "ChakraModel Project"
+      },
+      {
+        "href": "10-future.html",
+        "text": "Future & Foundation Models"
+      },
+      {
+        "href": "11-references.html",
+        "text": "48 Master References"
+      }
+    ]
+  },
+  "pages\\12-glossary.html": {
+    "headerLinks": [
+      {
+        "href": "../index.html",
+        "text": "Home"
+      },
+      {
+        "href": "01-what-is-colonoscopy.html",
+        "text": "Clinical"
+      },
+      {
+        "href": "04-architectures.html",
+        "text": "Architectures"
+      },
+      {
+        "href": "05-datasets.html",
+        "text": "Datasets"
+      },
+      {
+        "href": "06-benchmarks.html",
+        "text": "Benchmarks"
+      },
+      {
+        "href": "08-benchmark-integrity.html",
+        "text": "Integrity Audit"
+      },
+      {
+        "href": "09-chakramodel.html",
+        "text": "ChakraModel"
+      },
+      {
+        "href": "10-future.html",
+        "text": "Future & Mamba"
+      },
+      {
+        "href": "11-references.html",
+        "text": "References"
+      },
+      {
+        "href": "12-glossary.html",
+        "text": "Glossary"
+      }
+    ],
+    "drawerLinks": [
+      {
+        "href": "../index.html",
+        "text": "Home (Overview)"
+      },
+      {
+        "href": "01-what-is-colonoscopy.html",
+        "text": "01. What is Colonoscopy"
+      },
+      {
+        "href": "02-polyp-types.html",
+        "text": "02. Polyp Morphology & Paris"
+      },
+      {
+        "href": "03-ai-history.html",
+        "text": "03. AI History & Evolution"
+      },
+      {
+        "href": "04-architectures.html",
+        "text": "04. Deep Architectures"
+      },
+      {
+        "href": "05-datasets.html",
+        "text": "05. Public Datasets"
+      },
+      {
+        "href": "06-benchmarks.html",
+        "text": "06. Performance Benchmarks"
+      },
+      {
+        "href": "06b-clinical-evidence.html",
+        "text": "06b. Clinical Trial Evidence"
+      },
+      {
+        "href": "08-benchmark-integrity.html",
+        "text": "08. Benchmark Integrity Audit"
+      },
+      {
+        "href": "09-chakramodel.html",
+        "text": "09. ChakraModel Research Project"
+      },
+      {
+        "href": "10-future.html",
+        "text": "10. Future & Agentic Vision"
+      },
+      {
+        "href": "11-references.html",
+        "text": "11. Master References (48 Papers)"
+      },
+      {
+        "href": "12-glossary.html",
+        "text": "12. Plain-English Glossary (50 Terms)"
+      }
+    ],
+    "footerLinks": [
+      {
+        "href": "01-what-is-colonoscopy.html",
+        "text": "Procedure & Anatomy"
+      },
+      {
+        "href": "02-polyp-types.html",
+        "text": "Polyp Morphology"
+      },
+      {
+        "href": "06b-clinical-evidence.html",
+        "text": "Clinical Trials & RCTs"
+      },
+      {
+        "href": "12-glossary.html",
+        "text": "Medical Glossary"
+      },
+      {
+        "href": "03-ai-history.html",
+        "text": "AI History Timeline"
+      },
+      {
+        "href": "04-architectures.html",
+        "text": "Model Architectures"
+      },
+      {
+        "href": "05-datasets.html",
+        "text": "Dataset Catalog"
+      },
+      {
+        "href": "06-benchmarks.html",
+        "text": "Performance Leaderboard"
+      },
+      {
+        "href": "08-benchmark-integrity.html",
+        "text": "Benchmark Integrity Audit"
+      },
+      {
+        "href": "09-chakramodel.html",
+        "text": "ChakraModel Project"
+      },
+      {
+        "href": "10-future.html",
+        "text": "Future & Foundation Models"
+      },
+      {
+        "href": "11-references.html",
+        "text": "48 Master References"
+      }
+    ]
+  }
+}

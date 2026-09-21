@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Clinical Guide to Colorectal Polyps: The Paris Classification, Size Stratification, Conventional vs Serrated Pathways, and Optical Diagnosis Standards (Kudo, NICE, JNET).">
+  <title>Polyp Types, Morphology & Histology | Colonoscopy AI</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+  <!-- Fixed Scroll Progress Bar -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- Sticky Site Navigation Header -->
+  <header class="site-header" role="banner">
+    <div class="container nav-container">
+      <a href="../index.html" class="brand-logo" aria-label="Colonoscopy AI Home">
+        <div class="brand-icon">AI</div>
+        <span>Colonoscopy AI</span>
+        <span class="brand-badge">Clinical Guide</span>
+      </a>
+
+      <nav role="navigation" aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="../index.html" class="nav-link">Home</a></li>
+          <li><a href="01-what-is-colonoscopy.html" class="nav-link">Anatomy & Prep</a></li>
+          <li><a href="02-polyp-types.html" class="nav-link active">Polyps & Histology</a></li>
+          <li><a href="04-architectures.html" class="nav-link">Architectures</a></li>
+          <li><a href="06b-clinical-evidence.html" class="nav-link">Clinical Trials</a></li>
+          <li><a href="07-clinical-systems.html" class="nav-link">Commercial Systems</a></li>
+          <li><a href="08-benchmark-integrity.html" class="nav-link">Integrity Audit</a></li>
+          <li><a href="09-chakramodel.html" class="nav-link">ChakraModel</a></li>
+          <li><a href="12-glossary.html" class="nav-link">Glossary</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" type="button" aria-label="Toggle dark and light theme">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+        <button class="hamburger-btn" type="button" aria-label="Open Navigation Menu" aria-expanded="false">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+    <div style="font-family: var(--font-heading); font-size: 0.8rem; text-transform: uppercase; color: var(--color-teal); letter-spacing: 0.08em; margin-bottom: 0.5rem;">Clinical Education</div>
+    <a href="../index.html" class="nav-link">00. Home / Portal Overview</a>
+    <a href="01-what-is-colonoscopy.html" class="nav-link">01. What is Colonoscopy? Anatomy & Prep</a>
+    <a href="02-polyp-types.html" class="nav-link active">02. Polyp Types & Morphology</a>
+    <a href="06b-clinical-evidence.html" class="nav-link">06b. Clinical Trials & Real-World Evidence</a>
+    <a href="07-clinical-systems.html" class="nav-link">07. Commercial CADe/CADx Systems</a>
+
+    <div style="font-family: var(--font-heading); font-size: 0.8rem; text-transform: uppercase; color: var(--color-purple); letter-spacing: 0.08em; margin: 1.25rem 0 0.5rem;">AI Engineering & Research</div>
+    <a href="03-ai-history.html" class="nav-link">03. History of AI in Colonoscopy</a>
+    <a href="04-architectures.html" class="nav-link">04. Deep Learning Architectures</a>
+    <a href="05-datasets.html" class="nav-link">05. Benchmark Datasets</a>
+    <a href="06-benchmarks.html" class="nav-link">06. Academic Benchmarks</a>
+    <a href="08-benchmark-integrity.html" class="nav-link">08. Benchmark Integrity Audit</a>
+    <a href="09-chakramodel.html" class="nav-link">09. ChakraModel Research Project</a>
+    <a href="10-future.html" class="nav-link">10. Future Directions & Open Frontiers</a>
+
+    <div style="font-family: var(--font-heading); font-size: 0.8rem; text-transform: uppercase; color: var(--color-amber); letter-spacing: 0.08em; margin: 1.25rem 0 0.5rem;">Knowledge Resources</div>
+    <a href="11-references.html" class="nav-link">11. Scientific References (49 Papers)</a>
+    <a href="12-glossary.html" class="nav-link">12. Medical & Technical Glossary (50 Terms)</a>
+  </div>
+
+  <main id="main-content">
+    <!-- Breadcrumb & Hero -->
+    <section class="hero" style="padding: 3.5rem 0 2.5rem;">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="container hero-content">
+        <div style="display: flex; justify-content: center; gap: 0.5rem; margin-bottom: 1rem; font-family: var(--font-mono); font-size: 0.85rem;">
+          <a href="../index.html" style="color: var(--text-muted);">Home</a>
+          <span style="color: var(--text-muted);">&gt;</span>
+          <span style="color: var(--color-teal);">Module 02: Polyps, Morphology & Histology</span>
+        </div>
+
+        <div class="hero-badge">
+          <span class="dot" aria-hidden="true"></span>
+          <span>Clinical Foundations &bull; Module 02</span>
+        </div>
+
+        <h1 class="hero-title" style="font-size: clamp(2rem, 4vw, 3.25rem);">
+          Colorectal Polyp Classification<br>
+          <span class="gradient-text">Morphology, Histology & Optical Diagnosis</span>
+        </h1>
+
+        <p class="hero-subtitle" style="max-width: 820px;">
+          Not all polyps carry equal malignant risk. Master the macroscopic <span class="glossary-term" data-term="paris-classification">Paris classification</span>, 
+          size stratification tiers, the conventional vs serrated neoplastic pathways, and high-magnification optical standards 
+          (<span class="glossary-term" data-term="kudo-pit-pattern">Kudo</span>, <span class="glossary-term" data-term="nice-classification">NICE</span>, and JNET).
+        </p>
+      </div>
+    </section>
+
+    <!-- Key Warning Banner: Diminutive vs Advanced -->
+    <section class="container" style="margin-top: -1rem; margin-bottom: 2rem;">
+      <div class="alert alert-technical">
+        <div class="alert-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+        </div>
+        <div class="alert-content">
+          <div class="alert-title">The Diminutive Paradox in Computer Vision</div>
+          <p>
+            While <span class="glossary-term" data-term="diminutive-polyp">diminutive polyps (&le;5 mm)</span> account for over 70% to 80% of all screening findings, their individual risk of invasive adenocarcinoma is <strong>fewer than 1 in 1,000 (&lt;0.1%)</strong>. Over <strong>85% of incremental detections</strong> produced by commercial CADe systems are diminutive lesions, while detection of advanced adenomas (&ge;10 mm) remains clinically unchanged (RR 1.01).
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 1: The Paris Classification -->
+    <section class="section">
+      <div class="container">
+        <div style="max-width: 800px; margin-bottom: 2.5rem;">
+          <span class="badge badge-clinical">Macroscopic Morphology</span>
+          <h2 style="margin-top: 0.5rem;">The Paris Classification of Superficial Lesions</h2>
+          <p class="lead">
+            Established in 2002, the Paris classification categorizes superficial gastrointestinal lesions (Type 0, confined to the mucosa and submucosa) based on height relative to endoscopic forceps jaws (2.5 mm).
+          </p>
+        </div>
+
+        <!-- Interactive Paris Morphology Explorer -->
+        <div class="card card-glass" style="margin-bottom: 3rem; padding: 2rem;">
+          <h3 style="margin-top: 0; margin-bottom: 0.5rem; font-size: 1.25rem;">Interactive Paris Morphological Selector</h3>
+          <p style="font-size: 0.95rem; margin-bottom: 1.5rem;">
+            Click on any Paris lesion type below to inspect its macroscopic profile, physical height, submucosal invasion risk, and resection method:
+          </p>
+
+          <div class="grid grid-4" id="paris-nav" style="gap: 0.75rem; margin-bottom: 1.5rem;">
+            <button type="button" class="btn btn-secondary btn-sm active" data-paris="0-Ip">0-Ip: Pedunculated</button>
+            <button type="button" class="btn btn-secondary btn-sm" data-paris="0-Is">0-Is: Sessile</button>
+            <button type="button" class="btn btn-secondary btn-sm" data-paris="0-IIa">0-IIa: Elevated Flat</button>
+            <button type="button" class="btn btn-secondary btn-sm" data-paris="0-IIb">0-IIb: Completely Flat</button>
+            <button type="button" class="btn btn-secondary btn-sm" data-paris="0-IIc">0-IIc: Depressed</button>
+            <button type="button" class="btn btn-secondary btn-sm" data-paris="0-III">0-III: Excavated</button>
+            <button type="button" class="btn btn-secondary btn-sm" data-paris="LST-G">LST-G: Granular</button>
+            <button type="button" class="btn btn-secondary btn-sm" data-paris="LST-NG">LST-NG: Non-Granular</button>
+          </div>
+
+          <!-- Paris Detail Card -->
+          <div id="paris-detail" style="background: var(--bg-primary); border: 1px solid var(--border-medium); border-radius: var(--radius-md); padding: 1.75rem;">
+            <div class="flex flex-between" style="flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem;">
+              <h4 id="paris-title" style="color: var(--color-teal); font-size: 1.35rem; margin-bottom: 0;">Type 0-Ip: Pedunculated (Stalked)</h4>
+              <span id="paris-risk-badge" class="badge badge-emerald">Low Stalk Base Invasion (&lt;2–3%)</span>
+            </div>
+
+            <div class="grid grid-2" style="margin-top: 1rem; gap: 1.5rem;">
+              <div>
+                <p id="paris-desc" style="color: var(--text-primary); font-size: 0.95rem;">
+                  Attached to the colonic wall by a distinct, slender fibromuscular stalk. The polypoid head is elevated far above the surrounding mucosal plane (&gt;2.5 mm).
+                </p>
+                <div style="margin-top: 1rem;">
+                  <strong style="color: var(--text-primary); font-size: 0.9rem;">Endoscopic Resection Strategy:</strong>
+                  <p id="paris-resection" style="font-size: 0.875rem; margin-top: 0.25rem;">
+                    Standard electrosurgical snare polypectomy across the mid-stalk. The stalk provides a natural surgical safety margin protecting the muscular wall.
+                  </p>
+                </div>
+              </div>
+
+              <div style="background: var(--bg-tertiary); padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+                <strong style="color: var(--color-amber); font-size: 0.9rem;">Submucosal Invasion & AI Detection Reality:</strong>
+                <p id="paris-ai-insight" style="font-size: 0.875rem; margin-top: 0.35rem; margin-bottom: 0.5rem;">
+                  Easiest lesion for deep learning detectors. Large protruding profile casts clear edge shadows that produce high IoU scores on academic benchmarks.
+                </p>
+                <div id="paris-warning" style="font-size: 0.8rem; font-family: var(--font-mono); color: var(--text-muted);">
+                  Invasion Risk: Low unless large head (&gt;20 mm) exhibits invasive adenocarcinoma descending into stalk core (Haggitt Level 4).
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Full Paris Classification Table -->
+        <div class="table-container">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Paris Subtype</th>
+                <th>Macroscopic Description</th>
+                <th>Physical Height Profile</th>
+                <th>Submucosal Invasion Risk</th>
+                <th>Clinical / AI Detection Reality</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Type 0-Ip</strong></td>
+                <td>Pedunculated (Distinct stalk)</td>
+                <td>&gt;2.5 mm above mucosa</td>
+                <td><span class="badge badge-emerald">Low (&lt;2–3%)</span></td>
+                <td>Easiest for models; dominant in older CNN benchmark evaluations.</td>
+              </tr>
+              <tr>
+                <td><strong>Type 0-Is</strong></td>
+                <td>Sessile (Broad-based, no stalk)</td>
+                <td>&gt;2.5 mm above mucosa</td>
+                <td><span class="badge badge-amber">Moderate (5–10%)</span></td>
+                <td>Base diameter exceeds height; requires cold snare or EMR.</td>
+              </tr>
+              <tr>
+                <td><strong>Type 0-IIa</strong></td>
+                <td>Slightly elevated flat plateau</td>
+                <td>&lt;2.5 mm (closed forceps)</td>
+                <td><span class="badge badge-amber">Moderate (2–8%)</span></td>
+                <td>Common morphology for proximal serrated lesions; easily missed.</td>
+              </tr>
+              <tr>
+                <td><strong>Type 0-IIb</strong></td>
+                <td>Completely flat, flush with mucosa</td>
+                <td>0.0 mm (flush level)</td>
+                <td><span class="badge badge-coral">Significant (5–10%)</span></td>
+                <td>Distinguished solely by subtle erythema or vascular texture; high human miss rate.</td>
+              </tr>
+              <tr>
+                <td><strong>Type 0-IIc</strong></td>
+                <td>Slightly depressed central crater</td>
+                <td>Below adjacent mucosal level</td>
+                <td><span class="badge badge-danger" style="background: rgba(239, 68, 68, 0.2); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.4);">EXTREMELY HIGH (30–60%+)</span></td>
+                <td>Disproportionately malignant even when diminutive (&lt;5 mm); urgent en bloc EMR/ESD.</td>
+              </tr>
+              <tr>
+                <td><strong>Type 0-III</strong></td>
+                <td>Excavated / Deep ulcerated crater</td>
+                <td>Deep transmucosal ulcer</td>
+                <td><span class="badge badge-danger" style="background: rgba(239, 68, 68, 0.2); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.4);">&gt;80% (Invasive Cancer)</span></td>
+                <td>Frank invasive adenocarcinoma; endoscopic resection contraindicated; needs surgery.</td>
+              </tr>
+              <tr>
+                <td><strong>LST-G</strong></td>
+                <td>Laterally Spreading Tumor - Granular</td>
+                <td>&ge;10 mm lateral spread</td>
+                <td><span class="badge badge-amber">Variable (2% to 30%)</span></td>
+                <td>Homogeneous nodules low risk (&lt;2%); mixed nodular carries 15–30% invasion under big nodules.</td>
+              </tr>
+              <tr>
+                <td><strong>LST-NG</strong></td>
+                <td>Laterally Spreading Tumor - Non-Granular</td>
+                <td>&ge;10 mm smooth sheet</td>
+                <td><span class="badge badge-coral">High (15% to 40%)</span></td>
+                <td>Pseudodepressed subtype has 30–40% multifocal submucosal invasion risk.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Size Stratification & Cancer Risk -->
+    <section class="section" style="background: var(--bg-secondary); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+      <div class="container">
+        <div style="max-width: 800px; margin-bottom: 2.5rem;">
+          <span class="badge badge-clinical">Size Stratification</span>
+          <h2 style="margin-top: 0.5rem;">Polyp Size & Invasive Malignancy Risk</h2>
+          <p class="lead">
+            Physical diameter measured against open biopsy forceps (6–8 mm) or snare loops is the primary determinant of histology, cancer risk, and resection strategy.
+          </p>
+        </div>
+
+        <div class="grid grid-3" style="gap: 1.5rem; margin-bottom: 3rem;">
+          <!-- Tier 1: Diminutive -->
+          <div class="card card-glass" style="border-top: 4px solid var(--color-teal);">
+            <div class="card-header">
+              <span class="badge badge-teal">Diminutive (&le;5 mm)</span>
+              <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted);">70–80% of Polyps</span>
+            </div>
+            <h3 style="font-size: 1.2rem; margin-top: 0;">Low Risk, High Volume</h3>
+            <p style="font-size: 0.875rem;">
+              Overwhelmingly tubular adenomas or benign hyperplastic tags. Invasive cancer occurs in <strong>fewer than 1 in 1,000 (&lt;0.1%)</strong>.
+            </p>
+            <div style="background: var(--bg-primary); padding: 0.85rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle); font-size: 0.85rem; margin-top: 1rem;">
+              <strong>CADe Impact:</strong> Represents &gt;85% of all incremental AI detections. High cost for low cancer reduction.
+            </div>
+          </div>
+
+          <!-- Tier 2: Small -->
+          <div class="card card-glass" style="border-top: 4px solid var(--color-amber);">
+            <div class="card-header">
+              <span class="badge badge-amber">Small (6 to 9 mm)</span>
+              <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted);">15–20% of Polyps</span>
+            </div>
+            <h3 style="font-size: 1.2rem; margin-top: 0;">Intermediate Transition Zone</h3>
+            <p style="font-size: 0.875rem;">
+              Tubular or tubulovillous adenomas, or right-sided <span class="glossary-term" data-term="sessile-serrated-lesion">SSLs</span>. Invasive cancer risk is approximately <strong>0.5%</strong>; high-grade dysplasia in 3% to 5%.
+            </p>
+            <div style="background: var(--bg-primary); padding: 0.85rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle); font-size: 0.85rem; margin-top: 1rem;">
+              <strong>Management:</strong> Complete cold snare polypectomy with verified mucosal margin clearance.
+            </div>
+          </div>
+
+          <!-- Tier 3: Large / Advanced -->
+          <div class="card card-glass" style="border-top: 4px solid var(--color-coral);">
+            <div class="card-header">
+              <span class="badge badge-coral">Large / Advanced (&ge;10 mm)</span>
+              <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted);">5–10% of Polyps</span>
+            </div>
+            <h3 style="font-size: 1.2rem; margin-top: 0;">High Malignant Potential</h3>
+            <p style="font-size: 0.875rem;">
+              Invasive adenocarcinoma in <strong>3.0% to 10.0%+</strong> (surpassing 20–30% if &gt;20 mm). High-grade dysplasia present in 10% to 25%.
+            </p>
+            <div style="background: var(--bg-primary); padding: 0.85rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle); font-size: 0.85rem; margin-top: 1rem;">
+              <strong>CADe Trial Finding:</strong> CADe trials show <strong>zero statistically significant benefit</strong> for advanced adenomas (RR 1.01).
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Histological Pathways (Conventional vs Serrated) -->
+    <section class="section">
+      <div class="container">
+        <div style="max-width: 800px; margin-bottom: 2.5rem;">
+          <span class="badge badge-clinical">Molecular Pathogenesis</span>
+          <h2 style="margin-top: 0.5rem;">Conventional Adenoma vs Serrated Neoplastic Pathways</h2>
+          <p class="lead">
+            Colorectal carcinomas do not originate from a single molecular route. Understanding the distinct genetic drivers and endoscopic phenotypes explains why some polyps evade detection and progress rapidly to cancer.
+          </p>
+        </div>
+
+        <div class="grid grid-2" style="gap: 2rem; margin-bottom: 3rem;">
+          <!-- Conventional Pathway -->
+          <div class="card card-glass" style="border-left: 4px solid var(--color-teal);">
+            <div class="card-header">
+              <h3 style="margin: 0; font-size: 1.25rem;">1. Conventional Adenoma-Carcinoma Sequence</h3>
+              <span class="badge badge-teal">~70–80% of CRC</span>
+            </div>
+            <p style="font-size: 0.925rem; margin-top: 1rem;">
+              First described by Fearon and Vogelstein (1990). Driven by sequential chromosomal mutations over a 10 to 15-year latency period:
+            </p>
+
+            <div style="font-family: var(--font-mono); font-size: 0.825rem; background: var(--bg-primary); padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle); margin: 1rem 0; line-height: 1.7;">
+              Normal Colonic Mucosa<br>
+              &darr; <em>Bi-allelic loss of APC (Wnt pathway activation)</em><br>
+              Early Tubular Adenoma (low-grade dysplasia)<br>
+              &darr; <em>Activating mutation in KRAS (MAPK signaling) + 18q loss (SMAD4)</em><br>
+              Tubulovillous / Villous Adenoma (high-grade dysplasia)<br>
+              &darr; <em>TP53 loss + Chromosomal Instability (CIN)</em><br>
+              <strong style="color: var(--color-danger);">Invasive Colorectal Adenocarcinoma</strong>
+            </div>
+
+            <ul style="font-size: 0.9rem; list-style: disc; margin-left: 1.25rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 0.4rem;">
+              <li><strong>Anatomical Predilection:</strong> Distal colon (descending, sigmoid, and rectum).</li>
+              <li><strong>Histology:</strong> Tubular (&lt;25% villous), Tubulovillous (25–75% villous), and Villous (&gt;75% villous).</li>
+              <li><strong>Endoscopic Appearance:</strong> Distinct reddish polypoid lesions (0-Ip, 0-Is) with organized dark microvessels.</li>
+            </ul>
+          </div>
+
+          <!-- Serrated Pathway -->
+          <div class="card card-glass" style="border-left: 4px solid var(--color-amber);">
+            <div class="card-header">
+              <h3 style="margin: 0; font-size: 1.25rem;">2. The Serrated Neoplastic Pathway</h3>
+              <span class="badge badge-amber">~15–30% of CRC</span>
+            </div>
+            <p style="font-size: 0.925rem; margin-top: 1rem;">
+              The alternative epigenetic cascade driven by oncogenic BRAF mutations and microsatellite instability (MSI). <strong>The primary driver of interval cancers</strong>:
+            </p>
+
+            <div style="font-family: var(--font-mono); font-size: 0.825rem; background: var(--bg-primary); padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle); margin: 1rem 0; line-height: 1.7;">
+              Normal Colonic Crypts<br>
+              &darr; <em>Activating BRAF V600E mutation</em><br>
+              Hyperplastic Polyp (HP) / Microvesicular<br>
+              &darr; <em>CpG Island Methylator Phenotype (CIMP-High)</em><br>
+              <strong style="color: var(--color-amber);"><span class="glossary-term" data-term="sessile-serrated-lesion">Sessile Serrated Lesion (SSL/SSA)</span></strong><br>
+              &darr; <em>MLH1 promoter hypermethylation &rarr; Microsatellite Instability (MSI-H)</em><br>
+              <strong style="color: var(--color-danger);">Serrated Adenocarcinoma (Rapid Progression)</strong>
+            </div>
+
+            <ul style="font-size: 0.9rem; list-style: disc; margin-left: 1.25rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 0.4rem;">
+              <li><strong>Anatomical Predilection:</strong> Right / proximal colon (cecum, ascending colon).</li>
+              <li><strong>Histology:</strong> Distorted basal crypts with lateral branching ("boot-shaped" or "inverted T-shaped").</li>
+              <li><strong>Endoscopic Appearance:</strong> Flat (0-IIa/0-IIb), pale, indistinct borders, and concealed under a mucus cap.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Deep Dive on Sessile Serrated Lesions -->
+        <div class="alert alert-clinical" style="margin-top: 1rem;">
+          <div class="alert-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+          </div>
+          <div class="alert-content">
+            <div class="alert-title">Why Sessile Serrated Lesions (SSLs) Are the #1 AI Target</div>
+            <p>
+              SSLs grow laterally with indistinct boundaries, match surrounding mucosa in color, and secrete mucus that traps bile and debris. While conventional adenomas take 10–15 years to become malignant, once an SSL acquires MLH1 hypermethylation, it can transform into an aggressive cancer in <strong>fewer than 2 to 3 years</strong>. Human endoscopists miss SSLs at rates up to <strong>31% to 35%</strong>. AI systems specialized in serrated texture detection deliver the highest clinical value per unit of accuracy.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Optical Diagnosis Standards (Kudo, NICE, JNET) -->
+    <section class="section" style="background: var(--bg-tertiary); border-top: 1px solid var(--border-subtle);">
+      <div class="container">
+        <div style="max-width: 800px; margin-bottom: 2.5rem;">
+          <span class="badge badge-metric">Real-Time Characterization</span>
+          <h2 style="margin-top: 0.5rem;">Optical Classification Systems: Kudo, NICE & JNET</h2>
+          <p class="lead">
+            Optical diagnosis allows endoscopists (and AI characterization engines, CADx) to predict histology in real time without waiting for laboratory biopsy results.
+          </p>
+        </div>
+
+        <!-- Kudo Pit Pattern Visual Display -->
+        <div class="card card-glass" style="margin-bottom: 2.5rem; padding: 2rem;">
+          <div class="flex flex-between" style="flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
+            <div>
+              <h3 style="margin: 0; font-size: 1.25rem;">1. Kudo Pit Pattern Classification</h3>
+              <div style="font-size: 0.85rem; color: var(--text-muted); font-family: var(--font-mono);">
+                Magnification Chromoendoscopy (Indigo Carmine / Crystal Violet Dye Spray)
+              </div>
+            </div>
+            <span class="badge badge-clinical">Gold Standard Morphology</span>
+          </div>
+
+          <p style="font-size: 0.95rem; margin-bottom: 1.5rem;">
+            Evaluates the mucosal crypt architecture under high optical magnification (&times;80 to &times;100). Pit patterns range from normal round pits to complete structural destruction:
+          </p>
+
+          <div class="grid grid-4" style="gap: 1rem;">
+            <!-- Type I -->
+            <div style="background: var(--bg-primary); padding: 1rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle); text-align: center;">
+              <div style="font-size: 1.75rem; font-family: var(--font-mono); color: var(--color-emerald);">&bull; &bull; &bull; &bull;</div>
+              <h4 style="font-size: 0.95rem; margin: 0.5rem 0 0.25rem;">Type I: Round</h4>
+              <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 0.5rem;">Normal circular mucosal pits (0.07 mm).</p>
+              <span class="badge badge-emerald" style="font-size: 0.7rem;">Normal Mucosa</span>
+            </div>
+
+            <!-- Type II -->
+            <div style="background: var(--bg-primary); padding: 1rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle); text-align: center;">
+              <div style="font-size: 1.75rem; font-family: var(--font-mono); color: var(--color-teal);">&lowast; &lowast; &lowast; &lowast;</div>
+              <h4 style="font-size: 0.95rem; margin: 0.5rem 0 0.25rem;">Type II: Asteroid</h4>
+              <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 0.5rem;">Star-shaped, papillary pits.</p>
+              <span class="badge badge-teal" style="font-size: 0.7rem;">Hyperplastic Polyp</span>
+            </div>
+
+            <!-- Type III-L / III-S -->
+            <div style="background: var(--bg-primary); padding: 1rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle); text-align: center;">
+              <div style="font-size: 1.75rem; font-family: var(--font-mono); color: var(--color-amber);">(O) (O) (O)</div>
+              <h4 style="font-size: 0.95rem; margin: 0.5rem 0 0.25rem;">Type III-L / III-S</h4>
+              <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 0.5rem;">Tubular round pits (Large vs Small depressed).</p>
+              <span class="badge badge-amber" style="font-size: 0.7rem;">Tubular Adenoma</span>
+            </div>
+
+            <!-- Type IV & V -->
+            <div style="background: var(--bg-primary); padding: 1rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle); text-align: center;">
+              <div style="font-size: 1.75rem; font-family: var(--font-mono); color: var(--color-danger);">? / / &times;</div>
+              <h4 style="font-size: 0.95rem; margin: 0.5rem 0 0.25rem;">Type IV & V</h4>
+              <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 0.5rem;">Branched sulcal (IV) to amorphous/lost pits (V-N).</p>
+              <span class="badge badge-coral" style="font-size: 0.7rem;">Villous / Invasive Cancer</span>
+            </div>
+          </div>
+
+          <div style="margin-top: 1.25rem; font-size: 0.85rem; color: var(--text-muted); font-family: var(--font-mono);">
+            Clinical Invariant: <strong>Type V-N (Non-structural pit pattern)</strong> indicates deep submucosal invasion (&ge;1000 &mu;m); endoscopic resection is contraindicated; surgical oncologic referral mandatory.
+          </div>
+        </div>
+
+        <!-- NICE vs JNET Comparison -->
+        <div class="grid grid-2" style="gap: 2rem;">
+          <!-- NICE Classification -->
+          <div class="card card-glass">
+            <h3 style="font-size: 1.25rem; margin-top: 0; color: var(--color-teal);"><span class="glossary-term" data-term="nice-classification">NICE Classification</span></h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">
+              NBI International Colorectal Endoscopic &bull; Designed for non-magnifying Narrow Band Imaging
+            </p>
+
+            <div style="display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.875rem;">
+              <div style="background: var(--bg-primary); padding: 0.85rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+                <div class="flex flex-between"><strong>NICE Type 1 (Hyperplastic / Non-neoplastic)</strong> <span class="badge badge-emerald">Leave</span></div>
+                <div style="color: var(--text-secondary); font-size: 0.8rem; margin-top: 0.25rem;">Color same as background; isolated faint thin vessels; uniform dark/white spots.</div>
+              </div>
+              <div style="background: var(--bg-primary); padding: 0.85rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+                <div class="flex flex-between"><strong>NICE Type 2 (Adenoma / Neoplastic)</strong> <span class="badge badge-teal">Snare Resection</span></div>
+                <div style="color: var(--text-secondary); font-size: 0.8rem; margin-top: 0.25rem;">Browner than background; thick microvessels surrounding white tubular structures.</div>
+              </div>
+              <div style="background: var(--bg-primary); padding: 0.85rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+                <div class="flex flex-between"><strong>NICE Type 3 (Deep Submucosal Cancer)</strong> <span class="badge badge-coral">Surgery</span></div>
+                <div style="color: var(--text-secondary); font-size: 0.8rem; margin-top: 0.25rem;">Dark brown/patchy white; disrupted, tortuous or avascular areas; amorphous pattern.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- JNET Classification -->
+          <div class="card card-glass">
+            <h3 style="font-size: 1.25rem; margin-top: 0; color: var(--color-purple);">JNET Classification</h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">
+              Japan NBI Expert Team &bull; Worldwide gold standard for magnifying NBI
+            </p>
+
+            <div style="display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.875rem;">
+              <div style="background: var(--bg-primary); padding: 0.85rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+                <div class="flex flex-between"><strong>JNET Type 1:</strong> <span class="badge badge-emerald">Observe or Cold Snare</span></div>
+                <div style="color: var(--text-secondary); font-size: 0.8rem; margin-top: 0.25rem;">Invisible/faint vessels; regular dark spots. Histology: HP / SSL.</div>
+              </div>
+              <div style="background: var(--bg-primary); padding: 0.85rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+                <div class="flex flex-between"><strong>JNET Type 2A:</strong> <span class="badge badge-teal">Polypectomy / EMR</span></div>
+                <div style="color: var(--text-secondary); font-size: 0.8rem; margin-top: 0.25rem;">Regular caliber/distribution vessels; regular tubular pattern. Histology: Low-grade adenoma.</div>
+              </div>
+              <div style="background: var(--bg-primary); padding: 0.85rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+                <div class="flex flex-between"><strong>JNET Type 2B:</strong> <span class="badge badge-amber">En Bloc ESD</span></div>
+                <div style="color: var(--text-secondary); font-size: 0.8rem; margin-top: 0.25rem;">Variable caliber, irregular vessels; obscured pit pattern. High-grade dysplasia / shallow cancer (&lt;1000 &mu;m).</div>
+              </div>
+              <div style="background: var(--bg-primary); padding: 0.85rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+                <div class="flex flex-between"><strong>JNET Type 3:</strong> <span class="badge badge-coral">Surgical Resection</span></div>
+                <div style="color: var(--text-secondary); font-size: 0.8rem; margin-top: 0.25rem;">Interrupted thick vessels; avascular areas. Deep submucosal invasion (&ge;1000 &mu;m).</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+          <a href="06b-clinical-evidence.html" class="btn btn-primary btn-lg">
+            Proceed to Module 06b: Clinical Trials & RCTs &rarr;
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Global Site Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h4>Colonoscopy AI & ChakraModel</h4>
+          <p>
+            An open educational and research initiative bridging gastroenterology, deep learning vision, and forensic data science. Dedicated to improving patient safety and upholding scientific integrity.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Clinical Education</h5>
+          <ul class="footer-links">
+            <li><a href="01-what-is-colonoscopy.html">Anatomy & Bowel Prep</a></li>
+            <li><a href="02-polyp-types.html">Polyp Morphologies & Histology</a></li>
+            <li><a href="06b-clinical-evidence.html">41 RCTs & Clinical Paradox</a></li>
+            <li><a href="07-clinical-systems.html">Commercial AI Systems</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>AI & Engineering</h5>
+          <ul class="footer-links">
+            <li><a href="03-ai-history.html">History of AI in Colonoscopy</a></li>
+            <li><a href="04-architectures.html">Deep Learning Architectures</a></li>
+            <li><a href="05-datasets.html">Benchmark Datasets</a></li>
+            <li><a href="06-benchmarks.html">Academic Benchmarks</a></li>
+            <li><a href="10-future.html">Future Directions & Mamba</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Integrity & Research</h5>
+          <ul class="footer-links">
+            <li><a href="08-benchmark-integrity.html">Integrity & Video Leakage Audit</a></li>
+            <li><a href="09-chakramodel.html">ChakraModel Case Study</a></li>
+            <li><a href="11-references.html">49 Academic References</a></li>
+            <li><a href="12-glossary.html">50-Term Medical Glossary</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 Colonoscopy AI & ChakraModel Research Platform. All medical data grounded in peer-reviewed clinical literature.
+        </div>
+        <div class="flex gap-md" style="font-family: var(--font-mono); font-size: 0.8rem;">
+          <span>Module 02: Polyps & Histology</span>
+          <span>&bull;</span>
+          <span>Paris, Kudo, NICE, JNET Standards</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../assets/js/main.js"></script>
+  <script>
+    // Module 02 Interactive Features: Paris Classification Selector
+    document.addEventListener('DOMContentLoaded', () => {
+      const PARIS_DATA = {
+        "0-Ip": {
+          title: "Type 0-Ip: Pedunculated (Stalked)",
+          badge: "Low Stalk Base Invasion (<2–3%)",
+          badgeClass: "badge-emerald",
+          desc: "Attached to the colonic wall by a distinct, slender fibromuscular stalk. The polypoid head is elevated far above the mucosal plane (>2.5 mm).",
+          resection: "Standard electrosurgical snare polypectomy across the mid-stalk. The stalk provides a natural surgical safety margin protecting the muscular wall.",
+          insight: "Easiest lesion for deep learning detectors. Large protruding profile casts clear edge shadows that produce high IoU scores on academic benchmarks.",
+          warning: "Invasion Risk: Low unless large head (>20 mm) exhibits invasive adenocarcinoma descending into stalk core (Haggitt Level 4)."
+        },
+        "0-Is": {
+          title: "Type 0-Is: Sessile (Broad-Based)",
+          badge: "Moderate Invasion Risk (5–10%)",
+          badgeClass: "badge-amber",
+          desc: "Broad-based mucosal protrusion lacking any stalk. The base diameter on the mucosal wall equals or exceeds lesion height (>2.5 mm).",
+          resection: "Submucosal saline injection followed by Endoscopic Mucosal Resection (EMR) or cold snare resection for lesions under 10 mm.",
+          insight: "Distinct elevation provides strong texture boundaries for convolutional filters, but lesions lacking contrast can blend into fold contours.",
+          warning: "Invasion Risk: 5% to 10%, directly increasing with lesion diameter and surface vascular irregularity."
+        },
+        "0-IIa": {
+          title: "Type 0-IIa: Slightly Elevated Flat Plateau",
+          badge: "Low to Moderate Risk (2–8%)",
+          badgeClass: "badge-amber",
+          desc: "Flat plateau elevated above mucosa, but physical height is strictly less than 2.5 mm (the height of closed biopsy forceps jaws).",
+          resection: "Cold snare polypectomy or targeted EMR. Cautious margin inspection required to prevent incomplete resection.",
+          insight: "Classic morphology for Sessile Serrated Lesions (SSLs) in the right proximal colon. Often missed by standard edge-detection kernels.",
+          warning: "Invasion Risk: 2% to 8%, but rapidly elevates if central depression or JNET Type 2B vessels are present."
+        },
+        "0-IIb": {
+          title: "Type 0-IIb: Completely Flat (Flush)",
+          badge: "High Human Miss Rate (5–10% Risk)",
+          badgeClass: "badge-coral",
+          desc: "Completely flush with adjacent colonic mucosa. Distinguished solely by subtle microvascular discoloration, focal erythema, or slight crypt disruption.",
+          resection: "Chromoguided EMR with indigo carmine dye spray or high-definition electronic chromoendoscopy (NBI/BLI).",
+          insight: "Extremely difficult for conventional CNNs trained only on white light images. Multi-scale transformers with cross-attention excel here.",
+          warning: "Invasion Risk: 5% to 10%; responsible for a disproportionate fraction of interval post-colonoscopy colorectal cancers."
+        },
+        "0-IIc": {
+          title: "Type 0-IIc: Slightly Depressed",
+          badge: "EXTREMELY HIGH RISK (30–60%+)",
+          badgeClass: "badge-danger",
+          desc: "Central mucosal depression dipping below the surrounding surface level, without frank deep ulceration into muscularis.",
+          resection: "High-priority therapeutic evaluation. Requires precise optical staging (Kudo Pit Pattern V / JNET 2B vs 3). En bloc EMR or ESD required.",
+          insight: "Extremely dangerous lesion. Disproportionately malignant even when diminutive (under 5 mm)! Often unrecognized by human endoscopists.",
+          warning: "Invasion Risk: 30% to 60%+ submucosal invasion rate regardless of small diameter. High risk of lymphatic metastasis."
+        },
+        "0-III": {
+          title: "Type 0-III: Excavated / Deeply Ulcerated",
+          badge: "Frank Invasive Cancer (>80%)",
+          badgeClass: "badge-danger",
+          desc: "Deep necrotic ulcer crater extending into deep submucosa or muscularis propria, with hard raised margins.",
+          resection: "Endoscopic resection contraindicated due to guaranteed colonic perforation and incomplete oncologic margin. Biopsy and surgical referral.",
+          insight: "Easily segmented by computer vision as ulceration, but clinical action must route to surgical oncology rather than snare removal.",
+          warning: "Invasion Risk: >80% deep submucosal invasive adenocarcinoma with nodal involvement."
+        },
+        "LST-G": {
+          title: "Laterally Spreading Tumor - Granular (LST-G)",
+          badge: "Variable Risk (2% to 30%)",
+          badgeClass: "badge-amber",
+          desc: "Circumferential lesion ≥10 mm diameter with nodular aggregate surface. Subdivided into Homogeneous vs Nodular Mixed.",
+          resection: "Homogeneous subtype can be treated with piecemeal EMR; mixed nodular requires en bloc resection under the dominant nodule.",
+          insight: "Granular texture produces strong feature map responses in attention decoders, but multi-nodular margins require precise boundary delineation.",
+          warning: "Invasion Risk: Homogeneous <2%; Mixed nodular 15% to 30% concentrated under largest protruding nodules."
+        },
+        "LST-NG": {
+          title: "Laterally Spreading Tumor - Non-Granular (LST-NG)",
+          badge: "High Multifocal Risk (15% to 40%)",
+          badgeClass: "badge-coral",
+          desc: "Circumferential lesion ≥10 mm with smooth flat surface. Subdivided into Flat Elevated vs Pseudodepressed.",
+          resection: "Mandatory en bloc resection, typically via Endoscopic Submucosal Dissection (ESD) or laparoscopic-assisted resection.",
+          insight: "Smooth surface lacks textural contrast against mucosal background, posing severe segmentation challenges on benchmark test sets.",
+          warning: "Invasion Risk: Pseudodepressed subtype exhibits 30% to 40% multifocal submucosal invasion rate."
+        }
+      };
+
+      const parisButtons = document.querySelectorAll('#paris-nav button');
+      const parisTitle = document.getElementById('paris-title');
+      const parisBadge = document.getElementById('paris-risk-badge');
+      const parisDesc = document.getElementById('paris-desc');
+      const parisResection = document.getElementById('paris-resection');
+      const parisInsight = document.getElementById('paris-ai-insight');
+      const parisWarning = document.getElementById('paris-warning');
+
+      parisButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          parisButtons.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const pKey = btn.getAttribute('data-paris');
+          const data = PARIS_DATA[pKey];
+          if (data) {
+            parisTitle.textContent = data.title;
+            parisBadge.textContent = data.badge;
+            parisBadge.className = `badge ${data.badgeClass}`;
+            parisDesc.textContent = data.desc;
+            parisResection.textContent = data.resection;
+            parisInsight.textContent = data.insight;
+            parisWarning.textContent = data.warning;
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

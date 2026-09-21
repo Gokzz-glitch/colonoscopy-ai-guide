@@ -1,0 +1,44 @@
+{
+  "timestamp": "2026-09-21T21:38:09.876Z",
+  "verdict": "CLEAN",
+  "totalViolations": 0,
+  "brokenLinksCount": 0,
+  "auditResults": {
+    "check1_colondb_cvc300": {
+      "status": "PASS",
+      "details": [
+        "ColonDB (380 frames) and CVC-300 (60 frames) are reported strictly independently across all tables, charts, and text. The 58-frame duplicate overlap (96.7%) is explicitly disclosed with zero pooling."
+      ],
+      "evidence": []
+    },
+    "check2_clinicdb_leakage": {
+      "status": "PASS",
+      "details": [],
+      "evidence": []
+    },
+    "check3_hyperkvasir_duplicate": {
+      "status": "PASS",
+      "details": [
+        "HyperKvasir 1,000 segmented images are verified and prominently disclosed as 1,000/1,000 SHA-256 byte-identical copies of Kvasir-SEG across all documentation, profiles, and audit pages."
+      ],
+      "evidence": []
+    },
+    "check4_numbers_citations": {
+      "status": "PASS",
+      "details": [
+        "All 9 required empirical numerical invariants and citations are exactly verified with zero distortion."
+      ],
+      "evidence": []
+    },
+    "check5_codebase_integrity_links": {
+      "status": "PASS",
+      "details": [],
+      "evidence": []
+    },
+    "check6_ocr_discrepancy": {
+      "status": "PASS",
+      "details": [],
+      "evidence": []
+    }
+  }
+}

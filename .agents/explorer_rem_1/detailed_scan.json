@@ -1,0 +1,1146 @@
+{
+  "index.html": [
+    {
+      "lineNum": 33,
+      "href": "pages/08-failure-modes.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "08-failure-modes.html",
+      "canonicalReplacement": "pages/08-benchmark-integrity.html",
+      "rawLine": "<li><a href=\"pages/08-failure-modes.html\" class=\"nav-link\">Integrity Audit</a></li>"
+    },
+    {
+      "lineNum": 34,
+      "href": "pages/09-chakramodel-case-study.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "09-chakramodel-case-study.html",
+      "canonicalReplacement": "pages/09-chakramodel.html",
+      "rawLine": "<li><a href=\"pages/09-chakramodel-case-study.html\" class=\"nav-link\">ChakraModel</a></li>"
+    },
+    {
+      "lineNum": 78,
+      "href": "pages/08-failure-modes.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "08-failure-modes.html",
+      "canonicalReplacement": "pages/08-benchmark-integrity.html",
+      "rawLine": "<a href=\"pages/08-failure-modes.html\" class=\"nav-link\">08. Failure Modes & Video Leakage</a>"
+    },
+    {
+      "lineNum": 79,
+      "href": "pages/09-chakramodel-case-study.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "09-chakramodel-case-study.html",
+      "canonicalReplacement": "pages/09-chakramodel.html",
+      "rawLine": "<a href=\"pages/09-chakramodel-case-study.html\" class=\"nav-link\">09. ChakraModel Research Case Study</a>"
+    },
+    {
+      "lineNum": 80,
+      "href": "pages/10-future-directions.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "10-future-directions.html",
+      "canonicalReplacement": "pages/10-future.html",
+      "rawLine": "<a href=\"pages/10-future-directions.html\" class=\"nav-link\">10. Future Directions & Open Frontiers</a>"
+    },
+    {
+      "lineNum": 115,
+      "href": "pages/09-chakramodel-case-study.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "09-chakramodel-case-study.html",
+      "canonicalReplacement": "pages/09-chakramodel.html",
+      "rawLine": "<a href=\"pages/09-chakramodel-case-study.html\" class=\"btn btn-outline btn-lg\">"
+    },
+    {
+      "lineNum": 256,
+      "href": "pages/08-failure-modes.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "08-failure-modes.html",
+      "canonicalReplacement": "pages/08-benchmark-integrity.html",
+      "rawLine": "<a href=\"pages/08-failure-modes.html\" class=\"btn btn-secondary btn-sm\">Integrity Audit</a>"
+    },
+    {
+      "lineNum": 257,
+      "href": "pages/09-chakramodel-case-study.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "09-chakramodel-case-study.html",
+      "canonicalReplacement": "pages/09-chakramodel.html",
+      "rawLine": "<a href=\"pages/09-chakramodel-case-study.html\" class=\"btn btn-outline btn-sm\">ChakraModel Study</a>"
+    },
+    {
+      "lineNum": 295,
+      "href": "pages/09-chakramodel-case-study.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "09-chakramodel-case-study.html",
+      "canonicalReplacement": "pages/09-chakramodel.html",
+      "rawLine": "<a href=\"pages/09-chakramodel-case-study.html\" class=\"btn btn-secondary\">"
+    },
+    {
+      "lineNum": 333,
+      "href": "pages/08-failure-modes.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "08-failure-modes.html",
+      "canonicalReplacement": "pages/08-benchmark-integrity.html",
+      "rawLine": "<a href=\"pages/08-failure-modes.html\" class=\"tooltip-link\" style=\"font-size: 0.85rem;\">See all 4 audit flaws &rarr;</a>"
+    },
+    {
+      "lineNum": 480,
+      "href": "pages/08-failure-modes.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "08-failure-modes.html",
+      "canonicalReplacement": "pages/08-benchmark-integrity.html",
+      "rawLine": "<h3 class=\"card-title\"><a href=\"pages/08-failure-modes.html\">Failure Modes & Video Leakage</a></h3>"
+    },
+    {
+      "lineNum": 485,
+      "href": "pages/08-failure-modes.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "08-failure-modes.html",
+      "canonicalReplacement": "pages/08-benchmark-integrity.html",
+      "rawLine": "<a href=\"pages/08-failure-modes.html\" class=\"tooltip-link\">Examine Leakage Proofs &rarr;</a>"
+    },
+    {
+      "lineNum": 495,
+      "href": "pages/09-chakramodel-case-study.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "09-chakramodel-case-study.html",
+      "canonicalReplacement": "pages/09-chakramodel.html",
+      "rawLine": "<h3 class=\"card-title\"><a href=\"pages/09-chakramodel-case-study.html\">ChakraModel Research Study</a></h3>"
+    },
+    {
+      "lineNum": 500,
+      "href": "pages/09-chakramodel-case-study.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "09-chakramodel-case-study.html",
+      "canonicalReplacement": "pages/09-chakramodel.html",
+      "rawLine": "<a href=\"pages/09-chakramodel-case-study.html\" class=\"tooltip-link\">Read Research Report &rarr;</a>"
+    },
+    {
+      "lineNum": 510,
+      "href": "pages/10-future-directions.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "10-future-directions.html",
+      "canonicalReplacement": "pages/10-future.html",
+      "rawLine": "<h3 class=\"card-title\"><a href=\"pages/10-future-directions.html\">Future Directions & Frontiers</a></h3>"
+    },
+    {
+      "lineNum": 515,
+      "href": "pages/10-future-directions.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "10-future-directions.html",
+      "canonicalReplacement": "pages/10-future.html",
+      "rawLine": "<a href=\"pages/10-future-directions.html\" class=\"tooltip-link\">See Future Roadmap &rarr;</a>"
+    },
+    {
+      "lineNum": 628,
+      "href": "pages/10-future-directions.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "10-future-directions.html",
+      "canonicalReplacement": "pages/10-future.html",
+      "rawLine": "<li><a href=\"pages/10-future-directions.html\">Future Directions & Mamba</a></li>"
+    },
+    {
+      "lineNum": 635,
+      "href": "pages/08-failure-modes.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "08-failure-modes.html",
+      "canonicalReplacement": "pages/08-benchmark-integrity.html",
+      "rawLine": "<li><a href=\"pages/08-failure-modes.html\">Integrity & Video Leakage Audit</a></li>"
+    },
+    {
+      "lineNum": 636,
+      "href": "pages/09-chakramodel-case-study.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "09-chakramodel-case-study.html",
+      "canonicalReplacement": "pages/09-chakramodel.html",
+      "rawLine": "<li><a href=\"pages/09-chakramodel-case-study.html\">ChakraModel Case Study</a></li>"
+    }
+  ],
+  "pages\\01-what-is-colonoscopy.html": [
+    {
+      "lineNum": 33,
+      "href": "08-failure-modes.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "08-failure-modes.html",
+      "canonicalReplacement": "08-benchmark-integrity.html",
+      "rawLine": "<li><a href=\"08-failure-modes.html\" class=\"nav-link\">Integrity Audit</a></li>"
+    },
+    {
+      "lineNum": 34,
+      "href": "09-chakramodel-case-study.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "09-chakramodel-case-study.html",
+      "canonicalReplacement": "09-chakramodel.html",
+      "rawLine": "<li><a href=\"09-chakramodel-case-study.html\" class=\"nav-link\">ChakraModel</a></li>"
+    },
+    {
+      "lineNum": 78,
+      "href": "08-failure-modes.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "08-failure-modes.html",
+      "canonicalReplacement": "08-benchmark-integrity.html",
+      "rawLine": "<a href=\"08-failure-modes.html\" class=\"nav-link\">08. Failure Modes & Video Leakage</a>"
+    },
+    {
+      "lineNum": 79,
+      "href": "09-chakramodel-case-study.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "09-chakramodel-case-study.html",
+      "canonicalReplacement": "09-chakramodel.html",
+      "rawLine": "<a href=\"09-chakramodel-case-study.html\" class=\"nav-link\">09. ChakraModel Research Case Study</a>"
+    },
+    {
+      "lineNum": 80,
+      "href": "10-future-directions.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "10-future-directions.html",
+      "canonicalReplacement": "10-future.html",
+      "rawLine": "<a href=\"10-future-directions.html\" class=\"nav-link\">10. Future Directions & Open Frontiers</a>"
+    },
+    {
+      "lineNum": 488,
+      "href": "11-references.html#ref-corley2014",
+      "type": "BROKEN_ANCHOR",
+      "matchDraft": "#ref-corley2014",
+      "canonicalReplacement": "needs target anchor in 11-references.html",
+      "rawLine": "<a href=\"11-references.html#ref-corley2014\" class=\"btn btn-outline btn-sm\">Citation Details &rarr;</a>"
+    },
+    {
+      "lineNum": 594,
+      "href": "10-future-directions.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "10-future-directions.html",
+      "canonicalReplacement": "10-future.html",
+      "rawLine": "<li><a href=\"10-future-directions.html\">Future Directions & Mamba</a></li>"
+    },
+    {
+      "lineNum": 601,
+      "href": "08-failure-modes.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "08-failure-modes.html",
+      "canonicalReplacement": "08-benchmark-integrity.html",
+      "rawLine": "<li><a href=\"08-failure-modes.html\">Integrity & Video Leakage Audit</a></li>"
+    },
+    {
+      "lineNum": 602,
+      "href": "09-chakramodel-case-study.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "09-chakramodel-case-study.html",
+      "canonicalReplacement": "09-chakramodel.html",
+      "rawLine": "<li><a href=\"09-chakramodel-case-study.html\">ChakraModel Case Study</a></li>"
+    }
+  ],
+  "pages\\02-polyp-types.html": [
+    {
+      "lineNum": 33,
+      "href": "08-failure-modes.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "08-failure-modes.html",
+      "canonicalReplacement": "08-benchmark-integrity.html",
+      "rawLine": "<li><a href=\"08-failure-modes.html\" class=\"nav-link\">Integrity Audit</a></li>"
+    },
+    {
+      "lineNum": 34,
+      "href": "09-chakramodel-case-study.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "09-chakramodel-case-study.html",
+      "canonicalReplacement": "09-chakramodel.html",
+      "rawLine": "<li><a href=\"09-chakramodel-case-study.html\" class=\"nav-link\">ChakraModel</a></li>"
+    },
+    {
+      "lineNum": 78,
+      "href": "08-failure-modes.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "08-failure-modes.html",
+      "canonicalReplacement": "08-benchmark-integrity.html",
+      "rawLine": "<a href=\"08-failure-modes.html\" class=\"nav-link\">08. Failure Modes & Video Leakage</a>"
+    },
+    {
+      "lineNum": 79,
+      "href": "09-chakramodel-case-study.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "09-chakramodel-case-study.html",
+      "canonicalReplacement": "09-chakramodel.html",
+      "rawLine": "<a href=\"09-chakramodel-case-study.html\" class=\"nav-link\">09. ChakraModel Research Case Study</a>"
+    },
+    {
+      "lineNum": 80,
+      "href": "10-future-directions.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "10-future-directions.html",
+      "canonicalReplacement": "10-future.html",
+      "rawLine": "<a href=\"10-future-directions.html\" class=\"nav-link\">10. Future Directions & Open Frontiers</a>"
+    },
+    {
+      "lineNum": 566,
+      "href": "10-future-directions.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "10-future-directions.html",
+      "canonicalReplacement": "10-future.html",
+      "rawLine": "<li><a href=\"10-future-directions.html\">Future Directions & Mamba</a></li>"
+    },
+    {
+      "lineNum": 573,
+      "href": "08-failure-modes.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "08-failure-modes.html",
+      "canonicalReplacement": "08-benchmark-integrity.html",
+      "rawLine": "<li><a href=\"08-failure-modes.html\">Integrity & Video Leakage Audit</a></li>"
+    },
+    {
+      "lineNum": 574,
+      "href": "09-chakramodel-case-study.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "09-chakramodel-case-study.html",
+      "canonicalReplacement": "09-chakramodel.html",
+      "rawLine": "<li><a href=\"09-chakramodel-case-study.html\">ChakraModel Case Study</a></li>"
+    }
+  ],
+  "pages\\03-ai-history.html": [
+    {
+      "lineNum": 28,
+      "href": "01-clinical-foundations.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "01-clinical-foundations.html",
+      "canonicalReplacement": "01-what-is-colonoscopy.html",
+      "rawLine": "<li><a href=\"01-clinical-foundations.html\" class=\"nav-link\">Clinical</a></li>"
+    },
+    {
+      "lineNum": 29,
+      "href": "02-clinical-evidence.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "02-clinical-evidence.html",
+      "canonicalReplacement": "06b-clinical-evidence.html",
+      "rawLine": "<li><a href=\"02-clinical-evidence.html\" class=\"nav-link\">Trials</a></li>"
+    },
+    {
+      "lineNum": 34,
+      "href": "07-integrity-audit.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "07-integrity-audit.html",
+      "canonicalReplacement": "08-benchmark-integrity.html",
+      "rawLine": "<li><a href=\"07-integrity-audit.html\" class=\"nav-link\">Integrity</a></li>"
+    },
+    {
+      "lineNum": 51,
+      "href": "01-clinical-foundations.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "01-clinical-foundations.html",
+      "canonicalReplacement": "01-what-is-colonoscopy.html",
+      "rawLine": "<a href=\"01-clinical-foundations.html\" class=\"nav-link\">01 Clinical Foundations</a>"
+    },
+    {
+      "lineNum": 52,
+      "href": "02-clinical-evidence.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "02-clinical-evidence.html",
+      "canonicalReplacement": "06b-clinical-evidence.html",
+      "rawLine": "<a href=\"02-clinical-evidence.html\" class=\"nav-link\">02 Clinical Trials &amp; Evidence</a>"
+    },
+    {
+      "lineNum": 57,
+      "href": "07-integrity-audit.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "07-integrity-audit.html",
+      "canonicalReplacement": "08-benchmark-integrity.html",
+      "rawLine": "<a href=\"07-integrity-audit.html\" class=\"nav-link\">07 Forensic Integrity Audit</a>"
+    },
+    {
+      "lineNum": 58,
+      "href": "08-commercial-systems.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "08-commercial-systems.html",
+      "canonicalReplacement": "07-clinical-systems.html",
+      "rawLine": "<a href=\"08-commercial-systems.html\" class=\"nav-link\">08 Commercial CADe/CADx</a>"
+    },
+    {
+      "lineNum": 59,
+      "href": "09-implementation.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "09-implementation.html",
+      "canonicalReplacement": "09-chakramodel.html",
+      "rawLine": "<a href=\"09-implementation.html\" class=\"nav-link\">09 Implementation &amp; Latency</a>"
+    },
+    {
+      "lineNum": 60,
+      "href": "10-future-frontiers.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "10-future-frontiers.html",
+      "canonicalReplacement": "10-future.html",
+      "rawLine": "<a href=\"10-future-frontiers.html\" class=\"nav-link\">10 Future Frontiers</a>"
+    },
+    {
+      "lineNum": 757,
+      "href": "01-clinical-foundations.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "01-clinical-foundations.html",
+      "canonicalReplacement": "01-what-is-colonoscopy.html",
+      "rawLine": "<li><a href=\"01-clinical-foundations.html\">Clinical Foundations</a></li>"
+    },
+    {
+      "lineNum": 758,
+      "href": "02-clinical-evidence.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "02-clinical-evidence.html",
+      "canonicalReplacement": "06b-clinical-evidence.html",
+      "rawLine": "<li><a href=\"02-clinical-evidence.html\">Trial Evidence &amp; RCTs</a></li>"
+    },
+    {
+      "lineNum": 759,
+      "href": "08-commercial-systems.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "08-commercial-systems.html",
+      "canonicalReplacement": "07-clinical-systems.html",
+      "rawLine": "<li><a href=\"08-commercial-systems.html\">Commercial Systems</a></li>"
+    },
+    {
+      "lineNum": 770,
+      "href": "09-implementation.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "09-implementation.html",
+      "canonicalReplacement": "09-chakramodel.html",
+      "rawLine": "<li><a href=\"09-implementation.html\">Deployment &amp; Latency</a></li>"
+    },
+    {
+      "lineNum": 776,
+      "href": "07-integrity-audit.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "07-integrity-audit.html",
+      "canonicalReplacement": "08-benchmark-integrity.html",
+      "rawLine": "<li><a href=\"07-integrity-audit.html\">Integrity Audit</a></li>"
+    },
+    {
+      "lineNum": 777,
+      "href": "10-future-frontiers.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "10-future-frontiers.html",
+      "canonicalReplacement": "10-future.html",
+      "rawLine": "<li><a href=\"10-future-frontiers.html\">Future Frontiers</a></li>"
+    }
+  ],
+  "pages\\04-architectures.html": [
+    {
+      "lineNum": 28,
+      "href": "01-clinical-foundations.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "01-clinical-foundations.html",
+      "canonicalReplacement": "01-what-is-colonoscopy.html",
+      "rawLine": "<li><a href=\"01-clinical-foundations.html\" class=\"nav-link\">Clinical</a></li>"
+    },
+    {
+      "lineNum": 29,
+      "href": "02-clinical-evidence.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "02-clinical-evidence.html",
+      "canonicalReplacement": "06b-clinical-evidence.html",
+      "rawLine": "<li><a href=\"02-clinical-evidence.html\" class=\"nav-link\">Trials</a></li>"
+    },
+    {
+      "lineNum": 34,
+      "href": "07-integrity-audit.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "07-integrity-audit.html",
+      "canonicalReplacement": "08-benchmark-integrity.html",
+      "rawLine": "<li><a href=\"07-integrity-audit.html\" class=\"nav-link\">Integrity</a></li>"
+    },
+    {
+      "lineNum": 51,
+      "href": "01-clinical-foundations.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "01-clinical-foundations.html",
+      "canonicalReplacement": "01-what-is-colonoscopy.html",
+      "rawLine": "<a href=\"01-clinical-foundations.html\" class=\"nav-link\">01 Clinical Foundations</a>"
+    },
+    {
+      "lineNum": 52,
+      "href": "02-clinical-evidence.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "02-clinical-evidence.html",
+      "canonicalReplacement": "06b-clinical-evidence.html",
+      "rawLine": "<a href=\"02-clinical-evidence.html\" class=\"nav-link\">02 Clinical Trials &amp; Evidence</a>"
+    },
+    {
+      "lineNum": 57,
+      "href": "07-integrity-audit.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "07-integrity-audit.html",
+      "canonicalReplacement": "08-benchmark-integrity.html",
+      "rawLine": "<a href=\"07-integrity-audit.html\" class=\"nav-link\">07 Forensic Integrity Audit</a>"
+    },
+    {
+      "lineNum": 58,
+      "href": "08-commercial-systems.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "08-commercial-systems.html",
+      "canonicalReplacement": "07-clinical-systems.html",
+      "rawLine": "<a href=\"08-commercial-systems.html\" class=\"nav-link\">08 Commercial CADe/CADx</a>"
+    },
+    {
+      "lineNum": 59,
+      "href": "09-implementation.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "09-implementation.html",
+      "canonicalReplacement": "09-chakramodel.html",
+      "rawLine": "<a href=\"09-implementation.html\" class=\"nav-link\">09 Implementation &amp; Latency</a>"
+    },
+    {
+      "lineNum": 60,
+      "href": "10-future-frontiers.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "10-future-frontiers.html",
+      "canonicalReplacement": "10-future.html",
+      "rawLine": "<a href=\"10-future-frontiers.html\" class=\"nav-link\">10 Future Frontiers</a>"
+    },
+    {
+      "lineNum": 667,
+      "href": "01-clinical-foundations.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "01-clinical-foundations.html",
+      "canonicalReplacement": "01-what-is-colonoscopy.html",
+      "rawLine": "<li><a href=\"01-clinical-foundations.html\">Clinical Foundations</a></li>"
+    },
+    {
+      "lineNum": 668,
+      "href": "02-clinical-evidence.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "02-clinical-evidence.html",
+      "canonicalReplacement": "06b-clinical-evidence.html",
+      "rawLine": "<li><a href=\"02-clinical-evidence.html\">Trial Evidence &amp; RCTs</a></li>"
+    },
+    {
+      "lineNum": 669,
+      "href": "08-commercial-systems.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "08-commercial-systems.html",
+      "canonicalReplacement": "07-clinical-systems.html",
+      "rawLine": "<li><a href=\"08-commercial-systems.html\">Commercial Systems</a></li>"
+    },
+    {
+      "lineNum": 680,
+      "href": "09-implementation.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "09-implementation.html",
+      "canonicalReplacement": "09-chakramodel.html",
+      "rawLine": "<li><a href=\"09-implementation.html\">Deployment &amp; Latency</a></li>"
+    },
+    {
+      "lineNum": 686,
+      "href": "07-integrity-audit.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "07-integrity-audit.html",
+      "canonicalReplacement": "08-benchmark-integrity.html",
+      "rawLine": "<li><a href=\"07-integrity-audit.html\">Integrity Audit</a></li>"
+    },
+    {
+      "lineNum": 687,
+      "href": "10-future-frontiers.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "10-future-frontiers.html",
+      "canonicalReplacement": "10-future.html",
+      "rawLine": "<li><a href=\"10-future-frontiers.html\">Future Frontiers</a></li>"
+    }
+  ],
+  "pages\\05-datasets.html": [
+    {
+      "lineNum": 28,
+      "href": "01-clinical-foundations.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "01-clinical-foundations.html",
+      "canonicalReplacement": "01-what-is-colonoscopy.html",
+      "rawLine": "<li><a href=\"01-clinical-foundations.html\" class=\"nav-link\">Clinical</a></li>"
+    },
+    {
+      "lineNum": 29,
+      "href": "02-clinical-evidence.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "02-clinical-evidence.html",
+      "canonicalReplacement": "06b-clinical-evidence.html",
+      "rawLine": "<li><a href=\"02-clinical-evidence.html\" class=\"nav-link\">Trials</a></li>"
+    },
+    {
+      "lineNum": 34,
+      "href": "07-integrity-audit.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "07-integrity-audit.html",
+      "canonicalReplacement": "08-benchmark-integrity.html",
+      "rawLine": "<li><a href=\"07-integrity-audit.html\" class=\"nav-link\">Integrity</a></li>"
+    },
+    {
+      "lineNum": 51,
+      "href": "01-clinical-foundations.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "01-clinical-foundations.html",
+      "canonicalReplacement": "01-what-is-colonoscopy.html",
+      "rawLine": "<a href=\"01-clinical-foundations.html\" class=\"nav-link\">01 Clinical Foundations</a>"
+    },
+    {
+      "lineNum": 52,
+      "href": "02-clinical-evidence.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "02-clinical-evidence.html",
+      "canonicalReplacement": "06b-clinical-evidence.html",
+      "rawLine": "<a href=\"02-clinical-evidence.html\" class=\"nav-link\">02 Clinical Trials &amp; Evidence</a>"
+    },
+    {
+      "lineNum": 57,
+      "href": "07-integrity-audit.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "07-integrity-audit.html",
+      "canonicalReplacement": "08-benchmark-integrity.html",
+      "rawLine": "<a href=\"07-integrity-audit.html\" class=\"nav-link\">07 Forensic Integrity Audit</a>"
+    },
+    {
+      "lineNum": 58,
+      "href": "08-commercial-systems.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "08-commercial-systems.html",
+      "canonicalReplacement": "07-clinical-systems.html",
+      "rawLine": "<a href=\"08-commercial-systems.html\" class=\"nav-link\">08 Commercial CADe/CADx</a>"
+    },
+    {
+      "lineNum": 59,
+      "href": "09-implementation.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "09-implementation.html",
+      "canonicalReplacement": "09-chakramodel.html",
+      "rawLine": "<a href=\"09-implementation.html\" class=\"nav-link\">09 Implementation &amp; Latency</a>"
+    },
+    {
+      "lineNum": 60,
+      "href": "10-future-frontiers.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "10-future-frontiers.html",
+      "canonicalReplacement": "10-future.html",
+      "rawLine": "<a href=\"10-future-frontiers.html\" class=\"nav-link\">10 Future Frontiers</a>"
+    },
+    {
+      "lineNum": 568,
+      "href": "01-clinical-foundations.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "01-clinical-foundations.html",
+      "canonicalReplacement": "01-what-is-colonoscopy.html",
+      "rawLine": "<li><a href=\"01-clinical-foundations.html\">Clinical Foundations</a></li>"
+    },
+    {
+      "lineNum": 569,
+      "href": "02-clinical-evidence.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "02-clinical-evidence.html",
+      "canonicalReplacement": "06b-clinical-evidence.html",
+      "rawLine": "<li><a href=\"02-clinical-evidence.html\">Trial Evidence &amp; RCTs</a></li>"
+    },
+    {
+      "lineNum": 570,
+      "href": "08-commercial-systems.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "08-commercial-systems.html",
+      "canonicalReplacement": "07-clinical-systems.html",
+      "rawLine": "<li><a href=\"08-commercial-systems.html\">Commercial Systems</a></li>"
+    },
+    {
+      "lineNum": 581,
+      "href": "09-implementation.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "09-implementation.html",
+      "canonicalReplacement": "09-chakramodel.html",
+      "rawLine": "<li><a href=\"09-implementation.html\">Deployment &amp; Latency</a></li>"
+    },
+    {
+      "lineNum": 587,
+      "href": "07-integrity-audit.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "07-integrity-audit.html",
+      "canonicalReplacement": "08-benchmark-integrity.html",
+      "rawLine": "<li><a href=\"07-integrity-audit.html\">Integrity Audit</a></li>"
+    },
+    {
+      "lineNum": 588,
+      "href": "10-future-frontiers.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "10-future-frontiers.html",
+      "canonicalReplacement": "10-future.html",
+      "rawLine": "<li><a href=\"10-future-frontiers.html\">Future Frontiers</a></li>"
+    }
+  ],
+  "pages\\06-benchmarks.html": [
+    {
+      "lineNum": 28,
+      "href": "01-clinical-foundations.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "01-clinical-foundations.html",
+      "canonicalReplacement": "01-what-is-colonoscopy.html",
+      "rawLine": "<li><a href=\"01-clinical-foundations.html\" class=\"nav-link\">Clinical</a></li>"
+    },
+    {
+      "lineNum": 29,
+      "href": "02-clinical-evidence.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "02-clinical-evidence.html",
+      "canonicalReplacement": "06b-clinical-evidence.html",
+      "rawLine": "<li><a href=\"02-clinical-evidence.html\" class=\"nav-link\">Trials</a></li>"
+    },
+    {
+      "lineNum": 34,
+      "href": "07-integrity-audit.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "07-integrity-audit.html",
+      "canonicalReplacement": "08-benchmark-integrity.html",
+      "rawLine": "<li><a href=\"07-integrity-audit.html\" class=\"nav-link\">Integrity</a></li>"
+    },
+    {
+      "lineNum": 51,
+      "href": "01-clinical-foundations.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "01-clinical-foundations.html",
+      "canonicalReplacement": "01-what-is-colonoscopy.html",
+      "rawLine": "<a href=\"01-clinical-foundations.html\" class=\"nav-link\">01 Clinical Foundations</a>"
+    },
+    {
+      "lineNum": 52,
+      "href": "02-clinical-evidence.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "02-clinical-evidence.html",
+      "canonicalReplacement": "06b-clinical-evidence.html",
+      "rawLine": "<a href=\"02-clinical-evidence.html\" class=\"nav-link\">02 Clinical Trials &amp; Evidence</a>"
+    },
+    {
+      "lineNum": 57,
+      "href": "07-integrity-audit.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "07-integrity-audit.html",
+      "canonicalReplacement": "08-benchmark-integrity.html",
+      "rawLine": "<a href=\"07-integrity-audit.html\" class=\"nav-link\">07 Forensic Integrity Audit</a>"
+    },
+    {
+      "lineNum": 58,
+      "href": "08-commercial-systems.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "08-commercial-systems.html",
+      "canonicalReplacement": "07-clinical-systems.html",
+      "rawLine": "<a href=\"08-commercial-systems.html\" class=\"nav-link\">08 Commercial CADe/CADx</a>"
+    },
+    {
+      "lineNum": 59,
+      "href": "09-implementation.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "09-implementation.html",
+      "canonicalReplacement": "09-chakramodel.html",
+      "rawLine": "<a href=\"09-implementation.html\" class=\"nav-link\">09 Implementation &amp; Latency</a>"
+    },
+    {
+      "lineNum": 60,
+      "href": "10-future-frontiers.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "10-future-frontiers.html",
+      "canonicalReplacement": "10-future.html",
+      "rawLine": "<a href=\"10-future-frontiers.html\" class=\"nav-link\">10 Future Frontiers</a>"
+    },
+    {
+      "lineNum": 468,
+      "href": "07-integrity-audit.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "07-integrity-audit.html",
+      "canonicalReplacement": "08-benchmark-integrity.html",
+      "rawLine": "<a href=\"07-integrity-audit.html\" class=\"btn btn-primary btn-lg\">"
+    },
+    {
+      "lineNum": 490,
+      "href": "01-clinical-foundations.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "01-clinical-foundations.html",
+      "canonicalReplacement": "01-what-is-colonoscopy.html",
+      "rawLine": "<li><a href=\"01-clinical-foundations.html\">Clinical Foundations</a></li>"
+    },
+    {
+      "lineNum": 491,
+      "href": "02-clinical-evidence.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "02-clinical-evidence.html",
+      "canonicalReplacement": "06b-clinical-evidence.html",
+      "rawLine": "<li><a href=\"02-clinical-evidence.html\">Trial Evidence &amp; RCTs</a></li>"
+    },
+    {
+      "lineNum": 492,
+      "href": "08-commercial-systems.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "08-commercial-systems.html",
+      "canonicalReplacement": "07-clinical-systems.html",
+      "rawLine": "<li><a href=\"08-commercial-systems.html\">Commercial Systems</a></li>"
+    },
+    {
+      "lineNum": 503,
+      "href": "09-implementation.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "09-implementation.html",
+      "canonicalReplacement": "09-chakramodel.html",
+      "rawLine": "<li><a href=\"09-implementation.html\">Deployment &amp; Latency</a></li>"
+    },
+    {
+      "lineNum": 509,
+      "href": "07-integrity-audit.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "07-integrity-audit.html",
+      "canonicalReplacement": "08-benchmark-integrity.html",
+      "rawLine": "<li><a href=\"07-integrity-audit.html\">Integrity Audit</a></li>"
+    },
+    {
+      "lineNum": 510,
+      "href": "10-future-frontiers.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "10-future-frontiers.html",
+      "canonicalReplacement": "10-future.html",
+      "rawLine": "<li><a href=\"10-future-frontiers.html\">Future Frontiers</a></li>"
+    }
+  ],
+  "pages\\06b-clinical-evidence.html": [
+    {
+      "lineNum": 33,
+      "href": "08-failure-modes.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "08-failure-modes.html",
+      "canonicalReplacement": "08-benchmark-integrity.html",
+      "rawLine": "<li><a href=\"08-failure-modes.html\" class=\"nav-link\">Integrity Audit</a></li>"
+    },
+    {
+      "lineNum": 34,
+      "href": "09-chakramodel-case-study.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "09-chakramodel-case-study.html",
+      "canonicalReplacement": "09-chakramodel.html",
+      "rawLine": "<li><a href=\"09-chakramodel-case-study.html\" class=\"nav-link\">ChakraModel</a></li>"
+    },
+    {
+      "lineNum": 78,
+      "href": "08-failure-modes.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "08-failure-modes.html",
+      "canonicalReplacement": "08-benchmark-integrity.html",
+      "rawLine": "<a href=\"08-failure-modes.html\" class=\"nav-link\">08. Failure Modes & Video Leakage</a>"
+    },
+    {
+      "lineNum": 79,
+      "href": "09-chakramodel-case-study.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "09-chakramodel-case-study.html",
+      "canonicalReplacement": "09-chakramodel.html",
+      "rawLine": "<a href=\"09-chakramodel-case-study.html\" class=\"nav-link\">09. ChakraModel Research Case Study</a>"
+    },
+    {
+      "lineNum": 80,
+      "href": "10-future-directions.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "10-future-directions.html",
+      "canonicalReplacement": "10-future.html",
+      "rawLine": "<a href=\"10-future-directions.html\" class=\"nav-link\">10. Future Directions & Open Frontiers</a>"
+    },
+    {
+      "lineNum": 517,
+      "href": "10-future-directions.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "10-future-directions.html",
+      "canonicalReplacement": "10-future.html",
+      "rawLine": "<li><a href=\"10-future-directions.html\">Future Directions & Mamba</a></li>"
+    },
+    {
+      "lineNum": 524,
+      "href": "08-failure-modes.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "08-failure-modes.html",
+      "canonicalReplacement": "08-benchmark-integrity.html",
+      "rawLine": "<li><a href=\"08-failure-modes.html\">Integrity & Video Leakage Audit</a></li>"
+    },
+    {
+      "lineNum": 525,
+      "href": "09-chakramodel-case-study.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "09-chakramodel-case-study.html",
+      "canonicalReplacement": "09-chakramodel.html",
+      "rawLine": "<li><a href=\"09-chakramodel-case-study.html\">ChakraModel Case Study</a></li>"
+    }
+  ],
+  "pages\\07-clinical-systems.html": [
+    {
+      "lineNum": 33,
+      "href": "08-failure-modes.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "08-failure-modes.html",
+      "canonicalReplacement": "08-benchmark-integrity.html",
+      "rawLine": "<li><a href=\"08-failure-modes.html\" class=\"nav-link\">Integrity Audit</a></li>"
+    },
+    {
+      "lineNum": 34,
+      "href": "09-chakramodel-case-study.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "09-chakramodel-case-study.html",
+      "canonicalReplacement": "09-chakramodel.html",
+      "rawLine": "<li><a href=\"09-chakramodel-case-study.html\" class=\"nav-link\">ChakraModel</a></li>"
+    },
+    {
+      "lineNum": 78,
+      "href": "08-failure-modes.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "08-failure-modes.html",
+      "canonicalReplacement": "08-benchmark-integrity.html",
+      "rawLine": "<a href=\"08-failure-modes.html\" class=\"nav-link\">08. Failure Modes & Video Leakage</a>"
+    },
+    {
+      "lineNum": 79,
+      "href": "09-chakramodel-case-study.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "09-chakramodel-case-study.html",
+      "canonicalReplacement": "09-chakramodel.html",
+      "rawLine": "<a href=\"09-chakramodel-case-study.html\" class=\"nav-link\">09. ChakraModel Research Case Study</a>"
+    },
+    {
+      "lineNum": 80,
+      "href": "10-future-directions.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "10-future-directions.html",
+      "canonicalReplacement": "10-future.html",
+      "rawLine": "<a href=\"10-future-directions.html\" class=\"nav-link\">10. Future Directions & Open Frontiers</a>"
+    },
+    {
+      "lineNum": 570,
+      "href": "08-failure-modes.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "08-failure-modes.html",
+      "canonicalReplacement": "08-benchmark-integrity.html",
+      "rawLine": "<a href=\"08-failure-modes.html\" class=\"btn btn-primary btn-lg\">"
+    },
+    {
+      "lineNum": 606,
+      "href": "10-future-directions.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "10-future-directions.html",
+      "canonicalReplacement": "10-future.html",
+      "rawLine": "<li><a href=\"10-future-directions.html\">Future Directions & Mamba</a></li>"
+    },
+    {
+      "lineNum": 613,
+      "href": "08-failure-modes.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "08-failure-modes.html",
+      "canonicalReplacement": "08-benchmark-integrity.html",
+      "rawLine": "<li><a href=\"08-failure-modes.html\">Integrity & Video Leakage Audit</a></li>"
+    },
+    {
+      "lineNum": 614,
+      "href": "09-chakramodel-case-study.html",
+      "type": "DRAFT_FILENAME",
+      "matchDraft": "09-chakramodel-case-study.html",
+      "canonicalReplacement": "09-chakramodel.html",
+      "rawLine": "<li><a href=\"09-chakramodel-case-study.html\">ChakraModel Case Study</a></li>"
+    }
+  ],
+  "pages\\08-benchmark-integrity.html": [],
+  "pages\\09-chakramodel.html": [],
+  "pages\\10-future.html": [],
+  "pages\\11-references.html": [],
+  "pages\\12-glossary.html": [
+    {
+      "lineNum": 160,
+      "href": "#letter-A",
+      "type": "GLOSSARY_LETTER_ANCHOR",
+      "matchDraft": "#letter-A",
+      "canonicalReplacement": "needs matching section id in 12-glossary.html",
+      "rawLine": "<a href=\"#letter-A\" class=\"letter-btn\" data-letter=\"A\">A</a>"
+    },
+    {
+      "lineNum": 161,
+      "href": "#letter-B",
+      "type": "GLOSSARY_LETTER_ANCHOR",
+      "matchDraft": "#letter-B",
+      "canonicalReplacement": "needs matching section id in 12-glossary.html",
+      "rawLine": "<a href=\"#letter-B\" class=\"letter-btn\" data-letter=\"B\">B</a>"
+    },
+    {
+      "lineNum": 162,
+      "href": "#letter-C",
+      "type": "GLOSSARY_LETTER_ANCHOR",
+      "matchDraft": "#letter-C",
+      "canonicalReplacement": "needs matching section id in 12-glossary.html",
+      "rawLine": "<a href=\"#letter-C\" class=\"letter-btn\" data-letter=\"C\">C</a>"
+    },
+    {
+      "lineNum": 163,
+      "href": "#letter-D",
+      "type": "GLOSSARY_LETTER_ANCHOR",
+      "matchDraft": "#letter-D",
+      "canonicalReplacement": "needs matching section id in 12-glossary.html",
+      "rawLine": "<a href=\"#letter-D\" class=\"letter-btn\" data-letter=\"D\">D</a>"
+    },
+    {
+      "lineNum": 164,
+      "href": "#letter-E",
+      "type": "GLOSSARY_LETTER_ANCHOR",
+      "matchDraft": "#letter-E",
+      "canonicalReplacement": "needs matching section id in 12-glossary.html",
+      "rawLine": "<a href=\"#letter-E\" class=\"letter-btn\" data-letter=\"E\">E</a>"
+    },
+    {
+      "lineNum": 165,
+      "href": "#letter-F",
+      "type": "GLOSSARY_LETTER_ANCHOR",
+      "matchDraft": "#letter-F",
+      "canonicalReplacement": "needs matching section id in 12-glossary.html",
+      "rawLine": "<a href=\"#letter-F\" class=\"letter-btn\" data-letter=\"F\">F</a>"
+    },
+    {
+      "lineNum": 166,
+      "href": "#letter-G",
+      "type": "GLOSSARY_LETTER_ANCHOR",
+      "matchDraft": "#letter-G",
+      "canonicalReplacement": "needs matching section id in 12-glossary.html",
+      "rawLine": "<a href=\"#letter-G\" class=\"letter-btn\" data-letter=\"G\">G</a>"
+    },
+    {
+      "lineNum": 167,
+      "href": "#letter-H",
+      "type": "GLOSSARY_LETTER_ANCHOR",
+      "matchDraft": "#letter-H",
+      "canonicalReplacement": "needs matching section id in 12-glossary.html",
+      "rawLine": "<a href=\"#letter-H\" class=\"letter-btn disabled\" data-letter=\"H\">H</a>"
+    },
+    {
+      "lineNum": 168,
+      "href": "#letter-I",
+      "type": "GLOSSARY_LETTER_ANCHOR",
+      "matchDraft": "#letter-I",
+      "canonicalReplacement": "needs matching section id in 12-glossary.html",
+      "rawLine": "<a href=\"#letter-I\" class=\"letter-btn\" data-letter=\"I\">I</a>"
+    },
+    {
+      "lineNum": 169,
+      "href": "#letter-J",
+      "type": "GLOSSARY_LETTER_ANCHOR",
+      "matchDraft": "#letter-J",
+      "canonicalReplacement": "needs matching section id in 12-glossary.html",
+      "rawLine": "<a href=\"#letter-J\" class=\"letter-btn disabled\" data-letter=\"J\">J</a>"
+    },
+    {
+      "lineNum": 170,
+      "href": "#letter-K",
+      "type": "GLOSSARY_LETTER_ANCHOR",
+      "matchDraft": "#letter-K",
+      "canonicalReplacement": "needs matching section id in 12-glossary.html",
+      "rawLine": "<a href=\"#letter-K\" class=\"letter-btn\" data-letter=\"K\">K</a>"
+    },
+    {
+      "lineNum": 171,
+      "href": "#letter-L",
+      "type": "GLOSSARY_LETTER_ANCHOR",
+      "matchDraft": "#letter-L",
+      "canonicalReplacement": "needs matching section id in 12-glossary.html",
+      "rawLine": "<a href=\"#letter-L\" class=\"letter-btn disabled\" data-letter=\"L\">L</a>"
+    },
+    {
+      "lineNum": 172,
+      "href": "#letter-M",
+      "type": "GLOSSARY_LETTER_ANCHOR",
+      "matchDraft": "#letter-M",
+      "canonicalReplacement": "needs matching section id in 12-glossary.html",
+      "rawLine": "<a href=\"#letter-M\" class=\"letter-btn\" data-letter=\"M\">M</a>"
+    },
+    {
+      "lineNum": 173,
+      "href": "#letter-N",
+      "type": "GLOSSARY_LETTER_ANCHOR",
+      "matchDraft": "#letter-N",
+      "canonicalReplacement": "needs matching section id in 12-glossary.html",
+      "rawLine": "<a href=\"#letter-N\" class=\"letter-btn\" data-letter=\"N\">N</a>"
+    },
+    {
+      "lineNum": 174,
+      "href": "#letter-O",
+      "type": "GLOSSARY_LETTER_ANCHOR",
+      "matchDraft": "#letter-O",
+      "canonicalReplacement": "needs matching section id in 12-glossary.html",
+      "rawLine": "<a href=\"#letter-O\" class=\"letter-btn disabled\" data-letter=\"O\">O</a>"
+    },
+    {
+      "lineNum": 175,
+      "href": "#letter-P",
+      "type": "GLOSSARY_LETTER_ANCHOR",
+      "matchDraft": "#letter-P",
+      "canonicalReplacement": "needs matching section id in 12-glossary.html",
+      "rawLine": "<a href=\"#letter-P\" class=\"letter-btn\" data-letter=\"P\">P</a>"
+    },
+    {
+      "lineNum": 176,
+      "href": "#letter-Q",
+      "type": "GLOSSARY_LETTER_ANCHOR",
+      "matchDraft": "#letter-Q",
+      "canonicalReplacement": "needs matching section id in 12-glossary.html",
+      "rawLine": "<a href=\"#letter-Q\" class=\"letter-btn disabled\" data-letter=\"Q\">Q</a>"
+    },
+    {
+      "lineNum": 177,
+      "href": "#letter-R",
+      "type": "GLOSSARY_LETTER_ANCHOR",
+      "matchDraft": "#letter-R",
+      "canonicalReplacement": "needs matching section id in 12-glossary.html",
+      "rawLine": "<a href=\"#letter-R\" class=\"letter-btn\" data-letter=\"R\">R</a>"
+    },
+    {
+      "lineNum": 178,
+      "href": "#letter-S",
+      "type": "GLOSSARY_LETTER_ANCHOR",
+      "matchDraft": "#letter-S",
+      "canonicalReplacement": "needs matching section id in 12-glossary.html",
+      "rawLine": "<a href=\"#letter-S\" class=\"letter-btn\" data-letter=\"S\">S</a>"
+    },
+    {
+      "lineNum": 179,
+      "href": "#letter-T",
+      "type": "GLOSSARY_LETTER_ANCHOR",
+      "matchDraft": "#letter-T",
+      "canonicalReplacement": "needs matching section id in 12-glossary.html",
+      "rawLine": "<a href=\"#letter-T\" class=\"letter-btn\" data-letter=\"T\">T</a>"
+    },
+    {
+      "lineNum": 180,
+      "href": "#letter-U",
+      "type": "GLOSSARY_LETTER_ANCHOR",
+      "matchDraft": "#letter-U",
+      "canonicalReplacement": "needs matching section id in 12-glossary.html",
+      "rawLine": "<a href=\"#letter-U\" class=\"letter-btn\" data-letter=\"U\">U</a>"
+    },
+    {
+      "lineNum": 181,
+      "href": "#letter-V",
+      "type": "GLOSSARY_LETTER_ANCHOR",
+      "matchDraft": "#letter-V",
+      "canonicalReplacement": "needs matching section id in 12-glossary.html",
+      "rawLine": "<a href=\"#letter-V\" class=\"letter-btn\" data-letter=\"V\">V</a>"
+    },
+    {
+      "lineNum": 182,
+      "href": "#letter-W",
+      "type": "GLOSSARY_LETTER_ANCHOR",
+      "matchDraft": "#letter-W",
+      "canonicalReplacement": "needs matching section id in 12-glossary.html",
+      "rawLine": "<a href=\"#letter-W\" class=\"letter-btn\" data-letter=\"W\">W</a>"
+    },
+    {
+      "lineNum": 183,
+      "href": "#letter-X",
+      "type": "GLOSSARY_LETTER_ANCHOR",
+      "matchDraft": "#letter-X",
+      "canonicalReplacement": "needs matching section id in 12-glossary.html",
+      "rawLine": "<a href=\"#letter-X\" class=\"letter-btn disabled\" data-letter=\"X\">X</a>"
+    },
+    {
+      "lineNum": 184,
+      "href": "#letter-Y",
+      "type": "GLOSSARY_LETTER_ANCHOR",
+      "matchDraft": "#letter-Y",
+      "canonicalReplacement": "needs matching section id in 12-glossary.html",
+      "rawLine": "<a href=\"#letter-Y\" class=\"letter-btn disabled\" data-letter=\"Y\">Y</a>"
+    },
+    {
+      "lineNum": 185,
+      "href": "#letter-Z",
+      "type": "GLOSSARY_LETTER_ANCHOR",
+      "matchDraft": "#letter-Z",
+      "canonicalReplacement": "needs matching section id in 12-glossary.html",
+      "rawLine": "<a href=\"#letter-Z\" class=\"letter-btn disabled\" data-letter=\"Z\">Z</a>"
+    }
+  ]
+}
