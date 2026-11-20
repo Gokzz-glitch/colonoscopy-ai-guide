@@ -42,6 +42,15 @@ This platform delivers two synchronized experiences:
 
 ## Complete Platform Site Map
 
+## Open-Source Medical Model Catalog
+
+The repository also includes source-linked CSV catalogs for tumor, oncology, pathology, and colonoscopy AI research:
+
+- [`catalogs/colonoscopy_tumor_open_models_400plus.csv`](catalogs/colonoscopy_tumor_open_models_400plus.csv) - 584 model-like GitHub candidates, including task, modality, specialty, colonoscopy relevance, license, stars, and update date.
+- [`catalogs/open_medical_ai_catalog.csv`](catalogs/open_medical_ai_catalog.csv) - 1,089 broader repository candidates collected across the same oncology and medical-imaging searches.
+
+These are discovery catalogs, not clinical model endorsements. Repository licenses and model status should be verified in the upstream project before use. The filtered catalog labels 270 repositories as explicitly licensed and 314 as license-unverified.
+
 | Page URL | Title | Core Focus |
 |---|---|---|
 | `index.html` | **Platform Overview & Dual Paths** | Hero section, clinical impact statistics, dual audience entry paths (Patients vs Researchers). |
